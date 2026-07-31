@@ -20,7 +20,7 @@ versions = [
     "1.9.1",
     "2",
     "2.0.1",
-    "2.1"
+    "2.1",
 ]
 
 
@@ -28,7 +28,9 @@ async def main():
     async with ClientSession() as session:
         for version in versions:
             async with session.get(
-                    f"https://sc1.checkpoint.com/documents/latest/APIs/data/v{version}/dynamic/apis.json", ssl=False) as response:
+                f"https://sc1.checkpoint.com/documents/latest/APIs/data/v{version}/dynamic/apis.json",
+                ssl=False,
+            ) as response:
                 res = await response.text(errors="ignore")
             try:
                 with Path(__file__).parent.joinpath(f"api_v{version}.json").open("w") as fp:

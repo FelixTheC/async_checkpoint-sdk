@@ -1,0 +1,31 @@
+from aiohttp import ClientSession
+
+from async_checkpoint_sdk.models.web_api_login_reply import WebApiLoginReply
+from async_checkpoint_sdk.models.web_api_login_request import WebApiLoginRequest
+from config import Config
+
+
+async def login(
+    client: ClientSession, data: WebApiLoginRequest, config: Config, **kwargs
+) -> WebApiLoginReply:
+    """
+    Log in to the server with username and password. The server shows your session unique identifier. Enter this session unique identifier in the 'X-chkp-sid' header of each request.
+
+    Parameters
+    ----------
+    client : ClientSession [Argument]
+    data : WebApiLoginRequest [Argument]
+    config : Config [Argument]
+    kwargs : [Keyword arguments]
+
+    Returns
+    -------
+    WebApiLoginReply
+    """
+    url = f"https://{config.server}:{config.port}/web_api/login"
+    data_obj = {"body": data}
+    if client.headers["Content-Type"] == "application/json":
+        data_obj = {"json": data}
+    async with client.post(url, **data_obj, raise_for_status=True, ssl=False) as response:
+        resp = await response.json()
+    return WebApiLoginReply(**resp)

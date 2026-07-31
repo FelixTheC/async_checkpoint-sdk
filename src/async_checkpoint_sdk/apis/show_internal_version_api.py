@@ -1,0 +1,29 @@
+from aiohttp import ClientSession
+
+from async_checkpoint_sdk.models.version_internal_reply import VersionInternalReply
+from async_checkpoint_sdk.models.version_internal_request import VersionInternalRequest
+from config import Config
+
+
+async def show_internal_version(
+    client: ClientSession, data: VersionInternalRequest, config: Config, **kwargs
+) -> VersionInternalReply:
+    """
+    Parameters
+    ----------
+    client : ClientSession [Argument]
+    data : VersionInternalRequest [Argument]
+    config : Config [Argument]
+    kwargs : [Keyword arguments]
+
+    Returns
+    -------
+    VersionInternalReply
+    """
+    url = f"https://{config.server}:{config.port}/web_api/show-internal-version"
+    data_obj = {"body": data}
+    if client.headers["Content-Type"] == "application/json":
+        data_obj = {"json": data}
+    async with client.post(url, **data_obj, raise_for_status=True, ssl=False) as response:
+        resp = await response.json()
+    return VersionInternalReply(**resp)

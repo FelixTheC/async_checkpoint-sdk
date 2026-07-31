@@ -1,0 +1,33 @@
+from aiohttp import ClientSession
+
+from async_checkpoint_sdk.models.default_admin_settings_reply import DefaultAdminSettingsReply
+from async_checkpoint_sdk.models.default_admin_settings_request_show import (
+    DefaultAdminSettingsRequestShow,
+)
+from config import Config
+
+
+async def show_default_administrator_settings(
+    client: ClientSession, data: DefaultAdminSettingsRequestShow, config: Config, **kwargs
+) -> DefaultAdminSettingsReply:
+    """
+    Retrieve existing default administrator settings.
+
+    Parameters
+    ----------
+    client : ClientSession [Argument]
+    data : DefaultAdminSettingsRequestShow [Argument]
+    config : Config [Argument]
+    kwargs : [Keyword arguments]
+
+    Returns
+    -------
+    DefaultAdminSettingsReply
+    """
+    url = f"https://{config.server}:{config.port}/web_api/show-default-administrator-settings"
+    data_obj = {"body": data}
+    if client.headers["Content-Type"] == "application/json":
+        data_obj = {"json": data}
+    async with client.post(url, **data_obj, raise_for_status=True, ssl=False) as response:
+        resp = await response.json()
+    return DefaultAdminSettingsReply(**resp)

@@ -1,11 +1,10 @@
+import keyword
 import subprocess
 from pathlib import Path
 from pprint import pprint
 from string import Template
-import keyword
 
 import orjson
-from docstring_generator import new_gen_docs
 
 BASE_DIR = Path(__file__).parent
 RESULT_DIR = BASE_DIR.joinpath("models")
@@ -33,7 +32,7 @@ required_field_template = Template("""
     $name: $type = Field(alias="$alias", description='''$description''')""")
 
 
-ALT_NAMES = {"from": "source"}
+ALT_NAMES = {"from ": "source"}
 
 
 def make_field_name_snake_case(field_name: str) -> str:
@@ -264,8 +263,12 @@ def command_parser(data):
             command["response"]["on-success"]["web"]["object"]["object-name"]
         )
 
-        imports.append(f"from models.{make_name_snake_case(req_type)} import {req_type}")
-        imports.append(f"from models.{make_name_snake_case(resp_type)} import {resp_type}")
+        imports.append(
+            f"from async_checkpoint_sdk.models.{make_name_snake_case(req_type)} import {req_type}"
+        )
+        imports.append(
+            f"from async_checkpoint_sdk.models.{make_name_snake_case(resp_type)} import {resp_type}"
+        )
 
         api_name = make_field_name_snake_case(command["name"]["web"])
 

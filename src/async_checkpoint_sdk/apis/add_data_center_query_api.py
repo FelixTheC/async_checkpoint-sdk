@@ -1,0 +1,47 @@
+from aiohttp import ClientSession
+
+from async_checkpoint_sdk.models.data_center_query_reply import DataCenterQueryReply
+from async_checkpoint_sdk.models.data_center_query_request_new import DataCenterQueryRequestNew
+from config import Config
+
+
+async def add_data_center_query(
+    client: ClientSession, data: DataCenterQueryRequestNew, config: Config, **kwargs
+) -> DataCenterQueryReply:
+    """
+    Add new data center query.
+
+    Parameters
+    ----------
+    client : ClientSession [Argument]
+        data : DataCenterQueryRequestNew [Argument]
+    config : Config [Argument]
+    kwargs : [Keyword arguments]
+
+    Returns
+    -------
+    DataCenterQueryReply
+    data : DataCenterQueryRequestNew [Argument]
+        data : DataCenterQueryRequestNew [Argument]
+    config : Config [Argument]
+    kwargs : [Keyword arguments]
+
+    Returns
+    -------
+    DataCenterQueryReply
+    data : DataCenterQueryRequestNew [Argument]
+        data : DataCenterQueryRequestNew [Argument]
+    config : Config [Argument]
+    kwargs : [Keyword arguments]
+
+    Returns
+    -------
+    DataCenterQueryReply
+    """
+    url = f"https://{config.server}:{config.port}/web_api/add-data-center-query"
+    data_obj = {"body": data}
+    if client.headers["Content-Type"] == "application/json":
+        data_obj = {"json": data}
+    async with client.post(url, **data_obj, raise_for_status=True, ssl=False) as response:
+        resp = await response.json()
+    return DataCenterQueryReply(**resp)
