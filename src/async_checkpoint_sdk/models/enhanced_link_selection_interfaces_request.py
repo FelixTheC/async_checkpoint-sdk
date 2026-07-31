@@ -1,7 +1,10 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class EnhancedLinkSelectionInterfacesRequest(BaseModel):
+    interface_name: str = Field(
+        alias="interface-name", description="""The name of the interface."""
+    )
     next_hop_ip: str = Field(alias="next-hop-ip", description="""The IP address of the next hop.""")
     static_nat_ip: str = Field(
         alias="static-nat-ip",
@@ -9,8 +12,7 @@ class EnhancedLinkSelectionInterfacesRequest(BaseModel):
     )
     priority: int = Field(alias="priority", description="""Priority of a 'Backup' interface.""")
     redundancy_mode: str = Field(
-        alias="redundancy-mode",
-        description="""Interface redundancy mode (Active/Backup).""",
+        alias="redundancy-mode", description="""Interface redundancy mode (Active/Backup)."""
     )
     ip_version: str = Field(
         alias="ip-version",

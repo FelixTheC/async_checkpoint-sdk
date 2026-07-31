@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.smtp_resource_reply import SmtpResourceReply
 from async_checkpoint_sdk.models.smtp_resource_request_edit import SmtpResourceRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_resource_smtp(
-    client: ClientSession, data: SmtpResourceRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: SmtpResourceRequestEdit, config: SDKConfig, **kwargs
 ) -> SmtpResourceReply:
     """
     Edit existing object using object name or uid.

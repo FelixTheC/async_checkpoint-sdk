@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.t_l_s_section_reply import TLSSectionReply
 from async_checkpoint_sdk.models.t_l_s_section_request_new import TLSSectionRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_https_section(
-    client: ClientSession, data: TLSSectionRequestNew, config: Config, **kwargs
+    client: ClientSession, data: TLSSectionRequestNew, config: SDKConfig, **kwargs
 ) -> TLSSectionReply:
     """
     Create new HTTPS Inspection section.

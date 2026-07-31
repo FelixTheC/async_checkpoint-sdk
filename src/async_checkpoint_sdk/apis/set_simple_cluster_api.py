@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.cluster_async_reply import ClusterAsyncReply
 from async_checkpoint_sdk.models.cluster_request_edit import ClusterRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_simple_cluster(
-    client: ClientSession, data: ClusterRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: ClusterRequestEdit, config: SDKConfig, **kwargs
 ) -> ClusterAsyncReply:
     """
     Edit existing object using object name or uid.

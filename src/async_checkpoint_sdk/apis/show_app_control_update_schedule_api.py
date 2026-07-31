@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.appi_update_schedule_reply import AppiUpdateSch
 from async_checkpoint_sdk.models.appi_update_schedule_request_show import (
     AppiUpdateScheduleRequestShow,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_app_control_update_schedule(
-    client: ClientSession, data: AppiUpdateScheduleRequestShow, config: Config, **kwargs
+    client: ClientSession, data: AppiUpdateScheduleRequestShow, config: SDKConfig, **kwargs
 ) -> AppiUpdateScheduleReply:
     """
     Retrieve existing Application Control and URL Filtering update schedule.

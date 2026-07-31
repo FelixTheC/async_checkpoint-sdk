@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.application_site_reply import ApplicationSiteReply
 from async_checkpoint_sdk.models.application_site_request_new import ApplicationSiteRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_application_site(
-    client: ClientSession, data: ApplicationSiteRequestNew, config: Config, **kwargs
+    client: ClientSession, data: ApplicationSiteRequestNew, config: SDKConfig, **kwargs
 ) -> ApplicationSiteReply:
     """
     Creates new application site, which can be initialized with 'url-list' or 'application-signature' (not both of them).

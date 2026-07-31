@@ -1,18 +1,18 @@
-from .add import add
-from .pydantic import BaseModel, Field
-from .radius_accounting_object_request import RadiusAccountingObjectRequest
-from .remove import remove
+from add import Add
+from pydantic import BaseModel, Field
+from radius_accounting_object_request import RadiusAccountingObjectRequest
+from remove import Remove
 
 
 class RadiusRequestEdit(BaseModel):
+    uid: str = Field(alias="uid", description="""Object unique identifier.""")
     service: str = Field(
         alias="service",
         description="""The UID or Name of the Service to which the RADIUS server listens.""",
     )
     new_name: str = Field(alias="new-name", description="""New name of the object.""")
     server: str = Field(
-        alias="server",
-        description="""The UID or Name of the host that is the RADIUS Server.""",
+        alias="server", description="""The UID or Name of the host that is the RADIUS Server."""
     )
     shared_secret: str = Field(
         alias="shared-secret",
@@ -34,15 +34,14 @@ class RadiusRequestEdit(BaseModel):
         alias="accounting", description="""Accounting settings."""
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
-    groups: add | remove | str | list[str] = Field(
+    groups: Add | Remove | str | list[str] = Field(
         alias="groups", description="""Collection of group identifiers."""
     )
     ignore_warnings: bool = Field(
@@ -52,6 +51,6 @@ class RadiusRequestEdit(BaseModel):
         alias="ignore-errors",
         description="""Apply changes ignoring errors. You won't be able to publish such a changes. If ignore-warnings flag was omitted - warnings will also be ignored.""",
     )
-    tags: add | remove | str | list[str] = Field(
+    tags: Add | Remove | str | list[str] = Field(
         alias="tags", description="""Collection of tag identifiers."""
     )

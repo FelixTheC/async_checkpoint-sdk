@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.pnp_license_reply import PnpLicenseReply
 from async_checkpoint_sdk.models.pnp_license_request_show import PnpLicenseRequestShow
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_pnp_license(
-    client: ClientSession, data: PnpLicenseRequestShow, config: Config, **kwargs
+    client: ClientSession, data: PnpLicenseRequestShow, config: SDKConfig, **kwargs
 ) -> PnpLicenseReply:
     """
     Parameters

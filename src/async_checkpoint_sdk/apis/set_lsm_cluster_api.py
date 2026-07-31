@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.lsm_cluster_reply import LsmClusterReply
 from async_checkpoint_sdk.models.lsm_cluster_request_edit import LsmClusterRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_lsm_cluster(
-    client: ClientSession, data: LsmClusterRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: LsmClusterRequestEdit, config: SDKConfig, **kwargs
 ) -> LsmClusterReply:
     """
     Edit existing LSM Cluster.

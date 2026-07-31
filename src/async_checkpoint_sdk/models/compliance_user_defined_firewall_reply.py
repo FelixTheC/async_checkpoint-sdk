@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class ComplianceUserDefinedFirewallReply(BaseModel):
@@ -7,8 +7,7 @@ class ComplianceUserDefinedFirewallReply(BaseModel):
         description="""User-defined policy range percentage to test.""",
     )
     policy_range_position: str = Field(
-        alias="policy-range-position",
-        description="""User-defined policy range position.""",
+        alias="policy-range-position", description="""User-defined policy range position."""
     )
     poor_condition: str = Field(
         alias="poor-condition", description="""User-defined poor condition."""

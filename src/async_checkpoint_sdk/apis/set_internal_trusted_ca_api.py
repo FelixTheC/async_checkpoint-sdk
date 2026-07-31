@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.internal_trusted_ca_request_edit import (
     InternalTrustedCaRequestEdit,
 )
 from async_checkpoint_sdk.models.trusted_ca_reply import TrustedCaReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_internal_trusted_ca(
-    client: ClientSession, data: InternalTrustedCaRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: InternalTrustedCaRequestEdit, config: SDKConfig, **kwargs
 ) -> TrustedCaReply:
     """
     Edit existing Internal CA object.

@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.login_restrictions_reply import LoginRestrictio
 from async_checkpoint_sdk.models.login_restrictions_request_show import (
     LoginRestrictionsRequestShow,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_login_restrictions(
-    client: ClientSession, data: LoginRestrictionsRequestShow, config: Config, **kwargs
+    client: ClientSession, data: LoginRestrictionsRequestShow, config: SDKConfig, **kwargs
 ) -> LoginRestrictionsReply:
     """
     Retrieve existing login restrictions.

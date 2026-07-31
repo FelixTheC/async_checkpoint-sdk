@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.other_service_reply import OtherServiceReply
 from async_checkpoint_sdk.models.other_service_request_new import OtherServiceRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_service_other(
-    client: ClientSession, data: OtherServiceRequestNew, config: Config, **kwargs
+    client: ClientSession, data: OtherServiceRequestNew, config: SDKConfig, **kwargs
 ) -> OtherServiceReply:
     """
     Create new object.

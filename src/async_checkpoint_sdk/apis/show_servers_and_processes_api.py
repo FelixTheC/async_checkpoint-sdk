@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.mds_stat_reply import MdsStatReply
 from async_checkpoint_sdk.models.mds_stat_request import MdsStatRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_servers_and_processes(
-    client: ClientSession, data: MdsStatRequest, config: Config, **kwargs
+    client: ClientSession, data: MdsStatRequest, config: SDKConfig, **kwargs
 ) -> MdsStatReply:
     """
     Shows the status of all processes in the current machine (Multi-Domain Server and all Domain Management / Log Servers). <br>This command is available only on Multi-Domain Server.

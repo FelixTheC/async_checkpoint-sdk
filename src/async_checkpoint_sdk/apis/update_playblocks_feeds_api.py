@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_ok_reply import ApiOkReply
 from async_checkpoint_sdk.models.playblocks_feeds_request_edit import PlayblocksFeedsRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def update_playblocks_feeds(
-    client: ClientSession, data: PlayblocksFeedsRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: PlayblocksFeedsRequestEdit, config: SDKConfig, **kwargs
 ) -> ApiOkReply:
     """
     Parameters

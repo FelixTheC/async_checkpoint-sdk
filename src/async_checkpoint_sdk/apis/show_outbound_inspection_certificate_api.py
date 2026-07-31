@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.outbound_certificate_reply import OutboundCerti
 from async_checkpoint_sdk.models.outbound_certificate_request_show import (
     OutboundCertificateRequestShow,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_outbound_inspection_certificate(
-    client: ClientSession, data: OutboundCertificateRequestShow, config: Config, **kwargs
+    client: ClientSession, data: OutboundCertificateRequestShow, config: SDKConfig, **kwargs
 ) -> OutboundCertificateReply:
     """
     Retrieve existing Outbound Certificate using object name or uid. If an Identifier wasn't given, the default Outbound Certificate is returned if it exists.

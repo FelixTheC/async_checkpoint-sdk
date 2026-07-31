@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.scada_application_reply import ScadaApplicationReply
 from async_checkpoint_sdk.models.scada_application_request_new import ScadaApplicationRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_scada_application(
-    client: ClientSession, data: ScadaApplicationRequestNew, config: Config, **kwargs
+    client: ClientSession, data: ScadaApplicationRequestNew, config: SDKConfig, **kwargs
 ) -> ScadaApplicationReply:
     """
     Create new object.

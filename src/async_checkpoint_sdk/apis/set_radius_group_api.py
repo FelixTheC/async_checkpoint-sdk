@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.radius_group_reply import RadiusGroupReply
 from async_checkpoint_sdk.models.radius_group_request_edit import RadiusGroupRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_radius_group(
-    client: ClientSession, data: RadiusGroupRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: RadiusGroupRequestEdit, config: SDKConfig, **kwargs
 ) -> RadiusGroupReply:
     """
     Edit existing object using object name or uid.

@@ -1,27 +1,29 @@
-from .add import add
-from .api_doc_rule_base_position_object_builder import (
-    ApiDocRuleBasePositionObjectBuilder,
-)
-from .object import Object
-from .pydantic import BaseModel, Field
-from .remove import remove
+from add import Add
+from api_doc_rule_base_position_object_builder import ApiDocRuleBasePositionObjectBuilder
+from object import Object
+from pydantic import BaseModel, Field
+from remove import Remove
 
 
 class TLSRuleRequestEdit(BaseModel):
-    destination: add | remove | str | list[str] = Field(
+    uid: str = Field(alias="uid", description="""Object unique identifier.""")
+    layer: str = Field(
+        alias="layer", description="""Layer that holds the Object. Identified by the Name or UID."""
+    )
+    destination: Add | Remove | str | list[str] = Field(
         alias="destination",
         description="""Collection of Network objects identified by Name or UID that represents connection destination.""",
     )
-    service: add | remove | str | list[str] = Field(
+    service: Add | Remove | str | list[str] = Field(
         alias="service",
         description="""Collection of Network objects identified by Name or UID that represents connection service.""",
     )
-    source: add | remove | str | list[str] = Field(
+    source: Add | Remove | str | list[str] = Field(
         alias="source",
         description="""Collection of Network objects identified by Name or UID that represents connection source.""",
     )
     action: str = Field(alias="action", description="""Rule inspect level. Bypass or Inspect.""")
-    blade: add | remove | str | list[str] = Field(
+    blade: Add | Remove | str | list[str] = Field(
         alias="blade",
         description="""Blades for HTTPS Inspection. Identified by Name or UID of the blade.""",
     )
@@ -31,8 +33,7 @@ class TLSRuleRequestEdit(BaseModel):
 otherwise, Outbound Certificate is a default value.""",
     )
     destination_negate: bool = Field(
-        alias="destination-negate",
-        description="""TRUE if negate value is set for Destination.""",
+        alias="destination-negate", description="""TRUE if negate value is set for Destination."""
     )
     enabled: bool = Field(alias="enabled", description="""Enable/Disable the rule.""")
     install_on: Object = Field(
@@ -44,10 +45,9 @@ otherwise, Outbound Certificate is a default value.""",
         alias="new-position", description="""New position in the rulebase."""
     )
     service_negate: bool = Field(
-        alias="service-negate",
-        description="""TRUE if negate value is set for Service.""",
+        alias="service-negate", description="""TRUE if negate value is set for Service."""
     )
-    site_category: add | remove | str | list[str] = Field(
+    site_category: Add | Remove | str | list[str] = Field(
         alias="site-category",
         description="""Collection of Site Categories objects identified by the name or UID.""",
     )
@@ -58,7 +58,7 @@ otherwise, Outbound Certificate is a default value.""",
     source_negate: bool = Field(
         alias="source-negate", description="""TRUE if negate value is set for Source."""
     )
-    tags: add | remove | str | list[str] = Field(
+    tags: Add | Remove | str | list[str] = Field(
         alias="tags", description="""Collection of tag identifiers."""
     )
     track: str = Field(
@@ -68,7 +68,7 @@ otherwise, Outbound Certificate is a default value.""",
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     ignore_warnings: bool = Field(
         alias="ignore-warnings", description="""Apply changes ignoring warnings."""

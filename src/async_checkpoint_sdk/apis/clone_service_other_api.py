@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.other_service_reply import OtherServiceReply
 from async_checkpoint_sdk.models.other_service_request_edit import OtherServiceRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def clone_service_other(
-    client: ClientSession, data: OtherServiceRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: OtherServiceRequestEdit, config: SDKConfig, **kwargs
 ) -> OtherServiceReply:
     """
     Clone existing object.

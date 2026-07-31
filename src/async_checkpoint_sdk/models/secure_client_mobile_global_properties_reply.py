@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class SecureClientMobileGlobalPropertiesReply(BaseModel):
@@ -11,8 +11,7 @@ class SecureClientMobileGlobalPropertiesReply(BaseModel):
         description="""If the password entered to authenticate is saved locally on the user's machine.""",
     )
     cache_password_timeout: int = Field(
-        alias="cache-password-timeout",
-        description="""Cached password timeout (in minutes).""",
+        alias="cache-password-timeout", description="""Cached password timeout (in minutes)."""
     )
     re_auth_user_interval: int = Field(
         alias="re-auth-user-interval",
@@ -20,7 +19,7 @@ class SecureClientMobileGlobalPropertiesReply(BaseModel):
     )
     connect_mode: str = Field(
         alias="connect-mode",
-        description="""Methods by which a connection to the gateway will be initiated:<br>Configured On Endpoint Client - the method used for initiating a connection to a gateway is determined by the endpoint client<br>Manual - VPN connections will not be initiated automatically.<br>Always connected - SecureClient Mobile will automatically establish a connection to the last connected gateway under the following circumstances: (a) the device has a valid IP address, (b) when the device wakes up from .a low-power state or a soft-reset, or (c) after a condition that caused the device to automatically disconnect ceases to exist (for example, Device is out of PC Sync, Disconnect is not idle.).<br>On application request - Applications requiring access to resources through the VPN will be able to initiate a VPN connection.""",
+        description="""Methods by which a connection to the gateway will be initiated:<br>Configured On Endpoint Client - the method used for initiating a connection to a gateway is determined by the endpoint client<br>Manual - VPN connections will not be initiated automatically.<br>Always connected - SecureClient Mobile will automatically establish a connection to the last connected gateway under the following circumstances: (a) the device has a valid IP address, (b) when the device wakes up from a low-power state or a soft-reset, or (c) after a condition that caused the device to automatically disconnect ceases to exist (for example, Device is out of PC Sync, Disconnect is not idle.).<br>On application request - Applications requiring access to resources through the VPN will be able to initiate a VPN connection.""",
     )
     automatically_initiate_dialup: str = Field(
         alias="automatically-initiate-dialup",
@@ -28,7 +27,7 @@ class SecureClientMobileGlobalPropertiesReply(BaseModel):
     )
     disconnect_when_device_is_idle: str = Field(
         alias="disconnect-when-device-is-idle",
-        description="""Enabling this feature will disconnect users from .the gateway if there is no traffic sent during the defined time period.""",
+        description="""Enabling this feature will disconnect users from the gateway if there is no traffic sent during the defined time period.""",
     )
     supported_encryption_methods: str = Field(
         alias="supported-encryption-methods",

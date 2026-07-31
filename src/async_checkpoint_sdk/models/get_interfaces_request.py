@@ -1,7 +1,8 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class GetInterfacesRequest(BaseModel):
+    target_uid: str = Field(alias="target-uid", description="""Target unique identifier.""")
     group_interfaces_by_subnet: bool = Field(
         alias="group-interfaces-by-subnet",
         description="""Specify whether to group the cluster interfaces by a subnet.

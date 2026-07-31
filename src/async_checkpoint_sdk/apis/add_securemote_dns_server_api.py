@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.secu_remote_dns_reply import SecuRemoteDnsReply
 from async_checkpoint_sdk.models.secu_remote_dns_request_new import SecuRemoteDnsRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_securemote_dns_server(
-    client: ClientSession, data: SecuRemoteDnsRequestNew, config: Config, **kwargs
+    client: ClientSession, data: SecuRemoteDnsRequestNew, config: SDKConfig, **kwargs
 ) -> SecuRemoteDnsReply:
     """
     Create new SecuRemote DNS server.

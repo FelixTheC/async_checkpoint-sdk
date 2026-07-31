@@ -1,9 +1,8 @@
-from .pydantic import BaseModel, Field
-from .vpn_certificate_complete_request import VpnCertificateCompleteRequest
+from pydantic import BaseModel, Field
+from vpn_certificate_complete_request import VpnCertificateCompleteRequest
 
 
-class complete(BaseModel):
+class Complete(BaseModel):
     complete: VpnCertificateCompleteRequest = Field(
-        alias="complete",
-        description="""Completes certificate from .collection of certificates""",
+        alias="complete", description="""Completes certificate from collection of certificates"""
     )

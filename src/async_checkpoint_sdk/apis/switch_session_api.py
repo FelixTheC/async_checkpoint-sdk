@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.work_session_reply import WorkSessionReply
 from async_checkpoint_sdk.models.work_session_switch_request import WorkSessionSwitchRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def switch_session(
-    client: ClientSession, data: WorkSessionSwitchRequest, config: Config, **kwargs
+    client: ClientSession, data: WorkSessionSwitchRequest, config: SDKConfig, **kwargs
 ) -> WorkSessionReply:
     """
     Switch to a disconnected Management API session of the same administrator. To switch to an open session or to a session of a different administrator use the take-over session API.

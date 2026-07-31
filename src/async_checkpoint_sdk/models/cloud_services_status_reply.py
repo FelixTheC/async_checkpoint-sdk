@@ -1,12 +1,11 @@
-from .api_date_reply import ApiDateReply
-from .gateways_onboard_settings_reply import GatewaysOnboardSettingsReply
-from .pydantic import BaseModel, Field
+from api_date_reply import ApiDateReply
+from gateways_onboard_settings_reply import GatewaysOnboardSettingsReply
+from pydantic import BaseModel, Field
 
 
 class CloudServicesStatusReply(BaseModel):
     status: str = Field(
-        alias="status",
-        description="""Status of the connection to the Infinity Portal.""",
+        alias="status", description="""Status of the connection to the Infinity Portal."""
     )
     connected_at: ApiDateReply = Field(
         alias="connected-at",

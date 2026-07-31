@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.cds_ignore_query_request import CdsIgnoreQueryR
 from async_checkpoint_sdk.models.ips_additional_properties_query_reply import (
     IpsAdditionalPropertiesQueryReply,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_ips_protection_extended_attributes(
-    client: ClientSession, data: CdsIgnoreQueryRequest, config: Config, **kwargs
+    client: ClientSession, data: CdsIgnoreQueryRequest, config: SDKConfig, **kwargs
 ) -> IpsAdditionalPropertiesQueryReply:
     """
     Retrieve all objects.

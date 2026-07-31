@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.vpn_cloud_gateway_reply import VpnCloudGatewayReply
 from async_checkpoint_sdk.models.vpn_cloud_gateway_request_edit import VpnCloudGatewayRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_vpn_cloud_gateway(
-    client: ClientSession, data: VpnCloudGatewayRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: VpnCloudGatewayRequestEdit, config: SDKConfig, **kwargs
 ) -> VpnCloudGatewayReply:
     """
     Edit existing object using object name or uid.

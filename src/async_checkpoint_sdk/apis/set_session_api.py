@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.work_session_reply import WorkSessionReply
 from async_checkpoint_sdk.models.work_session_request_edit import WorkSessionRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_session(
-    client: ClientSession, data: WorkSessionRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: WorkSessionRequestEdit, config: SDKConfig, **kwargs
 ) -> WorkSessionReply:
     """
     Edit user's current session.

@@ -1,7 +1,10 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class KeywordsAndPhrasesRequest(BaseModel):
+    keyword: str = Field(
+        alias="keyword", description="""keyword or regular expression to be weighted."""
+    )
     weight: int = Field(alias="weight", description="""Weight of the expression.""")
     max_weight: int = Field(alias="max-weight", description="""Max weight of the expression.""")
     regex: bool = Field(

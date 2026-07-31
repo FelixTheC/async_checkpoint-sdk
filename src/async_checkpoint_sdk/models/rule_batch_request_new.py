@@ -1,5 +1,7 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class RuleBatchRequestNew(BaseModel):
-    pass
+    objects: list[dict] = Field(
+        alias="objects", description="""Batch of rules separated by types."""
+    )

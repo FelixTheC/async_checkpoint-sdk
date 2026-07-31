@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class LogExporterAttachmentsRequest(BaseModel):
@@ -11,6 +11,5 @@ class LogExporterAttachmentsRequest(BaseModel):
         description="""Indicates whether to add link to log details in SmartView.""",
     )
     add_log_attachment_id: bool = Field(
-        alias="add-log-attachment-id",
-        description="""Indicates whether to add log attachment ID.""",
+        alias="add-log-attachment-id", description="""Indicates whether to add log attachment ID."""
     )

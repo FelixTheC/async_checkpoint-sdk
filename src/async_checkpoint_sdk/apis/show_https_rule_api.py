@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.t_l_s_rule_identifier_request_show import (
     TLSRuleIdentifierRequestShow,
 )
 from async_checkpoint_sdk.models.t_l_s_rule_reply import TLSRuleReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_https_rule(
-    client: ClientSession, data: TLSRuleIdentifierRequestShow, config: Config, **kwargs
+    client: ClientSession, data: TLSRuleIdentifierRequestShow, config: SDKConfig, **kwargs
 ) -> TLSRuleReply:
     """
     Retrieve existing object using object name or uid.

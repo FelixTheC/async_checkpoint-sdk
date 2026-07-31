@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.central_licenses_reply import CentralLicensesReply
 from async_checkpoint_sdk.models.show_central_license_request import ShowCentralLicenseRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_central_license(
-    client: ClientSession, data: ShowCentralLicenseRequest, config: Config, **kwargs
+    client: ClientSession, data: ShowCentralLicenseRequest, config: SDKConfig, **kwargs
 ) -> CentralLicensesReply:
     """
     Show given license.

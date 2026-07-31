@@ -1,5 +1,5 @@
-from .api_object_standard_identifier import ApiObjectStandardIdentifier
-from .pydantic import BaseModel, Field
+from api_object_standard_identifier import ApiObjectStandardIdentifier
+from pydantic import BaseModel, Field
 
 
 class DataCenterContentObjectReply(BaseModel):
@@ -19,6 +19,5 @@ class DataCenterContentObjectReply(BaseModel):
         alias="type-in-data-center", description="""Object type in Data Center."""
     )
     additional_properties: list[dict] = Field(
-        alias="additional-properties",
-        description="""Additional properties on the object.""",
+        alias="additional-properties", description="""Additional properties on the object."""
     )

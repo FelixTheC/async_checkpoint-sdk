@@ -1,14 +1,15 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class InterfaceRequestDelete(BaseModel):
+    uid: str = Field(alias="uid", description="""Network interface uid.""")
     gateway_uid: str = Field(
         alias="gateway-uid",
         description="""Gateway or cluster object uid that the interface belongs to. <font color=red>Required only if</font> name was specified.""",
     )
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     ignore_warnings: bool = Field(
         alias="ignore-warnings", description="""Apply changes ignoring warnings."""

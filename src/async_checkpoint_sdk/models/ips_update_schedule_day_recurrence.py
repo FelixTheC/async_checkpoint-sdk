@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class IpsUpdateScheduleDayRecurrence(BaseModel):
@@ -11,8 +11,7 @@ class IpsUpdateScheduleDayRecurrence(BaseModel):
         description="""Valid on interval. The length of time in minutes between updates.""",
     )
     pattern: str = Field(
-        alias="pattern",
-        description="""Valid on Interval, Daily, Weekly, Monthly base.""",
+        alias="pattern", description="""Valid on Interval, Daily, Weekly, Monthly base."""
     )
     weekdays: list[str] = Field(
         alias="weekdays", description="""Valid on weekdays. Example: Sun, Mon...Sat."""

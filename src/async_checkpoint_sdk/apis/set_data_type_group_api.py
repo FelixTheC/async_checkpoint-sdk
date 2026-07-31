@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.data_group_reply import DataGroupReply
 from async_checkpoint_sdk.models.data_group_request_edit import DataGroupRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_data_type_group(
-    client: ClientSession, data: DataGroupRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: DataGroupRequestEdit, config: SDKConfig, **kwargs
 ) -> DataGroupReply:
     """
     Edit existing Data Group Type object using object name or uid.

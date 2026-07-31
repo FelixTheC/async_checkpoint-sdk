@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_task_reply import ApiTaskReply
 from async_checkpoint_sdk.models.full_sync_request import FullSyncRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def ha_full_sync(
-    client: ClientSession, data: FullSyncRequest, config: Config, **kwargs
+    client: ClientSession, data: FullSyncRequest, config: SDKConfig, **kwargs
 ) -> ApiTaskReply:
     """
     Perform full sync from active server to standby peer. <br>Run this command from the active server. <br>When performing a full sync on the global domain, use the Multi Domain Server name of the standby global domain.

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.packages_query_reply import PackagesQueryReply
 from async_checkpoint_sdk.models.policy_package_query_request import PolicyPackageQueryRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_packages(
-    client: ClientSession, data: PolicyPackageQueryRequest, config: Config, **kwargs
+    client: ClientSession, data: PolicyPackageQueryRequest, config: SDKConfig, **kwargs
 ) -> PackagesQueryReply:
     """
     Retrieve all objects.

@@ -1,5 +1,5 @@
-from .internal_access_reply import InternalAccessReply
-from .pydantic import BaseModel, Field
+from internal_access_reply import InternalAccessReply
+from pydantic import BaseModel, Field
 
 
 class PortalAccessibilityReply(BaseModel):

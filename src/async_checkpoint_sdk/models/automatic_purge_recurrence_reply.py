@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class AutomaticPurgeRecurrenceReply(BaseModel):
@@ -8,8 +8,7 @@ class AutomaticPurgeRecurrenceReply(BaseModel):
     )
     time_units: str = Field(alias="time-units", description="""N/A""")
     check_interval: int = Field(
-        alias="check-interval",
-        description="""Number of time-units between two purge checks.""",
+        alias="check-interval", description="""Number of time-units between two purge checks."""
     )
     last_check: str = Field(
         alias="last-check", description="""Last time purge check was executed."""

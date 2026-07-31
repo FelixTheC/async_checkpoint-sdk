@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.global_assignment_reply import GlobalAssignmentReply
 from async_checkpoint_sdk.models.global_assignment_request_edit import GlobalAssignmentRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_global_assignment(
-    client: ClientSession, data: GlobalAssignmentRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: GlobalAssignmentRequestEdit, config: SDKConfig, **kwargs
 ) -> GlobalAssignmentReply:
     """
     Edit existing object using object name or uid.

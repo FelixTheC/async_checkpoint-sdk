@@ -6,11 +6,11 @@ from async_checkpoint_sdk.models.threat_emulation_file_types_update_reply import
 from async_checkpoint_sdk.models.threat_emulation_file_types_update_request import (
     ThreatEmulationFileTypesUpdateRequest,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def run_threat_emulation_file_types_offline_update(
-    client: ClientSession, data: ThreatEmulationFileTypesUpdateRequest, config: Config, **kwargs
+    client: ClientSession, data: ThreatEmulationFileTypesUpdateRequest, config: SDKConfig, **kwargs
 ) -> ThreatEmulationFileTypesUpdateReply:
     """
     Update Threat Emulation file types offline.

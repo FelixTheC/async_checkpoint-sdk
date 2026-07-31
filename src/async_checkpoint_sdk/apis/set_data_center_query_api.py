@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.data_center_query_reply import DataCenterQueryReply
 from async_checkpoint_sdk.models.data_center_query_request_edit import DataCenterQueryRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_data_center_query(
-    client: ClientSession, data: DataCenterQueryRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: DataCenterQueryRequestEdit, config: SDKConfig, **kwargs
 ) -> DataCenterQueryReply:
     """
     Edit existing data center query.

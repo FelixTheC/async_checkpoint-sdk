@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.mobile_applications_rule_reply import MobileApp
 from async_checkpoint_sdk.models.mobile_applications_rule_request_edit import (
     MobileApplicationsRuleRequestEdit,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_mobile_access_rule(
-    client: ClientSession, data: MobileApplicationsRuleRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: MobileApplicationsRuleRequestEdit, config: SDKConfig, **kwargs
 ) -> MobileApplicationsRuleReply:
     """
     Edit existing Mobile Access rule using rule number or uid or name.

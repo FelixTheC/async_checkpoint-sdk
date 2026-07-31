@@ -1,5 +1,5 @@
-from .pydantic import BaseModel, Field
-from .where_used_report_reply import WhereUsedReportReply
+from pydantic import BaseModel, Field
+from where_used_report_reply import WhereUsedReportReply
 
 
 class WhereUsedObjectReply(BaseModel):

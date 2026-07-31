@@ -1,10 +1,11 @@
-from .add import add
-from .folder_permissions_role_pair_request import FolderPermissionsRolePairRequest
-from .pydantic import BaseModel, Field
-from .remove import remove
+from add import Add
+from folder_permissions_role_pair_request import FolderPermissionsRolePairRequest
+from pydantic import BaseModel, Field
+from remove import Remove
 
 
 class AdministratorRequestEdit(BaseModel):
+    uid: str = Field(alias="uid", description="""Object unique identifier.""")
     authentication_method: str = Field(
         alias="authentication-method", description="""Authentication method."""
     )
@@ -14,8 +15,7 @@ class AdministratorRequestEdit(BaseModel):
         description="""Format: YYYY-MM-DD. <br>If you configure an expiration for an administrator user, then the user is not logged out automatically. Only a new login is blocked.""",
     )
     multi_domain_profile: str = Field(
-        alias="multi-domain-profile",
-        description="""Administrator multi-domain profile.""",
+        alias="multi-domain-profile", description="""Administrator multi-domain profile."""
     )
     must_change_password: bool = Field(
         alias="must-change-password",
@@ -26,7 +26,7 @@ class AdministratorRequestEdit(BaseModel):
     password_hash: str = Field(
         alias="password-hash", description="""Administrator password hash."""
     )
-    permissions_profile: add | remove | FolderPermissionsRolePairRequest | list[dict] = Field(
+    permissions_profile: Add | Remove | FolderPermissionsRolePairRequest | list[dict] = Field(
         alias="permissions-profile",
         description="""Administrator permissions profile. Permissions profile should not be provided when multi-domain-profile is set to Multi-Domain Super User or Domain Super User.""",
     )
@@ -40,15 +40,14 @@ class AdministratorRequestEdit(BaseModel):
         description="""TACACS server object identified by the name or UID. Must be set when authentication-method was selected to be TACACS.""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
-    tags: add | remove | str | list[str] = Field(
+    tags: Add | Remove | str | list[str] = Field(
         alias="tags", description="""Collection of tag identifiers."""
     )
     ignore_warnings: bool = Field(

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.cdm_command_reply import CdmCommandReply
 from async_checkpoint_sdk.models.run_script_request import RunScriptRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def run_script(
-    client: ClientSession, data: RunScriptRequest, config: Config, **kwargs
+    client: ClientSession, data: RunScriptRequest, config: SDKConfig, **kwargs
 ) -> CdmCommandReply:
     """
     Executes the script on a given list of targets.

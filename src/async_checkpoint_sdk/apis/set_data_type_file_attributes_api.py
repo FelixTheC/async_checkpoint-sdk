@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.file_data_type_reply import FileDataTypeReply
 from async_checkpoint_sdk.models.file_data_type_request_edit import FileDataTypeRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_data_type_file_attributes(
-    client: ClientSession, data: FileDataTypeRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: FileDataTypeRequestEdit, config: SDKConfig, **kwargs
 ) -> FileDataTypeReply:
     """
     Edit existing File Attributes Data Type object using object name or uid.

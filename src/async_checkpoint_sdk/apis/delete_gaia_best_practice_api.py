@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.api_ok_reply import ApiOkReply
 from async_checkpoint_sdk.models.compliance_gaia_best_practice_request_delete import (
     ComplianceGaiaBestPracticeRequestDelete,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def delete_gaia_best_practice(
-    client: ClientSession, data: ComplianceGaiaBestPracticeRequestDelete, config: Config, **kwargs
+    client: ClientSession, data: ComplianceGaiaBestPracticeRequestDelete, config: SDKConfig, **kwargs
 ) -> ApiOkReply:
     """
     Delete a user-defined Gaia Best Practice.

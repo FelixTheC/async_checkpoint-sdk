@@ -1,10 +1,9 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class VpnClientsRequest(BaseModel):
     enable_endpoint_security_vpn: bool = Field(
-        alias="enable-endpoint-security-vpn",
-        description="""Enable endpoint security vpn.""",
+        alias="enable-endpoint-security-vpn", description="""Enable endpoint security vpn."""
     )
     enable_cp_mobile_for_windows: bool = Field(
         alias="enable-cp-mobile-for-windows",

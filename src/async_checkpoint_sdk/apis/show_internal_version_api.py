@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.version_internal_reply import VersionInternalReply
 from async_checkpoint_sdk.models.version_internal_request import VersionInternalRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_internal_version(
-    client: ClientSession, data: VersionInternalRequest, config: Config, **kwargs
+    client: ClientSession, data: VersionInternalRequest, config: SDKConfig, **kwargs
 ) -> VersionInternalReply:
     """
     Parameters

@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class TrackSettingsForRequest(BaseModel):
@@ -15,7 +15,6 @@ class TrackSettingsForRequest(BaseModel):
         description="""Determines whether to perform the log per connection.""",
     )
     per_session: bool = Field(
-        alias="per-session",
-        description="""Determines whether to perform the log per session.""",
+        alias="per-session", description="""Determines whether to perform the log per session."""
     )
     type: str = Field(alias="type", description="""Log, Extended Log, Detailed  Log, None.""")

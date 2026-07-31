@@ -6,11 +6,11 @@ from async_checkpoint_sdk.models.compliance_gaia_best_practice_reply import (
 from async_checkpoint_sdk.models.compliance_gaia_best_practice_request_show import (
     ComplianceGaiaBestPracticeRequestShow,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_gaia_best_practice(
-    client: ClientSession, data: ComplianceGaiaBestPracticeRequestShow, config: Config, **kwargs
+    client: ClientSession, data: ComplianceGaiaBestPracticeRequestShow, config: SDKConfig, **kwargs
 ) -> ComplianceGaiaBestPracticeReply:
     """
     Show a Gaia Best Practice.

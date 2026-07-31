@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.network_reply import NetworkReply
 from async_checkpoint_sdk.models.network_request_edit import NetworkRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def clone_network(
-    client: ClientSession, data: NetworkRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: NetworkRequestEdit, config: SDKConfig, **kwargs
 ) -> NetworkReply:
     """
     Clone existing object.

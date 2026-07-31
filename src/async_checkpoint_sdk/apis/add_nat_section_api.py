@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.nat_section_reply import NatSectionReply
 from async_checkpoint_sdk.models.nat_section_request_new import NatSectionRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_nat_section(
-    client: ClientSession, data: NatSectionRequestNew, config: Config, **kwargs
+    client: ClientSession, data: NatSectionRequestNew, config: SDKConfig, **kwargs
 ) -> NatSectionReply:
     """
     Create new object.

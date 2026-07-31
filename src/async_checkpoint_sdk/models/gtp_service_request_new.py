@@ -1,22 +1,22 @@
-from .access_point_name_request import AccessPointNameRequest
-from .apply_a_p_on_traffic_request import ApplyAPOnTrafficRequest
-from .imsi_prefix_request import ImsiPrefixRequest
-from .interface_profile_request import InterfaceProfileRequest
-from .ldap_group_request import LdapGroupRequest
-from .ms_isdn_request import MsIsdnRequest
-from .pydantic import BaseModel, Field
-from .ra_tech_request import RaTechRequest
-from .selection_mode_request import SelectionModeRequest
+from access_point_name_request import AccessPointNameRequest
+from apply_a_p_on_traffic_request import ApplyAPOnTrafficRequest
+from imsi_prefix_request import ImsiPrefixRequest
+from interface_profile_request import InterfaceProfileRequest
+from ldap_group_request import LdapGroupRequest
+from ms_isdn_request import MsIsdnRequest
+from pydantic import BaseModel, Field
+from ra_tech_request import RaTechRequest
+from selection_mode_request import SelectionModeRequest
 
 
 class GtpServiceRequestNew(BaseModel):
+    name: str = Field(alias="name", description="""Object name. Must be unique in the domain.""")
     version: str = Field(alias="version", description="""GTP version.""")
     access_point_name: AccessPointNameRequest = Field(
         alias="access-point-name", description="""Match by Access Point Name."""
     )
     allow_usage_of_static_ip: bool = Field(
-        alias="allow-usage-of-static-ip",
-        description="""Allow usage of static IP addresses.""",
+        alias="allow-usage-of-static-ip", description="""Allow usage of static IP addresses."""
     )
     apply_access_policy_on_user_traffic: ApplyAPOnTrafficRequest = Field(
         alias="apply-access-policy-on-user-traffic",
@@ -38,8 +38,7 @@ class GtpServiceRequestNew(BaseModel):
     )
     ms_isdn: MsIsdnRequest = Field(alias="ms-isdn", description="""Match by an MS-ISDN.""")
     radio_access_technology: RaTechRequest = Field(
-        alias="radio-access-technology",
-        description="""Match by Radio Access Technology.""",
+        alias="radio-access-technology", description="""Match by Radio Access Technology."""
     )
     restoration_and_recovery: bool = Field(
         alias="restoration-and-recovery",
@@ -47,23 +46,21 @@ class GtpServiceRequestNew(BaseModel):
     )
     reverse_service: bool = Field(
         alias="reverse-service",
-        description="""Accept PDUs from .the GGSN/PGW to the SGSN/SGW on a previously established PDP context, even if different ports are used.""",
+        description="""Accept PDUs from the GGSN/PGW to the SGSN/SGW on a previously established PDP context, even if different ports are used.""",
     )
     selection_mode: SelectionModeRequest = Field(
         alias="selection-mode", description="""Match by a selection mode."""
     )
     trace_management: bool = Field(
-        alias="trace-management",
-        description="""Trace Management (Relevant for V2 only).""",
+        alias="trace-management", description="""Trace Management (Relevant for V2 only)."""
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     groups: str | list[str] = Field(
         alias="groups", description="""Collection of group identifiers."""

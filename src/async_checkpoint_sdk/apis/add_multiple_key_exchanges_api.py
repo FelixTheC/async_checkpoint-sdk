@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.multiple_key_exchanges_reply import MultipleKey
 from async_checkpoint_sdk.models.multiple_key_exchanges_request_new import (
     MultipleKeyExchangesRequestNew,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_multiple_key_exchanges(
-    client: ClientSession, data: MultipleKeyExchangesRequestNew, config: Config, **kwargs
+    client: ClientSession, data: MultipleKeyExchangesRequestNew, config: SDKConfig, **kwargs
 ) -> MultipleKeyExchangesReply:
     """
     Create new object.

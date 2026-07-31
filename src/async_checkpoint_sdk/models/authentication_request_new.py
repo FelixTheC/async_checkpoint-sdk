@@ -1,8 +1,6 @@
-from .dynamic_id_settings_request_new import DynamicIdSettingsRequestNew
-from .pydantic import BaseModel, Field
-from .single_authentication_client_request_new import (
-    SingleAuthenticationClientRequestNew,
-)
+from dynamic_id_settings_request_new import DynamicIdSettingsRequestNew
+from pydantic import BaseModel, Field
+from single_authentication_client_request_new import SingleAuthenticationClientRequestNew
 
 
 class AuthenticationRequestNew(BaseModel):

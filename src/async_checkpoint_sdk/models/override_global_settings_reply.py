@@ -1,5 +1,5 @@
-from .pydantic import BaseModel, Field
-from .website_categorization_reply import WebsiteCategorizationReply
+from pydantic import BaseModel, Field
+from website_categorization_reply import WebsiteCategorizationReply
 
 
 class OverrideGlobalSettingsReply(BaseModel):

@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class UriResourceSoapRequest(BaseModel):
@@ -8,6 +8,5 @@ class UriResourceSoapRequest(BaseModel):
     )
     file_id: str = Field(alias="file-id", description="""A file containing SOAP requests.""")
     track_connections: str = Field(
-        alias="track-connections",
-        description="""The method of tracking SOAP connections.""",
+        alias="track-connections", description="""The method of tracking SOAP connections."""
     )

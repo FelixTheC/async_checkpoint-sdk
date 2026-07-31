@@ -6,11 +6,11 @@ from async_checkpoint_sdk.models.scaled_identity_sharing_key_reply import (
 from async_checkpoint_sdk.models.scaled_identity_sharing_key_request import (
     ScaledIdentitySharingKeyRequest,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_identity_sharing_key(
-    client: ClientSession, data: ScaledIdentitySharingKeyRequest, config: Config, **kwargs
+    client: ClientSession, data: ScaledIdentitySharingKeyRequest, config: SDKConfig, **kwargs
 ) -> ScaledIdentitySharingKeyReply:
     """
     Parameters

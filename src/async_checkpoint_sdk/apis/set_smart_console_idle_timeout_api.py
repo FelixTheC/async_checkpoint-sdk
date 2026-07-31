@@ -6,11 +6,11 @@ from async_checkpoint_sdk.models.smart_console_idle_timeout_reply import (
 from async_checkpoint_sdk.models.smart_console_idle_timeout_request_edit import (
     SmartConsoleIdleTimeoutRequestEdit,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_smart_console_idle_timeout(
-    client: ClientSession, data: SmartConsoleIdleTimeoutRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: SmartConsoleIdleTimeoutRequestEdit, config: SDKConfig, **kwargs
 ) -> SmartConsoleIdleTimeoutReply:
     """
     Set SmartConsole idle timeout settings.

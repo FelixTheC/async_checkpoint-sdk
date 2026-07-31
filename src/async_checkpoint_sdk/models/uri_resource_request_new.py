@@ -1,16 +1,16 @@
-from .pydantic import BaseModel, Field
-from .ufp_object_request import UfpObjectRequest
-from .uri_resource_action_request import UriResourceActionRequest
-from .uri_resource_connection_methods_request import UriResourceConnectionMethodsRequest
-from .uri_resource_cvp_request import UriResourceCvpRequest
-from .uri_resource_soap_request import UriResourceSoapRequest
-from .uri_resource_wildcards_request import UriResourceWildcardsRequest
+from pydantic import BaseModel, Field
+from ufp_object_request import UfpObjectRequest
+from uri_resource_action_request import UriResourceActionRequest
+from uri_resource_connection_methods_request import UriResourceConnectionMethodsRequest
+from uri_resource_cvp_request import UriResourceCvpRequest
+from uri_resource_soap_request import UriResourceSoapRequest
+from uri_resource_wildcards_request import UriResourceWildcardsRequest
 
 
 class UriResourceRequestNew(BaseModel):
+    name: str = Field(alias="name", description="""Object name. Must be unique in the domain.""")
     use_this_resource_to: str = Field(
-        alias="use-this-resource-to",
-        description="""Select the use of the URI resource.""",
+        alias="use-this-resource-to", description="""Select the use of the URI resource."""
     )
     connection_methods: UriResourceConnectionMethodsRequest = Field(
         alias="connection-methods", description="""Connection methods."""
@@ -31,13 +31,12 @@ class UriResourceRequestNew(BaseModel):
     cvp: UriResourceCvpRequest = Field(alias="cvp", description="""CVP settings.""")
     soap: UriResourceSoapRequest = Field(alias="soap", description="""SOAP settings.""")
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     ignore_warnings: bool = Field(
         alias="ignore-warnings", description="""Apply changes ignoring warnings."""

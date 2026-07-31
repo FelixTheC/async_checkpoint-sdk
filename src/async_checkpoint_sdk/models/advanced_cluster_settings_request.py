@@ -1,5 +1,5 @@
-from .pydantic import BaseModel, Field
-from .state_syncronization import StateSyncronization
+from pydantic import BaseModel, Field
+from state_syncronization import StateSyncronization
 
 
 class AdvancedClusterSettingsRequest(BaseModel):
@@ -10,8 +10,7 @@ Maintain current active Cluster Member (maintain-current-active) or
 Switch to higher priority Cluster Member (according-to-priority).""",
     )
     state_synchronization: StateSyncronization = Field(
-        alias="state-synchronization",
-        description="""Cluster State Synchronization settings.""",
+        alias="state-synchronization", description="""Cluster State Synchronization settings."""
     )
     track_changes_of_cluster_members: str = Field(
         alias="track-changes-of-cluster-members",

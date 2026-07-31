@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class ValidationsReply(BaseModel):
@@ -14,6 +14,5 @@ class ValidationsReply(BaseModel):
         alias="blocking-errors", description="""Blocking validation errors."""
     )
     blocking_errors_total: int = Field(
-        alias="blocking-errors-total",
-        description="""Total number of blocking error validations.""",
+        alias="blocking-errors-total", description="""Total number of blocking error validations."""
     )

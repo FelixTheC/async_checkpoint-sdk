@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_query_request import ApiQueryRequest
 from async_checkpoint_sdk.models.infinity_cloud_idp_query_reply import InfinityCloudIdpQueryReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_infinity_cloud_idps(
-    client: ClientSession, data: ApiQueryRequest, config: Config, **kwargs
+    client: ClientSession, data: ApiQueryRequest, config: SDKConfig, **kwargs
 ) -> InfinityCloudIdpQueryReply:
     """
     Retrieve all objects.

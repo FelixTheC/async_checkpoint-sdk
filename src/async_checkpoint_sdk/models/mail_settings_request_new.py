@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class MailSettingsRequestNew(BaseModel):
@@ -11,8 +11,7 @@ class MailSettingsRequestNew(BaseModel):
         description="""Add a prefix to the malicious email subject.""",
     )
     add_x_header_to_email: bool = Field(
-        alias="add-x-header-to-email",
-        description="""Add an X-Header to the malicious email.""",
+        alias="add-x-header-to-email", description="""Add an X-Header to the malicious email."""
     )
     email_action: str = Field(
         alias="email-action",
@@ -23,8 +22,7 @@ class MailSettingsRequestNew(BaseModel):
         description="""Customized text for the malicious email body.<br> Available predefined fields:<br> $verdicts$ - the malicious/error attachments/links verdict.""",
     )
     email_subject_prefix_text: str = Field(
-        alias="email-subject-prefix-text",
-        description="""Prefix for the malicious email subject.""",
+        alias="email-subject-prefix-text", description="""Prefix for the malicious email subject."""
     )
     failed_to_scan_attachments_text: str = Field(
         alias="failed-to-scan-attachments-text",
@@ -40,7 +38,7 @@ class MailSettingsRequestNew(BaseModel):
     )
     remove_attachments_and_links: bool = Field(
         alias="remove-attachments-and-links",
-        description="""Remove attachments and links from .the malicious email.""",
+        description="""Remove attachments and links from the malicious email.""",
     )
     send_copy: bool = Field(
         alias="send-copy",

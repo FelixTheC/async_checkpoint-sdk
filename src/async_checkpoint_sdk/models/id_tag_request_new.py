@@ -1,15 +1,19 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class IdTagRequestNew(BaseModel):
+    name: str = Field(alias="name", description="""Object name. Must be unique in the domain.""")
+    external_identifier: str = Field(
+        alias="external-identifier",
+        description="""External identifier. For example: Cisco ISE security group tag.""",
+    )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     tags: str | list[str] = Field(alias="tags", description="""Collection of tag identifiers.""")
     ignore_warnings: bool = Field(

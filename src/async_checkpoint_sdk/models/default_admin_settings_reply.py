@@ -1,7 +1,7 @@
-from .api_date_reply import ApiDateReply
-from .api_domain_identifier import ApiDomainIdentifier
-from .meta_info_for_top_level_reply import MetaInfoForTopLevelReply
-from .pydantic import BaseModel, Field
+from api_date_reply import ApiDateReply
+from api_domain_identifier import ApiDomainIdentifier
+from meta_info_for_top_level_reply import MetaInfoForTopLevelReply
+from pydantic import BaseModel, Field
 
 
 class DefaultAdminSettingsReply(BaseModel):
@@ -12,8 +12,7 @@ class DefaultAdminSettingsReply(BaseModel):
         description="""Authentication method for new administrator.""",
     )
     expiration_type: str = Field(
-        alias="expiration-type",
-        description="""Expiration type for new administrator.""",
+        alias="expiration-type", description="""Expiration type for new administrator."""
     )
     expiration_date: ApiDateReply = Field(
         alias="expiration-date",
@@ -44,8 +43,7 @@ class DefaultAdminSettingsReply(BaseModel):
         description="""Number of days in advanced to notify administrator about expiration.""",
     )
     domain: ApiDomainIdentifier = Field(
-        alias="domain",
-        description="""Information about the domain that holds the Object.""",
+        alias="domain", description="""Information about the domain that holds the Object."""
     )
     meta_info: MetaInfoForTopLevelReply = Field(
         alias="meta-info", description="""Object metadata."""

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.policy_settings_reply import PolicySettingsReply
 from async_checkpoint_sdk.models.policy_settings_request_show import PolicySettingsRequestShow
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_policy_settings(
-    client: ClientSession, data: PolicySettingsRequestShow, config: Config, **kwargs
+    client: ClientSession, data: PolicySettingsRequestShow, config: SDKConfig, **kwargs
 ) -> PolicySettingsReply:
     """
     Show Policy settings.

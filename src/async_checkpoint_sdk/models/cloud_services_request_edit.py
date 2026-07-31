@@ -1,5 +1,5 @@
-from .gateways_onboard_settings_request_edit import GatewaysOnboardSettingsRequestEdit
-from .pydantic import BaseModel, Field
+from gateways_onboard_settings_request_edit import GatewaysOnboardSettingsRequestEdit
+from pydantic import BaseModel, Field
 
 
 class CloudServicesRequestEdit(BaseModel):

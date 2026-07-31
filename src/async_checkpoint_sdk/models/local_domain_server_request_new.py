@@ -1,7 +1,12 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class LocalDomainServerRequestNew(BaseModel):
+    name: str = Field(alias="name", description="""Object name. Must be unique in the domain.""")
+    ip_address: str = Field(alias="ip-address", description="""IPv4 address.""")
+    multi_domain_server: str = Field(
+        alias="multi-domain-server", description="""Multi Domain server name or UID."""
+    )
     ipv6_address: str = Field(
         alias="ipv6-address", description="""IPv6 address. Can only be set one time."""
     )

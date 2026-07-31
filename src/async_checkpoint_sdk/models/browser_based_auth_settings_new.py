@@ -1,6 +1,6 @@
-from .auth_settings_browser_based_new import AuthSettingsBrowserBasedNew
-from .browser_based_auth_portal_api_new import BrowserBasedAuthPortalApiNew
-from .pydantic import BaseModel, Field
+from auth_settings_browser_based_new import AuthSettingsBrowserBasedNew
+from browser_based_auth_portal_api_new import BrowserBasedAuthPortalApiNew
+from pydantic import BaseModel, Field
 
 
 class BrowserBasedAuthSettingsNew(BaseModel):

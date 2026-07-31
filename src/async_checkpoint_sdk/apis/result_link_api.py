@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.web_api_result_link_reply import WebApiResultLinkReply
 from async_checkpoint_sdk.models.web_api_result_link_request import WebApiResultLinkRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def result_link(
-    client: ClientSession, data: WebApiResultLinkRequest, config: Config, **kwargs
+    client: ClientSession, data: WebApiResultLinkRequest, config: SDKConfig, **kwargs
 ) -> WebApiResultLinkReply:
     """
     Parameters

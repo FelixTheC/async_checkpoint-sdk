@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.tcp_resource_reply import TcpResourceReply
 from async_checkpoint_sdk.models.tcp_resource_request_new import TcpResourceRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_resource_tcp(
-    client: ClientSession, data: TcpResourceRequestNew, config: Config, **kwargs
+    client: ClientSession, data: TcpResourceRequestNew, config: SDKConfig, **kwargs
 ) -> TcpResourceReply:
     """
     Create new TCP resource.

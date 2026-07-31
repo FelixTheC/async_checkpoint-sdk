@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.tacacs_reply import TacacsReply
 from async_checkpoint_sdk.models.tacacs_request_edit import TacacsRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def clone_tacacs_server(
-    client: ClientSession, data: TacacsRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: TacacsRequestEdit, config: SDKConfig, **kwargs
 ) -> TacacsReply:
     """
     Clone existing object.

@@ -1,12 +1,13 @@
-from .add import add
-from .https_layers_request_edit import HttpsLayersRequestEdit
-from .multi_value_access_layer import MultiValueAccessLayer
-from .multi_value_threat_layer import MultiValueThreatLayer
-from .pydantic import BaseModel, Field
-from .remove import remove
+from add import Add
+from https_layers_request_edit import HttpsLayersRequestEdit
+from multi_value_access_layer import MultiValueAccessLayer
+from multi_value_threat_layer import MultiValueThreatLayer
+from pydantic import BaseModel, Field
+from remove import Remove
 
 
 class PolicyPackageRequestEdit(BaseModel):
+    uid: str = Field(alias="uid", description="""Object unique identifier.""")
     access: bool = Field(
         alias="access",
         description="""True - enables, False - disables access & NAT policies, empty - nothing is changed.""",
@@ -19,10 +20,9 @@ class PolicyPackageRequestEdit(BaseModel):
         description="""True - enables, False - disables Desktop security policy, empty - nothing is changed.""",
     )
     https_inspection_layers: HttpsLayersRequestEdit = Field(
-        alias="https-inspection-layers",
-        description="""HTTPS inspection policy layers.""",
+        alias="https-inspection-layers", description="""HTTPS inspection policy layers."""
     )
-    installation_targets: add | remove | str | list[str] = Field(
+    installation_targets: Add | Remove | str | list[str] = Field(
         alias="installation-targets",
         description="""Which Gateways identified by the name or UID to install the policy on. <br>All - Install the policy on all Gateways.<br>[] - Empty the list of specified Gateways on which to install the policy.""",
     )
@@ -44,15 +44,14 @@ class PolicyPackageRequestEdit(BaseModel):
         description="""True - enables, False - disables VPN traditional mode, empty - nothing is changed.""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
-    tags: add | remove | str | list[str] = Field(
+    tags: Add | Remove | str | list[str] = Field(
         alias="tags", description="""Collection of tag identifiers."""
     )
     ignore_warnings: bool = Field(

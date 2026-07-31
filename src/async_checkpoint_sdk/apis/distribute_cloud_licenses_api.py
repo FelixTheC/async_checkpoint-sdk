@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.distribute_cloud_guard_licenses_request import 
     DistributeCloudGuardLicensesRequest,
 )
 from async_checkpoint_sdk.models.distribute_licenses_reply import DistributeLicensesReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def distribute_cloud_licenses(
-    client: ClientSession, data: DistributeCloudGuardLicensesRequest, config: Config, **kwargs
+    client: ClientSession, data: DistributeCloudGuardLicensesRequest, config: SDKConfig, **kwargs
 ) -> DistributeLicensesReply:
     """
     Distribute licenses to target CloudGuard gateways. For more information, see the <A HREF = "https://sc1.checkpoint.com/documents/IaaS/WebAdminGuides/EN/CP_CloudGuard_Central_License_Tool_Admin_Guide/Content/Topics-Central-License-Tool/Overview.htm?tocpath=Overview%7C_____0#Overview"><b>Central License Administration Guide</b></A>.

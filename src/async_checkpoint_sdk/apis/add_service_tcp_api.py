@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.tcp_service_reply import TcpServiceReply
 from async_checkpoint_sdk.models.tcp_service_request_new import TcpServiceRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_service_tcp(
-    client: ClientSession, data: TcpServiceRequestNew, config: Config, **kwargs
+    client: ClientSession, data: TcpServiceRequestNew, config: SDKConfig, **kwargs
 ) -> TcpServiceReply:
     """
     Create new object.

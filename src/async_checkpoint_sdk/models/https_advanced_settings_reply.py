@@ -1,9 +1,9 @@
-from .api_domain_identifier import ApiDomainIdentifier
-from .available_actions_reply import AvailableActionsReply
-from .bypass_under_load_reply import BypassUnderLoadReply
-from .meta_info_for_top_level_reply import MetaInfoForTopLevelReply
-from .pydantic import BaseModel, Field
-from .server_cert_validation_actions_reply import ServerCertValidationActionsReply
+from api_domain_identifier import ApiDomainIdentifier
+from available_actions_reply import AvailableActionsReply
+from bypass_under_load_reply import BypassUnderLoadReply
+from meta_info_for_top_level_reply import MetaInfoForTopLevelReply
+from pydantic import BaseModel, Field
+from server_cert_validation_actions_reply import ServerCertValidationActionsReply
 
 
 class HttpsAdvancedSettingsReply(BaseModel):
@@ -27,15 +27,15 @@ class HttpsAdvancedSettingsReply(BaseModel):
     )
     server_certificate_validation_actions: ServerCertValidationActionsReply = Field(
         alias="server-certificate-validation-actions",
-        description="""When a Security Gateway receives an untrusted certificate from .a website server, define when to drop the connection and how to track it.""",
+        description="""When a Security Gateway receives an untrusted certificate from a website server, define when to drop the connection and how to track it.""",
     )
     retrieve_intermediate_ca_certificates: bool = Field(
         alias="retrieve-intermediate-ca-certificates",
-        description="""Configure the value true to use the Certificate Authority Information Access extension to retrieve certificates that are missing from .the certificate chain.""",
+        description="""Configure the value true to use the Certificate Authority Information Access extension to retrieve certificates that are missing from the certificate chain.""",
     )
     blocked_certificates: list[dict] = Field(
         alias="blocked-certificates",
-        description="""Collection of certificates objects identified by serial number.<br>Drop traffic from .servers using the blocked certificate.""",
+        description="""Collection of certificates objects identified by serial number.<br>Drop traffic from servers using the blocked certificate.""",
     )
     blocked_certificate_tracking: str = Field(
         alias="blocked-certificate-tracking",
@@ -47,15 +47,14 @@ class HttpsAdvancedSettingsReply(BaseModel):
     )
     certificate_pinned_apps_action: str = Field(
         alias="certificate-pinned-apps-action",
-        description="""Configure the value bypass to bypass traffic from .certificate-pinned applications approved by Check Point.<br>HTTPS Inspection cannot inspect connections initiated by certificate-pinned applications.<br>Configure the value detect to send logs for traffic from .certificate-pinned applications approved by Check Point.""",
+        description="""Configure the value bypass to bypass traffic from certificate-pinned applications approved by Check Point.<br>HTTPS Inspection cannot inspect connections initiated by certificate-pinned applications.<br>Configure the value detect to send logs for traffic from certificate-pinned applications approved by Check Point.""",
     )
     log_sessions: bool = Field(
         alias="log-sessions",
         description="""The value true configures the Security Gateway to send HTTPS Inspection session logs.""",
     )
     domain: ApiDomainIdentifier = Field(
-        alias="domain",
-        description="""Information about the domain that holds the Object.""",
+        alias="domain", description="""Information about the domain that holds the Object."""
     )
     meta_info: MetaInfoForTopLevelReply = Field(
         alias="meta-info", description="""Object metadata."""
@@ -64,6 +63,5 @@ class HttpsAdvancedSettingsReply(BaseModel):
         alias="read-only", description="""Indicates whether the object is read-only."""
     )
     available_actions: AvailableActionsReply = Field(
-        alias="available-actions",
-        description="""Actions that are available on the object.""",
+        alias="available-actions", description="""Actions that are available on the object."""
     )

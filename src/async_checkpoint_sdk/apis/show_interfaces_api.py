@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.interface_query_reply import InterfaceQueryReply
 from async_checkpoint_sdk.models.interfaces_query_request import InterfacesQueryRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_interfaces(
-    client: ClientSession, data: InterfacesQueryRequest, config: Config, **kwargs
+    client: ClientSession, data: InterfacesQueryRequest, config: SDKConfig, **kwargs
 ) -> InterfaceQueryReply:
     """
     Retrieve all network interfaces for specified gateway or cluster.

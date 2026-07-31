@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.diff_reply_task import DiffReplyTask
 from async_checkpoint_sdk.models.diff_request import DiffRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_changes(
-    client: ClientSession, data: DiffRequest, config: Config, **kwargs
+    client: ClientSession, data: DiffRequest, config: SDKConfig, **kwargs
 ) -> DiffReplyTask:
     """
     Show changes between two sessions.

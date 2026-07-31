@@ -1,18 +1,18 @@
-from .add import add
-from .custom_header_request_edit import CustomHeaderRequestEdit
-from .pydantic import BaseModel, Field
-from .remove import remove
+from add import Add
+from custom_header_request_edit import CustomHeaderRequestEdit
+from pydantic import BaseModel, Field
+from remove import Remove
 
 
 class NetworkFeedRequestEdit(BaseModel):
+    uid: str = Field(alias="uid", description="""Object unique identifier.""")
     feed_url: str = Field(
         alias="feed-url",
         description="""URL of the feed.
 URL should be written as http or https.""",
     )
     certificate_id: str = Field(
-        alias="certificate-id",
-        description="""Certificate SHA-1 fingerprint to access the feed.""",
+        alias="certificate-id", description="""Certificate SHA-1 fingerprint to access the feed."""
     )
     feed_format: str = Field(alias="feed-format", description="""Feed file format.""")
     feed_type: str = Field(alias="feed-type", description="""Feed type to be enforced.""")
@@ -23,7 +23,7 @@ URL should be written as http or https.""",
     username: str = Field(
         alias="username", description="""username for authenticating with the URL."""
     )
-    custom_header: add | remove | CustomHeaderRequestEdit | list[dict] = Field(
+    custom_header: Add | Remove | CustomHeaderRequestEdit | list[dict] = Field(
         alias="custom-header",
         description="""Headers to allow different authentication methods with the URL.""",
     )
@@ -32,8 +32,7 @@ URL should be written as http or https.""",
         description="""Interval in minutes for updating the feed on the Security Gateway.""",
     )
     data_column: int = Field(
-        alias="data-column",
-        description="""Number of the column that contains the feed's data.""",
+        alias="data-column", description="""Number of the column that contains the feed's data."""
     )
     fields_delimiter: str = Field(
         alias="fields-delimiter",
@@ -49,19 +48,18 @@ URL should be written as http or https.""",
         description="""Use the gateway's proxy for retrieving the feed.""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     domains_to_process: list[str] = Field(
         alias="domains-to-process",
-        description="""Indicates which domains to process the commands on. It cannot be used with the details-level full, must be run from .the System Domain only and with ignore-warnings true. Valid values are: CURRENT_DOMAIN, ALL_DOMAINS_ON_THIS_SERVER.""",
+        description="""Indicates which domains to process the commands on. It cannot be used with the details-level full, must be run from the System Domain only and with ignore-warnings true. Valid values are: CURRENT_DOMAIN, ALL_DOMAINS_ON_THIS_SERVER.""",
     )
-    tags: add | remove | str | list[str] = Field(
+    tags: Add | Remove | str | list[str] = Field(
         alias="tags", description="""Collection of tag identifiers."""
     )
     ignore_warnings: bool = Field(

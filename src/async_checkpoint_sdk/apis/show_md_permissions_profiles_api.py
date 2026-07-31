@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.api_query_object_reply import ApiQueryObjectRep
 from async_checkpoint_sdk.models.md_permissions_profile_query_request import (
     MdPermissionsProfileQueryRequest,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_md_permissions_profiles(
-    client: ClientSession, data: MdPermissionsProfileQueryRequest, config: Config, **kwargs
+    client: ClientSession, data: MdPermissionsProfileQueryRequest, config: SDKConfig, **kwargs
 ) -> ApiQueryObjectReply:
     """
     Retrieve all Multi-Domain Permissions Profiles.

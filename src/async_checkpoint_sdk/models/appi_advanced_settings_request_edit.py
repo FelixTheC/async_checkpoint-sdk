@@ -1,8 +1,8 @@
-from .add import add
-from .custom_categorization_settings_request import CustomCategorizationSettingsRequest
-from .pydantic import BaseModel, Field
-from .remove import remove
-from .url_filtering_settings_request import UrlFilteringSettingsRequest
+from add import Add
+from custom_categorization_settings_request import CustomCategorizationSettingsRequest
+from pydantic import BaseModel, Field
+from remove import Remove
+from url_filtering_settings_request import UrlFilteringSettingsRequest
 
 
 class AppiAdvancedSettingsRequestEdit(BaseModel):
@@ -14,7 +14,7 @@ class AppiAdvancedSettingsRequestEdit(BaseModel):
         alias="url-filtering-settings",
         description="""In this section user can enable  URL Filtering features.<br>This property is not available in the Global domain of an MDS machine.""",
     )
-    web_browsing_services: add | remove | str | list[str] = Field(
+    web_browsing_services: Add | Remove | str | list[str] = Field(
         alias="web-browsing-services",
         description="""Web browsing services are the services that match a Web-based custom Application/Site.""",
     )

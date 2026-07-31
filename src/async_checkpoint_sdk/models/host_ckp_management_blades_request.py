@@ -1,10 +1,9 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class HostCkpManagementBladesRequest(BaseModel):
     network_policy_management: bool = Field(
-        alias="network-policy-management",
-        description="""Enable Network Policy Management.""",
+        alias="network-policy-management", description="""Enable Network Policy Management."""
     )
     logging_and_status: bool = Field(
         alias="logging-and-status", description="""Enable Logging & Status."""
@@ -14,8 +13,7 @@ class HostCkpManagementBladesRequest(BaseModel):
         description="""Enable SmartEvent server. </br>When activating SmartEvent server, blades 'logging-and-status' and 'smart-event-correlation' should be set to True. </br>To complete SmartEvent configuration, perform Install Database or Install Policy on your Security Management servers and Log servers. </br>Activating SmartEvent Server is not recommended in Management High Availability environment. For more information refer to sk25164.""",
     )
     smart_event_correlation: bool = Field(
-        alias="smart-event-correlation",
-        description="""Enable SmartEvent Correlation Unit.""",
+        alias="smart-event-correlation", description="""Enable SmartEvent Correlation Unit."""
     )
     endpoint_policy: bool = Field(
         alias="endpoint-policy",

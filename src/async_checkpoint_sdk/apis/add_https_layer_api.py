@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.https_layer_reply import HttpsLayerReply
 from async_checkpoint_sdk.models.https_layer_request_new import HttpsLayerRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_https_layer(
-    client: ClientSession, data: HttpsLayerRequestNew, config: Config, **kwargs
+    client: ClientSession, data: HttpsLayerRequestNew, config: SDKConfig, **kwargs
 ) -> HttpsLayerReply:
     """
     Create new object.

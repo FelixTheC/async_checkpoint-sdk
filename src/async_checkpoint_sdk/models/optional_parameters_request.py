@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class OptionalParametersRequest(BaseModel):
@@ -11,8 +11,7 @@ class OptionalParametersRequest(BaseModel):
 Must be set when use-primary-dns-server is true and can not be set when use-primary-dns-server is false.""",
     )
     use_first_backup_dns_server: bool = Field(
-        alias="use-first-backup-dns-server",
-        description="""Use First Backup DNS Server.""",
+        alias="use-first-backup-dns-server", description="""Use First Backup DNS Server."""
     )
     first_backup_dns_server: str = Field(
         alias="first-backup-dns-server",
@@ -20,8 +19,7 @@ Must be set when use-primary-dns-server is true and can not be set when use-prim
 Must be set when use-first-backup-dns-server is true and can not be set when use-first-backup-dns-server is false.""",
     )
     use_second_backup_dns_server: bool = Field(
-        alias="use-second-backup-dns-server",
-        description="""Use Second Backup DNS Server.""",
+        alias="use-second-backup-dns-server", description="""Use Second Backup DNS Server."""
     )
     second_backup_dns_server: str = Field(
         alias="second-backup-dns-server",
@@ -38,8 +36,7 @@ Must be set when use-second-backup-dns-server is true and can not be set when us
 Must be set when use-primary-wins-server is true and can not be set when use-primary-wins-server is false.""",
     )
     use_first_backup_wins_server: bool = Field(
-        alias="use-first-backup-wins-server",
-        description="""Use First Backup WINS Server.""",
+        alias="use-first-backup-wins-server", description="""Use First Backup WINS Server."""
     )
     first_backup_wins_server: str = Field(
         alias="first-backup-wins-server",
@@ -47,8 +44,7 @@ Must be set when use-primary-wins-server is true and can not be set when use-pri
 Must be set when use-first-backup-wins-server is true and can not be set when use-first-backup-wins-server is false.""",
     )
     use_second_backup_wins_server: bool = Field(
-        alias="use-second-backup-wins-server",
-        description="""Use Second Backup WINS Server.""",
+        alias="use-second-backup-wins-server", description="""Use Second Backup WINS Server."""
     )
     second_backup_wins_server: str = Field(
         alias="second-backup-wins-server",

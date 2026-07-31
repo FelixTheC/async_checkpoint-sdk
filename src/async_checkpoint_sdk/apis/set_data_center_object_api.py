@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.data_center_object_reply import DataCenterObjectReply
 from async_checkpoint_sdk.models.data_center_object_request_edit import DataCenterObjectRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_data_center_object(
-    client: ClientSession, data: DataCenterObjectRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: DataCenterObjectRequestEdit, config: SDKConfig, **kwargs
 ) -> DataCenterObjectReply:
     """
     Edit existing object using object name or uid.

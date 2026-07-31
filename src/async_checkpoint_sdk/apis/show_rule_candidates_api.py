@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.show_rule_candidate_reply import ShowRuleCandidateReply
 from async_checkpoint_sdk.models.show_rule_candidate_request import ShowRuleCandidateRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_rule_candidates(
-    client: ClientSession, data: ShowRuleCandidateRequest, config: Config, **kwargs
+    client: ClientSession, data: ShowRuleCandidateRequest, config: SDKConfig, **kwargs
 ) -> ShowRuleCandidateReply:
     """
     Parameters

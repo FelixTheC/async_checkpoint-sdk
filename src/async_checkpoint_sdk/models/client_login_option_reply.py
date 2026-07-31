@@ -1,8 +1,8 @@
-from .api_domain_identifier import ApiDomainIdentifier
-from .available_actions_reply import AvailableActionsReply
-from .meta_info_for_top_level_reply import MetaInfoForTopLevelReply
-from .pydantic import BaseModel, Field
-from .user_directories_settings_reply import UserDirectoriesSettingsReply
+from api_domain_identifier import ApiDomainIdentifier
+from available_actions_reply import AvailableActionsReply
+from meta_info_for_top_level_reply import MetaInfoForTopLevelReply
+from pydantic import BaseModel, Field
+from user_directories_settings_reply import UserDirectoriesSettingsReply
 
 
 class ClientLoginOptionReply(BaseModel):
@@ -10,8 +10,7 @@ class ClientLoginOptionReply(BaseModel):
     uid: str = Field(alias="uid", description="""Object unique identifier.""")
     type: str = Field(alias="type", description="""Object type.""")
     display_name: str = Field(
-        alias="display-name",
-        description="""Display name for the client login option.""",
+        alias="display-name", description="""Display name for the client login option."""
     )
     authentication_methods: list[dict] = Field(
         alias="authentication-methods",
@@ -22,13 +21,11 @@ class ClientLoginOptionReply(BaseModel):
         description="""Select one or more places where the Security Gateway searches to find users when they try to authenticate.""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     domain: ApiDomainIdentifier = Field(
-        alias="domain",
-        description="""Information about the domain that holds the Object.""",
+        alias="domain", description="""Information about the domain that holds the Object."""
     )
     icon: str = Field(alias="icon", description="""Object icon.""")
     meta_info: MetaInfoForTopLevelReply = Field(
@@ -42,6 +39,5 @@ class ClientLoginOptionReply(BaseModel):
         description="""Collection of tag objects identified by the name or UID. Level of details in the output corresponds to the number of details for search. This table shows the level of details in the Standard level.""",
     )
     available_actions: AvailableActionsReply = Field(
-        alias="available-actions",
-        description="""Actions that are available on the object.""",
+        alias="available-actions", description="""Actions that are available on the object."""
     )

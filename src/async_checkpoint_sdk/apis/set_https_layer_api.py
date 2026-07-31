@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.https_layer_reply import HttpsLayerReply
 from async_checkpoint_sdk.models.t_l_s_layer_request_edit import TLSLayerRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_https_layer(
-    client: ClientSession, data: TLSLayerRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: TLSLayerRequestEdit, config: SDKConfig, **kwargs
 ) -> HttpsLayerReply:
     """
     Edit existing HTTPS Inspection layer using layer name or uid.

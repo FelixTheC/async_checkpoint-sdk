@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.access_layer_reply import AccessLayerReply
 from async_checkpoint_sdk.models.access_layer_request_new import AccessLayerRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_access_layer(
-    client: ClientSession, data: AccessLayerRequestNew, config: Config, **kwargs
+    client: ClientSession, data: AccessLayerRequestNew, config: SDKConfig, **kwargs
 ) -> AccessLayerReply:
     """
     Create new object.

@@ -1,5 +1,5 @@
-from .object import Object
-from .pydantic import BaseModel, Field
+from object import Object
+from pydantic import BaseModel, Field
 
 
 class ServiceReply(BaseModel):

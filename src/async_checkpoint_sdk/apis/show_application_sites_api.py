@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_query_object_reply import ApiQueryObjectReply
 from async_checkpoint_sdk.models.application_site_query_request import ApplicationSiteQueryRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_application_sites(
-    client: ClientSession, data: ApplicationSiteQueryRequest, config: Config, **kwargs
+    client: ClientSession, data: ApplicationSiteQueryRequest, config: SDKConfig, **kwargs
 ) -> ApiQueryObjectReply:
     """
     Retrieve all objects.

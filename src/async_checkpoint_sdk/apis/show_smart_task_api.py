@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.api_visual_c_p_object_identifier_request_show i
     ApiVisualCPObjectIdentifierRequestShow,
 )
 from async_checkpoint_sdk.models.smart_task_reply import SmartTaskReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_smart_task(
-    client: ClientSession, data: ApiVisualCPObjectIdentifierRequestShow, config: Config, **kwargs
+    client: ClientSession, data: ApiVisualCPObjectIdentifierRequestShow, config: SDKConfig, **kwargs
 ) -> SmartTaskReply:
     """
     Retrieve existing object using object name or uid. <br>This command is available only in a Security Management environment or in Multi-Domain environment when logged into local domain.

@@ -6,11 +6,11 @@ from async_checkpoint_sdk.models.vpn_remote_access_community_reply import (
 from async_checkpoint_sdk.models.vpn_remote_access_community_request_show import (
     VpnRemoteAccessCommunityRequestShow,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_vpn_community_remote_access(
-    client: ClientSession, data: VpnRemoteAccessCommunityRequestShow, config: Config, **kwargs
+    client: ClientSession, data: VpnRemoteAccessCommunityRequestShow, config: SDKConfig, **kwargs
 ) -> VpnRemoteAccessCommunityReply:
     """
     Retrieve existing Remote Access object. Using object name or uid is optional.

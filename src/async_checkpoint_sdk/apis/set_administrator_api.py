@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.administrator_reply import AdministratorReply
 from async_checkpoint_sdk.models.administrator_request_edit import AdministratorRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_administrator(
-    client: ClientSession, data: AdministratorRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: AdministratorRequestEdit, config: SDKConfig, **kwargs
 ) -> AdministratorReply:
     """
     Edit existing administrator using object name or uid.

@@ -4,13 +4,13 @@ from async_checkpoint_sdk.models.mobile_applications_rule_identifier_request_sho
     MobileApplicationsRuleIdentifierRequestShow,
 )
 from async_checkpoint_sdk.models.mobile_applications_rule_reply import MobileApplicationsRuleReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_mobile_access_rule(
     client: ClientSession,
     data: MobileApplicationsRuleIdentifierRequestShow,
-    config: Config,
+    config: SDKConfig,
     **kwargs,
 ) -> MobileApplicationsRuleReply:
     """

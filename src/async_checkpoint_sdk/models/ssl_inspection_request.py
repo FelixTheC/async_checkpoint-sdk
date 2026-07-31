@@ -1,12 +1,12 @@
-from .bypass_on_client_failure_request import BypassOnClientFailureRequest
-from .bypass_on_failure_request import BypassOnFailureRequest
-from .bypass_under_load_per_g_w_request import BypassUnderLoadPerGWRequest
-from .deny_expired_server_cert_request import DenyExpiredServerCertRequest
-from .deny_revoked_server_cert_request import DenyRevokedServerCertRequest
-from .deny_untrusted_server_cert_request import DenyUntrustedServerCertRequest
-from .outbound_certificate_override_request import OutboundCertificateOverrideRequest
-from .pydantic import BaseModel, Field
-from .site_categorization_allow_mode_request import SiteCategorizationAllowModeRequest
+from bypass_on_client_failure_request import BypassOnClientFailureRequest
+from bypass_on_failure_request import BypassOnFailureRequest
+from bypass_under_load_per_g_w_request import BypassUnderLoadPerGWRequest
+from deny_expired_server_cert_request import DenyExpiredServerCertRequest
+from deny_revoked_server_cert_request import DenyRevokedServerCertRequest
+from deny_untrusted_server_cert_request import DenyUntrustedServerCertRequest
+from outbound_certificate_override_request import OutboundCertificateOverrideRequest
+from pydantic import BaseModel, Field
+from site_categorization_allow_mode_request import SiteCategorizationAllowModeRequest
 
 
 class SslInspectionRequest(BaseModel):
@@ -28,15 +28,15 @@ class SslInspectionRequest(BaseModel):
     )
     deny_untrusted_server_cert: DenyUntrustedServerCertRequest = Field(
         alias="deny-untrusted-server-cert",
-        description="""Set to be true in order to drop traffic from .servers with untrusted server certificate. The global value can be set in HTTPS Advanced Settings under server certificate validation object.""",
+        description="""Set to be true in order to drop traffic from servers with untrusted server certificate. The global value can be set in HTTPS Advanced Settings under server certificate validation object.""",
     )
     deny_revoked_server_cert: DenyRevokedServerCertRequest = Field(
         alias="deny-revoked-server-cert",
-        description="""Set to be true in order to drop traffic from .servers with revoked server certificate (validate CRL). The global value can be set in HTTPS Advanced Settings under server certificate validation object.""",
+        description="""Set to be true in order to drop traffic from servers with revoked server certificate (validate CRL). The global value can be set in HTTPS Advanced Settings under server certificate validation object.""",
     )
     deny_expired_server_cert: DenyExpiredServerCertRequest = Field(
         alias="deny-expired-server-cert",
-        description="""Set to be true in order to drop traffic from .servers with expired server certificate. The global value can be set in HTTPS Advanced Settings under server certificate validation object.""",
+        description="""Set to be true in order to drop traffic from servers with expired server certificate. The global value can be set in HTTPS Advanced Settings under server certificate validation object.""",
     )
     outbound_certificate: OutboundCertificateOverrideRequest = Field(
         alias="outbound-certificate",

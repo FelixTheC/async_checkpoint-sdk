@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.mobile_profile_section_identifier_request_show 
     MobileProfileSectionIdentifierRequestShow,
 )
 from async_checkpoint_sdk.models.mobile_profile_section_reply import MobileProfileSectionReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_mobile_access_profile_section(
-    client: ClientSession, data: MobileProfileSectionIdentifierRequestShow, config: Config, **kwargs
+    client: ClientSession, data: MobileProfileSectionIdentifierRequestShow, config: SDKConfig, **kwargs
 ) -> MobileProfileSectionReply:
     """
     Retrieve existing Mobile Access Profile section using section name or uid.

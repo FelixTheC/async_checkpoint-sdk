@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class UpgradeMessagesReply(BaseModel):
@@ -11,8 +11,7 @@ class UpgradeMessagesReply(BaseModel):
         description="""Global and System domain prepare message body.""",
     )
     local_domain_title: str = Field(
-        alias="local-domain-title",
-        description="""Local domain prepare message title.""",
+        alias="local-domain-title", description="""Local domain prepare message title."""
     )
     local_domain_body: str = Field(
         alias="local-domain-body", description="""Local domain prepare message body."""

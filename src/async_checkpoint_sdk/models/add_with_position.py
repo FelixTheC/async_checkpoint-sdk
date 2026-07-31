@@ -1,5 +1,6 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class AddWithPosition(BaseModel):
-    pass
+    name: str = Field(alias="name", description="""Layer name or UID.""")
+    position: int = Field(alias="position", description="""Layer position.""")

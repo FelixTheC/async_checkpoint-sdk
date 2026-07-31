@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.import_outbound_certificate_request import (
     ImportOutboundCertificateRequest,
 )
 from async_checkpoint_sdk.models.outbound_certificate_reply import OutboundCertificateReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def import_outbound_inspection_certificate(
-    client: ClientSession, data: ImportOutboundCertificateRequest, config: Config, **kwargs
+    client: ClientSession, data: ImportOutboundCertificateRequest, config: SDKConfig, **kwargs
 ) -> OutboundCertificateReply:
     """
     Import Outbound Inspection certificate for HTTPS inspection.

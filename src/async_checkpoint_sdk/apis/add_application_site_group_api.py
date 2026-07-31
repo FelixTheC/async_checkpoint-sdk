@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.application_site_group_reply import Application
 from async_checkpoint_sdk.models.application_site_group_request_new import (
     ApplicationSiteGroupRequestNew,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_application_site_group(
-    client: ClientSession, data: ApplicationSiteGroupRequestNew, config: Config, **kwargs
+    client: ClientSession, data: ApplicationSiteGroupRequestNew, config: SDKConfig, **kwargs
 ) -> ApplicationSiteGroupReply:
     """
     Create new object.

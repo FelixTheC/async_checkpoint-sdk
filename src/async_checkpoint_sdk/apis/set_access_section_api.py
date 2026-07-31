@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.access_section_reply import AccessSectionReply
 from async_checkpoint_sdk.models.access_section_request_edit import AccessSectionRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_access_section(
-    client: ClientSession, data: AccessSectionRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: AccessSectionRequestEdit, config: SDKConfig, **kwargs
 ) -> AccessSectionReply:
     """
     Edit existing object using object name or uid.

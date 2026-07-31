@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class BestPracticeRelevantRegulatoryRequirementReply(BaseModel):
@@ -6,8 +6,7 @@ class BestPracticeRelevantRegulatoryRequirementReply(BaseModel):
         alias="regulation-name", description="""The name of the regulation."""
     )
     requirement_description: str = Field(
-        alias="requirement-description",
-        description="""The description of the requirement.""",
+        alias="requirement-description", description="""The description of the requirement."""
     )
     requirement_id: str = Field(
         alias="requirement-id", description="""The id of the requirement."""
@@ -16,6 +15,5 @@ class BestPracticeRelevantRegulatoryRequirementReply(BaseModel):
         alias="requirement-status", description="""The status of the requirement."""
     )
     requirement_uid: str = Field(
-        alias="requirement-uid",
-        description="""The unique identifier of the requirement.""",
+        alias="requirement-uid", description="""The unique identifier of the requirement."""
     )

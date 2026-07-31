@@ -1,9 +1,9 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class MulticastAddressRangeQueryReply(BaseModel):
-    source: int = Field(
-        alias="from", description="""from .which element number the query was done."""
+    from_: int = Field(
+        alias="from", description="""From which element number the query was done."""
     )
     objects: list[dict] = Field(
         alias="objects",

@@ -1,7 +1,10 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class VptSetVdRequest(BaseModel):
+    vd: str = Field(
+        alias="vd", description="""Name of the Virtual System, Virtual Switch, or Virtual Router."""
+    )
     calc_topology_auto: bool = Field(
         alias="calc-topology-auto",
         description="""Calculate interface topology automatically based on routes.<br/>Relevant only for Virtual Systems.<br/>Do not use for virtual devices.""",

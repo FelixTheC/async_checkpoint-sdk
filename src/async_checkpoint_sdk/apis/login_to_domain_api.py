@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.login_to_domain_request import LoginToDomainRequest
 from async_checkpoint_sdk.models.web_api_login_reply import WebApiLoginReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def login_to_domain(
-    client: ClientSession, data: LoginToDomainRequest, config: Config, **kwargs
+    client: ClientSession, data: LoginToDomainRequest, config: SDKConfig, **kwargs
 ) -> WebApiLoginReply:
     """
     Login from MDS to other domain.

@@ -1,13 +1,12 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class UpdatableObjectsRepositoryContentReply(BaseModel):
-    source: int = Field(
-        alias="from", description="""from .which element number the query was done."""
+    from_: int = Field(
+        alias="from", description="""From which element number the query was done."""
     )
     objects: list[dict] = Field(
-        alias="objects",
-        description="""Remote view of the retrieved Updatable Objects.""",
+        alias="objects", description="""Remote view of the retrieved Updatable Objects."""
     )
     to: int = Field(alias="to", description="""To which element number the query was done.""")
     total: int = Field(

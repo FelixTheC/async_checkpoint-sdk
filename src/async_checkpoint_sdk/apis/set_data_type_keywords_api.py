@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.key_words_data_type_reply import KeyWordsDataTy
 from async_checkpoint_sdk.models.key_words_data_type_request_edit import (
     KeyWordsDataTypeRequestEdit,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_data_type_keywords(
-    client: ClientSession, data: KeyWordsDataTypeRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: KeyWordsDataTypeRequestEdit, config: SDKConfig, **kwargs
 ) -> KeyWordsDataTypeReply:
     """
     Edit existing Keywords Data Type object using object name or uid.

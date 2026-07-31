@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.work_session_request_show import WorkSessionRequestShow
 from async_checkpoint_sdk.models.work_session_show_reply import WorkSessionShowReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_session(
-    client: ClientSession, data: WorkSessionRequestShow, config: Config, **kwargs
+    client: ClientSession, data: WorkSessionRequestShow, config: SDKConfig, **kwargs
 ) -> WorkSessionShowReply:
     """
     Show session.

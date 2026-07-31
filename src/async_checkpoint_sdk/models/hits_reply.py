@@ -1,5 +1,5 @@
-from .api_date_reply import ApiDateReply
-from .pydantic import BaseModel, Field
+from api_date_reply import ApiDateReply
+from pydantic import BaseModel, Field
 
 
 class HitsReply(BaseModel):

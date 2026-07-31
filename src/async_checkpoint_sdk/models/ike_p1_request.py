@@ -1,17 +1,15 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class IkeP1Request(BaseModel):
     encryption_algorithm: str = Field(
-        alias="encryption-algorithm",
-        description="""The encryption algorithm to be used.""",
+        alias="encryption-algorithm", description="""The encryption algorithm to be used."""
     )
     data_integrity: str = Field(
         alias="data-integrity", description="""The hash algorithm to be used."""
     )
     diffie_hellman_group: str = Field(
-        alias="diffie-hellman-group",
-        description="""The Diffie-Hellman group to be used.""",
+        alias="diffie-hellman-group", description="""The Diffie-Hellman group to be used."""
     )
     use_standard_proposal: bool = Field(
         alias="use-standard-proposal",

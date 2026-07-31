@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.host_reply import HostReply
 from async_checkpoint_sdk.models.host_request_edit import HostRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def clone_host(
-    client: ClientSession, data: HostRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: HostRequestEdit, config: SDKConfig, **kwargs
 ) -> HostReply:
     """
     Clone existing object.

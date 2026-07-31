@@ -1,5 +1,7 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class GetPlatformRequest(BaseModel):
-    pass
+    uid: str = Field(
+        alias="uid", description="""Gateway, cluster or Check Point host unique identifier."""
+    )

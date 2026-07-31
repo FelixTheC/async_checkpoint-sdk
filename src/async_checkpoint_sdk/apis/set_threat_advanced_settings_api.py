@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.threat_advanced_settings_reply import ThreatAdv
 from async_checkpoint_sdk.models.threat_advanced_settings_request_edit import (
     ThreatAdvancedSettingsRequestEdit,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_threat_advanced_settings(
-    client: ClientSession, data: ThreatAdvancedSettingsRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: ThreatAdvancedSettingsRequestEdit, config: SDKConfig, **kwargs
 ) -> ThreatAdvancedSettingsReply:
     """
     Edit Threat Prevention's Blades' Settings.

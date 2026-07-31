@@ -1,11 +1,11 @@
-from .anti_spoofing_settings_reply import AntiSpoofingSettingsReply
-from .api_domain_identifier import ApiDomainIdentifier
-from .available_actions_reply import AvailableActionsReply
-from .gateway_description import GatewayDescription
-from .internal_topology_settings_reply import InternalTopologySettingsReply
-from .meta_info_for_top_level_reply import MetaInfoForTopLevelReply
-from .pydantic import BaseModel, Field
-from .security_zone_settings_reply import SecurityZoneSettingsReply
+from anti_spoofing_settings_reply import AntiSpoofingSettingsReply
+from api_domain_identifier import ApiDomainIdentifier
+from available_actions_reply import AvailableActionsReply
+from gateway_description import GatewayDescription
+from internal_topology_settings_reply import InternalTopologySettingsReply
+from meta_info_for_top_level_reply import MetaInfoForTopLevelReply
+from pydantic import BaseModel, Field
+from security_zone_settings_reply import SecurityZoneSettingsReply
 
 
 class InterfaceReply(BaseModel):
@@ -21,8 +21,7 @@ class InterfaceReply(BaseModel):
         alias="anti-spoofing-settings", description="""Anti Spoofing Settings."""
     )
     cluster_members: list[dict] = Field(
-        alias="cluster-members",
-        description="""Network interface settings for cluster members.""",
+        alias="cluster-members", description="""Network interface settings for cluster members."""
     )
     cluster_network_type: str = Field(
         alias="cluster-network-type", description="""Cluster interface type."""
@@ -50,8 +49,7 @@ class InterfaceReply(BaseModel):
         description="""Topology configuration automatically calculated by get-interfaces command.""",
     )
     topology_manual: str = Field(
-        alias="topology-manual",
-        description="""Topology configuration manually defined.""",
+        alias="topology-manual", description="""Topology configuration manually defined."""
     )
     topology_settings: InternalTopologySettingsReply = Field(
         alias="topology-settings",
@@ -62,17 +60,14 @@ class InterfaceReply(BaseModel):
         description="""Topology settings automatically calculated by get-interfaces command.""",
     )
     topology_settings_manual: InternalTopologySettingsReply = Field(
-        alias="topology-settings-manual",
-        description="""Topology settings manually defined.""",
+        alias="topology-settings-manual", description="""Topology settings manually defined."""
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     domain: ApiDomainIdentifier = Field(
-        alias="domain",
-        description="""Information about the domain that holds the Object.""",
+        alias="domain", description="""Information about the domain that holds the Object."""
     )
     icon: str = Field(alias="icon", description="""Object icon.""")
     meta_info: MetaInfoForTopLevelReply = Field(
@@ -86,6 +81,5 @@ class InterfaceReply(BaseModel):
         description="""Collection of tag objects identified by the name or UID. Level of details in the output corresponds to the number of details for search. This table shows the level of details in the Standard level.""",
     )
     available_actions: AvailableActionsReply = Field(
-        alias="available-actions",
-        description="""Actions that are available on the object.""",
+        alias="available-actions", description="""Actions that are available on the object."""
     )

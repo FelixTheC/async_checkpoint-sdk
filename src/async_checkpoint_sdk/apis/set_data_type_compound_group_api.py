@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.compound_group_reply import CompoundGroupReply
 from async_checkpoint_sdk.models.compound_group_request_edit import CompoundGroupRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_data_type_compound_group(
-    client: ClientSession, data: CompoundGroupRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: CompoundGroupRequestEdit, config: SDKConfig, **kwargs
 ) -> CompoundGroupReply:
     """
     Edit existing Compound Data Type Group object using object name or uid.

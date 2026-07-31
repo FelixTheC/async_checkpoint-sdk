@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.access_rule_reply import AccessRuleReply
 from async_checkpoint_sdk.models.access_rule_request_edit import AccessRuleRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_access_rule(
-    client: ClientSession, data: AccessRuleRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: AccessRuleRequestEdit, config: SDKConfig, **kwargs
 ) -> AccessRuleReply:
     """
     Edit existing object using object name or uid.

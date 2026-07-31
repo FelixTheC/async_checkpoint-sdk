@@ -1,7 +1,7 @@
-from .anti_spoofing_settings_reply import AntiSpoofingSettingsReply
-from .internal_topology_settings_reply import InternalTopologySettingsReply
-from .pydantic import BaseModel, Field
-from .security_zone_settings_reply import SecurityZoneSettingsReply
+from anti_spoofing_settings_reply import AntiSpoofingSettingsReply
+from internal_topology_settings_reply import InternalTopologySettingsReply
+from pydantic import BaseModel, Field
+from security_zone_settings_reply import SecurityZoneSettingsReply
 
 
 class NetworkInterfaceReply(BaseModel):
@@ -21,8 +21,7 @@ class NetworkInterfaceReply(BaseModel):
         alias="anti-spoofing-settings", description="""N/A"""
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     dynamic_ip: bool = Field(alias="dynamic-ip", description="""Enable dynamic interface.""")

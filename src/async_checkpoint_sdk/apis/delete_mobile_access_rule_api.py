@@ -4,13 +4,13 @@ from async_checkpoint_sdk.models.api_ok_reply import ApiOkReply
 from async_checkpoint_sdk.models.mobile_applications_rule_identifier_request_show import (
     MobileApplicationsRuleIdentifierRequestShow,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def delete_mobile_access_rule(
     client: ClientSession,
     data: MobileApplicationsRuleIdentifierRequestShow,
-    config: Config,
+    config: SDKConfig,
     **kwargs,
 ) -> ApiOkReply:
     """

@@ -1,8 +1,8 @@
-from .api_domain_identifier import ApiDomainIdentifier
-from .available_actions_reply import AvailableActionsReply
-from .meta_info_for_top_level_reply import MetaInfoForTopLevelReply
-from .object import Object
-from .pydantic import BaseModel, Field
+from api_domain_identifier import ApiDomainIdentifier
+from available_actions_reply import AvailableActionsReply
+from meta_info_for_top_level_reply import MetaInfoForTopLevelReply
+from object import Object
+from pydantic import BaseModel, Field
 
 
 class IdpDefaultAssignmentReply(BaseModel):
@@ -13,12 +13,10 @@ class IdpDefaultAssignmentReply(BaseModel):
         description="""Represents the Identity Provider to be used for login.""",
     )
     identity_provider_set: bool = Field(
-        alias="identity-provider-set",
-        description="""True if 'identity-provider' value is set.""",
+        alias="identity-provider-set", description="""True if 'identity-provider' value is set."""
     )
     domain: ApiDomainIdentifier = Field(
-        alias="domain",
-        description="""Information about the domain that holds the Object.""",
+        alias="domain", description="""Information about the domain that holds the Object."""
     )
     meta_info: MetaInfoForTopLevelReply = Field(
         alias="meta-info", description="""Object metadata."""
@@ -31,6 +29,5 @@ class IdpDefaultAssignmentReply(BaseModel):
         description="""Collection of tag objects identified by the name or UID. Level of details in the output corresponds to the number of details for search. This table shows the level of details in the Standard level.""",
     )
     available_actions: AvailableActionsReply = Field(
-        alias="available-actions",
-        description="""Actions that are available on the object.""",
+        alias="available-actions", description="""Actions that are available on the object."""
     )

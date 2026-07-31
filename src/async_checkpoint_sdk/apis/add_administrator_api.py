@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.administrator_reply import AdministratorReply
 from async_checkpoint_sdk.models.administrator_request_new import AdministratorRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_administrator(
-    client: ClientSession, data: AdministratorRequestNew, config: Config, **kwargs
+    client: ClientSession, data: AdministratorRequestNew, config: SDKConfig, **kwargs
 ) -> AdministratorReply:
     """
     Create new administrator.

@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class IfMapServerAuthenticationReply(BaseModel):
@@ -7,6 +7,5 @@ class IfMapServerAuthenticationReply(BaseModel):
         description="""Authentication method for the IF-MAP server.""",
     )
     username: str = Field(
-        alias="username",
-        description="""Username for the IF-MAP server authentication.""",
+        alias="username", description="""Username for the IF-MAP server authentication."""
     )

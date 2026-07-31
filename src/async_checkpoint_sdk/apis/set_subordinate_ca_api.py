@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.subordinate_ca_reply import SubordinateCaReply
 from async_checkpoint_sdk.models.subordinate_ca_request_edit import SubordinateCaRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_subordinate_ca(
-    client: ClientSession, data: SubordinateCaRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: SubordinateCaRequestEdit, config: SDKConfig, **kwargs
 ) -> SubordinateCaReply:
     """
     Edit existing Subordinate CA server using object name or uid.

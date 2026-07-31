@@ -1,25 +1,33 @@
-from .internal_topology_settings_request import InternalTopologySettingsRequest
-from .object import Object
-from .pydantic import BaseModel, Field
+from internal_topology_settings_request import InternalTopologySettingsRequest
+from object import Object
+from pydantic import BaseModel, Field
 
 
 class InteroperableInterfaceRequest(BaseModel):
+    name: str = Field(alias="name", description="""Object name. Must be unique in the domain.""")
+    ip_address: str = Field(
+        alias="ip-address",
+        description="""IPv4 or IPv6 address. If both addresses are required use ipv4-address and ipv6-address fields explicitly.""",
+    )
+    network_mask: str = Field(
+        alias="network-mask",
+        description="""IPv4 or IPv6 network mask. If both masks are required use ipv4-network-mask and ipv6-network-mask fields explicitly. Instead of providing mask itself it is possible to specify IPv4 or IPv6 mask length in mask-length field. If both masks length are required use ipv4-mask-length and  ipv6-mask-length fields explicitly.""",
+    )
     topology: str = Field(alias="topology", description="""Topology configuration.""")
     topology_settings: InternalTopologySettingsRequest = Field(
         alias="topology-settings", description="""Internal topology settings."""
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     domains_to_process: list[str] = Field(
         alias="domains-to-process",
-        description="""Indicates which domains to process the commands on. It cannot be used with the details-level full, must be run from .the System Domain only and with ignore-warnings true. Valid values are: CURRENT_DOMAIN, ALL_DOMAINS_ON_THIS_SERVER.""",
+        description="""Indicates which domains to process the commands on. It cannot be used with the details-level full, must be run from the System Domain only and with ignore-warnings true. Valid values are: CURRENT_DOMAIN, ALL_DOMAINS_ON_THIS_SERVER.""",
     )
     tags: Object = Field(alias="tags", description="""Collection of tag identifiers.""")
     ignore_warnings: bool = Field(

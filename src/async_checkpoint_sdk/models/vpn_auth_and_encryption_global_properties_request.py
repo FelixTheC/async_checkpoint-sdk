@@ -1,7 +1,7 @@
-from .encryption_algorithms_global_properties_request import (
+from encryption_algorithms_global_properties_request import (
     EncryptionAlgorithmsGlobalPropertiesRequest,
 )
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class VpnAuthAndEncryptionGlobalPropertiesRequest(BaseModel):

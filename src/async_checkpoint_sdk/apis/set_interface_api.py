@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.interface_reply import InterfaceReply
 from async_checkpoint_sdk.models.interface_request_edit import InterfaceRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_interface(
-    client: ClientSession, data: InterfaceRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: InterfaceRequestEdit, config: SDKConfig, **kwargs
 ) -> InterfaceReply:
     """
     Edit existing network interface using object uid.

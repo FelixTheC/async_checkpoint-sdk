@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.udp_service_reply import UdpServiceReply
 from async_checkpoint_sdk.models.udp_service_request_new import UdpServiceRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_service_udp(
-    client: ClientSession, data: UdpServiceRequestNew, config: Config, **kwargs
+    client: ClientSession, data: UdpServiceRequestNew, config: SDKConfig, **kwargs
 ) -> UdpServiceReply:
     """
     Create new object.

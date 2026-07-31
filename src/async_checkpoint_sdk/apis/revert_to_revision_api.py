@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_task_reply import ApiTaskReply
 from async_checkpoint_sdk.models.revert_to_revision_request import RevertToRevisionRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def revert_to_revision(
-    client: ClientSession, data: RevertToRevisionRequest, config: Config, **kwargs
+    client: ClientSession, data: RevertToRevisionRequest, config: SDKConfig, **kwargs
 ) -> ApiTaskReply:
     """
     Revert the Management Database to the selected revision.

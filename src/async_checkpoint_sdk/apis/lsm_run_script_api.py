@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.lsm_base_command_reply import LsmBaseCommandReply
 from async_checkpoint_sdk.models.lsm_run_script_request import LsmRunScriptRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def lsm_run_script(
-    client: ClientSession, data: LsmRunScriptRequest, config: Config, **kwargs
+    client: ClientSession, data: LsmRunScriptRequest, config: SDKConfig, **kwargs
 ) -> LsmBaseCommandReply:
     """
     Executes the lsm-run-script on a given list of targets. Run the given script on the targets devices.

@@ -1,18 +1,18 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class DataLeakPreventionReply(BaseModel):
     open_extension_with_external_app: list[str] = Field(
         alias="open-extension-with-external-app",
-        description="""Open the following extensions from .your app with external apps when they cannot be opened with Capsule viewer.""",
+        description="""Open the following extensions from your app with external apps when they cannot be opened with Capsule viewer.""",
     )
     share_protected_extension: list[str] = Field(
         alias="share-protected-extension",
-        description="""Share protected files with these extensions from .your app with external apps.""",
+        description="""Share protected files with these extensions from your app with external apps.""",
     )
     share_unprotected_extension: list[str] = Field(
         alias="share-unprotected-extension",
-        description="""Share unprotected files with these extensions from .your app with external apps.""",
+        description="""Share unprotected files with these extensions from your app with external apps.""",
     )
     allow_copy_paste: bool = Field(
         alias="allow-copy-paste", description="""Allow copy paste of mail content."""
@@ -23,7 +23,7 @@ class DataLeakPreventionReply(BaseModel):
     )
     block_screenshot: bool = Field(
         alias="block-screenshot",
-        description="""If true - you can't make a screenshot from .your app.""",
+        description="""If true - you can't make a screenshot from your app.""",
     )
     allowed_domains_forward_attachment: str = Field(
         alias="allowed-domains-forward-attachment",
@@ -31,19 +31,18 @@ class DataLeakPreventionReply(BaseModel):
     )
     accept_protected_file_extensions: list[str] = Field(
         alias="accept-protected-file-extensions",
-        description="""Accept protected files with these extensions from .external apps to your app.""",
+        description="""Accept protected files with these extensions from external apps to your app.""",
     )
     accept_unprotected_file_extensions: list[str] = Field(
         alias="accept-unprotected-file-extensions",
-        description="""Accept unprotected files with these extensions from .external apps to your app.""",
+        description="""Accept unprotected files with these extensions from external apps to your app.""",
     )
     allow_import_from_gallery: bool = Field(
-        alias="allow-import-from-gallery",
-        description="""Allow import media from .gallery.""",
+        alias="allow-import-from-gallery", description="""Allow import media from gallery."""
     )
     allow_taking_photos_and_videos: bool = Field(
         alias="allow-taking-photos-and-videos",
-        description="""Allow the camera to be used from .your app.""",
+        description="""Allow the camera to be used from your app.""",
     )
     offer_capsule_as_viewer: bool = Field(
         alias="offer-capsule-as-viewer",

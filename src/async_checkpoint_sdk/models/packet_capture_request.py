@@ -1,5 +1,7 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class PacketCaptureRequest(BaseModel):
-    pass
+    attachment_id: str = Field(
+        alias="attachment-id", description="""Attachment identifier from a log record."""
+    )

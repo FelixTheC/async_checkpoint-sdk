@@ -1,20 +1,20 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class UserGroupRequestNew(BaseModel):
+    name: str = Field(alias="name", description="""Object name. Must be unique in the domain.""")
     email: str = Field(alias="email", description="""Email Address.""")
     members: str | list[str] = Field(
         alias="members",
         description="""Collection of User Group objects identified by the name or UID.""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     groups: str | list[str] = Field(
         alias="groups", description="""Collection of group identifiers."""

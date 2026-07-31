@@ -7,8 +7,8 @@ from string import Template
 import orjson
 
 BASE_DIR = Path(__file__).parent
-RESULT_DIR = BASE_DIR.joinpath("models")
-API_RESULT_DIR = BASE_DIR.joinpath("apis")
+RESULT_DIR = BASE_DIR.joinpath("src").joinpath("async_checkpoint_sdk").joinpath("models")
+API_RESULT_DIR = BASE_DIR.joinpath("src").joinpath("async_checkpoint_sdk").joinpath("apis")
 COMMANDS = {}
 
 JSON_TYPE_TO_PYTHON_TYPE = {
@@ -84,7 +84,12 @@ def make_class_name(name: str) -> str:
     -------
     str
     """
-    return name.split(".")[-1].replace("$", "_")
+    cls_name = name
+    if "." in name:
+        cls_name = name.split(".")[-1]
+    if cls_name[0].isupper():
+        return cls_name.replace("$", "_")
+    return cls_name.replace("$", "_").title()
 
 
 class DataObject:
@@ -187,7 +192,7 @@ class DataObjectParser:
             self.data_objects.append(
                 DataObject(
                     name=make_class_name(obj["name"]),
-                    fields=obj["fields"] + obj["under-more-fields"],
+                    fields= obj.get("required-fields", []) + obj["fields"] + obj["under-more-fields"],
                 )
             )
 
@@ -320,7 +325,8 @@ async def main():
 def main():
     with BASE_DIR.joinpath("dev_data/api_v2.1.json").open("rb") as fp:
         data = orjson.loads(fp.read())
-    command_parser(data)
+    # command_parser(data)
+    object_parser(data)
     # print(data["commands"][0].keys())
     # from pprint import pprint
     # pprint(data["commands"][0])

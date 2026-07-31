@@ -1,14 +1,14 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class SmtpAction2Request(BaseModel):
     strip_mime_of_type: str = Field(
         alias="strip-mime-of-type",
-        description="""Specifies the MIME type to strip from .the message.""",
+        description="""Specifies the MIME type to strip from the message.""",
     )
     strip_file_by_name: str = Field(
         alias="strip-file-by-name",
-        description="""Strips file attachments of the specified name from .the message.""",
+        description="""Strips file attachments of the specified name from the message.""",
     )
     mail_capacity: int = Field(
         alias="mail-capacity",

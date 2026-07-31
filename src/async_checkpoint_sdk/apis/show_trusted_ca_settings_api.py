@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.trusted_ca_settings_reply import TrustedCaSetti
 from async_checkpoint_sdk.models.trusted_ca_settings_request_show import (
     TrustedCaSettingsRequestShow,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_trusted_ca_settings(
-    client: ClientSession, data: TrustedCaSettingsRequestShow, config: Config, **kwargs
+    client: ClientSession, data: TrustedCaSettingsRequestShow, config: SDKConfig, **kwargs
 ) -> TrustedCaSettingsReply:
     """
     Show trusted CAs package update settings.

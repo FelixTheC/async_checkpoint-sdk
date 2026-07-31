@@ -1,5 +1,5 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class WebConsoleStatisticsRequest(BaseModel):
-    pass
+    file_name: str = Field(alias="file-name", description="""N/A""")

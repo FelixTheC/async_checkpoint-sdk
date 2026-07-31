@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.publish_reply import PublishReply
 from async_checkpoint_sdk.models.publish_request import PublishRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def publish(
-    client: ClientSession, data: PublishRequest, config: Config, **kwargs
+    client: ClientSession, data: PublishRequest, config: SDKConfig, **kwargs
 ) -> PublishReply:
     """
     All the changes done by this user will be seen by all users only after publish is called.

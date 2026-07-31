@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.mms_resource_reply import MmsResourceReply
 from async_checkpoint_sdk.models.mms_resource_request_new import MmsResourceRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_resource_mms(
-    client: ClientSession, data: MmsResourceRequestNew, config: Config, **kwargs
+    client: ClientSession, data: MmsResourceRequestNew, config: SDKConfig, **kwargs
 ) -> MmsResourceReply:
     """
     Create new MMS resource.

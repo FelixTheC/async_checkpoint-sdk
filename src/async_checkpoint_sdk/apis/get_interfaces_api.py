@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.get_interfaces_async_reply import GetInterfacesAsyncReply
 from async_checkpoint_sdk.models.get_interfaces_request import GetInterfacesRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def get_interfaces(
-    client: ClientSession, data: GetInterfacesRequest, config: Config, **kwargs
+    client: ClientSession, data: GetInterfacesRequest, config: SDKConfig, **kwargs
 ) -> GetInterfacesAsyncReply:
     """
         Get physical interfaces with or without their topology from a Gaia Security Gateway or Cluster.

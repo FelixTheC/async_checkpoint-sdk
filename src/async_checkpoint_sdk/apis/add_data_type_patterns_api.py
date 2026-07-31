@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.patterns_data_type_reply import PatternsDataTypeReply
 from async_checkpoint_sdk.models.patterns_data_type_request_new import PatternsDataTypeRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_data_type_patterns(
-    client: ClientSession, data: PatternsDataTypeRequestNew, config: Config, **kwargs
+    client: ClientSession, data: PatternsDataTypeRequestNew, config: SDKConfig, **kwargs
 ) -> PatternsDataTypeReply:
     """
     Create new Pattern Data Type Object.

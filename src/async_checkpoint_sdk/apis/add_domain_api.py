@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_tasks_reply import ApiTasksReply
 from async_checkpoint_sdk.models.local_domain_request_new import LocalDomainRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_domain(
-    client: ClientSession, data: LocalDomainRequestNew, config: Config, **kwargs
+    client: ClientSession, data: LocalDomainRequestNew, config: SDKConfig, **kwargs
 ) -> ApiTasksReply:
     """
     Create a new domain in a Multi-Domain-Management environment. In order to allow administrators to connect to this domain using SmartConsole, use add-trusted-client command.<br> Note: This operation is not part of session and will take effect immediately.

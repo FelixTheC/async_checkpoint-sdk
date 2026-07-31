@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.discard_reply import DiscardReply
 from async_checkpoint_sdk.models.discard_request import DiscardRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def discard(
-    client: ClientSession, data: DiscardRequest, config: Config, **kwargs
+    client: ClientSession, data: DiscardRequest, config: SDKConfig, **kwargs
 ) -> DiscardReply:
     """
     All changes done by user are discarded and removed from database.

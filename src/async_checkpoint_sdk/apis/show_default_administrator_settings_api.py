@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.default_admin_settings_reply import DefaultAdmi
 from async_checkpoint_sdk.models.default_admin_settings_request_show import (
     DefaultAdminSettingsRequestShow,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_default_administrator_settings(
-    client: ClientSession, data: DefaultAdminSettingsRequestShow, config: Config, **kwargs
+    client: ClientSession, data: DefaultAdminSettingsRequestShow, config: SDKConfig, **kwargs
 ) -> DefaultAdminSettingsReply:
     """
     Retrieve existing default administrator settings.

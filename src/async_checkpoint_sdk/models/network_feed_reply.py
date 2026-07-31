@@ -1,7 +1,7 @@
-from .api_domain_identifier import ApiDomainIdentifier
-from .available_actions_reply import AvailableActionsReply
-from .meta_info_for_top_level_reply import MetaInfoForTopLevelReply
-from .pydantic import BaseModel, Field
+from api_domain_identifier import ApiDomainIdentifier
+from available_actions_reply import AvailableActionsReply
+from meta_info_for_top_level_reply import MetaInfoForTopLevelReply
+from pydantic import BaseModel, Field
 
 
 class NetworkFeedReply(BaseModel):
@@ -14,8 +14,7 @@ URL should be written as http or https.""",
     )
     type: str = Field(alias="type", description="""Object type.""")
     certificate_id: str = Field(
-        alias="certificate-id",
-        description="""Certificate SHA-1 fingerprint to access the feed.""",
+        alias="certificate-id", description="""Certificate SHA-1 fingerprint to access the feed."""
     )
     username: str = Field(
         alias="username", description="""username for authenticating with the URL."""
@@ -31,8 +30,7 @@ URL should be written as http or https.""",
         description="""Interval in minutes for updating the feed on the Security Gateway.""",
     )
     data_column: int = Field(
-        alias="data-column",
-        description="""Number of the column that contains the feed's data.""",
+        alias="data-column", description="""Number of the column that contains the feed's data."""
     )
     fields_delimiter: str = Field(
         alias="fields-delimiter",
@@ -48,13 +46,11 @@ URL should be written as http or https.""",
         description="""Use the gateway's proxy for retrieving the feed.""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     domain: ApiDomainIdentifier = Field(
-        alias="domain",
-        description="""Information about the domain that holds the Object.""",
+        alias="domain", description="""Information about the domain that holds the Object."""
     )
     icon: str = Field(alias="icon", description="""Object icon.""")
     meta_info: MetaInfoForTopLevelReply = Field(
@@ -68,6 +64,5 @@ URL should be written as http or https.""",
         description="""Collection of tag objects identified by the name or UID. Level of details in the output corresponds to the number of details for search. This table shows the level of details in the Standard level.""",
     )
     available_actions: AvailableActionsReply = Field(
-        alias="available-actions",
-        description="""Actions that are available on the object.""",
+        alias="available-actions", description="""Actions that are available on the object."""
     )

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.diff_reply_task import DiffReplyTask
 from async_checkpoint_sdk.models.internal_diff_request import InternalDiffRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_publish_information(
-    client: ClientSession, data: InternalDiffRequest, config: Config, **kwargs
+    client: ClientSession, data: InternalDiffRequest, config: SDKConfig, **kwargs
 ) -> DiffReplyTask:
     """
     Parameters

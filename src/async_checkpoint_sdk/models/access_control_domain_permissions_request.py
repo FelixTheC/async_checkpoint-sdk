@@ -1,8 +1,7 @@
-from pydantic import BaseModel, Field
-
-from .access_control_policy_layers_domain_permissions_request import (
+from access_control_policy_layers_domain_permissions_request import (
     AccessControlPolicyLayersDomainPermissionsRequest,
 )
+from pydantic import BaseModel, Field
 
 
 class AccessControlDomainPermissionsRequest(BaseModel):
@@ -17,7 +16,7 @@ class AccessControlDomainPermissionsRequest(BaseModel):
     dlp_policy: str = Field(alias="dlp-policy", description="""Configure DLP rules and Policies.""")
     geo_control_policy: str = Field(
         alias="geo-control-policy",
-        description="""Work with Access Control rules that control traffic to and from .specified countries.""",
+        description="""Work with Access Control rules that control traffic to and from specified countries.""",
     )
     nat_policy: str = Field(
         alias="nat-policy", description="""Work with NAT in Access Control rules."""

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.get_platform_reply import GetPlatformReply
 from async_checkpoint_sdk.models.get_platform_request import GetPlatformRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def get_platform(
-    client: ClientSession, data: GetPlatformRequest, config: Config, **kwargs
+    client: ClientSession, data: GetPlatformRequest, config: SDKConfig, **kwargs
 ) -> GetPlatformReply:
     """
     Get actual platform (Hardware, Version, OS) from gateway, cluster or Check Point host, and update the object.

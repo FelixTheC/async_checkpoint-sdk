@@ -1,10 +1,25 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class ComplianceGaiaBestPracticeRequestNew(BaseModel):
+    name: str = Field(alias="name", description="""Object name. Must be unique in the domain.""")
+    action_item: str = Field(
+        alias="action-item", description="""To comply with Best Practice, do this action item."""
+    )
+    description: str = Field(
+        alias="description", description="""Description of the Best Practice."""
+    )
+    expected_output_text: str = Field(
+        alias="expected-output-text",
+        description="""The expected output of the script as plain text.""",
+    )
+    practice_script_path: str = Field(
+        alias="practice-script-path",
+        description="""The absolute path of the script on the Management Server to run on Gaia Security Gateways during the Compliance scans.""",
+    )
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     ignore_warnings: bool = Field(
         alias="ignore-warnings", description="""Apply changes ignoring warnings."""

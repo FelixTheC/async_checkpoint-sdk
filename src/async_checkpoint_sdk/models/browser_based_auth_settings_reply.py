@@ -1,6 +1,6 @@
-from .auth_settings_browser_based_reply import AuthSettingsBrowserBasedReply
-from .i_d_a_portal_reply import IDAPortalReply
-from .pydantic import BaseModel, Field
+from auth_settings_browser_based_reply import AuthSettingsBrowserBasedReply
+from i_d_a_portal_reply import IDAPortalReply
+from pydantic import BaseModel, Field
 
 
 class BrowserBasedAuthSettingsReply(BaseModel):

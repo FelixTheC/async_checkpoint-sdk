@@ -1,7 +1,11 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class VptAddPhysInterfaceRequest(BaseModel):
+    name: str = Field(alias="name", description="""Name of the interface.""")
+    vsx_name: str = Field(
+        alias="vsx-name", description="""Name of the VSX Gateway or Cluster object."""
+    )
     vlan_trunk: bool = Field(
         alias="vlan-trunk", description="""True if this interface is a VLAN trunk."""
     )

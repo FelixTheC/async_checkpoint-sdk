@@ -1,19 +1,22 @@
-from .automatic_enrollment_request import AutomaticEnrollmentRequest
-from .pydantic import BaseModel, Field
+from automatic_enrollment_request import AutomaticEnrollmentRequest
+from pydantic import BaseModel, Field
 
 
 class OpsecTrustedCaRequestNew(BaseModel):
+    name: str = Field(alias="name", description="""Object name. Must be unique in the domain.""")
+    base64_certificate: str = Field(
+        alias="base64-certificate", description="""Certificate file encoded in base64."""
+    )
     automatic_enrollment: AutomaticEnrollmentRequest = Field(
-        alias="automatic-enrollment",
-        description="""Certificate automatic enrollment.""",
+        alias="automatic-enrollment", description="""Certificate automatic enrollment."""
     )
     retrieve_crl_from_http_servers: bool = Field(
         alias="retrieve-crl-from-http-servers",
-        description="""Whether to retrieve Certificate Revocation List from .http servers.""",
+        description="""Whether to retrieve Certificate Revocation List from http servers.""",
     )
     retrieve_crl_from_ldap_servers: bool = Field(
         alias="retrieve-crl-from-ldap-servers",
-        description="""Whether to retrieve Certificate Revocation List from .ldap servers.""",
+        description="""Whether to retrieve Certificate Revocation List from ldap servers.""",
     )
     cache_crl: bool = Field(
         alias="cache-crl",
@@ -29,24 +32,23 @@ class OpsecTrustedCaRequestNew(BaseModel):
     )
     allow_certificates_from_branches: bool = Field(
         alias="allow-certificates-from-branches",
-        description="""Allow only certificates from .listed branches.""",
+        description="""Allow only certificates from listed branches.""",
     )
     branches: str | list[str] = Field(
         alias="branches",
         description="""Branches to allow certificates from. Required only if allow-certificates-from-branches set to true.""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     domains_to_process: list[str] = Field(
         alias="domains-to-process",
-        description="""Indicates which domains to process the commands on. It cannot be used with the details-level full, must be run from .the System Domain only and with ignore-warnings true. Valid values are: CURRENT_DOMAIN, ALL_DOMAINS_ON_THIS_SERVER.""",
+        description="""Indicates which domains to process the commands on. It cannot be used with the details-level full, must be run from the System Domain only and with ignore-warnings true. Valid values are: CURRENT_DOMAIN, ALL_DOMAINS_ON_THIS_SERVER.""",
     )
     ignore_warnings: bool = Field(
         alias="ignore-warnings", description="""Apply changes ignoring warnings."""

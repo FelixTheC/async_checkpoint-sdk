@@ -1,9 +1,9 @@
-from .pydantic import BaseModel, Field
-from .trust_details_reply import TrustDetailsReply
+from pydantic import BaseModel, Field
+from trust_details_reply import TrustDetailsReply
 
 
 class TrustStatusReply(BaseModel):
-    sic_message: str = Field(alias="sic-message", description="""SIC message from .the gateway.""")
+    sic_message: str = Field(alias="sic-message", description="""SIC message from the gateway.""")
     sic_name: str = Field(
         alias="sic-name", description="""SIC (Secure Internal Communication) name."""
     )

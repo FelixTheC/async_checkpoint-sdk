@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.t_l_s_rule_reply import TLSRuleReply
 from async_checkpoint_sdk.models.t_l_s_rule_request_new import TLSRuleRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_https_rule(
-    client: ClientSession, data: TLSRuleRequestNew, config: Config, **kwargs
+    client: ClientSession, data: TLSRuleRequestNew, config: SDKConfig, **kwargs
 ) -> TLSRuleReply:
     """
     Create new object.

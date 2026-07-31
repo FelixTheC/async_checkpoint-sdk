@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.ftp_resource_reply import FtpResourceReply
 from async_checkpoint_sdk.models.ftp_resource_request_edit import FtpResourceRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def clone_resource_ftp(
-    client: ClientSession, data: FtpResourceRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: FtpResourceRequestEdit, config: SDKConfig, **kwargs
 ) -> FtpResourceReply:
     """
     Clone existing object.

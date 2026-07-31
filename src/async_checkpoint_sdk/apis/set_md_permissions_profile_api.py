@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.md_permissions_profile_reply import MdPermissio
 from async_checkpoint_sdk.models.md_permissions_profile_request_edit import (
     MdPermissionsProfileRequestEdit,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_md_permissions_profile(
-    client: ClientSession, data: MdPermissionsProfileRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: MdPermissionsProfileRequestEdit, config: SDKConfig, **kwargs
 ) -> MdPermissionsProfileReply:
     """
     Edit existing Multi-Domain Permissions Profile using object name or uid.

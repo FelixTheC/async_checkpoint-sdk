@@ -1,5 +1,7 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class ScvExceptionsRequestRemove(BaseModel):
-    pass
+    hosts: str | list[str] = Field(
+        alias="hosts", description="""Specify the Hosts to be excluded from SCV."""
+    )

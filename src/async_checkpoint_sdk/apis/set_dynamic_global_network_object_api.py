@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.dynamic_global_network_reply import DynamicGlob
 from async_checkpoint_sdk.models.dynamic_global_network_request_edit import (
     DynamicGlobalNetworkRequestEdit,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_dynamic_global_network_object(
-    client: ClientSession, data: DynamicGlobalNetworkRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: DynamicGlobalNetworkRequestEdit, config: SDKConfig, **kwargs
 ) -> DynamicGlobalNetworkReply:
     """
     Edit existing object using object name or uid. <br>Local domain must have a corresponding network object (with the same name as the Dynamic Global Network Object) in order for Assignment to succeed.

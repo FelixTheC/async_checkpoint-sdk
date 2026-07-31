@@ -1,5 +1,5 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class DeletePackageCommandRequest(BaseModel):
-    pass
+    name: str = Field(alias="name", description="""The name of the software package.""")

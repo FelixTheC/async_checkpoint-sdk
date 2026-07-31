@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.api_visual_c_p_object_identifier_request_show i
     ApiVisualCPObjectIdentifierRequestShow,
 )
 from async_checkpoint_sdk.models.syslog_server_reply import SyslogServerReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_syslog_server(
-    client: ClientSession, data: ApiVisualCPObjectIdentifierRequestShow, config: Config, **kwargs
+    client: ClientSession, data: ApiVisualCPObjectIdentifierRequestShow, config: SDKConfig, **kwargs
 ) -> SyslogServerReply:
     """
     Retrieve existing syslog server using object name or uid.

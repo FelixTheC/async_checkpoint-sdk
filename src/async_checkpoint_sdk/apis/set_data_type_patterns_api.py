@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.patterns_data_type_reply import PatternsDataTypeReply
 from async_checkpoint_sdk.models.patterns_data_type_request_edit import PatternsDataTypeRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_data_type_patterns(
-    client: ClientSession, data: PatternsDataTypeRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: PatternsDataTypeRequestEdit, config: SDKConfig, **kwargs
 ) -> PatternsDataTypeReply:
     """
     Edit existing Pattern Data Type object using object name or uid.

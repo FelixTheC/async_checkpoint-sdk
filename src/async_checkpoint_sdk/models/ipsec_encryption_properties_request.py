@@ -1,6 +1,6 @@
-from .ipsec_support_data_integrity_request import IpsecSupportDataIntegrityRequest
-from .ipsec_support_encryption_algs_request import IpsecSupportEncryptionAlgsRequest
-from .pydantic import BaseModel, Field
+from ipsec_support_data_integrity_request import IpsecSupportDataIntegrityRequest
+from ipsec_support_encryption_algs_request import IpsecSupportEncryptionAlgsRequest
+from pydantic import BaseModel, Field
 
 
 class IpsecEncryptionPropertiesRequest(BaseModel):

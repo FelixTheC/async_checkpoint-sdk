@@ -1,7 +1,7 @@
-from .ips_top_cpu_consuming_protections_settings_request_new import (
+from ips_top_cpu_consuming_protections_settings_request_new import (
     IpsTopCpuConsumingProtectionsSettingsRequestNew,
 )
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class IpsSettingsClusterRequestNew(BaseModel):

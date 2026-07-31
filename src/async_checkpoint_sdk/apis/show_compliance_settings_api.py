@@ -6,13 +6,13 @@ from async_checkpoint_sdk.models.compliance_configuration_settings_show_request 
 from async_checkpoint_sdk.models.compliance_show_configuration_settings_reply import (
     ComplianceShowConfigurationSettingsReply,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_compliance_settings(
     client: ClientSession,
     data: ComplianceConfigurationSettingsShowRequest,
-    config: Config,
+    config: SDKConfig,
     **kwargs,
 ) -> ComplianceShowConfigurationSettingsReply:
     """

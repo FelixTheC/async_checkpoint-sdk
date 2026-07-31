@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class HotSpotHotelRegistrationReply(BaseModel):
@@ -19,6 +19,5 @@ class HotSpotHotelRegistrationReply(BaseModel):
         description="""Maximum number of addresses to allow access to during registration.""",
     )
     ports: list[str] = Field(
-        alias="ports",
-        description="""Ports to be opened during registration (up to 10 ports).""",
+        alias="ports", description="""Ports to be opened during registration (up to 10 ports)."""
     )

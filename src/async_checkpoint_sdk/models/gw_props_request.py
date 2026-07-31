@@ -1,7 +1,12 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class GwPropsRequest(BaseModel):
+    gateway: str = Field(
+        alias="gateway",
+        description="""Gateway to set all is tunnels to permanent with specified track options.<br>
+Identified by name or UID.""",
+    )
     track_options: str = Field(
         alias="track-options",
         description="""Indicates whether to use the community track options or to override track options for the permanent tunnels.""",

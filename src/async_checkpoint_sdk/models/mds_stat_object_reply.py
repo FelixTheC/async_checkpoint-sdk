@@ -1,5 +1,5 @@
-from .api_domain_identifier import ApiDomainIdentifier
-from .pydantic import BaseModel, Field
+from api_domain_identifier import ApiDomainIdentifier
+from pydantic import BaseModel, Field
 
 
 class MdsStatObjectReply(BaseModel):
@@ -9,6 +9,5 @@ class MdsStatObjectReply(BaseModel):
     server_status: str = Field(alias="server-status", description="""Server status.""")
     processes: list[dict] = Field(alias="processes", description="""Server processes.""")
     domain: ApiDomainIdentifier = Field(
-        alias="domain",
-        description="""Information about the domain that holds the Object.""",
+        alias="domain", description="""Information about the domain that holds the Object."""
     )

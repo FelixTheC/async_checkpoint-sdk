@@ -1,10 +1,9 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class InterfaceProfileRequest(BaseModel):
     profile: str = Field(
-        alias="profile",
-        description="""The Interface Profile object identified by Name or UID.""",
+        alias="profile", description="""The Interface Profile object identified by Name or UID."""
     )
     custom_message_types: str = Field(
         alias="custom-message-types",

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.vpn_star_community_reply import VpnStarCommunityReply
 from async_checkpoint_sdk.models.vpn_star_community_request_new import VpnStarCommunityRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_vpn_community_star(
-    client: ClientSession, data: VpnStarCommunityRequestNew, config: Config, **kwargs
+    client: ClientSession, data: VpnStarCommunityRequestNew, config: SDKConfig, **kwargs
 ) -> VpnStarCommunityReply:
     """
     Create new object.

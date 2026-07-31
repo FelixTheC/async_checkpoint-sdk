@@ -1,6 +1,6 @@
-from .pydantic import BaseModel, Field
-from .ssl_network_extender_reply import SslNetworkExtenderReply
-from .v_c_settings_for_gateway_reply import VCSettingsForGatewayReply
+from pydantic import BaseModel, Field
+from ssl_network_extender_reply import SslNetworkExtenderReply
+from v_c_settings_for_gateway_reply import VCSettingsForGatewayReply
 
 
 class VpnReply(BaseModel):

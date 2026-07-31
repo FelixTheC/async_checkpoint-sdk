@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.api_ok_reply import ApiOkReply
 from async_checkpoint_sdk.models.api_visual_c_p_object_identifier_request_delete import (
     ApiVisualCPObjectIdentifierRequestDelete,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def delete_opsec_trusted_ca(
-    client: ClientSession, data: ApiVisualCPObjectIdentifierRequestDelete, config: Config, **kwargs
+    client: ClientSession, data: ApiVisualCPObjectIdentifierRequestDelete, config: SDKConfig, **kwargs
 ) -> ApiOkReply:
     """
     Delete existing object using object name or uid.

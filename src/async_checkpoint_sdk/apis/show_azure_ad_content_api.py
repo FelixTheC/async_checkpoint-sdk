@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.azure_a_d_content_query_reply import AzureADContentQueryReply
 from async_checkpoint_sdk.models.azure_a_d_content_request import AzureADContentRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_azure_ad_content(
-    client: ClientSession, data: AzureADContentRequest, config: Config, **kwargs
+    client: ClientSession, data: AzureADContentRequest, config: SDKConfig, **kwargs
 ) -> AzureADContentQueryReply:
     """
     Retrieve Microsoft Entra ID Objects from the Microsoft Entra ID Server (formerly, Azure AD).

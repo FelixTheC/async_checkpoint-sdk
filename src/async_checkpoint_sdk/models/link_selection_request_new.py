@@ -1,5 +1,5 @@
-from .probing_settings_request_new import ProbingSettingsRequestNew
-from .pydantic import BaseModel, Field
+from probing_settings_request_new import ProbingSettingsRequestNew
+from pydantic import BaseModel, Field
 
 
 class LinkSelectionRequestNew(BaseModel):

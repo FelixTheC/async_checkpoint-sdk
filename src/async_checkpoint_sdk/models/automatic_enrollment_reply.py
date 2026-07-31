@@ -1,7 +1,7 @@
-from .cmpv1_settings_reply import Cmpv1SettingsReply
-from .cmpv2_settings_reply import Cmpv2SettingsReply
-from .pydantic import BaseModel, Field
-from .scep_settings_reply import ScepSettingsReply
+from cmpv1_settings_reply import Cmpv1SettingsReply
+from cmpv2_settings_reply import Cmpv2SettingsReply
+from pydantic import BaseModel, Field
+from scep_settings_reply import ScepSettingsReply
 
 
 class AutomaticEnrollmentReply(BaseModel):

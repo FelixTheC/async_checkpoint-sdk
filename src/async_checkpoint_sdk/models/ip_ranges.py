@@ -1,14 +1,12 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class IpRanges(BaseModel):
     ipv4: list[dict] = Field(
-        alias="ipv4",
-        description="""Range of IPv4 addresses that match in the given rule.""",
+        alias="ipv4", description="""Range of IPv4 addresses that match in the given rule."""
     )
     ipv6: list[dict] = Field(
-        alias="ipv6",
-        description="""Range of IPv6 addresses that match in the given rule.""",
+        alias="ipv6", description="""Range of IPv6 addresses that match in the given rule."""
     )
     others: list[dict] = Field(
         alias="others",

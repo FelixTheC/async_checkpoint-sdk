@@ -1,19 +1,16 @@
-from .otp_settings_reply import OtpSettingsReply
-from .pydantic import BaseModel, Field
+from otp_settings_reply import OtpSettingsReply
+from pydantic import BaseModel, Field
 
 
 class AdvancedSettingsReply(BaseModel):
     dynamic_id_message: str = Field(
-        alias="dynamic-id-message",
-        description="""Dynamic ID message displayed to users.""",
+        alias="dynamic-id-message", description="""Dynamic ID message displayed to users."""
     )
     otp_settings: OtpSettingsReply = Field(
-        alias="otp-settings",
-        description="""OTP (One Time Password) configuration settings.""",
+        alias="otp-settings", description="""OTP (One Time Password) configuration settings."""
     )
     enable_display_user_details: bool = Field(
-        alias="enable-display-user-details",
-        description="""Enable display of user details.""",
+        alias="enable-display-user-details", description="""Enable display of user details."""
     )
     country_code: str = Field(
         alias="country-code", description="""Country code for SMS services."""

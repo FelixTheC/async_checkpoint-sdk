@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.client_login_option_reply import ClientLoginOptionReply
 from async_checkpoint_sdk.models.client_login_option_request_new import ClientLoginOptionRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_client_login_option(
-    client: ClientSession, data: ClientLoginOptionRequestNew, config: Config, **kwargs
+    client: ClientSession, data: ClientLoginOptionRequestNew, config: SDKConfig, **kwargs
 ) -> ClientLoginOptionReply:
     """
     Create new client login option with authentication methods and user directory configurations.

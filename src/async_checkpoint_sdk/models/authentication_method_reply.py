@@ -1,10 +1,10 @@
-from .client_display_settings_reply import ClientDisplaySettingsReply
-from .dynamic_id_settings_reply import DynamicIdSettingsReply
-from .identity_provider_settings_reply import IdentityProviderSettingsReply
-from .personal_certificate_settings_reply import PersonalCertificateSettingsReply
-from .pydantic import BaseModel, Field
-from .radius_settings_reply import RadiusSettingsReply
-from .secur_id_settings_reply import SecurIdSettingsReply
+from client_display_settings_reply import ClientDisplaySettingsReply
+from dynamic_id_settings_reply import DynamicIdSettingsReply
+from identity_provider_settings_reply import IdentityProviderSettingsReply
+from personal_certificate_settings_reply import PersonalCertificateSettingsReply
+from pydantic import BaseModel, Field
+from radius_settings_reply import RadiusSettingsReply
+from secur_id_settings_reply import SecurIdSettingsReply
 
 
 class AuthenticationMethodReply(BaseModel):

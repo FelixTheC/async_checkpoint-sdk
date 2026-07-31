@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.generic_upload_file_reply import GenericUploadFileReply
 from async_checkpoint_sdk.models.generic_upload_file_request import GenericUploadFileRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def generic_upload_file(
-    client: ClientSession, data: GenericUploadFileRequest, config: Config, **kwargs
+    client: ClientSession, data: GenericUploadFileRequest, config: SDKConfig, **kwargs
 ) -> GenericUploadFileReply:
     """
     Parameters

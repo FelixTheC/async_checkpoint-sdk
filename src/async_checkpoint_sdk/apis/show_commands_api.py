@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.show_commands_reply import ShowCommandsReply
 from async_checkpoint_sdk.models.show_commands_request import ShowCommandsRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_commands(
-    client: ClientSession, data: ShowCommandsRequest, config: Config, **kwargs
+    client: ClientSession, data: ShowCommandsRequest, config: SDKConfig, **kwargs
 ) -> ShowCommandsReply:
     """
     Retrieve all of the supported Management API commands with their description.

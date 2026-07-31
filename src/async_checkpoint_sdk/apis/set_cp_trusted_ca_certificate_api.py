@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.trusted_ca_certificate_reply import TrustedCaCe
 from async_checkpoint_sdk.models.trusted_ca_certificate_request_edit import (
     TrustedCaCertificateRequestEdit,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_cp_trusted_ca_certificate(
-    client: ClientSession, data: TrustedCaCertificateRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: TrustedCaCertificateRequestEdit, config: SDKConfig, **kwargs
 ) -> TrustedCaCertificateReply:
     """
     Edit existing Check Point trusted CA certificate using name or uid. </br>By default all CP trusted CA certificates are enabled.

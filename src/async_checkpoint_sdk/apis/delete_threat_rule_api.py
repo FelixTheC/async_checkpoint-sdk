@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_ok_reply import ApiOkReply
 from async_checkpoint_sdk.models.threat_rule_identifier_request import ThreatRuleIdentifierRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def delete_threat_rule(
-    client: ClientSession, data: ThreatRuleIdentifierRequest, config: Config, **kwargs
+    client: ClientSession, data: ThreatRuleIdentifierRequest, config: SDKConfig, **kwargs
 ) -> ApiOkReply:
     """
     Delete existing object using object name or uid.

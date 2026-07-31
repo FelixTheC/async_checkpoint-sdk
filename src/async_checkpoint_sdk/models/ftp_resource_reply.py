@@ -1,9 +1,9 @@
-from .api_domain_identifier import ApiDomainIdentifier
-from .api_object_standard_identifier import ApiObjectStandardIdentifier
-from .available_actions_reply import AvailableActionsReply
-from .cvp_object_reply import CvpObjectReply
-from .meta_info_for_top_level_reply import MetaInfoForTopLevelReply
-from .pydantic import BaseModel, Field
+from api_domain_identifier import ApiDomainIdentifier
+from api_object_standard_identifier import ApiObjectStandardIdentifier
+from available_actions_reply import AvailableActionsReply
+from cvp_object_reply import CvpObjectReply
+from meta_info_for_top_level_reply import MetaInfoForTopLevelReply
+from pydantic import BaseModel, Field
 
 
 class FtpResourceReply(BaseModel):
@@ -26,13 +26,11 @@ The CVP server must already be defined as an OPSEC Application.""",
         alias="cvp", description="""Configure CVP inspection on mail messages."""
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     domain: ApiDomainIdentifier = Field(
-        alias="domain",
-        description="""Information about the domain that holds the Object.""",
+        alias="domain", description="""Information about the domain that holds the Object."""
     )
     icon: str = Field(alias="icon", description="""Object icon.""")
     meta_info: MetaInfoForTopLevelReply = Field(
@@ -42,8 +40,7 @@ The CVP server must already be defined as an OPSEC Application.""",
         alias="read-only", description="""Indicates whether the object is read-only."""
     )
     available_actions: AvailableActionsReply = Field(
-        alias="available-actions",
-        description="""Actions that are available on the object.""",
+        alias="available-actions", description="""Actions that are available on the object."""
     )
     tags: list[dict] = Field(
         alias="tags",

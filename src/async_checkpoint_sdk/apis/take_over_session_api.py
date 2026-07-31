@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.work_session_reply import WorkSessionReply
 from async_checkpoint_sdk.models.work_session_take_over_request import WorkSessionTakeOverRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def take_over_session(
-    client: ClientSession, data: WorkSessionTakeOverRequest, config: Config, **kwargs
+    client: ClientSession, data: WorkSessionTakeOverRequest, config: SDKConfig, **kwargs
 ) -> WorkSessionReply:
     """
     Take ownership of another session and start working on it.

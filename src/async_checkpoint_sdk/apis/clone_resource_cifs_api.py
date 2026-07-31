@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.cifs_resource_reply import CifsResourceReply
 from async_checkpoint_sdk.models.cifs_resource_request_edit import CifsResourceRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def clone_resource_cifs(
-    client: ClientSession, data: CifsResourceRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: CifsResourceRequestEdit, config: SDKConfig, **kwargs
 ) -> CifsResourceReply:
     """
     Clone existing object.

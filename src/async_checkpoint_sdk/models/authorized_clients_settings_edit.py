@@ -1,5 +1,6 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class AuthorizedClientsSettingsEdit(BaseModel):
-    pass
+    client: str = Field(alias="client", description="""Host / Network Group Name or UID.""")
+    client_secret: str = Field(alias="client-secret", description="""Client Secret.""")

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.web_api_export_reply import WebApiExportReply
 from async_checkpoint_sdk.models.web_api_export_request import WebApiExportRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def export(
-    client: ClientSession, data: WebApiExportRequest, config: Config, **kwargs
+    client: ClientSession, data: WebApiExportRequest, config: SDKConfig, **kwargs
 ) -> WebApiExportReply:
     """
     Export the Database.

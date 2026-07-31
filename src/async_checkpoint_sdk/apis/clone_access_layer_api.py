@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_task_reply import ApiTaskReply
 from async_checkpoint_sdk.models.clone_access_layer_request import CloneAccessLayerRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def clone_access_layer(
-    client: ClientSession, data: CloneAccessLayerRequest, config: Config, **kwargs
+    client: ClientSession, data: CloneAccessLayerRequest, config: SDKConfig, **kwargs
 ) -> ApiTaskReply:
     """
     Clone access layer using layer name or uid.

@@ -1,14 +1,15 @@
-from .add import add
-from .host_ckp_log_settings_request_edit import HostCkpLogSettingsRequestEdit
-from .host_ckp_management_blades_request import HostCkpManagementBladesRequest
-from .host_interface_request_edit import HostInterfaceRequestEdit
-from .pydantic import BaseModel, Field
-from .remove import remove
-from .third_party_nat_request import ThirdPartyNatRequest
+from add import Add
+from host_ckp_log_settings_request_edit import HostCkpLogSettingsRequestEdit
+from host_ckp_management_blades_request import HostCkpManagementBladesRequest
+from host_interface_request_edit import HostInterfaceRequestEdit
+from pydantic import BaseModel, Field
+from remove import Remove
+from third_party_nat_request import ThirdPartyNatRequest
 
 
 class HostCkpRequestEdit(BaseModel):
-    interfaces: add | remove | HostInterfaceRequestEdit | list[dict] = Field(
+    uid: str = Field(alias="uid", description="""Object unique identifier.""")
+    interfaces: Add | Remove | HostInterfaceRequestEdit | list[dict] = Field(
         alias="interfaces", description="""Check Point host interfaces."""
     )
     ip_address: str = Field(
@@ -19,8 +20,7 @@ class HostCkpRequestEdit(BaseModel):
         alias="nat-settings", description="""NAT settings."""
     )
     one_time_password: str = Field(
-        alias="one-time-password",
-        description="""Secure internal connection one time password.""",
+        alias="one-time-password", description="""Secure internal connection one time password."""
     )
     hardware: str = Field(alias="hardware", description="""Hardware name.""")
     new_name: str = Field(alias="new-name", description="""New name of the object.""")
@@ -35,31 +35,30 @@ class HostCkpRequestEdit(BaseModel):
     save_logs_locally: bool = Field(
         alias="save-logs-locally", description="""Enable save logs locally."""
     )
-    send_alerts_to_server: add | remove | str | list[str] = Field(
+    send_alerts_to_server: Add | Remove | str | list[str] = Field(
         alias="send-alerts-to-server",
         description="""Collection of Server(s) to send alerts to identified by the name or UID.""",
     )
-    send_logs_to_backup_server: add | remove | str | list[str] = Field(
+    send_logs_to_backup_server: Add | Remove | str | list[str] = Field(
         alias="send-logs-to-backup-server",
         description="""Collection of Backup server(s) to send logs to identified by the name or UID.""",
     )
-    send_logs_to_server: add | remove | str | list[str] = Field(
+    send_logs_to_server: Add | Remove | str | list[str] = Field(
         alias="send-logs-to-server",
         description="""Collection of Server(s) to send logs to identified by the name or UID.""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
-    groups: add | remove | str | list[str] = Field(
+    groups: Add | Remove | str | list[str] = Field(
         alias="groups", description="""Collection of group identifiers."""
     )
-    tags: add | remove | str | list[str] = Field(
+    tags: Add | Remove | str | list[str] = Field(
         alias="tags", description="""Collection of tag identifiers."""
     )
     ignore_warnings: bool = Field(

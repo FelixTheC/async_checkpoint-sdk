@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.threat_exception_group_reply import ThreatExcep
 from async_checkpoint_sdk.models.threat_exception_group_request_new import (
     ThreatExceptionGroupRequestNew,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_exception_group(
-    client: ClientSession, data: ThreatExceptionGroupRequestNew, config: Config, **kwargs
+    client: ClientSession, data: ThreatExceptionGroupRequestNew, config: SDKConfig, **kwargs
 ) -> ThreatExceptionGroupReply:
     """
     Create new object.

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.appi_update_reply import AppiUpdateReply
 from async_checkpoint_sdk.models.appi_update_request import AppiUpdateRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def run_app_control_update(
-    client: ClientSession, data: AppiUpdateRequest, config: Config, **kwargs
+    client: ClientSession, data: AppiUpdateRequest, config: SDKConfig, **kwargs
 ) -> AppiUpdateReply:
     """
     Runs Application Control & URL Filtering database update.

@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.api_server_settings_reply import ApiServerSetti
 from async_checkpoint_sdk.models.api_server_settings_request_show import (
     ApiServerSettingsRequestShow,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_api_settings(
-    client: ClientSession, data: ApiServerSettingsRequestShow, config: Config, **kwargs
+    client: ClientSession, data: ApiServerSettingsRequestShow, config: SDKConfig, **kwargs
 ) -> ApiServerSettingsReply:
     """
     Retrieve existing object using object name or uid.

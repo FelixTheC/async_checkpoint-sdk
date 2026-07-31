@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.override_categorization_reply import OverrideCa
 from async_checkpoint_sdk.models.override_categorization_request_edit import (
     OverrideCategorizationRequestEdit,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def clone_override_categorization(
-    client: ClientSession, data: OverrideCategorizationRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: OverrideCategorizationRequestEdit, config: SDKConfig, **kwargs
 ) -> OverrideCategorizationReply:
     """
     Clone existing object.

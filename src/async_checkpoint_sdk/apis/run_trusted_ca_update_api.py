@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_task_reply import ApiTaskReply
 from async_checkpoint_sdk.models.trusted_ca_update_request import TrustedCaUpdateRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def run_trusted_ca_update(
-    client: ClientSession, data: TrustedCaUpdateRequest, config: Config, **kwargs
+    client: ClientSession, data: TrustedCaUpdateRequest, config: SDKConfig, **kwargs
 ) -> ApiTaskReply:
     """
     Executes Trusted CAs package update.

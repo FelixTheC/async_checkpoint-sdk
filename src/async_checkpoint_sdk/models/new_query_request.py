@@ -1,6 +1,6 @@
-from .group_request import GroupRequest
-from .pydantic import BaseModel, Field
-from .top_request import TopRequest
+from group_request import GroupRequest
+from pydantic import BaseModel, Field
+from top_request import TopRequest
 
 
 class NewQueryRequest(BaseModel):
@@ -25,8 +25,7 @@ class NewQueryRequest(BaseModel):
         description="""Specify how to group logs. Supported only in environments with SmartEvent configured.""",
     )
     sort: list[dict] = Field(
-        alias="sort",
-        description="""Order by fields. Applicable only for group requests.""",
+        alias="sort", description="""Order by fields. Applicable only for group requests."""
     )
     returned_fields: list[str] = Field(
         alias="returned-fields",
@@ -41,5 +40,5 @@ class NewQueryRequest(BaseModel):
     )
     type: str = Field(alias="type", description="""Filter logs by specified type.""")
     log_servers: list[str] = Field(
-        alias="log-servers", description="""Filter logs from .specified log-servers."""
+        alias="log-servers", description="""Filter logs from specified log-servers."""
     )

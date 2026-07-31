@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.set_trust_reply import SetTrustReply
 from async_checkpoint_sdk.models.set_trust_request import SetTrustRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_trust(
-    client: ClientSession, data: SetTrustRequest, config: Config, **kwargs
+    client: ClientSession, data: SetTrustRequest, config: SDKConfig, **kwargs
 ) -> SetTrustReply:
     """
     Configure a Trusted communication between the Management Server and the managed Security Gateway.

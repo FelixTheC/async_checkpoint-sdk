@@ -1,5 +1,5 @@
-from .pydantic import BaseModel, Field
-from .scep_settings_request import ScepSettingsRequest
+from pydantic import BaseModel, Field
+from scep_settings_request import ScepSettingsRequest
 
 
 class AutomaticEnrollmentRequest(BaseModel):

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.policy_package_reply import PolicyPackageReply
 from async_checkpoint_sdk.models.policy_package_request_edit import PolicyPackageRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_package(
-    client: ClientSession, data: PolicyPackageRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: PolicyPackageRequestEdit, config: SDKConfig, **kwargs
 ) -> PolicyPackageReply:
     """
     Edit existing object using object name or uid.

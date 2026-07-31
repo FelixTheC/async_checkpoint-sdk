@@ -1,5 +1,5 @@
-from .manual_vpn_domain_request import ManualVpnDomainRequest
-from .pydantic import BaseModel, Field
+from manual_vpn_domain_request import ManualVpnDomainRequest
+from pydantic import BaseModel, Field
 
 
 class TopologyRequestNew(BaseModel):

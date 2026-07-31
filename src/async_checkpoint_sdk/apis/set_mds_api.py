@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.mds_reply import MdsReply
 from async_checkpoint_sdk.models.mds_request_edit import MdsRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_mds(
-    client: ClientSession, data: MdsRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: MdsRequestEdit, config: SDKConfig, **kwargs
 ) -> MdsReply:
     """
     Edit existing object of type Multi-Domain Server or Multi-Domain Log Server using object name or uid.

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.user_template_reply import UserTemplateReply
 from async_checkpoint_sdk.models.user_template_request_new import UserTemplateRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_user_template(
-    client: ClientSession, data: UserTemplateRequestNew, config: Config, **kwargs
+    client: ClientSession, data: UserTemplateRequestNew, config: SDKConfig, **kwargs
 ) -> UserTemplateReply:
     """
     Create new object.

@@ -1,7 +1,7 @@
-from .add import add
-from .pydantic import BaseModel, Field
-from .remove import remove
-from .scv_exceptions_request import ScvExceptionsRequest
+from add import Add
+from pydantic import BaseModel, Field
+from remove import Remove
+from scv_exceptions_request import ScvExceptionsRequest
 
 
 class ScvGlobalPropertiesRequest(BaseModel):
@@ -9,13 +9,13 @@ class ScvGlobalPropertiesRequest(BaseModel):
         alias="apply-scv-on-simplified-mode-fw-policies",
         description="""Determine whether the gateway verifies that remote access clients are securely configured. This is set here only if the security policy is defined in the Simplified Mode. If the security policy is defined in the Traditional Mode, verification takes place per rule.""",
     )
-    exceptions: add | remove | ScvExceptionsRequest | list[dict] = Field(
+    exceptions: Add | Remove | ScvExceptionsRequest | list[dict] = Field(
         alias="exceptions",
         description="""Specify the hosts that can be accessed using the selected services even if the client is not verified.<br>Available only if apply-scv-on-simplified-mode-fw-policies is true.""",
     )
     no_scv_for_unsupported_cp_clients: bool = Field(
         alias="no-scv-for-unsupported-cp-clients",
-        description="""Do not apply Secure Configuration Verification for connections from .Check Point VPN clients that don't support it, such as SSL Network Extender, GO, Capsule VPN / Connect, Endpoint Connects lower than R75, or L2TP clients.<br>Available only if apply-scv-on-simplified-mode-fw-policies is true.""",
+        description="""Do not apply Secure Configuration Verification for connections from Check Point VPN clients that don't support it, such as SSL Network Extender, GO, Capsule VPN / Connect, Endpoint Connects lower than R75, or L2TP clients.<br>Available only if apply-scv-on-simplified-mode-fw-policies is true.""",
     )
     upon_verification_accept_and_log_client_connection: bool = Field(
         alias="upon-verification-accept-and-log-client-connection",

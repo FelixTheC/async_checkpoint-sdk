@@ -1,14 +1,15 @@
-from .add import add
-from .pydantic import BaseModel, Field
-from .remove import remove
+from add import Add
+from pydantic import BaseModel, Field
+from remove import Remove
 
 
 class ThreatExceptionGroupRequestEdit(BaseModel):
+    uid: str = Field(alias="uid", description="""Object unique identifier.""")
     applied_profile: str = Field(
         alias="applied-profile",
         description="""The threat profile to apply this group to in the case of apply-on threat-rules-with-specific-profile.""",
     )
-    applied_threat_rules: add | remove = Field(
+    applied_threat_rules: Add | Remove = Field(
         alias="applied-threat-rules",
         description="""The threat rules to apply this group on in the case of apply-on manually-select-threat-rules.""",
     )
@@ -18,15 +19,14 @@ class ThreatExceptionGroupRequestEdit(BaseModel):
     )
     new_name: str = Field(alias="new-name", description="""New name of the object.""")
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
-    tags: add | remove | str | list[str] = Field(
+    tags: Add | Remove | str | list[str] = Field(
         alias="tags", description="""Collection of tag identifiers."""
     )
     ignore_warnings: bool = Field(

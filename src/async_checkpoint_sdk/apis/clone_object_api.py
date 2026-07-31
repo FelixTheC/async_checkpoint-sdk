@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.clone_object_reply import CloneObjectReply
 from async_checkpoint_sdk.models.clone_object_request import CloneObjectRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def clone_object(
-    client: ClientSession, data: CloneObjectRequest, config: Config, **kwargs
+    client: ClientSession, data: CloneObjectRequest, config: SDKConfig, **kwargs
 ) -> CloneObjectReply:
     """
     Creates a clone of an existing object.  <br>Clone supported types: access-role, address-range, application-site-category, application-site-group, dns-domain, dynamic-object, group, group-with-exclusion, host, lsv-profile, multicast-address-range, network, security-zone, service-dce-rpc, service-group, service-icmp, service-other, service-sctp, service-tcp, service-udp, tacacs-server, tacacs-group, tag, time, time-group, vpn-community-meshed, vpn-community-star, wildcard.

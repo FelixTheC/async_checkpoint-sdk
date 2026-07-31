@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.api_query_object_reply import ApiQueryObjectRep
 from async_checkpoint_sdk.models.dynamic_global_network_query_request import (
     DynamicGlobalNetworkQueryRequest,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_dynamic_global_network_objects(
-    client: ClientSession, data: DynamicGlobalNetworkQueryRequest, config: Config, **kwargs
+    client: ClientSession, data: DynamicGlobalNetworkQueryRequest, config: SDKConfig, **kwargs
 ) -> ApiQueryObjectReply:
     """
     Retrieve all objects.

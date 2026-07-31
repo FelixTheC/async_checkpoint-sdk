@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.user_group_reply import UserGroupReply
 from async_checkpoint_sdk.models.user_group_request_edit import UserGroupRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_user_group(
-    client: ClientSession, data: UserGroupRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: UserGroupRequestEdit, config: SDKConfig, **kwargs
 ) -> UserGroupReply:
     """
     Edit existing object using object name or uid.

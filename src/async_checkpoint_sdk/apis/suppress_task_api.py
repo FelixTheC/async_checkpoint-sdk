@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_message_reply import ApiMessageReply
 from async_checkpoint_sdk.models.suppress_task_request import SuppressTaskRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def suppress_task(
-    client: ClientSession, data: SuppressTaskRequest, config: Config, **kwargs
+    client: ClientSession, data: SuppressTaskRequest, config: SDKConfig, **kwargs
 ) -> ApiMessageReply:
     """
     Parameters

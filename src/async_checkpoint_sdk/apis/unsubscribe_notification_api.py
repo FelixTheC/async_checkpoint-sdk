@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.api_ok_reply import ApiOkReply
 from async_checkpoint_sdk.models.notification_unsubscribe_request import (
     NotificationUnsubscribeRequest,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def unsubscribe_notification(
-    client: ClientSession, data: NotificationUnsubscribeRequest, config: Config, **kwargs
+    client: ClientSession, data: NotificationUnsubscribeRequest, config: SDKConfig, **kwargs
 ) -> ApiOkReply:
     """
     Parameters

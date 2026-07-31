@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.disconnect_reply import DisconnectReply
 from async_checkpoint_sdk.models.disconnect_request import DisconnectRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def disconnect(
-    client: ClientSession, data: DisconnectRequest, config: Config, **kwargs
+    client: ClientSession, data: DisconnectRequest, config: SDKConfig, **kwargs
 ) -> DisconnectReply:
     """
     Disconnect a private session.

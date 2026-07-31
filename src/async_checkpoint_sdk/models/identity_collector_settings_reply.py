@@ -1,6 +1,6 @@
-from .authentication_settings_idc_reply import AuthenticationSettingsIdcReply
-from .i_d_a_portal_reply import IDAPortalReply
-from .pydantic import BaseModel, Field
+from authentication_settings_idc_reply import AuthenticationSettingsIdcReply
+from i_d_a_portal_reply import IDAPortalReply
+from pydantic import BaseModel, Field
 
 
 class IdentityCollectorSettingsReply(BaseModel):

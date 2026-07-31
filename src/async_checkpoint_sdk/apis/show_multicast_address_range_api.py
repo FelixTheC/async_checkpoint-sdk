@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.api_visual_c_p_object_identifier_request_show i
     ApiVisualCPObjectIdentifierRequestShow,
 )
 from async_checkpoint_sdk.models.multi_cast_address_range_reply import MultiCastAddressRangeReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_multicast_address_range(
-    client: ClientSession, data: ApiVisualCPObjectIdentifierRequestShow, config: Config, **kwargs
+    client: ClientSession, data: ApiVisualCPObjectIdentifierRequestShow, config: SDKConfig, **kwargs
 ) -> MultiCastAddressRangeReply:
     """
     Retrieve existing object using object name or uid.

@@ -1,5 +1,5 @@
-from .compliance_auto_scan_settings_request import ComplianceAutoScanSettingsRequest
-from .pydantic import BaseModel, Field
+from compliance_auto_scan_settings_request import ComplianceAutoScanSettingsRequest
+from pydantic import BaseModel, Field
 
 
 class ComplianceConfigurationSettingsSetRequest(BaseModel):

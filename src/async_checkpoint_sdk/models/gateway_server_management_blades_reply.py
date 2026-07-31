@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class GatewayServerManagementBladesReply(BaseModel):
@@ -10,8 +10,7 @@ class GatewayServerManagementBladesReply(BaseModel):
         alias="logging-and-status", description="""Logging & Status blade."""
     )
     network_policy_management: bool = Field(
-        alias="network-policy-management",
-        description="""Network policy management blade.""",
+        alias="network-policy-management", description="""Network policy management blade."""
     )
     secondary: bool = Field(alias="secondary", description="""Secondary blade.""")
     compliance: bool = Field(alias="compliance", description="""Compliance blade.""")

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.policy_installation_reply import PolicyInstallationReply
 from async_checkpoint_sdk.models.policy_installation_request import PolicyInstallationRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def install_policy(
-    client: ClientSession, data: PolicyInstallationRequest, config: Config, **kwargs
+    client: ClientSession, data: PolicyInstallationRequest, config: SDKConfig, **kwargs
 ) -> PolicyInstallationReply:
     """
     Executes the install-policy on a given list of targets.

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.opsec_application_reply import OpsecApplicationReply
 from async_checkpoint_sdk.models.opsec_application_request_new import OpsecApplicationRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_opsec_application(
-    client: ClientSession, data: OpsecApplicationRequestNew, config: Config, **kwargs
+    client: ClientSession, data: OpsecApplicationRequestNew, config: SDKConfig, **kwargs
 ) -> OpsecApplicationReply:
     """
     Create a new OPSEC Application. At least one client entity (LEA, CPMI) must be supplied.

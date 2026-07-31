@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.threat_exception_identifier_request import (
     ThreatExceptionIdentifierRequest,
 )
 from async_checkpoint_sdk.models.threat_exception_reply import ThreatExceptionReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_threat_exception(
-    client: ClientSession, data: ThreatExceptionIdentifierRequest, config: Config, **kwargs
+    client: ClientSession, data: ThreatExceptionIdentifierRequest, config: SDKConfig, **kwargs
 ) -> ThreatExceptionReply:
     """
     Retrieve existing object using object name or uid.

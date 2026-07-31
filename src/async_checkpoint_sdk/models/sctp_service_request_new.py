@@ -1,8 +1,13 @@
-from .aggressive_aging_request import AggressiveAgingRequest
-from .pydantic import BaseModel, Field
+from aggressive_aging_request import AggressiveAgingRequest
+from pydantic import BaseModel, Field
 
 
 class SctpServiceRequestNew(BaseModel):
+    name: str = Field(alias="name", description="""Object name. Must be unique in the domain.""")
+    port: str = Field(
+        alias="port",
+        description="""Port number. To specify a port range add a hyphen between the lowest and the highest port numbers, for example 44-45.""",
+    )
     aggressive_aging: AggressiveAgingRequest = Field(
         alias="aggressive-aging",
         description="""Sets short (aggressive) timeouts for idle connections.""",
@@ -16,8 +21,7 @@ class SctpServiceRequestNew(BaseModel):
         description="""Indicates whether this service is used when 'Any' is set as the rule's service and there are several service objects with the same source port and protocol.""",
     )
     session_timeout: int = Field(
-        alias="session-timeout",
-        description="""Time (in seconds) before the session times out.""",
+        alias="session-timeout", description="""Time (in seconds) before the session times out."""
     )
     source_port: str = Field(
         alias="source-port",
@@ -28,21 +32,19 @@ class SctpServiceRequestNew(BaseModel):
         description="""Enables state-synchronized High Availability or Load Sharing on a ClusterXL or OPSEC-certified cluster.""",
     )
     use_default_session_timeout: bool = Field(
-        alias="use-default-session-timeout",
-        description="""Use default virtual session timeout.""",
+        alias="use-default-session-timeout", description="""Use default virtual session timeout."""
     )
     set_if_exists: bool = Field(
         alias="set-if-exists",
         description="""If another object with the same identifier already exists, it will be updated. The command behaviour will be the same as if originally a set command was called. Pay attention that original object's fields will be overwritten by the fields provided in the request payload!""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     groups: str | list[str] = Field(
         alias="groups", description="""Collection of group identifiers."""

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.sctp_service_reply import SctpServiceReply
 from async_checkpoint_sdk.models.sctp_service_request_new import SctpServiceRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_service_sctp(
-    client: ClientSession, data: SctpServiceRequestNew, config: Config, **kwargs
+    client: ClientSession, data: SctpServiceRequestNew, config: SDKConfig, **kwargs
 ) -> SctpServiceReply:
     """
     Create new object.

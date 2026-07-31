@@ -1,10 +1,10 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class CarrierSecurityGlobalPropertiesRequest(BaseModel):
     block_gtp_in_gtp: bool = Field(
         alias="block-gtp-in-gtp",
-        description="""Prevents GTP packets from .being encapsulated inside GTP tunnels. When this option is checked, such packets are dropped and logged.""",
+        description="""Prevents GTP packets from being encapsulated inside GTP tunnels. When this option is checked, such packets are dropped and logged.""",
     )
     enforce_gtp_anti_spoofing: bool = Field(
         alias="enforce-gtp-anti-spoofing",
@@ -36,11 +36,11 @@ class CarrierSecurityGlobalPropertiesRequest(BaseModel):
     )
     allow_ggsn_replies_from_multiple_interfaces: bool = Field(
         alias="allow-ggsn-replies-from-multiple-interfaces",
-        description="""Allows GTP signaling replies from .an IP address different from .the IP address to which the requests are sent (Relevant only for gateways below R80).""",
+        description="""Allows GTP signaling replies from an IP address different from the IP address to which the requests are sent (Relevant only for gateways below R80).""",
     )
     enable_reverse_connections: bool = Field(
         alias="enable-reverse-connections",
-        description="""Allows Carrier Security gateways to accept PDUs sent from .the GGSN to the SGSN, on a previously established PDP context, even if these PDUs are sent over ports that do not match the ports of the established PDP context.""",
+        description="""Allows Carrier Security gateways to accept PDUs sent from the GGSN to the SGSN, on a previously established PDP context, even if these PDUs are sent over ports that do not match the ports of the established PDP context.""",
     )
     gtp_signaling_rate_limit_sampling_interval: int = Field(
         alias="gtp-signaling-rate-limit-sampling-interval",

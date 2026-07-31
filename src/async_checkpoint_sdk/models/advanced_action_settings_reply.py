@@ -1,5 +1,5 @@
-from .api_object_standard_identifier import ApiObjectStandardIdentifier
-from .pydantic import BaseModel, Field
+from api_object_standard_identifier import ApiObjectStandardIdentifier
+from pydantic import BaseModel, Field
 
 
 class AdvancedActionSettingsReply(BaseModel):

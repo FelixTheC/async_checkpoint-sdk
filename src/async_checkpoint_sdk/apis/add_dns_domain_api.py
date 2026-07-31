@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.dns_domain_reply import DnsDomainReply
 from async_checkpoint_sdk.models.dns_domain_request_new import DnsDomainRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_dns_domain(
-    client: ClientSession, data: DnsDomainRequestNew, config: Config, **kwargs
+    client: ClientSession, data: DnsDomainRequestNew, config: SDKConfig, **kwargs
 ) -> DnsDomainReply:
     """
     Create new Domain object.<br>A Domain object defines a Host of a DNS domain by its name.

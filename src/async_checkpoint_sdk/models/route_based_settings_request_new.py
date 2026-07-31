@@ -1,10 +1,6 @@
-from .participant_route_based_settings_request import (
-    ParticipantRouteBasedSettingsRequest,
-)
-from .pydantic import BaseModel, Field
-from .route_based_advanced_settings_request_new import (
-    RouteBasedAdvancedSettingsRequestNew,
-)
+from participant_route_based_settings_request import ParticipantRouteBasedSettingsRequest
+from pydantic import BaseModel, Field
+from route_based_advanced_settings_request_new import RouteBasedAdvancedSettingsRequestNew
 
 
 class RouteBasedSettingsRequestNew(BaseModel):

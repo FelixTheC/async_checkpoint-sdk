@@ -1,5 +1,5 @@
-from .activation_reply import ActivationReply
-from .pydantic import BaseModel, Field
+from activation_reply import ActivationReply
+from pydantic import BaseModel, Field
 
 
 class AllActivationsByProtectionReply(BaseModel):

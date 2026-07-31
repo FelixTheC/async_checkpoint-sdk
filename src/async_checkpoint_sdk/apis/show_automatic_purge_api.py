@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.automatic_purge_reply import AutomaticPurgeReply
 from async_checkpoint_sdk.models.automatic_purge_request_show import AutomaticPurgeRequestShow
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_automatic_purge(
-    client: ClientSession, data: AutomaticPurgeRequestShow, config: Config, **kwargs
+    client: ClientSession, data: AutomaticPurgeRequestShow, config: SDKConfig, **kwargs
 ) -> AutomaticPurgeReply:
     """
     Show Automatic Purge.

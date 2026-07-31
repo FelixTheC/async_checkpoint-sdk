@@ -1,7 +1,7 @@
-from .add import add
-from .http_server_request import HttpServerRequest
-from .pydantic import BaseModel, Field
-from .remove import remove
+from add import Add
+from http_server_request import HttpServerRequest
+from pydantic import BaseModel, Field
+from remove import Remove
 
 
 class SecurityServerGlobalPropertiesRequest(BaseModel):
@@ -29,11 +29,11 @@ class SecurityServerGlobalPropertiesRequest(BaseModel):
         alias="smtp-welcome-msg",
         description="""SMTP Welcome Message is the message to be displayed when a user begins an SMTP session.""",
     )
-    http_servers: add | remove | HttpServerRequest | list[dict] = Field(
+    http_servers: Add | Remove | HttpServerRequest | list[dict] = Field(
         alias="http-servers",
         description="""This list specifies the HTTP servers. Defining HTTP servers allows you to restrict incoming HTTP.""",
     )
     server_for_null_requests: str = Field(
         alias="server-for-null-requests",
-        description="""The Logical Name of a Null Requests Server from .http-servers.""",
+        description="""The Logical Name of a Null Requests Server from http-servers.""",
     )

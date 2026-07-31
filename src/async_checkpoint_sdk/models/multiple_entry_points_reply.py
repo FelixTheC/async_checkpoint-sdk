@@ -1,15 +1,14 @@
-from .default_mep_priority_rule_reply import DefaultMepPriorityRuleReply
-from .pydantic import BaseModel, Field
+from default_mep_priority_rule_reply import DefaultMepPriorityRuleReply
+from pydantic import BaseModel, Field
 
 
 class MultipleEntryPointsReply(BaseModel):
     enabled: bool = Field(
-        alias="enabled",
-        description="""Enable center gateways as Multiple Entry Points.""",
+        alias="enabled", description="""Enable center gateways as Multiple Entry Points."""
     )
     entry_point_selection_mechanism: str = Field(
         alias="entry-point-selection-mechanism",
-        description="""The method by which the entry point gateway will be chosen from .the gateways in the center.""",
+        description="""The method by which the entry point gateway will be chosen from the gateways in the center.""",
     )
     entry_point_final_selection_mechanism: str = Field(
         alias="entry-point-final-selection-mechanism",

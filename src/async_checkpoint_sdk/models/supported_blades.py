@@ -1,5 +1,5 @@
-from .pydantic import BaseModel, Field
-from .threat_prevention_blades import ThreatPreventionBlades
+from pydantic import BaseModel, Field
+from threat_prevention_blades import ThreatPreventionBlades
 
 
 class SupportedBlades(BaseModel):

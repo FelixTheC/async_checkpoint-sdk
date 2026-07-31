@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.access_point_reply import AccessPointReply
 from async_checkpoint_sdk.models.api_visual_c_p_object_identifier_request_show import (
     ApiVisualCPObjectIdentifierRequestShow,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_access_point_name(
-    client: ClientSession, data: ApiVisualCPObjectIdentifierRequestShow, config: Config, **kwargs
+    client: ClientSession, data: ApiVisualCPObjectIdentifierRequestShow, config: SDKConfig, **kwargs
 ) -> AccessPointReply:
     """
     Retrieve existing object using object name or uid.

@@ -1,14 +1,14 @@
-from .add import add
-from .pydantic import BaseModel, Field
-from .remove import remove
-from .users_directories_settings_edit import UsersDirectoriesSettingsEdit
+from add import Add
+from pydantic import BaseModel, Field
+from remove import Remove
+from users_directories_settings_edit import UsersDirectoriesSettingsEdit
 
 
 class AuthSettingsBrowserBasedEdit(BaseModel):
     authentication_method: str = Field(
         alias="authentication-method", description="""Authentication method."""
     )
-    identity_provider: add | remove | str | list[str] = Field(
+    identity_provider: Add | Remove | str | list[str] = Field(
         alias="identity-provider",
         description="""Identity provider object identified by the name or UID. Must be set when authentication-method was selected to be identity provider.""",
     )

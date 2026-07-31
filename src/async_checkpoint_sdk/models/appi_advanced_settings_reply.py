@@ -1,9 +1,9 @@
-from .api_domain_identifier import ApiDomainIdentifier
-from .available_actions_reply import AvailableActionsReply
-from .custom_categorization_settings_reply import CustomCategorizationSettingsReply
-from .meta_info_for_top_level_reply import MetaInfoForTopLevelReply
-from .pydantic import BaseModel, Field
-from .url_filtering_settings_reply import UrlFilteringSettingsReply
+from api_domain_identifier import ApiDomainIdentifier
+from available_actions_reply import AvailableActionsReply
+from custom_categorization_settings_reply import CustomCategorizationSettingsReply
+from meta_info_for_top_level_reply import MetaInfoForTopLevelReply
+from pydantic import BaseModel, Field
+from url_filtering_settings_reply import UrlFilteringSettingsReply
 
 
 class AppiAdvancedSettingsReply(BaseModel):
@@ -41,7 +41,7 @@ Application and URL Filtering assigns Web Browsing as the default application fo
     )
     website_categorization_mode: str = Field(
         alias="website-categorization-mode",
-        description="""This option lets Application and URL Filtering assign categories to HTTPS sites without activating HTTPS inspection. It assigns a site category based on its domain name and whether the site has a valid certificate. If the server certificate is:<br> Trusted - Application and URL Filtering gets the domain name from .the certificate and uses it to categorize the site.<br>Not Trusted - Application and URL Filtering assigns a category based on the IP address.<br>This property is not available in the Global domain of an MDS machine.""",
+        description="""This option lets Application and URL Filtering assign categories to HTTPS sites without activating HTTPS inspection. It assigns a site category based on its domain name and whether the site has a valid certificate. If the server certificate is:<br> Trusted - Application and URL Filtering gets the domain name from the certificate and uses it to categorize the site.<br>Not Trusted - Application and URL Filtering assigns a category based on the IP address.<br>This property is not available in the Global domain of an MDS machine.""",
     )
     custom_categorization_settings: CustomCategorizationSettingsReply = Field(
         alias="custom-categorization-settings",
@@ -56,8 +56,7 @@ Application and URL Filtering assigns Web Browsing as the default application fo
         description="""Allows the editing of applications, categories, and services. This property is used only in the Global Domain of an MDS machine.""",
     )
     domain: ApiDomainIdentifier = Field(
-        alias="domain",
-        description="""Information about the domain that holds the Object.""",
+        alias="domain", description="""Information about the domain that holds the Object."""
     )
     meta_info: MetaInfoForTopLevelReply = Field(
         alias="meta-info", description="""Object metadata."""
@@ -66,6 +65,5 @@ Application and URL Filtering assigns Web Browsing as the default application fo
         alias="read-only", description="""Indicates whether the object is read-only."""
     )
     available_actions: AvailableActionsReply = Field(
-        alias="available-actions",
-        description="""Actions that are available on the object.""",
+        alias="available-actions", description="""Actions that are available on the object."""
     )

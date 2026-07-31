@@ -1,10 +1,15 @@
-from .host_interface_request_new import HostInterfaceRequestNew
-from .host_servers_request_new import HostServersRequestNew
-from .nat_settings_request import NatSettingsRequest
-from .pydantic import BaseModel, Field
+from host_interface_request_new import HostInterfaceRequestNew
+from host_servers_request_new import HostServersRequestNew
+from nat_settings_request import NatSettingsRequest
+from pydantic import BaseModel, Field
 
 
 class HostRequestNew(BaseModel):
+    name: str = Field(alias="name", description="""Object name. Must be unique in the domain.""")
+    ip_address: str = Field(
+        alias="ip-address",
+        description="""IPv4 or IPv6 address. If both addresses are required use ipv4-address and ipv6-address fields explicitly.""",
+    )
     interfaces: HostInterfaceRequestNew | list[dict] = Field(
         alias="interfaces", description="""Host interfaces."""
     )
@@ -17,13 +22,12 @@ class HostRequestNew(BaseModel):
         description="""If another object with the same identifier already exists, it will be updated. The command behaviour will be the same as if originally a set command was called. Pay attention that original object's fields will be overwritten by the fields provided in the request payload!""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     groups: str | list[str] = Field(
         alias="groups", description="""Collection of group identifiers."""

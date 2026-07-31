@@ -1,21 +1,22 @@
-from .advanced_properties_request import AdvancedPropertiesRequest
-from .enhanced_link_selection_interfaces_per_participant_request_add_and_edit import (
+from advanced_properties_request import AdvancedPropertiesRequest
+from enhanced_link_selection_interfaces_per_participant_request_add_and_edit import (
     EnhancedLinkSelectionInterfacesPerParticipantRequestAddAndEdit,
 )
-from .granular_encryption_request import GranularEncryptionRequest
-from .ike_p1_request_new import IkeP1RequestNew
-from .ike_p2_request_new import IkeP2RequestNew
-from .multiple_entry_points_request_new import MultipleEntryPointsRequestNew
-from .participants_domains_request import ParticipantsDomainsRequest
-from .pydantic import BaseModel, Field
-from .route_based_settings_request_new import RouteBasedSettingsRequestNew
-from .shared_secret_request import SharedSecretRequest
-from .star_encrypted_traffic_request_new import StarEncryptedTrafficRequestNew
-from .star_permanent_tunnels_request_new import StarPermanentTunnelsRequestNew
-from .wire_mode_request import WireModeRequest
+from granular_encryption_request import GranularEncryptionRequest
+from ike_p1_request_new import IkeP1RequestNew
+from ike_p2_request_new import IkeP2RequestNew
+from multiple_entry_points_request_new import MultipleEntryPointsRequestNew
+from participants_domains_request import ParticipantsDomainsRequest
+from pydantic import BaseModel, Field
+from route_based_settings_request_new import RouteBasedSettingsRequestNew
+from shared_secret_request import SharedSecretRequest
+from star_encrypted_traffic_request_new import StarEncryptedTrafficRequestNew
+from star_permanent_tunnels_request_new import StarPermanentTunnelsRequestNew
+from wire_mode_request import WireModeRequest
 
 
 class VpnStarCommunityRequestNew(BaseModel):
+    name: str = Field(alias="name", description="""Object name. Must be unique in the domain.""")
     center_gateways: str | list[str] = Field(
         alias="center-gateways",
         description="""Collection of center VPN Gateway and VPN Device objects identified by the name or UID.""",
@@ -39,11 +40,10 @@ class VpnStarCommunityRequestNew(BaseModel):
     )
     excluded_services: str | list[str] = Field(
         alias="excluded-services",
-        description="""Collection of services that are excluded from .the community identified by the name or UID.<br> Connections with these services will not be encrypted and will not match rules specifying the community in the VPN community.""",
+        description="""Collection of services that are excluded from the community identified by the name or UID.<br> Connections with these services will not be encrypted and will not match rules specifying the community in the VPN community.""",
     )
     granular_encryptions: GranularEncryptionRequest | list[dict] = Field(
-        alias="granular-encryptions",
-        description="""VPN granular encryption settings.""",
+        alias="granular-encryptions", description="""VPN granular encryption settings."""
     )
     ike_phase_1: IkeP1RequestNew = Field(
         alias="ike-phase-1",
@@ -84,8 +84,7 @@ class VpnStarCommunityRequestNew(BaseModel):
         alias="shared-secrets", description="""Shared secrets for external gateways."""
     )
     tunnel_granularity: str = Field(
-        alias="tunnel-granularity",
-        description="""VPN tunnel sharing option to be used.""",
+        alias="tunnel-granularity", description="""VPN tunnel sharing option to be used."""
     )
     use_shared_secret: bool = Field(
         alias="use-shared-secret",
@@ -110,13 +109,12 @@ class VpnStarCommunityRequestNew(BaseModel):
         description="""If another object with the same identifier already exists, it will be updated. The command behaviour will be the same as if originally a set command was called. Pay attention that original object's fields will be overwritten by the fields provided in the request payload!""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     tags: str | list[str] = Field(alias="tags", description="""Collection of tag identifiers.""")
     ignore_warnings: bool = Field(

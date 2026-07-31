@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.cloud_services_request_show import CloudServicesRequestShow
 from async_checkpoint_sdk.models.cloud_services_status_reply import CloudServicesStatusReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_cloud_services(
-    client: ClientSession, data: CloudServicesRequestShow, config: Config, **kwargs
+    client: ClientSession, data: CloudServicesRequestShow, config: SDKConfig, **kwargs
 ) -> CloudServicesStatusReply:
     """
     Show the connection status of the Management Server to Check Point's Infinity Portal.

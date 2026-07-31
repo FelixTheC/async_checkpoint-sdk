@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.ldap_group_reply import LdapGroupReply
 from async_checkpoint_sdk.models.ldap_group_request_edit import LdapGroupRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_ldap_group(
-    client: ClientSession, data: LdapGroupRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: LdapGroupRequestEdit, config: SDKConfig, **kwargs
 ) -> LdapGroupReply:
     """
     Edit existing LDAP Group using object name or uid.

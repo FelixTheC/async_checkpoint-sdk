@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.appi_advanced_settings_reply import AppiAdvance
 from async_checkpoint_sdk.models.appi_advanced_settings_request_edit import (
     AppiAdvancedSettingsRequestEdit,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_app_control_advanced_settings(
-    client: ClientSession, data: AppiAdvancedSettingsRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: AppiAdvancedSettingsRequestEdit, config: SDKConfig, **kwargs
 ) -> AppiAdvancedSettingsReply:
     """
     Edit Application Control & URL Filtering Blades' Settings.

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.secur_id_reply import SecurIdReply
 from async_checkpoint_sdk.models.secur_id_request_new import SecurIdRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_securid_server(
-    client: ClientSession, data: SecurIdRequestNew, config: Config, **kwargs
+    client: ClientSession, data: SecurIdRequestNew, config: SDKConfig, **kwargs
 ) -> SecurIdReply:
     """
     Create new SecurID server.

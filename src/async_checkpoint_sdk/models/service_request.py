@@ -1,8 +1,10 @@
-from .array_node import ArrayNode
-from .pydantic import BaseModel, Field
+from array_node import ArrayNode
+from pydantic import BaseModel, Field
 
 
 class ServiceRequest(BaseModel):
+    command: str = Field(alias="command", description="""Command inside the service.""")
+    service: str = Field(alias="service", description="""The service.""")
     fields_to_remove: list[str] = Field(alias="fields-to-remove", description="""N/A""")
     params: ArrayNode = Field(
         alias="params",

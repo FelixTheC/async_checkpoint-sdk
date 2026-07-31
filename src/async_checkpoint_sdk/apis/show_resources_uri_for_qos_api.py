@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_query_object_reply import ApiQueryObjectReply
 from async_checkpoint_sdk.models.api_query_request import ApiQueryRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_resources_uri_for_qos(
-    client: ClientSession, data: ApiQueryRequest, config: Config, **kwargs
+    client: ClientSession, data: ApiQueryRequest, config: SDKConfig, **kwargs
 ) -> ApiQueryObjectReply:
     """
     Shows a list of all Uri For QoS resources.

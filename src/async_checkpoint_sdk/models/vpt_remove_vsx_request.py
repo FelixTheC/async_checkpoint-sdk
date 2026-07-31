@@ -1,5 +1,7 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class VptRemoveVsxRequest(BaseModel):
-    pass
+    vsx_name: str = Field(
+        alias="vsx-name", description="""Name of the VSX Gateway or Cluster object."""
+    )

@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.mobile_applications_rule_reply import MobileApp
 from async_checkpoint_sdk.models.mobile_applications_rule_request_new import (
     MobileApplicationsRuleRequestNew,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_mobile_access_rule(
-    client: ClientSession, data: MobileApplicationsRuleRequestNew, config: Config, **kwargs
+    client: ClientSession, data: MobileApplicationsRuleRequestNew, config: SDKConfig, **kwargs
 ) -> MobileApplicationsRuleReply:
     """
     Create new Mobile Access rule for associating groups of users with a available apps.

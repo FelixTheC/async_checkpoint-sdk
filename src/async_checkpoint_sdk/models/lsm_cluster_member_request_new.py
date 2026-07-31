@@ -1,9 +1,13 @@
-from .lsm_cluster_sic_request import LsmClusterSicRequest
-from .provisioning_settings_request import ProvisioningSettingsRequest
-from .pydantic import BaseModel, Field
+from lsm_cluster_sic_request import LsmClusterSicRequest
+from provisioning_settings_request import ProvisioningSettingsRequest
+from pydantic import BaseModel, Field
 
 
 class LsmClusterMemberRequestNew(BaseModel):
+    name: str = Field(
+        alias="name",
+        description="""Member Name. Consists of the member name in the LSM profile and the name or prefix or suffix of the cluster.""",
+    )
     device_id: str = Field(alias="device-id", description="""Device ID.""")
     provisioning_settings: ProvisioningSettingsRequest = Field(
         alias="provisioning-settings",
@@ -15,17 +19,16 @@ class LsmClusterMemberRequestNew(BaseModel):
     )
     sic: LsmClusterSicRequest = Field(alias="sic", description="""Secure Internal Communication.""")
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     domains_to_process: list[str] = Field(
         alias="domains-to-process",
-        description="""Indicates which domains to process the commands on. It cannot be used with the details-level full, must be run from .the System Domain only and with ignore-warnings true. Valid values are: CURRENT_DOMAIN, ALL_DOMAINS_ON_THIS_SERVER.""",
+        description="""Indicates which domains to process the commands on. It cannot be used with the details-level full, must be run from the System Domain only and with ignore-warnings true. Valid values are: CURRENT_DOMAIN, ALL_DOMAINS_ON_THIS_SERVER.""",
     )
     tags: str | list[str] = Field(alias="tags", description="""Collection of tag identifiers.""")
     ignore_warnings: bool = Field(

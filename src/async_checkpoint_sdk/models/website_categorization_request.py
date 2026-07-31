@@ -1,5 +1,5 @@
-from .custom_mode_request import CustomModeRequest
-from .pydantic import BaseModel, Field
+from custom_mode_request import CustomModeRequest
+from pydantic import BaseModel, Field
 
 
 class WebsiteCategorizationRequest(BaseModel):

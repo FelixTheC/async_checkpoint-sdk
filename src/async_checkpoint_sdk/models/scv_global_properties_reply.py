@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class ScvGlobalPropertiesReply(BaseModel):
@@ -12,7 +12,7 @@ class ScvGlobalPropertiesReply(BaseModel):
     )
     no_scv_for_unsupported_cp_clients: bool = Field(
         alias="no-scv-for-unsupported-cp-clients",
-        description="""Do not apply Secure Configuration Verification for connections from .Check Point VPN clients that don't support it, such as SSL Network Extender, GO, Capsule VPN / Connect, Endpoint Connects lower than R75, or L2TP clients.<br>Available only if apply-scv-on-simplified-mode-fw-policies is true.""",
+        description="""Do not apply Secure Configuration Verification for connections from Check Point VPN clients that don't support it, such as SSL Network Extender, GO, Capsule VPN / Connect, Endpoint Connects lower than R75, or L2TP clients.<br>Available only if apply-scv-on-simplified-mode-fw-policies is true.""",
     )
     upon_verification_accept_and_log_client_connection: bool = Field(
         alias="upon-verification-accept-and-log-client-connection",

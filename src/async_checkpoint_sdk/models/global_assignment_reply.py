@@ -1,9 +1,9 @@
-from .api_date_reply import ApiDateReply
-from .api_domain_identifier import ApiDomainIdentifier
-from .api_object_standard_identifier import ApiObjectStandardIdentifier
-from .available_actions_reply import AvailableActionsReply
-from .meta_info_for_top_level_reply import MetaInfoForTopLevelReply
-from .pydantic import BaseModel, Field
+from api_date_reply import ApiDateReply
+from api_domain_identifier import ApiDomainIdentifier
+from api_object_standard_identifier import ApiObjectStandardIdentifier
+from available_actions_reply import AvailableActionsReply
+from meta_info_for_top_level_reply import MetaInfoForTopLevelReply
+from pydantic import BaseModel, Field
 
 
 class GlobalAssignmentReply(BaseModel):
@@ -12,8 +12,7 @@ class GlobalAssignmentReply(BaseModel):
     type: str = Field(alias="type", description="""Object type.""")
     assignment_status: str = Field(alias="assignment-status", description="""N/A""")
     assignment_up_to_date: ApiDateReply = Field(
-        alias="assignment-up-to-date",
-        description="""The time when the assignment was assigned.""",
+        alias="assignment-up-to-date", description="""The time when the assignment was assigned."""
     )
     dependent_domain: ApiObjectStandardIdentifier = Field(
         alias="dependent-domain",
@@ -35,13 +34,11 @@ class GlobalAssignmentReply(BaseModel):
         alias="manage-protection-actions", description="""N/A"""
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     domain: ApiDomainIdentifier = Field(
-        alias="domain",
-        description="""Information about the domain that holds the Object.""",
+        alias="domain", description="""Information about the domain that holds the Object."""
     )
     icon: str = Field(alias="icon", description="""Object icon.""")
     meta_info: MetaInfoForTopLevelReply = Field(
@@ -55,6 +52,5 @@ class GlobalAssignmentReply(BaseModel):
         description="""Collection of tag objects identified by the name or UID. Level of details in the output corresponds to the number of details for search. This table shows the level of details in the Standard level.""",
     )
     available_actions: AvailableActionsReply = Field(
-        alias="available-actions",
-        description="""Actions that are available on the object.""",
+        alias="available-actions", description="""Actions that are available on the object."""
     )

@@ -1,5 +1,5 @@
-from .p12_certificate_file_request import P12CertificateFileRequest
-from .pydantic import BaseModel, Field
+from p12_certificate_file_request import P12CertificateFileRequest
+from pydantic import BaseModel, Field
 
 
 class UserCertificateRequest(BaseModel):

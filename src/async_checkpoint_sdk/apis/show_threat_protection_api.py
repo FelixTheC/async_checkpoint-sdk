@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.protection_reply import ProtectionReply
 from async_checkpoint_sdk.models.protection_request_show import ProtectionRequestShow
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_threat_protection(
-    client: ClientSession, data: ProtectionRequestShow, config: Config, **kwargs
+    client: ClientSession, data: ProtectionRequestShow, config: SDKConfig, **kwargs
 ) -> ProtectionReply:
     """
     Retrieve existing object using object name or uid.

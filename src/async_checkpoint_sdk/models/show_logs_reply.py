@@ -1,11 +1,10 @@
-from .object import Object
-from .pydantic import BaseModel, Field
+from object import Object
+from pydantic import BaseModel, Field
 
 
 class ShowLogsReply(BaseModel):
     incidents: Object = Field(
-        alias="incidents",
-        description="""Incident object when error or warning occur.""",
+        alias="incidents", description="""Incident object when error or warning occur."""
     )
     logs: Object = Field(alias="logs", description="""Logs result.""")
     logs_count: int = Field(alias="logs-count", description="""Number of logs in the result.""")

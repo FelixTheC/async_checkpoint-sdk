@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.api_ok_reply import ApiOkReply
 from async_checkpoint_sdk.models.t_l_s_section_identifier_request import (
     TLSSectionIdentifierRequest,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def delete_https_section(
-    client: ClientSession, data: TLSSectionIdentifierRequest, config: Config, **kwargs
+    client: ClientSession, data: TLSSectionIdentifierRequest, config: SDKConfig, **kwargs
 ) -> ApiOkReply:
     """
     Delete existing HTTPS Inspection section using section name or uid and layer name.

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.network_feed_reply import NetworkFeedReply
 from async_checkpoint_sdk.models.network_feed_request_new import NetworkFeedRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_network_feed(
-    client: ClientSession, data: NetworkFeedRequestNew, config: Config, **kwargs
+    client: ClientSession, data: NetworkFeedRequestNew, config: SDKConfig, **kwargs
 ) -> NetworkFeedReply:
     """
     Create a new Network Feed.

@@ -1,16 +1,14 @@
-from .pydantic import BaseModel, Field
-from .uri_resource_wildcards_methods_request import UriResourceWildcardsMethodsRequest
-from .uri_resource_wildcards_schemes_request import UriResourceWildcardsSchemesRequest
+from pydantic import BaseModel, Field
+from uri_resource_wildcards_methods_request import UriResourceWildcardsMethodsRequest
+from uri_resource_wildcards_schemes_request import UriResourceWildcardsSchemesRequest
 
 
 class UriResourceWildcardsRequest(BaseModel):
     schemes: UriResourceWildcardsSchemesRequest = Field(
-        alias="schemes",
-        description="""Select the URI Schemes to which this resource applies.""",
+        alias="schemes", description="""Select the URI Schemes to which this resource applies."""
     )
     methods: UriResourceWildcardsMethodsRequest = Field(
-        alias="methods",
-        description="""Select the URI Schemes to which this resource applies.""",
+        alias="methods", description="""Select the URI Schemes to which this resource applies."""
     )
     host: str = Field(
         alias="host",

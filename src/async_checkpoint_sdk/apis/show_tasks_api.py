@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.task_query_reply import TaskQueryReply
 from async_checkpoint_sdk.models.task_query_request import TaskQueryRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_tasks(
-    client: ClientSession, data: TaskQueryRequest, config: Config, **kwargs
+    client: ClientSession, data: TaskQueryRequest, config: SDKConfig, **kwargs
 ) -> TaskQueryReply:
     """
     Retrieve all tasks and show their progress and details.

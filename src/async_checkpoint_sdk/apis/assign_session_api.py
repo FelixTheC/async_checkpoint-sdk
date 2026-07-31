@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_ok_reply import ApiOkReply
 from async_checkpoint_sdk.models.work_session_assign_request import WorkSessionAssignRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def assign_session(
-    client: ClientSession, data: WorkSessionAssignRequest, config: Config, **kwargs
+    client: ClientSession, data: WorkSessionAssignRequest, config: SDKConfig, **kwargs
 ) -> ApiOkReply:
     """
     Assign a session ownership to another administrator.

@@ -1,24 +1,34 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class OutboundCertificateRequestNew(BaseModel):
+    dn: str = Field(alias="dn", description="""The DN (Distinguished Name) of the certificate.""")
+    base64_password: str = Field(
+        alias="base64-password",
+        description="""Password (encoded in Base64 with padding) for the certificate file.""",
+    )
+    valid_from: str = Field(
+        alias="valid-from",
+        description="""The date, from which the certificate is valid. Format: YYYY-MM-DD.""",
+    )
+    valid_to: str = Field(
+        alias="valid-to", description="""The certificate expiration date. Format: YYYY-MM-DD."""
+    )
     name: str = Field(alias="name", description="""Object name. Must be unique in the domain.""")
     public_key_algorithm: str = Field(
         alias="public-key-algorithm",
         description="""Public key algorithm and size of the outbound certificate.""",
     )
     is_default: bool = Field(
-        alias="is-default",
-        description="""Is the certificate the default certificate.""",
+        alias="is-default", description="""Is the certificate the default certificate."""
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     ignore_warnings: bool = Field(
         alias="ignore-warnings",

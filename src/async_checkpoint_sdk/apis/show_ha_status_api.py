@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.show_ha_status_reply import ShowHaStatusReply
 from async_checkpoint_sdk.models.show_ha_status_request import ShowHaStatusRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_ha_status(
-    client: ClientSession, data: ShowHaStatusRequest, config: Config, **kwargs
+    client: ClientSession, data: ShowHaStatusRequest, config: SDKConfig, **kwargs
 ) -> ShowHaStatusReply:
     """
     Retrieve domain high availability status.

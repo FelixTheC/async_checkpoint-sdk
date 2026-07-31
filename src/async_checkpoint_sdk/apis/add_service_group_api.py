@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.service_group_reply import ServiceGroupReply
 from async_checkpoint_sdk.models.service_group_request_new import ServiceGroupRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_service_group(
-    client: ClientSession, data: ServiceGroupRequestNew, config: Config, **kwargs
+    client: ClientSession, data: ServiceGroupRequestNew, config: SDKConfig, **kwargs
 ) -> ServiceGroupReply:
     """
     Create new object.

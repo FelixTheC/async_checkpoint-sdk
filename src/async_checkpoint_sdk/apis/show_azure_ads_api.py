@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_query_object_reply import ApiQueryObjectReply
 from async_checkpoint_sdk.models.api_query_request import ApiQueryRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_azure_ads(
-    client: ClientSession, data: ApiQueryRequest, config: Config, **kwargs
+    client: ClientSession, data: ApiQueryRequest, config: SDKConfig, **kwargs
 ) -> ApiQueryObjectReply:
     """
     Retrieve existing Microsoft Entra ID Servers (formerly, Azure AD). <br>Reply will not contain the sensitive properties <i><b>application key</i></b> and <i><b>password</i></b>.

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.protection_query_reply import ProtectionQueryReply
 from async_checkpoint_sdk.models.protection_query_request import ProtectionQueryRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_threat_protections(
-    client: ClientSession, data: ProtectionQueryRequest, config: Config, **kwargs
+    client: ClientSession, data: ProtectionQueryRequest, config: SDKConfig, **kwargs
 ) -> ProtectionQueryReply:
     """
     Retrieve all objects.

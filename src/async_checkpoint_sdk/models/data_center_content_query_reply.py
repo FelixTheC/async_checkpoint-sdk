@@ -1,10 +1,10 @@
-from .api_date_reply import ApiDateReply
-from .pydantic import BaseModel, Field
+from api_date_reply import ApiDateReply
+from pydantic import BaseModel, Field
 
 
 class DataCenterContentQueryReply(BaseModel):
-    source: int = Field(
-        alias="from", description="""from .which element number the query was done."""
+    from_: int = Field(
+        alias="from", description="""From which element number the query was done."""
     )
     last_successful_scan: ApiDateReply = Field(
         alias="last-successful-scan", description="""Last successful scan time."""

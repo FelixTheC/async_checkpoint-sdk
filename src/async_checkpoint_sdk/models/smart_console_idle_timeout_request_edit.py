@@ -1,10 +1,9 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class SmartConsoleIdleTimeoutRequestEdit(BaseModel):
     enabled: bool = Field(
-        alias="enabled",
-        description="""Indicates whether to perform logout after being idle.""",
+        alias="enabled", description="""Indicates whether to perform logout after being idle."""
     )
     timeout_duration: int = Field(
         alias="timeout-duration",

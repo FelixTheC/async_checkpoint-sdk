@@ -1,7 +1,8 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class DeleteObjectsByTagRequest(BaseModel):
+    uid: str = Field(alias="uid", description="""Object unique identifier.""")
     async_response: bool = Field(
         alias="async-response",
         description="""Run command in asynchronous mode and return task UID. Use show-task command to check the progress of the task.""",

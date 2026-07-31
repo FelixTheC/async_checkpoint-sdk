@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.secu_remote_dns_reply import SecuRemoteDnsReply
 from async_checkpoint_sdk.models.secu_remote_dns_request_edit import SecuRemoteDnsRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_securemote_dns_server(
-    client: ClientSession, data: SecuRemoteDnsRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: SecuRemoteDnsRequestEdit, config: SDKConfig, **kwargs
 ) -> SecuRemoteDnsReply:
     """
     Edit existing SecuRemote DNS server using object name or uid.

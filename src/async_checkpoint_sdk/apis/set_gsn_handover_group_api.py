@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.gsn_handover_group_reply import GsnHandoverGroupReply
 from async_checkpoint_sdk.models.gsn_handover_group_request_edit import GsnHandoverGroupRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_gsn_handover_group(
-    client: ClientSession, data: GsnHandoverGroupRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: GsnHandoverGroupRequestEdit, config: SDKConfig, **kwargs
 ) -> GsnHandoverGroupReply:
     """
     Edit existing object using object name or uid.

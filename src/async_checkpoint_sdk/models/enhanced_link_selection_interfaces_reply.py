@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class EnhancedLinkSelectionInterfacesReply(BaseModel):
@@ -12,8 +12,7 @@ class EnhancedLinkSelectionInterfacesReply(BaseModel):
     )
     priority: int = Field(alias="priority", description="""Priority of a 'Backup' interface.""")
     redundancy_mode: str = Field(
-        alias="redundancy-mode",
-        description="""Interface redundancy mode (Active/Backup).""",
+        alias="redundancy-mode", description="""Interface redundancy mode (Active/Backup)."""
     )
     ip_version: str = Field(
         alias="ip-version",

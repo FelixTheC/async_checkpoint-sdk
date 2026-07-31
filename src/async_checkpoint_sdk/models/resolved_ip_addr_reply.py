@@ -1,5 +1,5 @@
-from .ipv4_address_range_reply import Ipv4AddressRangeReply
-from .pydantic import BaseModel, Field
+from ipv4_address_range_reply import Ipv4AddressRangeReply
+from pydantic import BaseModel, Field
 
 
 class ResolvedIpAddrReply(BaseModel):

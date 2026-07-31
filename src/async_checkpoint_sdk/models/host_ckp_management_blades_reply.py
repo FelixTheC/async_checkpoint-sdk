@@ -1,10 +1,9 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class HostCkpManagementBladesReply(BaseModel):
     network_policy_management: bool = Field(
-        alias="network-policy-management",
-        description="""Network Policy Management enabled.""",
+        alias="network-policy-management", description="""Network Policy Management enabled."""
     )
     secondary: bool = Field(alias="secondary", description="""Secondary Management enabled.""")
     logging_and_status: bool = Field(
@@ -17,8 +16,7 @@ class HostCkpManagementBladesReply(BaseModel):
         alias="identity-logging", description="""Identity Logging enabled."""
     )
     smart_event_correlation: bool = Field(
-        alias="smart-event-correlation",
-        description="""SmartEvent Correlation Unit enabled.""",
+        alias="smart-event-correlation", description="""SmartEvent Correlation Unit enabled."""
     )
     smart_event_server: bool = Field(
         alias="smart-event-server", description="""SmartEvent Server enabled."""

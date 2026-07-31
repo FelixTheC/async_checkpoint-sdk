@@ -1,8 +1,8 @@
-from .api_domain_identifier import ApiDomainIdentifier
-from .automatic_enrollment_reply import AutomaticEnrollmentReply
-from .available_actions_reply import AvailableActionsReply
-from .meta_info_for_top_level_reply import MetaInfoForTopLevelReply
-from .pydantic import BaseModel, Field
+from api_domain_identifier import ApiDomainIdentifier
+from automatic_enrollment_reply import AutomaticEnrollmentReply
+from available_actions_reply import AvailableActionsReply
+from meta_info_for_top_level_reply import MetaInfoForTopLevelReply
+from pydantic import BaseModel, Field
 
 
 class OpsecTrustedCaReply(BaseModel):
@@ -10,20 +10,18 @@ class OpsecTrustedCaReply(BaseModel):
     uid: str = Field(alias="uid", description="""Object unique identifier.""")
     type: str = Field(alias="type", description="""Object type.""")
     base64_certificate: str = Field(
-        alias="base64-certificate",
-        description="""Certificate file encoded in base64.""",
+        alias="base64-certificate", description="""Certificate file encoded in base64."""
     )
     automatic_enrollment: AutomaticEnrollmentReply = Field(
-        alias="automatic-enrollment",
-        description="""Certificate automatic enrollment.""",
+        alias="automatic-enrollment", description="""Certificate automatic enrollment."""
     )
     retrieve_crl_from_http_servers: bool = Field(
         alias="retrieve-crl-from-http-servers",
-        description="""Whether to retrieve Certificate Revocation List from .http servers.""",
+        description="""Whether to retrieve Certificate Revocation List from http servers.""",
     )
     retrieve_crl_from_ldap_servers: bool = Field(
         alias="retrieve-crl-from-ldap-servers",
-        description="""Whether to retrieve Certificate Revocation List from .ldap servers.""",
+        description="""Whether to retrieve Certificate Revocation List from ldap servers.""",
     )
     cache_crl: bool = Field(
         alias="cache-crl",
@@ -39,20 +37,18 @@ class OpsecTrustedCaReply(BaseModel):
     )
     allow_certificates_from_branches: bool = Field(
         alias="allow-certificates-from-branches",
-        description="""Allow only certificates from .listed branches.""",
+        description="""Allow only certificates from listed branches.""",
     )
     branches: list[str] = Field(
         alias="branches",
         description="""Branches to allow certificates from. Required only if allow-certificates-from-branches set to true.""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     domain: ApiDomainIdentifier = Field(
-        alias="domain",
-        description="""Information about the domain that holds the Object.""",
+        alias="domain", description="""Information about the domain that holds the Object."""
     )
     icon: str = Field(alias="icon", description="""Object icon.""")
     meta_info: MetaInfoForTopLevelReply = Field(
@@ -62,8 +58,7 @@ class OpsecTrustedCaReply(BaseModel):
         alias="read-only", description="""Indicates whether the object is read-only."""
     )
     available_actions: AvailableActionsReply = Field(
-        alias="available-actions",
-        description="""Actions that are available on the object.""",
+        alias="available-actions", description="""Actions that are available on the object."""
     )
     tags: list[dict] = Field(
         alias="tags",

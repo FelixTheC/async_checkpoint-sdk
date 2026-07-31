@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class SecurityGroupPartitionInfoReply(BaseModel):
@@ -7,7 +7,6 @@ class SecurityGroupPartitionInfoReply(BaseModel):
     )
     path: str = Field(alias="path", description="""Path of this partition.""")
     status: str = Field(
-        alias="status",
-        description="""Status of this path partition of current member.""",
+        alias="status", description="""Status of this path partition of current member."""
     )
     usage: int = Field(alias="usage", description="""Usage in percentage of this partition.""")

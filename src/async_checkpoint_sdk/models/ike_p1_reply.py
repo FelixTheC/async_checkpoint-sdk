@@ -1,18 +1,16 @@
-from .multiple_key_exchanges_reply import MultipleKeyExchangesReply
-from .pydantic import BaseModel, Field
+from multiple_key_exchanges_reply import MultipleKeyExchangesReply
+from pydantic import BaseModel, Field
 
 
 class IkeP1Reply(BaseModel):
     encryption_algorithm: str = Field(
-        alias="encryption-algorithm",
-        description="""The encryption algorithm to be used.""",
+        alias="encryption-algorithm", description="""The encryption algorithm to be used."""
     )
     data_integrity: str = Field(
         alias="data-integrity", description="""The hash algorithm to be used."""
     )
     diffie_hellman_group: str = Field(
-        alias="diffie-hellman-group",
-        description="""The Diffie-Hellman group to be used.""",
+        alias="diffie-hellman-group", description="""The Diffie-Hellman group to be used."""
     )
     use_standard_proposal: bool = Field(
         alias="use-standard-proposal",
@@ -23,8 +21,7 @@ class IkeP1Reply(BaseModel):
         description="""Indicates whether to use a proposal with Multiple Key Exchanges.""",
     )
     multiple_key_exchanges: MultipleKeyExchangesReply = Field(
-        alias="multiple-key-exchanges",
-        description="""Multiple Key Exchanges proposal object.""",
+        alias="multiple-key-exchanges", description="""Multiple Key Exchanges proposal object."""
     )
     ike_p1_rekey_time: int = Field(
         alias="ike-p1-rekey-time",

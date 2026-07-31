@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.mobile_profile_section_reply import MobileProfi
 from async_checkpoint_sdk.models.mobile_profile_section_request_new import (
     MobileProfileSectionRequestNew,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_mobile_access_profile_section(
-    client: ClientSession, data: MobileProfileSectionRequestNew, config: Config, **kwargs
+    client: ClientSession, data: MobileProfileSectionRequestNew, config: SDKConfig, **kwargs
 ) -> MobileProfileSectionReply:
     """
     Create new Mobile Access Profile section.

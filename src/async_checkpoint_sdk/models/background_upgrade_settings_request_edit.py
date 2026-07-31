@@ -1,6 +1,6 @@
-from .automatic_cancel_request import AutomaticCancelRequest
-from .pydantic import BaseModel, Field
-from .upgrade_messages_request import UpgradeMessagesRequest
+from automatic_cancel_request import AutomaticCancelRequest
+from pydantic import BaseModel, Field
+from upgrade_messages_request import UpgradeMessagesRequest
 
 
 class BackgroundUpgradeSettingsRequestEdit(BaseModel):

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.notification_query_reply import NotificationQueryReply
 from async_checkpoint_sdk.models.notification_query_request import NotificationQueryRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_notifications(
-    client: ClientSession, data: NotificationQueryRequest, config: Config, **kwargs
+    client: ClientSession, data: NotificationQueryRequest, config: SDKConfig, **kwargs
 ) -> NotificationQueryReply:
     """
     Parameters

@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.api_ok_reply import ApiOkReply
 from async_checkpoint_sdk.models.web_console_statistics_request_new import (
     WebConsoleStatisticsRequestNew,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_web_console_statistics(
-    client: ClientSession, data: WebConsoleStatisticsRequestNew, config: Config, **kwargs
+    client: ClientSession, data: WebConsoleStatisticsRequestNew, config: SDKConfig, **kwargs
 ) -> ApiOkReply:
     """
     Parameters

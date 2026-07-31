@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.vpn_star_community_reply import VpnStarCommunityReply
 from async_checkpoint_sdk.models.vpn_star_community_request_edit import VpnStarCommunityRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_vpn_community_star(
-    client: ClientSession, data: VpnStarCommunityRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: VpnStarCommunityRequestEdit, config: SDKConfig, **kwargs
 ) -> VpnStarCommunityReply:
     """
     Edit existing object using object name or uid.

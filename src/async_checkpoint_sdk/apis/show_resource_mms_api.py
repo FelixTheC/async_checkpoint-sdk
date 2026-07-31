@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.api_visual_c_p_object_identifier_request_show i
     ApiVisualCPObjectIdentifierRequestShow,
 )
 from async_checkpoint_sdk.models.mms_resource_reply import MmsResourceReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_resource_mms(
-    client: ClientSession, data: ApiVisualCPObjectIdentifierRequestShow, config: Config, **kwargs
+    client: ClientSession, data: ApiVisualCPObjectIdentifierRequestShow, config: SDKConfig, **kwargs
 ) -> MmsResourceReply:
     """
     Retrieve existing MMS resource using object name or uid.

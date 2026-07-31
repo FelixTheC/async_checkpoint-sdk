@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.compliance_scan_reply import ComplianceScanReply
 from async_checkpoint_sdk.models.compliance_scan_request import ComplianceScanRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def compliance_scan(
-    client: ClientSession, data: ComplianceScanRequest, config: Config, **kwargs
+    client: ClientSession, data: ComplianceScanRequest, config: SDKConfig, **kwargs
 ) -> ComplianceScanReply:
     """
        Runs the Compliance Software Blade scan. The scan evaluates the configuration compliance with the relevant best practices.

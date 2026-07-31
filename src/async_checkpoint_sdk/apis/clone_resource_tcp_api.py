@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.tcp_resource_reply import TcpResourceReply
 from async_checkpoint_sdk.models.tcp_resource_request_edit import TcpResourceRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def clone_resource_tcp(
-    client: ClientSession, data: TcpResourceRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: TcpResourceRequestEdit, config: SDKConfig, **kwargs
 ) -> TcpResourceReply:
     """
     Clone existing TCP resource.

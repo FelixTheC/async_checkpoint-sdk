@@ -1,7 +1,7 @@
-from .ips_top_cpu_consuming_protections_settings_reply import (
+from ips_top_cpu_consuming_protections_settings_reply import (
     IpsTopCpuConsumingProtectionsSettingsReply,
 )
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class IpsSettingsClusterReply(BaseModel):

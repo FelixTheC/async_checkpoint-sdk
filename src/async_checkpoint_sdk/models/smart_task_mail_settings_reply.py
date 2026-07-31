@@ -1,10 +1,9 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class SmartTaskMailSettingsReply(BaseModel):
     recipients: str = Field(
-        alias="recipients",
-        description="""A comma separated list of recipient mail addresses.""",
+        alias="recipients", description="""A comma separated list of recipient mail addresses."""
     )
     sender_email: str = Field(
         alias="sender-email", description="""An email address to send the mail from."""

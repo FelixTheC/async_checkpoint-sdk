@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class UsersDirectoriesSettingsNew(BaseModel):
@@ -7,8 +7,7 @@ class UsersDirectoriesSettingsNew(BaseModel):
     )
     internal_users: bool = Field(alias="internal-users", description="""Internal users.""")
     users_from_external_directories: str = Field(
-        alias="users-from-external-directories",
-        description="""Users from .external directories.""",
+        alias="users-from-external-directories", description="""Users from external directories."""
     )
     specific: str | list[str] = Field(
         alias="specific",

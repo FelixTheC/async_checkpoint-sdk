@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.azure_a_d_request_new import AzureADRequestNew
 from async_checkpoint_sdk.models.azure_a_d_task_reply import AzureADTaskReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_azure_ad(
-    client: ClientSession, data: AzureADRequestNew, config: Config, **kwargs
+    client: ClientSession, data: AzureADRequestNew, config: SDKConfig, **kwargs
 ) -> AzureADTaskReply:
     """
     Create a new Microsoft Entra ID object (formerly, Azure AD). <br>Microsoft Entra ID is Microsoft's cloud-based identity and access management service.

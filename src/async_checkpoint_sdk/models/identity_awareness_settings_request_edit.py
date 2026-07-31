@@ -1,10 +1,10 @@
-from .browser_based_auth_settings_edit import BrowserBasedAuthSettingsEdit
-from .ida_proxy_settings_edit import IdaProxySettingsEdit
-from .identity_agent_settings_edit import IdentityAgentSettingsEdit
-from .identity_collector_settings_edit import IdentityCollectorSettingsEdit
-from .identity_sharing_settings_edit import IdentitySharingSettingsEdit
-from .identity_web_api_settings_edit import IdentityWebApiSettingsEdit
-from .pydantic import BaseModel, Field
+from browser_based_auth_settings_edit import BrowserBasedAuthSettingsEdit
+from ida_proxy_settings_edit import IdaProxySettingsEdit
+from identity_agent_settings_edit import IdentityAgentSettingsEdit
+from identity_collector_settings_edit import IdentityCollectorSettingsEdit
+from identity_sharing_settings_edit import IdentitySharingSettingsEdit
+from identity_web_api_settings_edit import IdentityWebApiSettingsEdit
+from pydantic import BaseModel, Field
 
 
 class IdentityAwarenessSettingsRequestEdit(BaseModel):
@@ -30,8 +30,7 @@ class IdentityAwarenessSettingsRequestEdit(BaseModel):
         alias="identity-collector", description="""Enable Identity Collector source."""
     )
     identity_collector_settings: IdentityCollectorSettingsEdit = Field(
-        alias="identity-collector-settings",
-        description="""Identity Collector settings.""",
+        alias="identity-collector-settings", description="""Identity Collector settings."""
     )
     identity_sharing_settings: IdentitySharingSettingsEdit = Field(
         alias="identity-sharing-settings", description="""Identity sharing settings."""

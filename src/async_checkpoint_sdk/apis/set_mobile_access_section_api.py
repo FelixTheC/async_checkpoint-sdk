@@ -6,11 +6,11 @@ from async_checkpoint_sdk.models.mobile_applications_section_reply import (
 from async_checkpoint_sdk.models.mobile_applications_section_request_edit import (
     MobileApplicationsSectionRequestEdit,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_mobile_access_section(
-    client: ClientSession, data: MobileApplicationsSectionRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: MobileApplicationsSectionRequestEdit, config: SDKConfig, **kwargs
 ) -> MobileApplicationsSectionReply:
     """
     Edit existing Mobile Access section using section name or uid.

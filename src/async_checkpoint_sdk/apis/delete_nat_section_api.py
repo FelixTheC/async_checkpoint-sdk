@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_ok_reply import ApiOkReply
 from async_checkpoint_sdk.models.nat_section_identifier_request import NatSectionIdentifierRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def delete_nat_section(
-    client: ClientSession, data: NatSectionIdentifierRequest, config: Config, **kwargs
+    client: ClientSession, data: NatSectionIdentifierRequest, config: SDKConfig, **kwargs
 ) -> ApiOkReply:
     """
     Delete existing object using object name or uid.

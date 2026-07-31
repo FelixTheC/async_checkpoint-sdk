@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_query_object_reply import ApiQueryObjectReply
 from async_checkpoint_sdk.models.user_request_query import UserRequestQuery
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_users(
-    client: ClientSession, data: UserRequestQuery, config: Config, **kwargs
+    client: ClientSession, data: UserRequestQuery, config: SDKConfig, **kwargs
 ) -> ApiQueryObjectReply:
     """
     Retrieve all objects.

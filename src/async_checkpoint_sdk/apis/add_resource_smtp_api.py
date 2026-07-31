@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.smtp_resource_reply import SmtpResourceReply
 from async_checkpoint_sdk.models.smtp_resource_request_new import SmtpResourceRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_resource_smtp(
-    client: ClientSession, data: SmtpResourceRequestNew, config: Config, **kwargs
+    client: ClientSession, data: SmtpResourceRequestNew, config: SDKConfig, **kwargs
 ) -> SmtpResourceReply:
     """
     Create new object.

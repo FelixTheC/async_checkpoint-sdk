@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.mms_resource_reply import MmsResourceReply
 from async_checkpoint_sdk.models.mms_resource_request_edit import MmsResourceRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_resource_mms(
-    client: ClientSession, data: MmsResourceRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: MmsResourceRequestEdit, config: SDKConfig, **kwargs
 ) -> MmsResourceReply:
     """
     Edit existing MMS resource using object name or uid.

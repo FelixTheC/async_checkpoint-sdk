@@ -1,7 +1,8 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class ClusterRequestShow(BaseModel):
+    uid: str = Field(alias="uid", description="""Object unique identifier.""")
     limit_interfaces: int = Field(
         alias="limit-interfaces",
         description="""Limit number of interfaces to show. Default is 50.""",
@@ -12,7 +13,7 @@ class ClusterRequestShow(BaseModel):
     )
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     show_advanced_settings: bool = Field(
         alias="show-advanced-settings",

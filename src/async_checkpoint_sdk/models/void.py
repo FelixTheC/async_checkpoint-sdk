@@ -1,5 +1,5 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
-class void(BaseModel):
+class Void(BaseModel):
     pass

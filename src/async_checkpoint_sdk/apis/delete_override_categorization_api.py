@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.api_ok_reply import ApiOkReply
 from async_checkpoint_sdk.models.override_categorization_request_delete import (
     OverrideCategorizationRequestDelete,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def delete_override_categorization(
-    client: ClientSession, data: OverrideCategorizationRequestDelete, config: Config, **kwargs
+    client: ClientSession, data: OverrideCategorizationRequestDelete, config: SDKConfig, **kwargs
 ) -> ApiOkReply:
     """
     Delete existing object using object name or uid.

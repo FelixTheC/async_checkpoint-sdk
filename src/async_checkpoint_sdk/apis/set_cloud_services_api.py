@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.cloud_services_request_edit import CloudServicesRequestEdit
 from async_checkpoint_sdk.models.cloud_services_status_reply import CloudServicesStatusReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_cloud_services(
-    client: ClientSession, data: CloudServicesRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: CloudServicesRequestEdit, config: SDKConfig, **kwargs
 ) -> CloudServicesStatusReply:
     """
     Set the connection settings between the Management Server and Check Point's Infinity Portal.

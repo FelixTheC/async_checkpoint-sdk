@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.idp_to_domain_assignment_reply import IdpToDoma
 from async_checkpoint_sdk.models.idp_to_domain_assignment_request_edit import (
     IdpToDomainAssignmentRequestEdit,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_idp_to_domain_assignment(
-    client: ClientSession, data: IdpToDomainAssignmentRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: IdpToDomainAssignmentRequestEdit, config: SDKConfig, **kwargs
 ) -> IdpToDomainAssignmentReply:
     """
     Set Identity Provider assignment to domain, to allow administrator login to that domain using that identity provider, if there is no Identity Provider assigned to the domain the 'idp-default-assignment' will be used. This command only available  for Multi-Domain server.

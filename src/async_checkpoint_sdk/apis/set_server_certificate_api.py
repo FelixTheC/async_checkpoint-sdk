@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.server_certificate_reply import ServerCertifica
 from async_checkpoint_sdk.models.server_certificate_request_edit import (
     ServerCertificateRequestEdit,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_server_certificate(
-    client: ClientSession, data: ServerCertificateRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: ServerCertificateRequestEdit, config: SDKConfig, **kwargs
 ) -> ServerCertificateReply:
     """
     Edit existing server certificate using name or uid.

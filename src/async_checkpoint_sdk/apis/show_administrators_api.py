@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.administrator_query_request import AdministratorQueryRequest
 from async_checkpoint_sdk.models.api_query_object_reply import ApiQueryObjectReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_administrators(
-    client: ClientSession, data: AdministratorQueryRequest, config: Config, **kwargs
+    client: ClientSession, data: AdministratorQueryRequest, config: SDKConfig, **kwargs
 ) -> ApiQueryObjectReply:
     """
     Retrieve all administrators.

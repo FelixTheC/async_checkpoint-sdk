@@ -1,8 +1,8 @@
-from .aggressive_aging_reply import AggressiveAgingReply
-from .api_domain_identifier import ApiDomainIdentifier
-from .available_actions_reply import AvailableActionsReply
-from .meta_info_for_top_level_reply import MetaInfoForTopLevelReply
-from .pydantic import BaseModel, Field
+from aggressive_aging_reply import AggressiveAgingReply
+from api_domain_identifier import ApiDomainIdentifier
+from available_actions_reply import AvailableActionsReply
+from meta_info_for_top_level_reply import MetaInfoForTopLevelReply
+from pydantic import BaseModel, Field
 
 
 class OtherServiceReply(BaseModel):
@@ -50,25 +50,21 @@ Example: tcp, dport = 21, direction = 0 matches incoming FTP control connections
 the management server (if any) that enforces Content Security and Authentication for the service.""",
     )
     session_timeout: int = Field(
-        alias="session-timeout",
-        description="""Time (in seconds) before the session times out.""",
+        alias="session-timeout", description="""Time (in seconds) before the session times out."""
     )
     sync_connections_on_cluster: bool = Field(
         alias="sync-connections-on-cluster",
         description="""Enables state-synchronized High Availability or Load Sharing on a ClusterXL or OPSEC-certified cluster.""",
     )
     use_default_session_timeout: bool = Field(
-        alias="use-default-session-timeout",
-        description="""Use default virtual session timeout.""",
+        alias="use-default-session-timeout", description="""Use default virtual session timeout."""
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     domain: ApiDomainIdentifier = Field(
-        alias="domain",
-        description="""Information about the domain that holds the Object.""",
+        alias="domain", description="""Information about the domain that holds the Object."""
     )
     icon: str = Field(alias="icon", description="""Object icon.""")
     meta_info: MetaInfoForTopLevelReply = Field(
@@ -82,6 +78,5 @@ the management server (if any) that enforces Content Security and Authentication
         description="""Collection of tag objects identified by the name or UID. Level of details in the output corresponds to the number of details for search. This table shows the level of details in the Standard level.""",
     )
     available_actions: AvailableActionsReply = Field(
-        alias="available-actions",
-        description="""Actions that are available on the object.""",
+        alias="available-actions", description="""Actions that are available on the object."""
     )

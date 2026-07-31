@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.if_map_reply import IfMapReply
 from async_checkpoint_sdk.models.if_map_request_edit import IfMapRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def clone_if_map_server(
-    client: ClientSession, data: IfMapRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: IfMapRequestEdit, config: SDKConfig, **kwargs
 ) -> IfMapReply:
     """
     Clone existing IF-MAP server.

@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.interoperable_device_reply import Interoperable
 from async_checkpoint_sdk.models.interoperable_device_request_new import (
     InteroperableDeviceRequestNew,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_interoperable_device(
-    client: ClientSession, data: InteroperableDeviceRequestNew, config: Config, **kwargs
+    client: ClientSession, data: InteroperableDeviceRequestNew, config: SDKConfig, **kwargs
 ) -> InteroperableDeviceReply:
     """
     Add new Interoperable Device.

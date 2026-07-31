@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.command_line_reply import CommandLineReply
 from async_checkpoint_sdk.models.command_line_request import CommandLineRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def run_command_line(
-    client: ClientSession, data: CommandLineRequest, config: Config, **kwargs
+    client: ClientSession, data: CommandLineRequest, config: SDKConfig, **kwargs
 ) -> CommandLineReply:
     """
     Parameters

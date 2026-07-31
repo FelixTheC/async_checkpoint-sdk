@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.api_server_settings_reply import ApiServerSetti
 from async_checkpoint_sdk.models.api_server_settings_request_edit import (
     ApiServerSettingsRequestEdit,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_api_settings(
-    client: ClientSession, data: ApiServerSettingsRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: ApiServerSettingsRequestEdit, config: SDKConfig, **kwargs
 ) -> ApiServerSettingsReply:
     """
     Edit API settings, the changes will be applied after publish followed by running 'api restart' command.

@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class SecurityAccessDefaultsRequestEdit(BaseModel):
@@ -11,10 +11,8 @@ class SecurityAccessDefaultsRequestEdit(BaseModel):
         description="""Service and Applications default value for new rule creation. Any or None.""",
     )
     source: str = Field(
-        alias="source",
-        description="""Source default value for new rule creation. Any or None.""",
+        alias="source", description="""Source default value for new rule creation. Any or None."""
     )
     track: str = Field(
-        alias="track",
-        description="""Track default value for new rule creation. Log or None.""",
+        alias="track", description="""Track default value for new rule creation. Log or None."""
     )

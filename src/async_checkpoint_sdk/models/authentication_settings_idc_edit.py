@@ -1,5 +1,5 @@
-from .pydantic import BaseModel, Field
-from .users_directories_settings_edit import UsersDirectoriesSettingsEdit
+from pydantic import BaseModel, Field
+from users_directories_settings_edit import UsersDirectoriesSettingsEdit
 
 
 class AuthenticationSettingsIdcEdit(BaseModel):

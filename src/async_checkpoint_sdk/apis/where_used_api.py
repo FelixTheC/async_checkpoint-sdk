@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.where_used_object_reply import WhereUsedObjectReply
 from async_checkpoint_sdk.models.where_used_object_request import WhereUsedObjectRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def where_used(
-    client: ClientSession, data: WhereUsedObjectRequest, config: Config, **kwargs
+    client: ClientSession, data: WhereUsedObjectRequest, config: SDKConfig, **kwargs
 ) -> WhereUsedObjectReply:
     """
     Searches for usage of the target object in other objects and rules.

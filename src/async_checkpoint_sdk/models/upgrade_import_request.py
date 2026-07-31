@@ -1,10 +1,29 @@
-from .pydantic import BaseModel, Field
+from change_ips_request import ChangeIpsRequest
+from pydantic import BaseModel, Field
 
 
 class UpgradeImportRequest(BaseModel):
+    file_path: str = Field(
+        alias="file-path", description="""Path to the exported database file to be imported."""
+    )
+    domain_name: str = Field(
+        alias="domain-name",
+        description="""Domain name to be imported. Must be unique in the Multi-Domain Server.<br><font color=red>Required only for</font> importing the Security Management Server into the Multi-Domain Server.""",
+    )
+    change_ips: ChangeIpsRequest | list[dict] = Field(
+        alias="change-ips",
+        description="""New IP addresses (IPv4, IPv6, or both) of the servers.<br><font color=red>Required only if</font> one or more of the servers in the Security Management environment migrates to a new IP address.""",
+    )
+    domain_ip_address: str = Field(
+        alias="domain-ip-address",
+        description="""IPv4 address for the imported Domain.<br><font color=red>Required only for</font> importing the Security Management Server into the Multi-Domain Server.""",
+    )
+    domain_server_name: str = Field(
+        alias="domain-server-name",
+        description="""Multi-Domain Server name for the imported Domain.<br><font color=red>Required only for</font> importing the Security Management Server into the Multi-Domain Server.""",
+    )
     domain_ipv6_address: str = Field(
-        alias="domain-ipv6-address",
-        description="""IPv6 address for the imported Domain.""",
+        alias="domain-ipv6-address", description="""IPv6 address for the imported Domain."""
     )
     days_of_logs: int = Field(alias="days-of-logs", description="""Export <N> last days of logs.""")
     include_logs: bool = Field(

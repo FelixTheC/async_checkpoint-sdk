@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.global_properties_reply import GlobalPropertiesReply
 from async_checkpoint_sdk.models.global_properties_request_edit import GlobalPropertiesRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_global_properties(
-    client: ClientSession, data: GlobalPropertiesRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: GlobalPropertiesRequestEdit, config: SDKConfig, **kwargs
 ) -> GlobalPropertiesReply:
     """
     Edit Global Properties.

@@ -1,7 +1,5 @@
-from .cluster_profile_anti_spoofing_settings_reply import (
-    ClusterProfileAntiSpoofingSettingsReply,
-)
-from .pydantic import BaseModel, Field
+from cluster_profile_anti_spoofing_settings_reply import ClusterProfileAntiSpoofingSettingsReply
+from pydantic import BaseModel, Field
 
 
 class ClusterProfileTopologyReply(BaseModel):

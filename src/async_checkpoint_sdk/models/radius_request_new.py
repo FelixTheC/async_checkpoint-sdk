@@ -1,9 +1,17 @@
-from .object import Object
-from .pydantic import BaseModel, Field
-from .radius_accounting_object_request import RadiusAccountingObjectRequest
+from object import Object
+from pydantic import BaseModel, Field
+from radius_accounting_object_request import RadiusAccountingObjectRequest
 
 
 class RadiusRequestNew(BaseModel):
+    name: str = Field(alias="name", description="""Object name. Must be unique in the domain.""")
+    server: str = Field(
+        alias="server", description="""The UID or Name of the host that is the RADIUS Server."""
+    )
+    shared_secret: str = Field(
+        alias="shared-secret",
+        description="""The secret between the RADIUS server and the Security Gateway.""",
+    )
     service: str = Field(
         alias="service",
         description="""The UID or Name of the Service to which the RADIUS server listens.""",
@@ -24,13 +32,12 @@ class RadiusRequestNew(BaseModel):
         alias="accounting", description="""Accounting settings."""
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     groups: Object = Field(alias="groups", description="""Collection of group identifiers.""")
     ignore_warnings: bool = Field(

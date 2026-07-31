@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.batch_reply_task import BatchReplyTask
 from async_checkpoint_sdk.models.batch_request_edit import BatchRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_objects_batch(
-    client: ClientSession, data: BatchRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: BatchRequestEdit, config: SDKConfig, **kwargs
 ) -> BatchReplyTask:
     """
     Edits existing objects in batch using object name or uid. To achieve optimum performance when updating more than one object, use this API. <br>Note: "ignore-errors" and "ignore-warnings" cannot be used in this API, errors and warnings are ignored and operation will apply changes while ignoring errors. It is not possible to publish changes that contain validations errors. <br>You must use the "show-validations" API to see any validation errors and warnings caused by the batch creation. <br>Batch supported types: access-role, address-range, application-site-category, application-site-group, dns-domain, dynamic-object, group, group-with-exclusion, host, lsv-profile, multicast-address-range, network, package, security-zone, service-dce-rpc, service-group, service-icmp, service-other, service-sctp, service-tcp, service-udp, tacacs-server, tacacs-group, tag, time, time-group, vpn-community-meshed, vpn-community-star, wildcard.

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.data_group_reply import DataGroupReply
 from async_checkpoint_sdk.models.data_group_request_new import DataGroupRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_data_type_group(
-    client: ClientSession, data: DataGroupRequestNew, config: Config, **kwargs
+    client: ClientSession, data: DataGroupRequestNew, config: SDKConfig, **kwargs
 ) -> DataGroupReply:
     """
     Create new Data Group Type Object.

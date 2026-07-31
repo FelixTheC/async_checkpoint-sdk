@@ -1,10 +1,9 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
-class cpmRelevantObjectReply(BaseModel):
+class Cpmrelevantobjectreply(BaseModel):
     cpm_relevant_object_type: str = Field(
-        alias="cpm-relevant-object-type",
-        description="""The type of the relevant object.""",
+        alias="cpm-relevant-object-type", description="""The type of the relevant object."""
     )
     enabled: bool = Field(
         alias="enabled",

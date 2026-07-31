@@ -1,12 +1,13 @@
-from .add import add
-from .object import Object
-from .pydantic import BaseModel, Field
-from .q_r_request import QRRequest
-from .remove import remove
+from add import Add
+from object import Object
+from pydantic import BaseModel, Field
+from q_r_request import QRRequest
+from remove import Remove
 
 
 class DataCenterQueryRequestEdit(BaseModel):
-    data_centers: add | remove | str | list[str] = Field(
+    uid: str = Field(alias="uid", description="""Object unique identifier.""")
+    data_centers: Add | Remove | str | list[str] = Field(
         alias="data-centers",
         description="""Collection of Data Center servers identified by the name or UID. use All to select all data centers.""",
     )
@@ -16,13 +17,12 @@ class DataCenterQueryRequestEdit(BaseModel):
         description="""Data Center Query Rules.<br>There is an 'AND' operation between multiple Query Rules.""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     tags: Object = Field(alias="tags", description="""Collection of tag identifiers.""")
     ignore_warnings: bool = Field(

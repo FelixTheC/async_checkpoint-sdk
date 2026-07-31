@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.show_logs_reply import ShowLogsReply
 from async_checkpoint_sdk.models.show_logs_request import ShowLogsRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_logs(
-    client: ClientSession, data: ShowLogsRequest, config: Config, **kwargs
+    client: ClientSession, data: ShowLogsRequest, config: SDKConfig, **kwargs
 ) -> ShowLogsReply:
     """
     Showing logs according to the given filter.

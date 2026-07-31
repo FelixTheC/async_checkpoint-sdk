@@ -1,11 +1,11 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class QueryAccessRulebaseReply(BaseModel):
     name: str = Field(alias="name", description="""Object name. Must be unique in the domain.""")
     uid: str = Field(alias="uid", description="""Object unique identifier.""")
-    source: int = Field(
-        alias="from", description="""from .which element number the query was done."""
+    from_: int = Field(
+        alias="from", description="""From which element number the query was done."""
     )
     objects_dictionary: list[dict] = Field(
         alias="objects-dictionary",

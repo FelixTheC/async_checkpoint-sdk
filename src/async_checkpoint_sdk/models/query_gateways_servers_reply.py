@@ -1,9 +1,9 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class QueryGatewaysServersReply(BaseModel):
-    source: int = Field(
-        alias="from", description="""from .which element number the query was done."""
+    from_: int = Field(
+        alias="from", description="""From which element number the query was done."""
     )
     to: int = Field(alias="to", description="""To which element number the query was done.""")
     total: int = Field(

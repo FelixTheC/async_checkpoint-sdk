@@ -1,10 +1,10 @@
-from .add import add
-from .gw_props_request_new import GwPropsRequestNew
-from .pydantic import BaseModel, Field
-from .remove import remove
-from .star_rim_request import StarRimRequest
-from .tunnel_props_request import TunnelPropsRequest
-from .update import update
+from add import Add
+from gw_props_request_new import GwPropsRequestNew
+from pydantic import BaseModel, Field
+from remove import Remove
+from star_rim_request import StarRimRequest
+from tunnel_props_request import TunnelPropsRequest
+from update import Update
 
 
 class StarPermanentTunnelsRequestEdit(BaseModel):
@@ -12,11 +12,11 @@ class StarPermanentTunnelsRequestEdit(BaseModel):
         alias="set-permanent-tunnels",
         description="""Indicates which tunnels to set as permanent.""",
     )
-    gateways: add | remove | update | GwPropsRequestNew | list[dict] = Field(
+    gateways: Add | Remove | Update | GwPropsRequestNew | list[dict] = Field(
         alias="gateways",
         description="""List of gateways to set all their tunnels to permanent with specified track options. Will take effect only if set-permanent-tunnels-on is set to all-tunnels-of-specific-gateways.""",
     )
-    tunnels: add | remove | update | TunnelPropsRequest | list[dict] = Field(
+    tunnels: Add | Remove | Update | TunnelPropsRequest | list[dict] = Field(
         alias="tunnels",
         description="""List of tunnels to set as permanent with specified track options. Will take effect only if set-permanent-tunnels-on is set to specific-tunnels-in-the-community.""",
     )

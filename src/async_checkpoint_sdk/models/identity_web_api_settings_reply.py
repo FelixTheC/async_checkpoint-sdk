@@ -1,6 +1,6 @@
-from .authentication_settings_web_api_reply import AuthenticationSettingsWebApiReply
-from .i_d_a_portal_reply import IDAPortalReply
-from .pydantic import BaseModel, Field
+from authentication_settings_web_api_reply import AuthenticationSettingsWebApiReply
+from i_d_a_portal_reply import IDAPortalReply
+from pydantic import BaseModel, Field
 
 
 class IdentityWebApiSettingsReply(BaseModel):

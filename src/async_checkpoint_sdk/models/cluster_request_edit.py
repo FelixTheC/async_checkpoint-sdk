@@ -1,32 +1,29 @@
-from .add import add
-from .advanced_cluster_settings_request import AdvancedClusterSettingsRequest
-from .advanced_settings_request import AdvancedSettingsRequest
-from .appi_settings_request import AppiSettingsRequest
-from .cluster_interface_request import ClusterInterfaceRequest
-from .cluster_member_request import ClusterMemberRequest
-from .comm_with_server_behind_nat_settings_request import (
-    CommWithServerBehindNatSettingsRequest,
-)
-from .firewall_settings_request import FirewallSettingsRequest
-from .identity_awareness_settings_request_edit import (
-    IdentityAwarenessSettingsRequestEdit,
-)
-from .ips_settings_cluster_request_edit import IpsSettingsClusterRequestEdit
-from .logs_settings_request import LogsSettingsRequest
-from .nat_settings_gateway_cluster_request import NatSettingsGatewayClusterRequest
-from .object import Object
-from .platform_portal_request_edit import PlatformPortalRequestEdit
-from .proxy_settings_request import ProxySettingsRequest
-from .pydantic import BaseModel, Field
-from .remove import remove
-from .ssl_inspection_request import SslInspectionRequest
-from .update import update
-from .user_check_portal_request_edit import UserCheckPortalRequestEdit
-from .vpn_settings_request_edit import VpnSettingsRequestEdit
-from .zero_phishing_fqdn_settings_request import ZeroPhishingFqdnSettingsRequest
+from add import Add
+from advanced_cluster_settings_request import AdvancedClusterSettingsRequest
+from advanced_settings_request import AdvancedSettingsRequest
+from appi_settings_request import AppiSettingsRequest
+from cluster_interface_request import ClusterInterfaceRequest
+from cluster_member_request import ClusterMemberRequest
+from comm_with_server_behind_nat_settings_request import CommWithServerBehindNatSettingsRequest
+from firewall_settings_request import FirewallSettingsRequest
+from identity_awareness_settings_request_edit import IdentityAwarenessSettingsRequestEdit
+from ips_settings_cluster_request_edit import IpsSettingsClusterRequestEdit
+from logs_settings_request import LogsSettingsRequest
+from nat_settings_gateway_cluster_request import NatSettingsGatewayClusterRequest
+from object import Object
+from platform_portal_request_edit import PlatformPortalRequestEdit
+from proxy_settings_request import ProxySettingsRequest
+from pydantic import BaseModel, Field
+from remove import Remove
+from ssl_inspection_request import SslInspectionRequest
+from update import Update
+from user_check_portal_request_edit import UserCheckPortalRequestEdit
+from vpn_settings_request_edit import VpnSettingsRequestEdit
+from zero_phishing_fqdn_settings_request import ZeroPhishingFqdnSettingsRequest
 
 
 class ClusterRequestEdit(BaseModel):
+    uid: str = Field(alias="uid", description="""Object unique identifier.""")
     advanced_settings: AdvancedSettingsRequest = Field(
         alias="advanced-settings", description="""N/A"""
     )
@@ -37,8 +34,7 @@ class ClusterRequestEdit(BaseModel):
     )
     anti_virus: bool = Field(alias="anti-virus", description="""Anti-Virus blade enabled.""")
     application_control: bool = Field(
-        alias="application-control",
-        description="""Application Control blade enabled.""",
+        alias="application-control", description="""Application Control blade enabled."""
     )
     application_control_and_url_filtering_settings: AppiSettingsRequest = Field(
         alias="application-control-and-url-filtering-settings",
@@ -70,7 +66,7 @@ class ClusterRequestEdit(BaseModel):
         alias="enable-https-inspection",
         description="""Enable HTTPS Inspection after defining an outbound inspection certificate. <br>To define the outbound certificate use outbound inspection certificate API.""",
     )
-    fetch_policy: add | remove | str | list[str] = Field(
+    fetch_policy: Add | Remove | str | list[str] = Field(
         alias="fetch-policy",
         description="""Security management server(s) to fetch the policy from.""",
     )
@@ -94,10 +90,9 @@ class ClusterRequestEdit(BaseModel):
         alias="identity-awareness", description="""Identity awareness blade enabled."""
     )
     identity_awareness_settings: IdentityAwarenessSettingsRequestEdit = Field(
-        alias="identity-awareness-settings",
-        description="""Gateway Identity Awareness settings.""",
+        alias="identity-awareness-settings", description="""Gateway Identity Awareness settings."""
     )
-    interfaces: add | remove | update | ClusterInterfaceRequest | list[dict] = Field(
+    interfaces: Add | Remove | Update | ClusterInterfaceRequest | list[dict] = Field(
         alias="interfaces", description="""N/A"""
     )
     ip_address: str = Field(
@@ -110,9 +105,9 @@ class ClusterRequestEdit(BaseModel):
     )
     ips_update_policy: str = Field(
         alias="ips-update-policy",
-        description="""Specifies whether the IPS will be downloaded from .the Management or directly to the Gateway.""",
+        description="""Specifies whether the IPS will be downloaded from the Management or directly to the Gateway.""",
     )
-    members: add | remove | update | ClusterMemberRequest | list[dict] = Field(
+    members: Add | Remove | Update | ClusterMemberRequest | list[dict] = Field(
         alias="members",
         description="""Cluster members list. Only new cluster member can be added. Adding existing gateway is not supported.""",
     )
@@ -141,8 +136,7 @@ class ClusterRequestEdit(BaseModel):
         description="""Enables monitoring blades system counters report (e.g CPU Usage,Memory Usage).""",
     )
     rtm_traffic_report: bool = Field(
-        alias="rtm-traffic-report",
-        description="""Enables monitoring blades traffic report.""",
+        alias="rtm-traffic-report", description="""Enables monitoring blades traffic report."""
     )
     rtm_traffic_report_per_connection: bool = Field(
         alias="rtm-traffic-report-per-connection",
@@ -152,8 +146,7 @@ class ClusterRequestEdit(BaseModel):
         alias="send-alerts-to-server", description="""Server(s) to send alerts to."""
     )
     send_logs_to_backup_server: Object = Field(
-        alias="send-logs-to-backup-server",
-        description="""Backup server(s) to send logs to.""",
+        alias="send-logs-to-backup-server", description="""Backup server(s) to send logs to."""
     )
     send_logs_to_server: Object = Field(
         alias="send-logs-to-server", description="""Server(s) to send logs to."""
@@ -194,13 +187,12 @@ class ClusterRequestEdit(BaseModel):
         description="""Indicates whether to show the portals certificate value in the reply.""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     groups: Object = Field(alias="groups", description="""Collection of group identifiers.""")
     tags: Object = Field(alias="tags", description="""Collection of tag identifiers.""")

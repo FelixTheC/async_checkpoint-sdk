@@ -1,6 +1,6 @@
-from .api_object_standard_identifier import ApiObjectStandardIdentifier
-from .exported_routes_reply import ExportedRoutesReply
-from .pydantic import BaseModel, Field
+from api_object_standard_identifier import ApiObjectStandardIdentifier
+from exported_routes_reply import ExportedRoutesReply
+from pydantic import BaseModel, Field
 
 
 class ParticipantRouteBasedSettingsReply(BaseModel):
@@ -14,7 +14,7 @@ class ParticipantRouteBasedSettingsReply(BaseModel):
     )
     mode: str = Field(
         alias="mode",
-        description="""<html>Specifies how to export routes from .the Security Gateway.<br><b>Relevant only in Route-Based VPN Communities</b></html>.""",
+        description="""<html>Specifies how to export routes from the Security Gateway.<br><b>Relevant only in Route-Based VPN Communities</b></html>.""",
     )
     exported_routes: ExportedRoutesReply = Field(
         alias="exported-routes",

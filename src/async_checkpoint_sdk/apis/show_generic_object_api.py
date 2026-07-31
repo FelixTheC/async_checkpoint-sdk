@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.generic_object_api_reply import GenericObjectAp
 from async_checkpoint_sdk.models.generic_object_identifier_request import (
     GenericObjectIdentifierRequest,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_generic_object(
-    client: ClientSession, data: GenericObjectIdentifierRequest, config: Config, **kwargs
+    client: ClientSession, data: GenericObjectIdentifierRequest, config: SDKConfig, **kwargs
 ) -> GenericObjectApiReply:
     """
     Parameters

@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class UserDirectoryGlobalPropertiesRequest(BaseModel):
@@ -20,7 +20,7 @@ class UserDirectoryGlobalPropertiesRequest(BaseModel):
     )
     timeout_on_cached_users: int = Field(
         alias="timeout-on-cached-users",
-        description="""The period of time in which a cached user is timed out and will need to be fetched again from .the LDAP server.""",
+        description="""The period of time in which a cached user is timed out and will need to be fetched again from the LDAP server.""",
     )
     display_user_dn_at_login: str = Field(
         alias="display-user-dn-at-login",
@@ -35,12 +35,10 @@ class UserDirectoryGlobalPropertiesRequest(BaseModel):
         description="""Specifies the minimum length (in characters) of the password.""",
     )
     password_must_include_a_digit: bool = Field(
-        alias="password-must-include-a-digit",
-        description="""Password must include a digit.""",
+        alias="password-must-include-a-digit", description="""Password must include a digit."""
     )
     password_must_include_a_symbol: bool = Field(
-        alias="password-must-include-a-symbol",
-        description="""Password must include a symbol.""",
+        alias="password-must-include-a-symbol", description="""Password must include a symbol."""
     )
     password_must_include_lowercase_char: bool = Field(
         alias="password-must-include-lowercase-char",

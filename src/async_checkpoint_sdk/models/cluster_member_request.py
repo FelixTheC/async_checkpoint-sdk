@@ -1,9 +1,10 @@
-from .cluster_member_interface_request import ClusterMemberInterfaceRequest
-from .object import Object
-from .pydantic import BaseModel, Field
+from cluster_member_interface_request import ClusterMemberInterfaceRequest
+from object import Object
+from pydantic import BaseModel, Field
 
 
 class ClusterMemberRequest(BaseModel):
+    uid: str = Field(alias="uid", description="""Object unique identifier.""")
     auto_generate_ip: bool = Field(
         alias="auto-generate-ip",
         description="""Use an automatically generated IP address for the Gateway object (applies only to Smart-1 Cloud).""",
@@ -18,23 +19,21 @@ class ClusterMemberRequest(BaseModel):
     new_name: str = Field(alias="new-name", description="""New name of the object.""")
     one_time_password: str = Field(alias="one-time-password", description="""N/A""")
     trust_method: str = Field(
-        alias="trust-method",
-        description="""Trust method to use for establishing communication.""",
+        alias="trust-method", description="""Trust method to use for establishing communication."""
     )
     priority: int = Field(
         alias="priority",
         description="""In a High Availability New mode cluster each machine is given a priority. The highest priority machine serves as the gateway in normal circumstances. If this machine fails, control is passed to the next highest priority machine. If that machine fails, control is passed to the next machine, and so on.
 In Load Sharing Unicast mode cluster, the highest priority is the pivot machine.
-The values must be in a range from .1 to N, where N is number of cluster members.""",
+The values must be in a range from 1 to N, where N is number of cluster members.""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     tags: Object = Field(alias="tags", description="""Collection of tag identifiers.""")
     ignore_warnings: bool = Field(

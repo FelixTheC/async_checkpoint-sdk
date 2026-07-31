@@ -1,7 +1,11 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class OverrideCategorizationRequestNew(BaseModel):
+    url: str = Field(
+        alias="url",
+        description="""The URL for which we want to update the category and risk definitions, the URL and the object name are the same for Override Categorization.""",
+    )
     url_defined_as_regular_expression: bool = Field(
         alias="url-defined-as-regular-expression",
         description="""States whether the URL is defined as a Regular Expression or not.""",
@@ -16,13 +20,12 @@ class OverrideCategorizationRequestNew(BaseModel):
         description="""Uid or name of the categories to override in the Application and URL Filtering or Threat Prevention.""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     ignore_warnings: bool = Field(
         alias="ignore-warnings", description="""Apply changes ignoring warnings."""

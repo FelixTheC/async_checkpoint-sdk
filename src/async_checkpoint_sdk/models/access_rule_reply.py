@@ -1,16 +1,16 @@
-from .advanced_action_settings_reply import AdvancedActionSettingsReply
-from .api_domain_identifier import ApiDomainIdentifier
-from .api_object_standard_identifier import ApiObjectStandardIdentifier
-from .available_actions_reply import AvailableActionsReply
-from .custom_summary_fields_reply import CustomSummaryFieldsReply
-from .expiration_date_reply import ExpirationDateReply
-from .hits_reply import HitsReply
-from .ip_ranges import IpRanges
-from .meta_info_for_top_level_reply import MetaInfoForTopLevelReply
-from .object import Object
-from .port_ranges import PortRanges
-from .pydantic import BaseModel, Field
-from .user_check_reply import UserCheckReply
+from advanced_action_settings_reply import AdvancedActionSettingsReply
+from api_domain_identifier import ApiDomainIdentifier
+from api_object_standard_identifier import ApiObjectStandardIdentifier
+from available_actions_reply import AvailableActionsReply
+from custom_summary_fields_reply import CustomSummaryFieldsReply
+from expiration_date_reply import ExpirationDateReply
+from hits_reply import HitsReply
+from ip_ranges import IpRanges
+from meta_info_for_top_level_reply import MetaInfoForTopLevelReply
+from object import Object
+from port_ranges import PortRanges
+from pydantic import BaseModel, Field
+from user_check_reply import UserCheckReply
 
 
 class AccessRuleReply(BaseModel):
@@ -43,8 +43,7 @@ class AccessRuleReply(BaseModel):
         description="""Collection of Network objects identified by the name or UID. Level of details in the output corresponds to the number of details for search. This table shows the level of details in the Standard level.""",
     )
     destination_negate: bool = Field(
-        alias="destination-negate",
-        description="""True if negate is set for destination.""",
+        alias="destination-negate", description="""True if negate is set for destination."""
     )
     destination_ranges: IpRanges = Field(
         alias="destination-ranges",
@@ -52,8 +51,7 @@ class AccessRuleReply(BaseModel):
     )
     enabled: bool = Field(alias="enabled", description="""Enable/Disable the rule.""")
     expiration_settings: ExpirationDateReply = Field(
-        alias="expiration-settings",
-        description="""Displays the expiration date settings.""",
+        alias="expiration-settings", description="""Displays the expiration date settings."""
     )
     hits: HitsReply = Field(alias="hits", description="""Hits count object.""")
     inline_layer: ApiObjectStandardIdentifier = Field(
@@ -106,13 +104,11 @@ class AccessRuleReply(BaseModel):
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     domain: ApiDomainIdentifier = Field(
-        alias="domain",
-        description="""Information about the domain that holds the Object.""",
+        alias="domain", description="""Information about the domain that holds the Object."""
     )
     meta_info: MetaInfoForTopLevelReply = Field(
         alias="meta-info", description="""Object metadata."""
     )
     available_actions: AvailableActionsReply = Field(
-        alias="available-actions",
-        description="""Actions that are available on the object.""",
+        alias="available-actions", description="""Actions that are available on the object."""
     )

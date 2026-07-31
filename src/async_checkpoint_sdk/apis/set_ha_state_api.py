@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.set_ha_state_reply import SetHaStateReply
 from async_checkpoint_sdk.models.set_ha_state_request import SetHaStateRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_ha_state(
-    client: ClientSession, data: SetHaStateRequest, config: Config, **kwargs
+    client: ClientSession, data: SetHaStateRequest, config: SDKConfig, **kwargs
 ) -> SetHaStateReply:
     """
     Switch domain server high availability state. </br>After switching domain server to standby state, the session expires and you need to login again. <br/>You can run this command from a user or global domain on Multi Domain Server and from the user domain on Security Management Server.

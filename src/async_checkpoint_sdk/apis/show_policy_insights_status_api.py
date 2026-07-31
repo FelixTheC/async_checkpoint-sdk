@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.afw_control_request import AfwControlRequest
 from async_checkpoint_sdk.models.afw_control_status_reply import AfwControlStatusReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_policy_insights_status(
-    client: ClientSession, data: AfwControlRequest, config: Config, **kwargs
+    client: ClientSession, data: AfwControlRequest, config: SDKConfig, **kwargs
 ) -> AfwControlStatusReply:
     """
     Retrieve the current state of Policy Insights, including enablement and supported API versions.

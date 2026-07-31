@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.deployment_command_reply import DeploymentComma
 from async_checkpoint_sdk.models.deployment_command_request_verify import (
     DeploymentCommandRequestVerify,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def verify_software_package(
-    client: ClientSession, data: DeploymentCommandRequestVerify, config: Config, **kwargs
+    client: ClientSession, data: DeploymentCommandRequestVerify, config: SDKConfig, **kwargs
 ) -> DeploymentCommandReply:
     """
     Verifies the software package on target machines.

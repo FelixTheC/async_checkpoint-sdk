@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.large_scale_vpn_reply import LargeScaleVpnReply
 from async_checkpoint_sdk.models.large_scale_vpn_request_edit import LargeScaleVpnRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_lsv_profile(
-    client: ClientSession, data: LargeScaleVpnRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: LargeScaleVpnRequestEdit, config: SDKConfig, **kwargs
 ) -> LargeScaleVpnReply:
     """
     Set LSV Profile object's fields. Set CA by uid or name, change peers limit or restrict encryption domain.

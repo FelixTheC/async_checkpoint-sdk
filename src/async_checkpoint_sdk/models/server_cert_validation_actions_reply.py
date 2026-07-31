@@ -1,18 +1,18 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class ServerCertValidationActionsReply(BaseModel):
     block_expired: bool = Field(
         alias="block-expired",
-        description="""Set to be true in order to drop traffic from .servers with expired server certificate.""",
+        description="""Set to be true in order to drop traffic from servers with expired server certificate.""",
     )
     block_revoked: bool = Field(
         alias="block-revoked",
-        description="""Set to be true in order to drop traffic from .servers with revoked server certificate (validate CRL).""",
+        description="""Set to be true in order to drop traffic from servers with revoked server certificate (validate CRL).""",
     )
     block_untrusted: bool = Field(
         alias="block-untrusted",
-        description="""Set to be true in order to drop traffic from .servers with untrusted server certificate.""",
+        description="""Set to be true in order to drop traffic from servers with untrusted server certificate.""",
     )
     track_errors: str = Field(
         alias="track-errors",

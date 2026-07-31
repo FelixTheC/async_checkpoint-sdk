@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.wildcard_reply import WildcardReply
 from async_checkpoint_sdk.models.wildcard_request_new import WildcardRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_wildcard(
-    client: ClientSession, data: WildcardRequestNew, config: Config, **kwargs
+    client: ClientSession, data: WildcardRequestNew, config: SDKConfig, **kwargs
 ) -> WildcardReply:
     """
     Create new object.

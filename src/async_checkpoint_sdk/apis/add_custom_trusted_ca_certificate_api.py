@@ -6,11 +6,11 @@ from async_checkpoint_sdk.models.custom_trusted_ca_certificate_reply import (
 from async_checkpoint_sdk.models.custom_trusted_ca_certificate_request_new import (
     CustomTrustedCaCertificateRequestNew,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_custom_trusted_ca_certificate(
-    client: ClientSession, data: CustomTrustedCaCertificateRequestNew, config: Config, **kwargs
+    client: ClientSession, data: CustomTrustedCaCertificateRequestNew, config: SDKConfig, **kwargs
 ) -> CustomTrustedCaCertificateReply:
     """
     Create new custom trusted CA certificate.

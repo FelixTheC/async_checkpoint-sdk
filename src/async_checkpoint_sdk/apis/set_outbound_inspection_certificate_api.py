@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.outbound_certificate_reply import OutboundCerti
 from async_checkpoint_sdk.models.outbound_certificate_request_edit import (
     OutboundCertificateRequestEdit,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_outbound_inspection_certificate(
-    client: ClientSession, data: OutboundCertificateRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: OutboundCertificateRequestEdit, config: SDKConfig, **kwargs
 ) -> OutboundCertificateReply:
     """
     Edit existing object using object name or uid.

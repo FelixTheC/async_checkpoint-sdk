@@ -6,11 +6,11 @@ from async_checkpoint_sdk.models.query_mobile_applications_rulebase_reply import
 from async_checkpoint_sdk.models.query_mobile_applications_rulebase_request import (
     QueryMobileApplicationsRulebaseRequest,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_mobile_access_rulebase(
-    client: ClientSession, data: QueryMobileApplicationsRulebaseRequest, config: Config, **kwargs
+    client: ClientSession, data: QueryMobileApplicationsRulebaseRequest, config: SDKConfig, **kwargs
 ) -> QueryMobileApplicationsRulebaseReply:
     """
     Shows the entire Mobile Access Rules layer.  This layer is divided into sections. A Mobile Access Rule may be within a section, or independent of a section (in which case it is said to be under the "global" section). The reply features a list of objects. Each object may be a section of the layer, with all its rules in, or a rule itself, for the case of rules which are under the global section. An optional "filter" field may be added in order to filter out only those rules that match a search criteria.

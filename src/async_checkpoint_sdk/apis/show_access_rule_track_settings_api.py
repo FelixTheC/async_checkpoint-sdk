@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.track_settings_reply import TrackSettingsReply
 from async_checkpoint_sdk.models.track_settings_request import TrackSettingsRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_access_rule_track_settings(
-    client: ClientSession, data: TrackSettingsRequest, config: Config, **kwargs
+    client: ClientSession, data: TrackSettingsRequest, config: SDKConfig, **kwargs
 ) -> TrackSettingsReply:
     """
     Parameters

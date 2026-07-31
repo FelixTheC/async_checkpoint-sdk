@@ -1,11 +1,11 @@
-from .add import add
-from .manual_vpn_domain_request import ManualVpnDomainRequest
-from .pydantic import BaseModel, Field
-from .remove import remove
+from add import Add
+from manual_vpn_domain_request import ManualVpnDomainRequest
+from pydantic import BaseModel, Field
+from remove import Remove
 
 
 class TopologyRequestEdit(BaseModel):
-    manual_vpn_domain: add | remove | ManualVpnDomainRequest | list[dict] = Field(
+    manual_vpn_domain: Add | Remove | ManualVpnDomainRequest | list[dict] = Field(
         alias="manual-vpn-domain",
         description="""A list of IP-addresses ranges, defined the VPN community network.
 This field is relevant only when 'manual' option of vpn-domain is checked.""",

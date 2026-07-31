@@ -1,13 +1,17 @@
-from .client_display_settings_request import ClientDisplaySettingsRequest
-from .dynamic_id_settings_request import DynamicIdSettingsRequest
-from .identity_provider_settings_request import IdentityProviderSettingsRequest
-from .personal_certificate_settings_request import PersonalCertificateSettingsRequest
-from .pydantic import BaseModel, Field
-from .radius_settings_request import RadiusSettingsRequest
-from .secur_id_settings_request import SecurIdSettingsRequest
+from client_display_settings_request import ClientDisplaySettingsRequest
+from dynamic_id_settings_request import DynamicIdSettingsRequest
+from identity_provider_settings_request import IdentityProviderSettingsRequest
+from personal_certificate_settings_request import PersonalCertificateSettingsRequest
+from pydantic import BaseModel, Field
+from radius_settings_request import RadiusSettingsRequest
+from secur_id_settings_request import SecurIdSettingsRequest
 
 
 class AuthenticationMethodRequestEdit(BaseModel):
+    authentication_factor: str = Field(
+        alias="authentication-factor",
+        description="""Type of authentication factor. 'personal-certificate' can only be used as a first authentication method. 'dynamic-id' cannot be used as a first authentication method. Only one authentication method can be added per authentication factor type.""",
+    )
     position: int = Field(
         alias="position",
         description="""Position in the authentication methods list (1-based). This field is only relevant for SET commands with ADD action. Determines the order in which authentication methods are tried. If not provided, the method will be appended to the end of the list. This field is not supported in ADD command and will be rejected if provided.""",

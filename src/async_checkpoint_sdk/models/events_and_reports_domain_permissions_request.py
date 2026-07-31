@@ -1,10 +1,9 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class EventsAndReportsDomainPermissionsRequest(BaseModel):
     smart_event: str = Field(
-        alias="smart-event",
-        description="""'Custom' - Configure SmartEvent permissions.""",
+        alias="smart-event", description="""'Custom' - Configure SmartEvent permissions."""
     )
     events: str = Field(
         alias="events",

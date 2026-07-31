@@ -1,6 +1,6 @@
-from .add import add
-from .pydantic import BaseModel, Field
-from .remove import remove
+from add import Add
+from pydantic import BaseModel, Field
+from remove import Remove
 
 
 class ProbingSettingsRequestEdit(BaseModel):
@@ -8,7 +8,7 @@ class ProbingSettingsRequestEdit(BaseModel):
         alias="probed-interfaces",
         description="""Specifies whether to probe all addresses defined in the topology tab or specific addresses.""",
     )
-    probed_interface_list: add | remove | str | list[str] = Field(
+    probed_interface_list: Add | Remove | str | list[str] = Field(
         alias="probed-interface-list",
         description="""List of specific IP addresses to probe. Only relevant when probed-interfaces is set to 'specific'.""",
     )
@@ -18,7 +18,7 @@ class ProbingSettingsRequestEdit(BaseModel):
     )
     primary_address: str = Field(
         alias="primary-address",
-        description="""Primary IP address to use. Must be one of the addresses from .probed-interface-list. Required when use-primary-address is true.""",
+        description="""Primary IP address to use. Must be one of the addresses from probed-interface-list. Required when use-primary-address is true.""",
     )
     probing_method: str = Field(
         alias="probing-method",

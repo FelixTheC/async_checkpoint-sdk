@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.lsm_cluster_reply import LsmClusterReply
 from async_checkpoint_sdk.models.lsm_gateway_cluster_common_request_show import (
     LsmGatewayClusterCommonRequestShow,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_lsm_cluster(
-    client: ClientSession, data: LsmGatewayClusterCommonRequestShow, config: Config, **kwargs
+    client: ClientSession, data: LsmGatewayClusterCommonRequestShow, config: SDKConfig, **kwargs
 ) -> LsmClusterReply:
     """
     Show LSM Cluster.

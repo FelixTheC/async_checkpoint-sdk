@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.security_group_members_reply import SecurityGroupMembersReply
 from async_checkpoint_sdk.models.security_group_members_request import SecurityGroupMembersRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_security_group_members(
-    client: ClientSession, data: SecurityGroupMembersRequest, config: Config, **kwargs
+    client: ClientSession, data: SecurityGroupMembersRequest, config: SDKConfig, **kwargs
 ) -> SecurityGroupMembersReply:
     """
     Shows the list of the Maestro Security Group Members.

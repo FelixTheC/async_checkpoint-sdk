@@ -1,5 +1,5 @@
-from .e_v_c_settings_for_gateway_request import EVCSettingsForGatewayRequest
-from .pydantic import BaseModel, Field
+from e_v_c_settings_for_gateway_request import EVCSettingsForGatewayRequest
+from pydantic import BaseModel, Field
 
 
 class VCSettingsForGatewayRequest(BaseModel):

@@ -6,13 +6,13 @@ from async_checkpoint_sdk.models.content_awareness_advanced_settings_reply impor
 from async_checkpoint_sdk.models.content_awareness_advanced_settings_request_edit import (
     ContentAwarenessAdvancedSettingsRequestEdit,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_content_awareness_advanced_settings(
     client: ClientSession,
     data: ContentAwarenessAdvancedSettingsRequestEdit,
-    config: Config,
+    config: SDKConfig,
     **kwargs,
 ) -> ContentAwarenessAdvancedSettingsReply:
     """

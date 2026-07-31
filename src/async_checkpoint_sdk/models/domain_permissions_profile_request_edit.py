@@ -1,23 +1,18 @@
-from .access_control_domain_permissions_request import (
-    AccessControlDomainPermissionsRequest,
-)
-from .endpoint_domain_permissions_request import EndpointDomainPermissionsRequest
-from .events_and_reports_domain_permissions_request import (
-    EventsAndReportsDomainPermissionsRequest,
-)
-from .gateways_domain_permissions_request import GatewaysDomainPermissionsRequest
-from .management_domain_permissions_request import ManagementDomainPermissionsRequest
-from .monitoring_and_logging_domain_permissions_request import (
+from access_control_domain_permissions_request import AccessControlDomainPermissionsRequest
+from endpoint_domain_permissions_request import EndpointDomainPermissionsRequest
+from events_and_reports_domain_permissions_request import EventsAndReportsDomainPermissionsRequest
+from gateways_domain_permissions_request import GatewaysDomainPermissionsRequest
+from management_domain_permissions_request import ManagementDomainPermissionsRequest
+from monitoring_and_logging_domain_permissions_request import (
     MonitoringAndLoggingDomainPermissionsRequest,
 )
-from .other_domain_permissions_request import OtherDomainPermissionsRequest
-from .pydantic import BaseModel, Field
-from .threat_prevention_domain_permissions_request import (
-    ThreatPreventionDomainPermissionsRequest,
-)
+from other_domain_permissions_request import OtherDomainPermissionsRequest
+from pydantic import BaseModel, Field
+from threat_prevention_domain_permissions_request import ThreatPreventionDomainPermissionsRequest
 
 
 class DomainPermissionsProfileRequestEdit(BaseModel):
+    uid: str = Field(alias="uid", description="""Object unique identifier.""")
     permission_type: str = Field(
         alias="permission-type", description="""The type of the Permissions Profile."""
     )
@@ -58,13 +53,12 @@ class DomainPermissionsProfileRequestEdit(BaseModel):
         description="""Additional permissions.<br>Only a 'Customized' permission-type profile can edit these permissions.""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     ignore_warnings: bool = Field(
         alias="ignore-warnings", description="""Apply changes ignoring warnings."""

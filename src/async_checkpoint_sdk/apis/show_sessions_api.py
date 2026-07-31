@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_query_object_reply import ApiQueryObjectReply
 from async_checkpoint_sdk.models.work_session_query_request import WorkSessionQueryRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_sessions(
-    client: ClientSession, data: WorkSessionQueryRequest, config: Config, **kwargs
+    client: ClientSession, data: WorkSessionQueryRequest, config: SDKConfig, **kwargs
 ) -> ApiQueryObjectReply:
     """
     Retrieve all objects.

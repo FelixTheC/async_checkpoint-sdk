@@ -1,5 +1,5 @@
-from .probing_settings_reply import ProbingSettingsReply
-from .pydantic import BaseModel, Field
+from probing_settings_reply import ProbingSettingsReply
+from pydantic import BaseModel, Field
 
 
 class LinkSelectionReply(BaseModel):

@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class DefaultAdminSettingsRequestEdit(BaseModel):
@@ -7,8 +7,7 @@ class DefaultAdminSettingsRequestEdit(BaseModel):
         description="""Authentication method for new administrator.""",
     )
     expiration_type: str = Field(
-        alias="expiration-type",
-        description="""Expiration type for new administrator.""",
+        alias="expiration-type", description="""Expiration type for new administrator."""
     )
     expiration_date: str = Field(
         alias="expiration-date",

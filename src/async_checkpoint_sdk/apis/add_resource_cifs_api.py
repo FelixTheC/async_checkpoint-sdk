@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.cifs_resource_reply import CifsResourceReply
 from async_checkpoint_sdk.models.cifs_resource_request_new import CifsResourceRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_resource_cifs(
-    client: ClientSession, data: CifsResourceRequestNew, config: Config, **kwargs
+    client: ClientSession, data: CifsResourceRequestNew, config: SDKConfig, **kwargs
 ) -> CifsResourceReply:
     """
     Create new object.

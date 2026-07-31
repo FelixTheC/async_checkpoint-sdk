@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.interface_reply import InterfaceReply
 from async_checkpoint_sdk.models.interface_request_show import InterfaceRequestShow
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_interface(
-    client: ClientSession, data: InterfaceRequestShow, config: Config, **kwargs
+    client: ClientSession, data: InterfaceRequestShow, config: SDKConfig, **kwargs
 ) -> InterfaceReply:
     """
     Retrieve existing network interface using object uid.

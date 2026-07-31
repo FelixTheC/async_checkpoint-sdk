@@ -1,7 +1,7 @@
-from .gw_props_request_new import GwPropsRequestNew
-from .pydantic import BaseModel, Field
-from .star_rim_request_new import StarRimRequestNew
-from .tunnel_props_request_new import TunnelPropsRequestNew
+from gw_props_request_new import GwPropsRequestNew
+from pydantic import BaseModel, Field
+from star_rim_request_new import StarRimRequestNew
+from tunnel_props_request_new import TunnelPropsRequestNew
 
 
 class StarPermanentTunnelsRequestNew(BaseModel):

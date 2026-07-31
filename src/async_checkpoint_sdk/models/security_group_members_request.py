@@ -1,5 +1,5 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class SecurityGroupMembersRequest(BaseModel):
-    pass
+    name: str = Field(alias="name", description="""Name of the Security Group.""")

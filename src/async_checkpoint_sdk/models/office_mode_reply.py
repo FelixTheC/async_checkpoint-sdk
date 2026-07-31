@@ -1,6 +1,6 @@
-from .api_object_standard_identifier import ApiObjectStandardIdentifier
-from .office_mode_method_reply import OfficeModeMethodReply
-from .pydantic import BaseModel, Field
+from api_object_standard_identifier import ApiObjectStandardIdentifier
+from office_mode_method_reply import OfficeModeMethodReply
+from pydantic import BaseModel, Field
 
 
 class OfficeModeReply(BaseModel):

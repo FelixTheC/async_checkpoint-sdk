@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.api_query_object_reply import ApiQueryObjectRep
 from async_checkpoint_sdk.models.trusted_ca_certificate_query_request import (
     TrustedCaCertificateQueryRequest,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_cp_trusted_ca_certificates(
-    client: ClientSession, data: TrustedCaCertificateQueryRequest, config: Config, **kwargs
+    client: ClientSession, data: TrustedCaCertificateQueryRequest, config: SDKConfig, **kwargs
 ) -> ApiQueryObjectReply:
     """
     Retrieve all objects.

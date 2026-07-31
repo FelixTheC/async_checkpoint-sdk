@@ -1,10 +1,9 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class SecurityAccessDefaultsReply(BaseModel):
     destination: str = Field(
-        alias="destination",
-        description="""Destination default value identified by name.""",
+        alias="destination", description="""Destination default value identified by name."""
     )
     service: str = Field(
         alias="service",

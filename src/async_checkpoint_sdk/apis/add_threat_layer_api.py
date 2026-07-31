@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.threat_layer_reply import ThreatLayerReply
 from async_checkpoint_sdk.models.threat_layer_request_new import ThreatLayerRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_threat_layer(
-    client: ClientSession, data: ThreatLayerRequestNew, config: Config, **kwargs
+    client: ClientSession, data: ThreatLayerRequestNew, config: SDKConfig, **kwargs
 ) -> ThreatLayerReply:
     """
     Create new object.

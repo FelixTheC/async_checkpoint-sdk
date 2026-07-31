@@ -1,9 +1,9 @@
-from .packages_filter import packagesFilter
-from .pydantic import BaseModel, Field
+from packagesfilter import Packagesfilter
+from pydantic import BaseModel, Field
 
 
 class PackagesPerTargetCommandRequest(BaseModel):
-    display: packagesFilter = Field(
+    display: Packagesfilter = Field(
         alias="display", description="""Filter the displayed results."""
     )
     targets: str | list[str] = Field(

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.id_tag_reply import IdTagReply
 from async_checkpoint_sdk.models.id_tag_request_edit import IdTagRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_identity_tag(
-    client: ClientSession, data: IdTagRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: IdTagRequestEdit, config: SDKConfig, **kwargs
 ) -> IdTagReply:
     """
     Edit existing object using object name or uid.

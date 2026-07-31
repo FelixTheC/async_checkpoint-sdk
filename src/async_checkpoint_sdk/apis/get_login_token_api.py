@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.login_token_reply import LoginTokenReply
 from async_checkpoint_sdk.models.login_token_request import LoginTokenRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def get_login_token(
-    client: ClientSession, data: LoginTokenRequest, config: Config, **kwargs
+    client: ClientSession, data: LoginTokenRequest, config: SDKConfig, **kwargs
 ) -> LoginTokenReply:
     """
     Parameters

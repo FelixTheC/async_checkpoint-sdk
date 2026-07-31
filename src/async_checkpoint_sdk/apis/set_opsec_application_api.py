@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.opsec_application_reply import OpsecApplicationReply
 from async_checkpoint_sdk.models.opsec_application_request_edit import OpsecApplicationRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_opsec_application(
-    client: ClientSession, data: OpsecApplicationRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: OpsecApplicationRequestEdit, config: SDKConfig, **kwargs
 ) -> OpsecApplicationReply:
     """
     Edit existing object using object name or uid.

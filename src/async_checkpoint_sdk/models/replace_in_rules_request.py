@@ -1,11 +1,13 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class ReplaceInRulesRequest(BaseModel):
+    rule: str = Field(
+        alias="rule", description="""The UID of the specific rule in which the object appears."""
+    )
     layer: str = Field(alias="layer", description="""The UID of the layer the rule belongs to.""")
     package: str = Field(
-        alias="package",
-        description="""The UID of the policy package where the rule is defined.""",
+        alias="package", description="""The UID of the policy package where the rule is defined."""
     )
     replacement_field_path: str = Field(
         alias="replacement-field-path",

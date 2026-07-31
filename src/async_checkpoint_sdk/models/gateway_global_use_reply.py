@@ -1,5 +1,5 @@
-from .api_domain_identifier import ApiDomainIdentifier
-from .pydantic import BaseModel, Field
+from api_domain_identifier import ApiDomainIdentifier
+from pydantic import BaseModel, Field
 
 
 class GatewayGlobalUseReply(BaseModel):
@@ -19,6 +19,5 @@ class GatewayGlobalUseReply(BaseModel):
         description="""Domains that Identity Awareness Sharing global use applied to them.""",
     )
     domain: ApiDomainIdentifier = Field(
-        alias="domain",
-        description="""Information about the domain that holds the Object.""",
+        alias="domain", description="""Information about the domain that holds the Object."""
     )

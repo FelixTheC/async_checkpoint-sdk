@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.rpc_service_reply import RpcServiceReply
 from async_checkpoint_sdk.models.rpc_service_request_new import RpcServiceRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_service_rpc(
-    client: ClientSession, data: RpcServiceRequestNew, config: Config, **kwargs
+    client: ClientSession, data: RpcServiceRequestNew, config: SDKConfig, **kwargs
 ) -> RpcServiceReply:
     """
     Create new object.

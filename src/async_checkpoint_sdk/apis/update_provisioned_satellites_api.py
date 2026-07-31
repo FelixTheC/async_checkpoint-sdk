@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.lsm_base_command_reply import LsmBaseCommandRep
 from async_checkpoint_sdk.models.update_provisioned_satellites_request import (
     UpdateProvisionedSatellitesRequest,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def update_provisioned_satellites(
-    client: ClientSession, data: UpdateProvisionedSatellitesRequest, config: Config, **kwargs
+    client: ClientSession, data: UpdateProvisionedSatellitesRequest, config: SDKConfig, **kwargs
 ) -> LsmBaseCommandReply:
     """
     Executes the update-provisioned-satellites on center gateways of VPN communities.

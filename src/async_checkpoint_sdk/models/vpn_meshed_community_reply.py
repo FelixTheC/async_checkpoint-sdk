@@ -1,14 +1,14 @@
-from .advanced_properties_reply import AdvancedPropertiesReply
-from .api_domain_identifier import ApiDomainIdentifier
-from .available_actions_reply import AvailableActionsReply
-from .encrypted_traffic_reply import EncryptedTrafficReply
-from .ike_p1_reply import IkeP1Reply
-from .ike_p2_reply import IkeP2Reply
-from .meshed_permanent_tunnels_reply import MeshedPermanentTunnelsReply
-from .meta_info_for_top_level_reply import MetaInfoForTopLevelReply
-from .pydantic import BaseModel, Field
-from .route_based_settings_reply import RouteBasedSettingsReply
-from .wire_mode_reply import WireModeReply
+from advanced_properties_reply import AdvancedPropertiesReply
+from api_domain_identifier import ApiDomainIdentifier
+from available_actions_reply import AvailableActionsReply
+from encrypted_traffic_reply import EncryptedTrafficReply
+from ike_p1_reply import IkeP1Reply
+from ike_p2_reply import IkeP2Reply
+from meshed_permanent_tunnels_reply import MeshedPermanentTunnelsReply
+from meta_info_for_top_level_reply import MetaInfoForTopLevelReply
+from pydantic import BaseModel, Field
+from route_based_settings_reply import RouteBasedSettingsReply
+from wire_mode_reply import WireModeReply
 
 
 class VpnMeshedCommunityReply(BaseModel):
@@ -30,15 +30,14 @@ class VpnMeshedCommunityReply(BaseModel):
     )
     excluded_services: list[dict] = Field(
         alias="excluded-services",
-        description="""Collection of services that are excluded from .the community identified by the name or UID.<br> Connections with these services will not be encrypted and will not match rules specifying the community in the VPN community. Level of details in the output corresponds to the number of details for search. This table shows the level of details in the Standard level.""",
+        description="""Collection of services that are excluded from the community identified by the name or UID.<br> Connections with these services will not be encrypted and will not match rules specifying the community in the VPN community. Level of details in the output corresponds to the number of details for search. This table shows the level of details in the Standard level.""",
     )
     gateways: list[dict] = Field(
         alias="gateways",
         description="""Collection of VPN Gateway and VPN Device objects identified by the name or UID. Level of details in the output corresponds to the number of details for search. This table shows the level of details in the Standard level.""",
     )
     granular_encryptions: list[dict] = Field(
-        alias="granular-encryptions",
-        description="""VPN granular encryption settings.""",
+        alias="granular-encryptions", description="""VPN granular encryption settings."""
     )
     ike_phase_1: IkeP1Reply = Field(
         alias="ike-phase-1",
@@ -66,8 +65,7 @@ class VpnMeshedCommunityReply(BaseModel):
         alias="shared-secrets", description="""Shared secrets for external gateways."""
     )
     tunnel_granularity: str = Field(
-        alias="tunnel-granularity",
-        description="""VPN tunnel sharing option to be used.""",
+        alias="tunnel-granularity", description="""VPN tunnel sharing option to be used."""
     )
     use_shared_secret: bool = Field(
         alias="use-shared-secret",
@@ -85,13 +83,11 @@ class VpnMeshedCommunityReply(BaseModel):
         alias="advanced-properties", description="""Advanced properties."""
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     domain: ApiDomainIdentifier = Field(
-        alias="domain",
-        description="""Information about the domain that holds the Object.""",
+        alias="domain", description="""Information about the domain that holds the Object."""
     )
     icon: str = Field(alias="icon", description="""Object icon.""")
     meta_info: MetaInfoForTopLevelReply = Field(
@@ -105,6 +101,5 @@ class VpnMeshedCommunityReply(BaseModel):
         description="""Collection of tag objects identified by the name or UID. Level of details in the output corresponds to the number of details for search. This table shows the level of details in the Standard level.""",
     )
     available_actions: AvailableActionsReply = Field(
-        alias="available-actions",
-        description="""Actions that are available on the object.""",
+        alias="available-actions", description="""Actions that are available on the object."""
     )

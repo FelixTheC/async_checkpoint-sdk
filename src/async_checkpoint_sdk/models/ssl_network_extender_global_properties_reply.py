@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class SslNetworkExtenderGlobalPropertiesReply(BaseModel):
@@ -16,7 +16,7 @@ class SslNetworkExtenderGlobalPropertiesReply(BaseModel):
     )
     client_uninstall_upon_disconnection: str = Field(
         alias="client-uninstall-upon-disconnection",
-        description="""Select whether the client should automatically uninstall SSL Network Extender when it disconnects from .the gateway.""",
+        description="""Select whether the client should automatically uninstall SSL Network Extender when it disconnects from the gateway.""",
     )
     re_auth_user_interval: int = Field(
         alias="re-auth-user-interval",

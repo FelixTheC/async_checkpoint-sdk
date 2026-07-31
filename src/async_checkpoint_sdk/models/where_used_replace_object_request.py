@@ -1,8 +1,15 @@
-from .pydantic import BaseModel, Field
-from .replace_in_rules_request import ReplaceInRulesRequest
+from pydantic import BaseModel, Field
+from replace_in_rules_request import ReplaceInRulesRequest
 
 
 class WhereUsedReplaceObjectRequest(BaseModel):
+    object_to_replace: str = Field(
+        alias="object-to-replace",
+        description="""The object to be replaced identified by name or UID.""",
+    )
+    replace_scope: str = Field(
+        alias="replace-scope", description="""Where to perform the replacement."""
+    )
     replace_with: str = Field(
         alias="replace-with",
         description="""The object that will replace the old object identified by name or UID.""",

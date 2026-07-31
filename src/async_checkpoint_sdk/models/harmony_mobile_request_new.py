@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class HarmonyMobileRequestNew(BaseModel):
@@ -60,5 +60,5 @@ class HarmonyMobileRequestNew(BaseModel):
     )
     suspicious_enterprise_certificate: str = Field(
         alias="suspicious-enterprise-certificate",
-        description="""Behavior when a certificate profile has been installed allowing the installing of apps on device from .unknown source - iOS only (configuration for Harmony SDK).""",
+        description="""Behavior when a certificate profile has been installed allowing the installing of apps on device from unknown source - iOS only (configuration for Harmony SDK).""",
     )

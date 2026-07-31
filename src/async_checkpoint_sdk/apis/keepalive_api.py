@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.keep_alive_reply import KeepAliveReply
 from async_checkpoint_sdk.models.keep_alive_request import KeepAliveRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def keepalive(
-    client: ClientSession, data: KeepAliveRequest, config: Config, **kwargs
+    client: ClientSession, data: KeepAliveRequest, config: SDKConfig, **kwargs
 ) -> KeepAliveReply:
     """
     Keep the session valid/alive.

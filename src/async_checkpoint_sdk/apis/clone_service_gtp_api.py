@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.gtp_service_reply import GtpServiceReply
 from async_checkpoint_sdk.models.gtp_service_request_edit import GtpServiceRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def clone_service_gtp(
-    client: ClientSession, data: GtpServiceRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: GtpServiceRequestEdit, config: SDKConfig, **kwargs
 ) -> GtpServiceReply:
     """
     Clone existing object.

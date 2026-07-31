@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.sync_user_center_reply import SyncUserCenterReply
 from async_checkpoint_sdk.models.sync_user_center_request_edit import SyncUserCenterRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_sync_with_user_center(
-    client: ClientSession, data: SyncUserCenterRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: SyncUserCenterRequestEdit, config: SDKConfig, **kwargs
 ) -> SyncUserCenterReply:
     """
     Adds information to the Check Point UserCenter account product list. <br><br>For example: Gateway name, version and active blades. For more details see: <span class="show-only-in-doc-ui"><a data-toggle="modal" href=https://support.checkpoint.com/results/sk/sk94064><u>sk94064</u></a></span>.

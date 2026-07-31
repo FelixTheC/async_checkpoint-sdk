@@ -1,8 +1,8 @@
-from .api_domain_identifier import ApiDomainIdentifier
-from .meta_info_for_top_level_reply import MetaInfoForTopLevelReply
-from .pydantic import BaseModel, Field
-from .schedule_update_gateway_reply import ScheduleUpdateGatewayReply
-from .schedule_update_mgmt_reply import ScheduleUpdateMgmtReply
+from api_domain_identifier import ApiDomainIdentifier
+from meta_info_for_top_level_reply import MetaInfoForTopLevelReply
+from pydantic import BaseModel, Field
+from schedule_update_gateway_reply import ScheduleUpdateGatewayReply
+from schedule_update_mgmt_reply import ScheduleUpdateMgmtReply
 
 
 class AppiUpdateScheduleReply(BaseModel):
@@ -17,8 +17,7 @@ class AppiUpdateScheduleReply(BaseModel):
         description="""Application Control & URL Filtering Update Schedule on Gateway.""",
     )
     domain: ApiDomainIdentifier = Field(
-        alias="domain",
-        description="""Information about the domain that holds the Object.""",
+        alias="domain", description="""Information about the domain that holds the Object."""
     )
     meta_info: MetaInfoForTopLevelReply = Field(
         alias="meta-info", description="""Object metadata."""

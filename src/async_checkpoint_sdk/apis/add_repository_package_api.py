@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.add_package_command_reply import AddPackageCommandReply
 from async_checkpoint_sdk.models.add_package_command_request import AddPackageCommandRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_repository_package(
-    client: ClientSession, data: AddPackageCommandRequest, config: Config, **kwargs
+    client: ClientSession, data: AddPackageCommandRequest, config: SDKConfig, **kwargs
 ) -> AddPackageCommandReply:
     """
     Add the software package to the central repository.<br>On Multi-Domain Server this command is available only after logging in to the Global domain.

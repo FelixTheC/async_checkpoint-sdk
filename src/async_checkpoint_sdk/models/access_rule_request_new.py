@@ -1,13 +1,21 @@
-from .advanced_action_settings_request import AdvancedActionSettingsRequest
-from .custom_summary_fields_request import CustomSummaryFieldsRequest
-from .object import Object
-from .pydantic import BaseModel, Field
-from .track_settings_for_request import TrackSettingsForRequest
-from .user_check_request import UserCheckRequest
-from .vpn_request import VpnRequest
+from advanced_action_settings_request import AdvancedActionSettingsRequest
+from api_doc_rule_base_position_object_builder import ApiDocRuleBasePositionObjectBuilder
+from custom_summary_fields_request import CustomSummaryFieldsRequest
+from object import Object
+from pydantic import BaseModel, Field
+from track_settings_for_request import TrackSettingsForRequest
+from user_check_request import UserCheckRequest
+from vpn_request import VpnRequest
 
 
 class AccessRuleRequestNew(BaseModel):
+    layer: str = Field(
+        alias="layer",
+        description="""Layer that the rule belongs to identified by the name or UID.""",
+    )
+    position: int | str | ApiDocRuleBasePositionObjectBuilder = Field(
+        alias="position", description="""Position in the rulebase."""
+    )
     name: str = Field(alias="name", description="""Rule name.""")
     action: str = Field(
         alias="action",
@@ -17,8 +25,7 @@ class AccessRuleRequestNew(BaseModel):
         alias="action-settings", description="""Action settings."""
     )
     content: Object = Field(
-        alias="content",
-        description="""List of processed file types that this rule applies on.""",
+        alias="content", description="""List of processed file types that this rule applies on."""
     )
     content_direction: str = Field(
         alias="content-direction",
@@ -35,8 +42,7 @@ class AccessRuleRequestNew(BaseModel):
         description="""Collection of Network objects identified by the name or UID.""",
     )
     destination_negate: bool = Field(
-        alias="destination-negate",
-        description="""True if negate is set for destination.""",
+        alias="destination-negate", description="""True if negate is set for destination."""
     )
     enabled: bool = Field(alias="enabled", description="""Enable/Disable the rule.""")
     inline_layer: str = Field(
@@ -78,7 +84,7 @@ class AccessRuleRequestNew(BaseModel):
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     ignore_warnings: bool = Field(
         alias="ignore-warnings", description="""Apply changes ignoring warnings."""

@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.api_ok_reply import ApiOkReply
 from async_checkpoint_sdk.models.clear_objects_subscriptions_request import (
     ClearObjectsSubscriptionsRequest,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def clear_objects_subscriptions(
-    client: ClientSession, data: ClearObjectsSubscriptionsRequest, config: Config, **kwargs
+    client: ClientSession, data: ClearObjectsSubscriptionsRequest, config: SDKConfig, **kwargs
 ) -> ApiOkReply:
     """
     Parameters

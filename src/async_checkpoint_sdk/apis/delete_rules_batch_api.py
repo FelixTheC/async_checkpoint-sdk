@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.batch_reply_task import BatchReplyTask
 from async_checkpoint_sdk.models.rule_batch_request_delete import RuleBatchRequestDelete
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def delete_rules_batch(
-    client: ClientSession, data: RuleBatchRequestDelete, config: Config, **kwargs
+    client: ClientSession, data: RuleBatchRequestDelete, config: SDKConfig, **kwargs
 ) -> BatchReplyTask:
     """
     Delete rules in batch from the same layer. Use this API to achieve optimum performance when removing more than one rule. <br>Note: Warnings are ignored when using this API, operation will apply changes while ignoring warnings. <br>Supported rules types: access-rule, nat-rule, https-rule and threat-exception.

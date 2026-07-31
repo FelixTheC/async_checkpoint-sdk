@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_query_object_reply import ApiQueryObjectReply
 from async_checkpoint_sdk.models.cds_ignore_query_request import CdsIgnoreQueryRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_trusted_clients(
-    client: ClientSession, data: CdsIgnoreQueryRequest, config: Config, **kwargs
+    client: ClientSession, data: CdsIgnoreQueryRequest, config: SDKConfig, **kwargs
 ) -> ApiQueryObjectReply:
     """
     Retrieve all objects.

@@ -1,5 +1,5 @@
-from .pydantic import BaseModel, Field
-from .users_directories_settings_reply import UsersDirectoriesSettingsReply
+from pydantic import BaseModel, Field
+from users_directories_settings_reply import UsersDirectoriesSettingsReply
 
 
 class AuthenticationSettingsIdcReply(BaseModel):

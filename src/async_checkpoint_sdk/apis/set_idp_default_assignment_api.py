@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.idp_default_assignment_reply import IdpDefaultA
 from async_checkpoint_sdk.models.idp_default_assignment_request_edit import (
     IdpDefaultAssignmentRequestEdit,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_idp_default_assignment(
-    client: ClientSession, data: IdpDefaultAssignmentRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: IdpDefaultAssignmentRequestEdit, config: SDKConfig, **kwargs
 ) -> IdpDefaultAssignmentReply:
     """
     Set default Identity Provider assignment to be use for Management server administrator access.

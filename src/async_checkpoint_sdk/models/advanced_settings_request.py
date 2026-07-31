@@ -1,5 +1,5 @@
-from .pydantic import BaseModel, Field
-from .sam_settings_request import SamSettingsRequest
+from pydantic import BaseModel, Field
+from sam_settings_request import SamSettingsRequest
 
 
 class AdvancedSettingsRequest(BaseModel):

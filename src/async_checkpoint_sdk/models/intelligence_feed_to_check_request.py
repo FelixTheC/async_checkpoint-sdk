@@ -1,8 +1,9 @@
-from .custom_header_request_new import CustomHeaderRequestNew
-from .pydantic import BaseModel, Field
+from custom_header_request_new import CustomHeaderRequestNew
+from pydantic import BaseModel, Field
 
 
 class IntelligenceFeedToCheckRequest(BaseModel):
+    uid: str = Field(alias="uid", description="""Object unique identifier.""")
     feed_url: str = Field(
         alias="feed-url",
         description="""URL of the feed.
@@ -10,16 +11,14 @@ URL should be written as http or https.""",
     )
     action: str = Field(alias="action", description="""The feed indicator's action.""")
     certificate_id: str = Field(
-        alias="certificate-id",
-        description="""Certificate SHA-1 fingerprint to access the feed.""",
+        alias="certificate-id", description="""Certificate SHA-1 fingerprint to access the feed."""
     )
     confidence: int = Field(
         alias="confidence",
         description="""Set in order to configure the confidence of the snort protections in snort format. 1-Low, 5-High.""",
     )
     custom_comment: int = Field(
-        alias="custom-comment",
-        description="""Custom IOC feed - the column number of comment.""",
+        alias="custom-comment", description="""Custom IOC feed - the column number of comment."""
     )
     custom_confidence: int = Field(
         alias="custom-confidence",
@@ -29,12 +28,10 @@ URL should be written as http or https.""",
         alias="custom-header", description="""Custom HTTP headers."""
     )
     custom_name: int = Field(
-        alias="custom-name",
-        description="""Custom IOC feed - the column number of name.""",
+        alias="custom-name", description="""Custom IOC feed - the column number of name."""
     )
     custom_severity: int = Field(
-        alias="custom-severity",
-        description="""Custom IOC feed - the column number of severity.""",
+        alias="custom-severity", description="""Custom IOC feed - the column number of severity."""
     )
     custom_type: int = Field(
         alias="custom-type",
@@ -85,7 +82,7 @@ URL should be written as http or https.""",
     )
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     ignore_warnings: bool = Field(
         alias="ignore-warnings", description="""Apply changes ignoring warnings."""

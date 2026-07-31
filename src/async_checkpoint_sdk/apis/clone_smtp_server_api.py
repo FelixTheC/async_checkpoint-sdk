@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.smtp_server_reply import SmtpServerReply
 from async_checkpoint_sdk.models.smtp_server_request_edit import SmtpServerRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def clone_smtp_server(
-    client: ClientSession, data: SmtpServerRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: SmtpServerRequestEdit, config: SDKConfig, **kwargs
 ) -> SmtpServerReply:
     """
     Clone existing object.

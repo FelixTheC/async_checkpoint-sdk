@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.sync_user_center_reply import SyncUserCenterReply
 from async_checkpoint_sdk.models.sync_user_center_request_show import SyncUserCenterRequestShow
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_sync_with_user_center(
-    client: ClientSession, data: SyncUserCenterRequestShow, config: Config, **kwargs
+    client: ClientSession, data: SyncUserCenterRequestShow, config: SDKConfig, **kwargs
 ) -> SyncUserCenterReply:
     """
     This indicates whether the information is being synchronized with the user center.

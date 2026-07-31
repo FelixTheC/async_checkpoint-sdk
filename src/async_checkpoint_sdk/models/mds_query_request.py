@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class MdsQueryRequest(BaseModel):
@@ -13,10 +13,9 @@ class MdsQueryRequest(BaseModel):
         description="""Sorts the results by search criteria. Automatically sorts the results by Name, in the ascending order.""",
     )
     show_domains: bool = Field(
-        alias="show-domains",
-        description="""Indicates whether to show domains field in reply.""",
+        alias="show-domains", description="""Indicates whether to show domains field in reply."""
     )
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )

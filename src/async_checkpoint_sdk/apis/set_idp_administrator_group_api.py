@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.idp_group_request_edit import IdpGroupRequestEdit
 from async_checkpoint_sdk.models.idp_group_role_reply import IdpGroupRoleReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_idp_administrator_group(
-    client: ClientSession, data: IdpGroupRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: IdpGroupRequestEdit, config: SDKConfig, **kwargs
 ) -> IdpGroupRoleReply:
     """
     Edit existing Identity Provider administrators group using object name or uid.

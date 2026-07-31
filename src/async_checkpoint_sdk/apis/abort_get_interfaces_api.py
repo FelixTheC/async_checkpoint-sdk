@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_ok_reply import ApiOkReply
 from async_checkpoint_sdk.models.get_interfaces_abort_request import GetInterfacesAbortRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def abort_get_interfaces(
-    client: ClientSession, data: GetInterfacesAbortRequest, config: Config, **kwargs
+    client: ClientSession, data: GetInterfacesAbortRequest, config: SDKConfig, **kwargs
 ) -> ApiOkReply:
     """
     Attempt to abort an on-going "get-interfaces" operation.

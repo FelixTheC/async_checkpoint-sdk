@@ -1,18 +1,18 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class ExportedRoutesRequestNew(BaseModel):
     internal_interfaces: bool = Field(
         alias="internal-interfaces",
-        description="""<html>Specifies to export networks from .interfaces with Topology 'Internal' from .the Security Gateway.<br><b>Relevant only in Route-Based VPN Communities</b></html>.""",
+        description="""<html>Specifies to export networks from interfaces with Topology 'Internal' from the Security Gateway.<br><b>Relevant only in Route-Based VPN Communities</b></html>.""",
     )
     static_routes: bool = Field(
         alias="static-routes",
-        description="""<html>Specifies to export static routes from .the Security Gateway.<br><b>Relevant only in Route-Based VPN Communities</b></html>.""",
+        description="""<html>Specifies to export static routes from the Security Gateway.<br><b>Relevant only in Route-Based VPN Communities</b></html>.""",
     )
     custom_routes: bool = Field(
         alias="custom-routes",
-        description="""<html>Specifies to export user-defined networks from .the Security Gateway.<br><b>Relevant only in Route-Based VPN Communities</b></html>.""",
+        description="""<html>Specifies to export user-defined networks from the Security Gateway.<br><b>Relevant only in Route-Based VPN Communities</b></html>.""",
     )
     custom_routes_object: str = Field(
         alias="custom-routes-object",

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.voip_gateway_reply import VoipGatewayReply
 from async_checkpoint_sdk.models.voip_gateway_request_new import VoipGatewayRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_voip_domain_h323_gateway(
-    client: ClientSession, data: VoipGatewayRequestNew, config: Config, **kwargs
+    client: ClientSession, data: VoipGatewayRequestNew, config: SDKConfig, **kwargs
 ) -> VoipGatewayReply:
     """
     Create new VoIP Domain H.323 Gateway.

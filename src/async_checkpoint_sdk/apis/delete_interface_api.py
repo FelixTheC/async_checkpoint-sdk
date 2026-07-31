@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_ok_reply import ApiOkReply
 from async_checkpoint_sdk.models.interface_request_delete import InterfaceRequestDelete
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def delete_interface(
-    client: ClientSession, data: InterfaceRequestDelete, config: Config, **kwargs
+    client: ClientSession, data: InterfaceRequestDelete, config: SDKConfig, **kwargs
 ) -> ApiOkReply:
     """
     Delete existing network interface using object uid.

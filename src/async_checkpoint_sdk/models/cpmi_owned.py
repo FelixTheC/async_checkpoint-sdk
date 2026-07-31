@@ -1,5 +1,5 @@
-from .cpuuid import CPUUID
-from .pydantic import BaseModel, Field
+from cpuuid import CPUUID
+from pydantic import BaseModel, Field
 
 
 class CpmiOwned(BaseModel):

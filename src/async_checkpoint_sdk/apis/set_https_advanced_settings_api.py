@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.https_advanced_settings_reply import HttpsAdvan
 from async_checkpoint_sdk.models.https_advanced_settings_request import (
     HttpsAdvancedSettingsRequest,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_https_advanced_settings(
-    client: ClientSession, data: HttpsAdvancedSettingsRequest, config: Config, **kwargs
+    client: ClientSession, data: HttpsAdvancedSettingsRequest, config: SDKConfig, **kwargs
 ) -> HttpsAdvancedSettingsReply:
     """
     Configure advanced settings for HTTPS Inspection.

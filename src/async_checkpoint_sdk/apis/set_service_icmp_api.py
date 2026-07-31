@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.service_icmp_reply import ServiceIcmpReply
 from async_checkpoint_sdk.models.service_icmp_request_edit import ServiceIcmpRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_service_icmp(
-    client: ClientSession, data: ServiceIcmpRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: ServiceIcmpRequestEdit, config: SDKConfig, **kwargs
 ) -> ServiceIcmpReply:
     """
     Edit existing object using object name or uid.

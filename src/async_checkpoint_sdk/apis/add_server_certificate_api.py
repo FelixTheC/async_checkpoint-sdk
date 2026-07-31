@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.server_certificate_reply import ServerCertificateReply
 from async_checkpoint_sdk.models.server_certificate_request_new import ServerCertificateRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_server_certificate(
-    client: ClientSession, data: ServerCertificateRequestNew, config: Config, **kwargs
+    client: ClientSession, data: ServerCertificateRequestNew, config: SDKConfig, **kwargs
 ) -> ServerCertificateReply:
     """
     Import server certificates for inbound HTTPS traffic inspection.<br/> You can use the imported server certificates in the Certificate column of the HTTPS Inspection Policy.

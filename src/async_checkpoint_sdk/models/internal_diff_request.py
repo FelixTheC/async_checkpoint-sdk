@@ -1,19 +1,18 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class InternalDiffRequest(BaseModel):
     from_date: str = Field(
         alias="from-date",
-        description="""The date from .which tracking changes is to be performed. ISO 8601. If timezone isn't specified in the input, the Management server's timezone is used.""",
+        description="""The date from which tracking changes is to be performed. ISO 8601. If timezone isn't specified in the input, the Management server's timezone is used.""",
     )
     from_session: str = Field(
         alias="from-session",
-        description="""The session UID from .which tracking changes is to be performed.""",
+        description="""The session UID from which tracking changes is to be performed.""",
     )
     limit: int = Field(alias="limit", description="""Maximum number of sessions to analyze.""")
     offset: int = Field(
-        alias="offset",
-        description="""Number of sessions to skip (beginning with from-session).""",
+        alias="offset", description="""Number of sessions to skip (beginning with from-session)."""
     )
     to_date: str = Field(
         alias="to-date",
@@ -37,5 +36,5 @@ class InternalDiffRequest(BaseModel):
     )
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )

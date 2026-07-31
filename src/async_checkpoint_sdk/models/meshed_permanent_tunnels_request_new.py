@@ -1,7 +1,7 @@
-from .gw_props_request_new import GwPropsRequestNew
-from .meshed_rim_request_new import MeshedRimRequestNew
-from .pydantic import BaseModel, Field
-from .tunnel_props_request_new import TunnelPropsRequestNew
+from gw_props_request_new import GwPropsRequestNew
+from meshed_rim_request_new import MeshedRimRequestNew
+from pydantic import BaseModel, Field
+from tunnel_props_request_new import TunnelPropsRequestNew
 
 
 class MeshedPermanentTunnelsRequestNew(BaseModel):

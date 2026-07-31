@@ -1,8 +1,18 @@
-from .if_map_server_authentication_request import IfMapServerAuthenticationRequest
-from .pydantic import BaseModel, Field
+from if_map_monitored_ips_request_new import IfMapMonitoredIpsRequestNew
+from if_map_server_authentication_request import IfMapServerAuthenticationRequest
+from pydantic import BaseModel, Field
 
 
 class IfMapRequestNew(BaseModel):
+    name: str = Field(alias="name", description="""Object name. Must be unique in the domain.""")
+    host: str = Field(
+        alias="host",
+        description="""Host that is IF-MAP server. 
+Identified by name or UID.""",
+    )
+    monitored_ips: IfMapMonitoredIpsRequestNew | list[dict] = Field(
+        alias="monitored-ips", description="""IP ranges to be monitored by the IF-MAP client."""
+    )
     port: int = Field(alias="port", description="""IF-MAP server port number.""")
     version: str = Field(alias="version", description="""IF-MAP version.""")
     path: str = Field(alias="path", description="""N/A""")
@@ -19,17 +29,16 @@ class IfMapRequestNew(BaseModel):
         description="""If another object with the same identifier already exists, it will be updated. The command behaviour will be the same as if originally a set command was called. Pay attention that original object's fields will be overwritten by the fields provided in the request payload!""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     domains_to_process: list[str] = Field(
         alias="domains-to-process",
-        description="""Indicates which domains to process the commands on. It cannot be used with the details-level full, must be run from .the System Domain only and with ignore-warnings true. Valid values are: CURRENT_DOMAIN, ALL_DOMAINS_ON_THIS_SERVER.""",
+        description="""Indicates which domains to process the commands on. It cannot be used with the details-level full, must be run from the System Domain only and with ignore-warnings true. Valid values are: CURRENT_DOMAIN, ALL_DOMAINS_ON_THIS_SERVER.""",
     )
     tags: str | list[str] = Field(alias="tags", description="""Collection of tag identifiers.""")
     ignore_warnings: bool = Field(

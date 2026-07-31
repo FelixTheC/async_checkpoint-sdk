@@ -1,9 +1,10 @@
-from .add import add
-from .pydantic import BaseModel, Field
-from .remove import remove
+from add import Add
+from pydantic import BaseModel, Field
+from remove import Remove
 
 
 class LdapGroupRequestEdit(BaseModel):
+    uid: str = Field(alias="uid", description="""Object unique identifier.""")
     account_unit: str = Field(
         alias="account-unit",
         description="""LDAP account unit of the group. 
@@ -15,8 +16,7 @@ Identified by name or UID.""",
         description="""Group's scope. There are three possible ways of defining a group, based on the users defined on the Account Unit.""",
     )
     account_unit_branch: str = Field(
-        alias="account-unit-branch",
-        description="""Branch of the selected LDAP Account Unit.""",
+        alias="account-unit-branch", description="""Branch of the selected LDAP Account Unit."""
     )
     sub_tree_prefix: str = Field(
         alias="sub-tree-prefix",
@@ -35,19 +35,18 @@ Identified by name or UID.""",
         description="""LDAP filter for the dynamic group. <font color=red>Relevant only when</font> 'apply-filter-for-dynamic-group' is set to 'true'.""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     domains_to_process: list[str] = Field(
         alias="domains-to-process",
-        description="""Indicates which domains to process the commands on. It cannot be used with the details-level full, must be run from .the System Domain only and with ignore-warnings true. Valid values are: CURRENT_DOMAIN, ALL_DOMAINS_ON_THIS_SERVER.""",
+        description="""Indicates which domains to process the commands on. It cannot be used with the details-level full, must be run from the System Domain only and with ignore-warnings true. Valid values are: CURRENT_DOMAIN, ALL_DOMAINS_ON_THIS_SERVER.""",
     )
-    tags: add | remove | str | list[str] = Field(
+    tags: Add | Remove | str | list[str] = Field(
         alias="tags", description="""Collection of tag identifiers."""
     )
     ignore_warnings: bool = Field(

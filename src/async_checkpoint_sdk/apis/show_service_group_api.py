@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.service_group_reply import ServiceGroupReply
 from async_checkpoint_sdk.models.service_group_request_show import ServiceGroupRequestShow
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_service_group(
-    client: ClientSession, data: ServiceGroupRequestShow, config: Config, **kwargs
+    client: ClientSession, data: ServiceGroupRequestShow, config: SDKConfig, **kwargs
 ) -> ServiceGroupReply:
     """
     Retrieve existing object using object name or uid.

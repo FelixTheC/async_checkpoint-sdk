@@ -1,5 +1,5 @@
-from .pydantic import BaseModel, Field
-from .resource_classification_request import ResourceClassificationRequest
+from pydantic import BaseModel, Field
+from resource_classification_request import ResourceClassificationRequest
 
 
 class ThreatAdvancedSettingsRequestEdit(BaseModel):

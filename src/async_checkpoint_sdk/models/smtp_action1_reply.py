@@ -1,6 +1,6 @@
-from .pydantic import BaseModel, Field
-from .smtp_rewrite_custom_header_reply import SmtpRewriteCustomHeaderReply
-from .smtp_rewrite_header_reply import SmtpRewriteHeaderReply
+from pydantic import BaseModel, Field
+from smtp_rewrite_custom_header_reply import SmtpRewriteCustomHeaderReply
+from smtp_rewrite_header_reply import SmtpRewriteHeaderReply
 
 
 class SmtpAction1Reply(BaseModel):

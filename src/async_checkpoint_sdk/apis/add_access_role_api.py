@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.access_role_reply import AccessRoleReply
 from async_checkpoint_sdk.models.access_role_request_new import AccessRoleRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_access_role(
-    client: ClientSession, data: AccessRoleRequestNew, config: Config, **kwargs
+    client: ClientSession, data: AccessRoleRequestNew, config: SDKConfig, **kwargs
 ) -> AccessRoleReply:
     """
     Create new object.

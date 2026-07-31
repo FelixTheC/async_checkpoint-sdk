@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.layer_structure_reply import LayerStructureReply
 from async_checkpoint_sdk.models.layer_structure_request import LayerStructureRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_layer_structure(
-    client: ClientSession, data: LayerStructureRequest, config: Config, **kwargs
+    client: ClientSession, data: LayerStructureRequest, config: SDKConfig, **kwargs
 ) -> LayerStructureReply:
     """
     Shows the entire layer structure. The layer structure is divided into sections and each section has its own entities.<br>Supported layer types: Access Control, NAT, Custom Threat Prevention, Threat Exception and HTTPS Inspection.

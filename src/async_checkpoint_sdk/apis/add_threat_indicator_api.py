@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_task_reply import ApiTaskReply
 from async_checkpoint_sdk.models.indicator_request_new import IndicatorRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_threat_indicator(
-    client: ClientSession, data: IndicatorRequestNew, config: Config, **kwargs
+    client: ClientSession, data: IndicatorRequestNew, config: SDKConfig, **kwargs
 ) -> ApiTaskReply:
     """
     Create a new Threat-Indicator.

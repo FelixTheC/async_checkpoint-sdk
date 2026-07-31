@@ -1,7 +1,10 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class VptAddInterfaceObjectRequest(BaseModel):
+    leads_to: str = Field(
+        alias="leads-to", description="""Virtual Switch or Virtual Router for this interface."""
+    )
     anti_spoofing: str = Field(
         alias="anti-spoofing",
         description="""The anti-spoofing enforcement setting of this interface.""",
@@ -32,12 +35,10 @@ class VptAddInterfaceObjectRequest(BaseModel):
     )
     mtu: int = Field(alias="mtu", description="""MTU of this interface.""")
     propagate: bool = Field(
-        alias="propagate",
-        description="""Propagate IPv4 route to adjacent virtual devices.""",
+        alias="propagate", description="""Propagate IPv4 route to adjacent virtual devices."""
     )
     propagate6: bool = Field(
-        alias="propagate6",
-        description="""Propagate IPv6 route to adjacent virtual devices.""",
+        alias="propagate6", description="""Propagate IPv6 route to adjacent virtual devices."""
     )
     specific_group: str = Field(
         alias="specific-group",

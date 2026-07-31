@@ -1,5 +1,5 @@
-from .day_recurrence_request_edit import DayRecurrenceRequestEdit
-from .pydantic import BaseModel, Field
+from day_recurrence_request_edit import DayRecurrenceRequestEdit
+from pydantic import BaseModel, Field
 
 
 class ScheduleConfRequestEdit(BaseModel):

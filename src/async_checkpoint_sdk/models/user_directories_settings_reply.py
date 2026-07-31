@@ -1,5 +1,5 @@
-from .manual_configuration_settings_reply import ManualConfigurationSettingsReply
-from .pydantic import BaseModel, Field
+from manual_configuration_settings_reply import ManualConfigurationSettingsReply
+from pydantic import BaseModel, Field
 
 
 class UserDirectoriesSettingsReply(BaseModel):

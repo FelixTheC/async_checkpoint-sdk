@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.onboarding_data_reply import OnboardingDataReply
 from async_checkpoint_sdk.models.onboarding_data_request import OnboardingDataRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_gateways_onboarding_data(
-    client: ClientSession, data: OnboardingDataRequest, config: Config, **kwargs
+    client: ClientSession, data: OnboardingDataRequest, config: SDKConfig, **kwargs
 ) -> OnboardingDataReply:
     """
     Parameters

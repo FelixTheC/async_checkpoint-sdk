@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.api_visual_c_p_object_identifier_request_show i
     ApiVisualCPObjectIdentifierRequestShow,
 )
 from async_checkpoint_sdk.models.secu_remote_dns_reply import SecuRemoteDnsReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_securemote_dns_server(
-    client: ClientSession, data: ApiVisualCPObjectIdentifierRequestShow, config: Config, **kwargs
+    client: ClientSession, data: ApiVisualCPObjectIdentifierRequestShow, config: SDKConfig, **kwargs
 ) -> SecuRemoteDnsReply:
     """
     Retrieve existing SecuRemote DNS server using object name or uid.

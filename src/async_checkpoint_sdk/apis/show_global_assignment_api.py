@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.global_assignment_identifier_request import (
     GlobalAssignmentIdentifierRequest,
 )
 from async_checkpoint_sdk.models.global_assignment_reply import GlobalAssignmentReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_global_assignment(
-    client: ClientSession, data: GlobalAssignmentIdentifierRequest, config: Config, **kwargs
+    client: ClientSession, data: GlobalAssignmentIdentifierRequest, config: SDKConfig, **kwargs
 ) -> GlobalAssignmentReply:
     """
     Retrieve existing object using object name or uid.

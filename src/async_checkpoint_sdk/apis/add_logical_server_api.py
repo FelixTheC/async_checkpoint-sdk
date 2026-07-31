@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.logical_server_reply import LogicalServerReply
 from async_checkpoint_sdk.models.logical_server_request_new import LogicalServerRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_logical_server(
-    client: ClientSession, data: LogicalServerRequestNew, config: Config, **kwargs
+    client: ClientSession, data: LogicalServerRequestNew, config: SDKConfig, **kwargs
 ) -> LogicalServerReply:
     """
     Create new logical server.

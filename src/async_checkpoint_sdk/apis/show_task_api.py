@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.task_reply import TaskReply
 from async_checkpoint_sdk.models.task_request import TaskRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_task(
-    client: ClientSession, data: TaskRequest, config: Config, **kwargs
+    client: ClientSession, data: TaskRequest, config: SDKConfig, **kwargs
 ) -> TaskReply:
     """
     Show task progress and details.

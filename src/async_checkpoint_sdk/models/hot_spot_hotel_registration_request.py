@@ -1,6 +1,6 @@
-from .add import add
-from .pydantic import BaseModel, Field
-from .remove import remove
+from add import Add
+from pydantic import BaseModel, Field
+from remove import Remove
 
 
 class HotSpotHotelRegistrationRequest(BaseModel):
@@ -20,7 +20,6 @@ class HotSpotHotelRegistrationRequest(BaseModel):
         alias="max-ip-access-during-registration",
         description="""Maximum number of addresses to allow access to during registration.""",
     )
-    ports: add | remove | str | list[str] = Field(
-        alias="ports",
-        description="""Ports to be opened during registration (up to 10 ports).""",
+    ports: Add | Remove | str | list[str] = Field(
+        alias="ports", description="""Ports to be opened during registration (up to 10 ports)."""
     )

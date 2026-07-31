@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.opsec_trusted_ca_reply import OpsecTrustedCaReply
 from async_checkpoint_sdk.models.opsec_trusted_ca_request_edit import OpsecTrustedCaRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_opsec_trusted_ca(
-    client: ClientSession, data: OpsecTrustedCaRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: OpsecTrustedCaRequestEdit, config: SDKConfig, **kwargs
 ) -> OpsecTrustedCaReply:
     """
     Edit existing object using object name or uid.

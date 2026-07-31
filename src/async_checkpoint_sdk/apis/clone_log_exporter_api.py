@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.log_exporter_reply import LogExporterReply
 from async_checkpoint_sdk.models.log_exporter_request_edit import LogExporterRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def clone_log_exporter(
-    client: ClientSession, data: LogExporterRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: LogExporterRequestEdit, config: SDKConfig, **kwargs
 ) -> LogExporterReply:
     """
     Clone existing log exporter.

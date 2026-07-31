@@ -1,5 +1,5 @@
-from .office_mode_method_request import OfficeModeMethodRequest
-from .pydantic import BaseModel, Field
+from office_mode_method_request import OfficeModeMethodRequest
+from pydantic import BaseModel, Field
 
 
 class OfficeModeRequest(BaseModel):

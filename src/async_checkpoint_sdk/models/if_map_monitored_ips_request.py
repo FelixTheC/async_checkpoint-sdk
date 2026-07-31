@@ -1,12 +1,10 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class IfMapMonitoredIpsRequest(BaseModel):
     first_ip: str = Field(
-        alias="first-ip",
-        description="""First IPv4 address in the range to be monitored.""",
+        alias="first-ip", description="""First IPv4 address in the range to be monitored."""
     )
     last_ip: str = Field(
-        alias="last-ip",
-        description="""Last IPv4 address in the range to be monitored.""",
+        alias="last-ip", description="""Last IPv4 address in the range to be monitored."""
     )

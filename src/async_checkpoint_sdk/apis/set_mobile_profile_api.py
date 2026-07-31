@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.mobile_profile_reply import MobileProfileReply
 from async_checkpoint_sdk.models.mobile_profile_request_edit import MobileProfileRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_mobile_profile(
-    client: ClientSession, data: MobileProfileRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: MobileProfileRequestEdit, config: SDKConfig, **kwargs
 ) -> MobileProfileReply:
     """
     Edit existing Mobile Profile using name or uid.

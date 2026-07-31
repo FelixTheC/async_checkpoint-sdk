@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.rpc_service_reply import RpcServiceReply
 from async_checkpoint_sdk.models.rpc_service_request_edit import RpcServiceRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_service_rpc(
-    client: ClientSession, data: RpcServiceRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: RpcServiceRequestEdit, config: SDKConfig, **kwargs
 ) -> RpcServiceReply:
     """
     Edit existing object using object name or uid.

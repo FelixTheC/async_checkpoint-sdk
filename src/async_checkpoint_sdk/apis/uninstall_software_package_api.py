@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.deployment_command_reply import DeploymentCommandReply
 from async_checkpoint_sdk.models.deployment_command_request import DeploymentCommandRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def uninstall_software_package(
-    client: ClientSession, data: DeploymentCommandRequest, config: Config, **kwargs
+    client: ClientSession, data: DeploymentCommandRequest, config: SDKConfig, **kwargs
 ) -> DeploymentCommandReply:
     """
     Uninstalls the software package from target machines.

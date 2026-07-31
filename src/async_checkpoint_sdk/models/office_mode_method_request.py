@@ -1,11 +1,10 @@
-from .optional_parameters_request import OptionalParametersRequest
-from .pydantic import BaseModel, Field
+from optional_parameters_request import OptionalParametersRequest
+from pydantic import BaseModel, Field
 
 
 class OfficeModeMethodRequest(BaseModel):
     radius_server: bool = Field(
-        alias="radius-server",
-        description="""Radius server used to authenticate the user.""",
+        alias="radius-server", description="""Radius server used to authenticate the user."""
     )
     use_allocate_method: bool = Field(
         alias="use-allocate-method", description="""Use Allocate Method."""

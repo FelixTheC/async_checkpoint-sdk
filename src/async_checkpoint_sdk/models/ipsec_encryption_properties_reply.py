@@ -1,6 +1,6 @@
-from .ipsec_support_data_integrity_reply import IpsecSupportDataIntegrityReply
-from .ipsec_support_encryption_algs_reply import IpsecSupportEncryptionAlgsReply
-from .pydantic import BaseModel, Field
+from ipsec_support_data_integrity_reply import IpsecSupportDataIntegrityReply
+from ipsec_support_encryption_algs_reply import IpsecSupportEncryptionAlgsReply
+from pydantic import BaseModel, Field
 
 
 class IpsecEncryptionPropertiesReply(BaseModel):

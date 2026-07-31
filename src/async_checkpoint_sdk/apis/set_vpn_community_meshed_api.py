@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.vpn_meshed_community_reply import VpnMeshedComm
 from async_checkpoint_sdk.models.vpn_meshed_community_request_edit import (
     VpnMeshedCommunityRequestEdit,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_vpn_community_meshed(
-    client: ClientSession, data: VpnMeshedCommunityRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: VpnMeshedCommunityRequestEdit, config: SDKConfig, **kwargs
 ) -> VpnMeshedCommunityReply:
     """
     Edit existing object using object name or uid.

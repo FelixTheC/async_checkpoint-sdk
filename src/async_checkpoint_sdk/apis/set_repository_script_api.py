@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.script_reply import ScriptReply
 from async_checkpoint_sdk.models.script_request_edit import ScriptRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_repository_script(
-    client: ClientSession, data: ScriptRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: ScriptRequestEdit, config: SDKConfig, **kwargs
 ) -> ScriptReply:
     """
     Edit an existing script in the script repository.

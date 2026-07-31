@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class TcpResourceUfpRequestEdit(BaseModel):
@@ -8,8 +8,7 @@ class TcpResourceUfpRequestEdit(BaseModel):
 The UFP server must already be defined as an OPSEC Application.""",
     )
     caching_control: str = Field(
-        alias="caching-control",
-        description="""Specifies if and how caching is to be enabled.""",
+        alias="caching-control", description="""Specifies if and how caching is to be enabled."""
     )
     ignore_ufp_server_after_failure: bool = Field(
         alias="ignore-ufp-server-after-failure",

@@ -1,12 +1,11 @@
-from .authentication_settings_edit import AuthenticationSettingsEdit
-from .identity_agent_portal_api_request import IdentityAgentPortalApiRequest
-from .pydantic import BaseModel, Field
+from authentication_settings_edit import AuthenticationSettingsEdit
+from identity_agent_portal_api_request import IdentityAgentPortalApiRequest
+from pydantic import BaseModel, Field
 
 
 class IdentityAgentSettingsEdit(BaseModel):
     agents_interval_keepalive: int = Field(
-        alias="agents-interval-keepalive",
-        description="""Agents send keepalive period (minutes).""",
+        alias="agents-interval-keepalive", description="""Agents send keepalive period (minutes)."""
     )
     user_reauthenticate_interval: int = Field(
         alias="user-reauthenticate-interval",

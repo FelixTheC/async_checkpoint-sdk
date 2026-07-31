@@ -1,11 +1,10 @@
-from .certs_and_pki_global_properties_reply import CertsAndPkiGlobalPropertiesReply
-from .pydantic import BaseModel, Field
+from certs_and_pki_global_properties_reply import CertsAndPkiGlobalPropertiesReply
+from pydantic import BaseModel, Field
 
 
 class GlobalPropertiesAdvancedConfReply(BaseModel):
     certs_and_pki: CertsAndPkiGlobalPropertiesReply = Field(
-        alias="certs-and-pki",
-        description="""Configure Certificates and PKI properties.""",
+        alias="certs-and-pki", description="""Configure Certificates and PKI properties."""
     )
     keep_ike_sas: bool = Field(
         alias="keep-ike-sas",

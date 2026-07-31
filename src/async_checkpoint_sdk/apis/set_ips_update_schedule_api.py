@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.ips_update_schedule_reply import IpsUpdateSched
 from async_checkpoint_sdk.models.ips_update_schedule_request_edit import (
     IpsUpdateScheduleRequestEdit,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_ips_update_schedule(
-    client: ClientSession, data: IpsUpdateScheduleRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: IpsUpdateScheduleRequestEdit, config: SDKConfig, **kwargs
 ) -> IpsUpdateScheduleReply:
     """
     Edit existing object using object name or uid.

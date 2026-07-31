@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class CertsAndPkiGlobalPropertiesRequest(BaseModel):
@@ -11,6 +11,5 @@ class CertsAndPkiGlobalPropertiesRequest(BaseModel):
         description="""Select the key size for ECDSA of the host certificate.""",
     )
     host_certs_key_size: str = Field(
-        alias="host-certs-key-size",
-        description="""Select the key size of the host certificate.""",
+        alias="host-certs-key-size", description="""Select the key size of the host certificate."""
     )

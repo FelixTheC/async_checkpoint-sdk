@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.traditional_group_reply import TraditionalGroupReply
 from async_checkpoint_sdk.models.traditional_group_request_edit import TraditionalGroupRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_data_type_traditional_group(
-    client: ClientSession, data: TraditionalGroupRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: TraditionalGroupRequestEdit, config: SDKConfig, **kwargs
 ) -> TraditionalGroupReply:
     """
     Edit existing Traditional Group Data Type using object name or uid.

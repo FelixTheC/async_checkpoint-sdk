@@ -1,5 +1,8 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class WorkSessionSwitchRequest(BaseModel):
-    pass
+    uid: str = Field(
+        alias="uid",
+        description="""Session unique identifier. It should belong to the current administrator. Switching to the sessions opened in SmartConsole is not supported.""",
+    )

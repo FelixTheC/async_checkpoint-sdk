@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.version_reply import VersionReply
 from async_checkpoint_sdk.models.version_request import VersionRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_version(
-    client: ClientSession, data: VersionRequest, config: Config, **kwargs
+    client: ClientSession, data: VersionRequest, config: SDKConfig, **kwargs
 ) -> VersionReply:
     """
     Parameters

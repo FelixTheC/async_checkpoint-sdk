@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.dcerpc_service_reply import DcerpcServiceReply
 from async_checkpoint_sdk.models.dcerpc_service_request_edit import DcerpcServiceRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def clone_service_dce_rpc(
-    client: ClientSession, data: DcerpcServiceRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: DcerpcServiceRequestEdit, config: SDKConfig, **kwargs
 ) -> DcerpcServiceReply:
     """
     Clone existing object.

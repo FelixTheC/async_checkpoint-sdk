@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_ok_reply import ApiOkReply
 from async_checkpoint_sdk.models.delete_objects_by_tag_request import DeleteObjectsByTagRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def delete_objects_by_tag(
-    client: ClientSession, data: DeleteObjectsByTagRequest, config: Config, **kwargs
+    client: ClientSession, data: DeleteObjectsByTagRequest, config: SDKConfig, **kwargs
 ) -> ApiOkReply:
     """
     Parameters

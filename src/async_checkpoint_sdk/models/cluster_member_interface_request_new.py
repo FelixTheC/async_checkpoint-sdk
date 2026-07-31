@@ -1,8 +1,10 @@
-from .object import Object
-from .pydantic import BaseModel, Field
+from object import Object
+from pydantic import BaseModel, Field
 
 
 class ClusterMemberInterfaceRequestNew(BaseModel):
+    name: str = Field(alias="name", description="""Cluster member network interface name.""")
+    member_uid: str = Field(alias="member-uid", description="""Cluster member object uid.""")
     ip_address: str = Field(
         alias="ip-address",
         description="""IPv4 or IPv6 address. If both addresses are required use ipv4-address and ipv6-address fields explicitly.""",
@@ -12,13 +14,12 @@ class ClusterMemberInterfaceRequestNew(BaseModel):
         description="""IPv4 or IPv6 network mask. If both masks are required use ipv4-network-mask and ipv6-network-mask fields explicitly. Instead of providing mask itself it is possible to specify IPv4 or IPv6 mask length in mask-length field. If both masks length are required use ipv4-mask-length and  ipv6-mask-length fields explicitly.""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     tags: Object = Field(alias="tags", description="""Collection of tag identifiers.""")
     ignore_warnings: bool = Field(

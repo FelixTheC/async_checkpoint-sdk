@@ -1,13 +1,13 @@
-from .api_object_standard_identifier import ApiObjectStandardIdentifier
-from .pydantic import BaseModel, Field
+from api_object_standard_identifier import ApiObjectStandardIdentifier
+from pydantic import BaseModel, Field
 
 
 class ShowRuleCandidateReply(BaseModel):
     default_object: ApiObjectStandardIdentifier = Field(
         alias="default-object", description="""Default object of the field."""
     )
-    source: int = Field(
-        alias="from", description="""from .which element number the query was done."""
+    from_: int = Field(
+        alias="from", description="""From which element number the query was done."""
     )
     objects: list[dict] = Field(
         alias="objects",

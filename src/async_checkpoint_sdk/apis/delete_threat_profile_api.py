@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.api_task_reply import ApiTaskReply
 from async_checkpoint_sdk.models.api_visual_c_p_object_identifier_request_delete import (
     ApiVisualCPObjectIdentifierRequestDelete,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def delete_threat_profile(
-    client: ClientSession, data: ApiVisualCPObjectIdentifierRequestDelete, config: Config, **kwargs
+    client: ClientSession, data: ApiVisualCPObjectIdentifierRequestDelete, config: SDKConfig, **kwargs
 ) -> ApiTaskReply:
     """
     Delete existing object using object name or uid.

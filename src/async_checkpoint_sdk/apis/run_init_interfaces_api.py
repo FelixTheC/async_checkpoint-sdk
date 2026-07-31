@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.run_init_interfaces_reply import RunInitInterfacesReply
 from async_checkpoint_sdk.models.run_init_interfaces_request import RunInitInterfacesRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def run_init_interfaces(
-    client: ClientSession, data: RunInitInterfacesRequest, config: Config, **kwargs
+    client: ClientSession, data: RunInitInterfacesRequest, config: SDKConfig, **kwargs
 ) -> RunInitInterfacesReply:
     """
     Parameters

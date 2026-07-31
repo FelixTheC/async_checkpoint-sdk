@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.cdm_command_reply import CdmCommandReply
 from async_checkpoint_sdk.models.put_file_request import PutFileRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def put_file(
-    client: ClientSession, data: PutFileRequest, config: Config, **kwargs
+    client: ClientSession, data: PutFileRequest, config: SDKConfig, **kwargs
 ) -> CdmCommandReply:
     """
     Executes the put-file on a given list of targets.

@@ -1,14 +1,12 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class SmbLogsSettingsRequest(BaseModel):
     alert_when_queue_is_full: bool = Field(
-        alias="alert-when-queue-is-full",
-        description="""Alert when queue is full enabled.""",
+        alias="alert-when-queue-is-full", description="""Alert when queue is full enabled."""
     )
     alert_when_queue_is_full_type: str = Field(
-        alias="alert-when-queue-is-full-type",
-        description="""Alert when queue is full type.""",
+        alias="alert-when-queue-is-full-type", description="""Alert when queue is full type."""
     )
     detect_new_citrix_ica_application_names: bool = Field(
         alias="detect-new-citrix-ica-application-names",

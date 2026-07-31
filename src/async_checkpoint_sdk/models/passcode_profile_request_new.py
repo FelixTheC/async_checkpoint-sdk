@@ -1,7 +1,8 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class PasscodeProfileRequestNew(BaseModel):
+    name: str = Field(alias="name", description="""Object name. Must be unique in the domain.""")
     allow_simple_passcode: bool = Field(
         alias="allow-simple-passcode",
         description="""The passcode length is 4 and only numeric values allowed.""",
@@ -27,8 +28,7 @@ class PasscodeProfileRequestNew(BaseModel):
         description="""The period in days after which the passcode will expire.""",
     )
     enable_inactivity_time_lock: bool = Field(
-        alias="enable-inactivity-time-lock",
-        description="""Lock the device if app is inactive.""",
+        alias="enable-inactivity-time-lock", description="""Lock the device if app is inactive."""
     )
     max_inactivity_time_lock: int = Field(
         alias="max-inactivity-time-lock",
@@ -39,12 +39,10 @@ class PasscodeProfileRequestNew(BaseModel):
         description="""Exit after few failures in passcode verification.""",
     )
     max_passcode_failed_attempts: int = Field(
-        alias="max-passcode-failed-attempts",
-        description="""Number of failed attempts allowed.""",
+        alias="max-passcode-failed-attempts", description="""Number of failed attempts allowed."""
     )
     enable_passcode_history: bool = Field(
-        alias="enable-passcode-history",
-        description="""Check passcode history for reparations.""",
+        alias="enable-passcode-history", description="""Check passcode history for reparations."""
     )
     passcode_history: int = Field(
         alias="passcode-history",
@@ -55,17 +53,16 @@ class PasscodeProfileRequestNew(BaseModel):
         description="""If another object with the same identifier already exists, it will be updated. The command behaviour will be the same as if originally a set command was called. Pay attention that original object's fields will be overwritten by the fields provided in the request payload!""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     domains_to_process: list[str] = Field(
         alias="domains-to-process",
-        description="""Indicates which domains to process the commands on. It cannot be used with the details-level full, must be run from .the System Domain only and with ignore-warnings true. Valid values are: CURRENT_DOMAIN, ALL_DOMAINS_ON_THIS_SERVER.""",
+        description="""Indicates which domains to process the commands on. It cannot be used with the details-level full, must be run from the System Domain only and with ignore-warnings true. Valid values are: CURRENT_DOMAIN, ALL_DOMAINS_ON_THIS_SERVER.""",
     )
     ignore_warnings: bool = Field(
         alias="ignore-warnings", description="""Apply changes ignoring warnings."""

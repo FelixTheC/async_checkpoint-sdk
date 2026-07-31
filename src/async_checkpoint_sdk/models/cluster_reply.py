@@ -1,25 +1,23 @@
-from .advanced_cluster_settings_reply import AdvancedClusterSettingsReply
-from .advanced_settings_reply import AdvancedSettingsReply
-from .api_domain_identifier import ApiDomainIdentifier
-from .appi_settings_reply import AppiSettingsReply
-from .available_actions_reply import AvailableActionsReply
-from .comm_with_server_behind_nat_settings_reply import (
-    CommWithServerBehindNatSettingsReply,
-)
-from .firewall_settings_reply import FirewallSettingsReply
-from .identity_awareness_settings_reply import IdentityAwarenessSettingsReply
-from .ips_settings_cluster_reply import IpsSettingsClusterReply
-from .logs_settings_reply import LogsSettingsReply
-from .meta_info_for_top_level_reply import MetaInfoForTopLevelReply
-from .nat_settings_gateway_cluster_reply import NatSettingsGatewayClusterReply
-from .paged_interface_reply import PagedInterfaceReply
-from .portal_reply import PortalReply
-from .proxy_settings_reply import ProxySettingsReply
-from .pydantic import BaseModel, Field
-from .smb_logs_settings_reply import SmbLogsSettingsReply
-from .ssl_inspection_reply import SslInspectionReply
-from .vpn_settings_reply import VpnSettingsReply
-from .zero_phishing_fqdn_settings_reply import ZeroPhishingFqdnSettingsReply
+from advanced_cluster_settings_reply import AdvancedClusterSettingsReply
+from advanced_settings_reply import AdvancedSettingsReply
+from api_domain_identifier import ApiDomainIdentifier
+from appi_settings_reply import AppiSettingsReply
+from available_actions_reply import AvailableActionsReply
+from comm_with_server_behind_nat_settings_reply import CommWithServerBehindNatSettingsReply
+from firewall_settings_reply import FirewallSettingsReply
+from identity_awareness_settings_reply import IdentityAwarenessSettingsReply
+from ips_settings_cluster_reply import IpsSettingsClusterReply
+from logs_settings_reply import LogsSettingsReply
+from meta_info_for_top_level_reply import MetaInfoForTopLevelReply
+from nat_settings_gateway_cluster_reply import NatSettingsGatewayClusterReply
+from paged_interface_reply import PagedInterfaceReply
+from portal_reply import PortalReply
+from proxy_settings_reply import ProxySettingsReply
+from pydantic import BaseModel, Field
+from smb_logs_settings_reply import SmbLogsSettingsReply
+from ssl_inspection_reply import SslInspectionReply
+from vpn_settings_reply import VpnSettingsReply
+from zero_phishing_fqdn_settings_reply import ZeroPhishingFqdnSettingsReply
 
 
 class ClusterReply(BaseModel):
@@ -36,8 +34,7 @@ class ClusterReply(BaseModel):
     )
     anti_virus: bool = Field(alias="anti-virus", description="""Anti-Virus blade enabled.""")
     application_control: bool = Field(
-        alias="application-control",
-        description="""Application Control blade enabled.""",
+        alias="application-control", description="""Application Control blade enabled."""
     )
     application_control_and_url_filtering_settings: AppiSettingsReply = Field(
         alias="application-control-and-url-filtering-settings",
@@ -94,8 +91,7 @@ class ClusterReply(BaseModel):
     )
     hardware: str = Field(alias="hardware", description="""Gateway platform hardware type.""")
     hardware_subtype: str = Field(
-        alias="hardware-subtype",
-        description="""Gateway type (relevant only for Spark gateways).""",
+        alias="hardware-subtype", description="""Gateway type (relevant only for Spark gateways)."""
     )
     hit_count: bool = Field(
         alias="hit-count",
@@ -108,8 +104,7 @@ class ClusterReply(BaseModel):
         alias="identity-awareness", description="""Identity awareness blade enabled."""
     )
     identity_awareness_settings: IdentityAwarenessSettingsReply = Field(
-        alias="identity-awareness-settings",
-        description="""Identity Awareness settings.""",
+        alias="identity-awareness-settings", description="""Identity Awareness settings."""
     )
     interfaces: PagedInterfaceReply = Field(
         alias="interfaces", description="""Cluster network interfaces."""
@@ -120,7 +115,7 @@ class ClusterReply(BaseModel):
     )
     ips_update_policy: str = Field(
         alias="ips-update-policy",
-        description="""Specifies whether the IPS will be downloaded from .the Management or directly to the Gateway.""",
+        description="""Specifies whether the IPS will be downloaded from the Management or directly to the Gateway.""",
     )
     ipv4_address: str = Field(alias="ipv4-address", description="""IPv4 address.""")
     ipv6_address: str = Field(alias="ipv6-address", description="""IPv6 address.""")
@@ -153,8 +148,7 @@ class ClusterReply(BaseModel):
         description="""Enables monitoring blades system counters report (e.g CPU Usage,Memory Usage).""",
     )
     rtm_traffic_report: bool = Field(
-        alias="rtm-traffic-report",
-        description="""Enables monitoring blades traffic report.""",
+        alias="rtm-traffic-report", description="""Enables monitoring blades traffic report."""
     )
     rtm_traffic_report_per_connection: bool = Field(
         alias="rtm-traffic-report-per-connection",
@@ -167,8 +161,7 @@ class ClusterReply(BaseModel):
         alias="send-alerts-to-server", description="""Server(s) to send alerts to."""
     )
     send_logs_to_backup_server: list[str] = Field(
-        alias="send-logs-to-backup-server",
-        description="""Backup server(s) to send logs to.""",
+        alias="send-logs-to-backup-server", description="""Backup server(s) to send logs to."""
     )
     send_logs_to_server: list[str] = Field(
         alias="send-logs-to-server", description="""Servers(s) to send logs to."""
@@ -209,13 +202,11 @@ class ClusterReply(BaseModel):
         description="""Logs settings that apply to Quantum Spark Appliances that run Gaia Embedded OS.""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     domain: ApiDomainIdentifier = Field(
-        alias="domain",
-        description="""Information about the domain that holds the Object.""",
+        alias="domain", description="""Information about the domain that holds the Object."""
     )
     icon: str = Field(alias="icon", description="""Object icon.""")
     meta_info: MetaInfoForTopLevelReply = Field(
@@ -229,6 +220,5 @@ class ClusterReply(BaseModel):
         description="""Collection of tag objects identified by the name or UID. Level of details in the output corresponds to the number of details for search. This table shows the level of details in the Standard level.""",
     )
     available_actions: AvailableActionsReply = Field(
-        alias="available-actions",
-        description="""Actions that are available on the object.""",
+        alias="available-actions", description="""Actions that are available on the object."""
     )

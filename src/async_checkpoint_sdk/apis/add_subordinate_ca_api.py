@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.subordinate_ca_reply import SubordinateCaReply
 from async_checkpoint_sdk.models.subordinate_ca_request_new import SubordinateCaRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_subordinate_ca(
-    client: ClientSession, data: SubordinateCaRequestNew, config: Config, **kwargs
+    client: ClientSession, data: SubordinateCaRequestNew, config: SDKConfig, **kwargs
 ) -> SubordinateCaReply:
     """
     Create new Subordinate CA server.

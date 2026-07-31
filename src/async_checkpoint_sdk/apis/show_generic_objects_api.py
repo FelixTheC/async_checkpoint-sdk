@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.generic_object_query_reply import GenericObjectQueryReply
 from async_checkpoint_sdk.models.generic_object_query_request import GenericObjectQueryRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_generic_objects(
-    client: ClientSession, data: GenericObjectQueryRequest, config: Config, **kwargs
+    client: ClientSession, data: GenericObjectQueryRequest, config: SDKConfig, **kwargs
 ) -> GenericObjectQueryReply:
     """
     Parameters

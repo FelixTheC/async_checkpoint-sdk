@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.upgrade_import_reply import UpgradeImportReply
 from async_checkpoint_sdk.models.upgrade_import_request import UpgradeImportRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def import_management(
-    client: ClientSession, data: UpgradeImportRequest, config: Config, **kwargs
+    client: ClientSession, data: UpgradeImportRequest, config: SDKConfig, **kwargs
 ) -> UpgradeImportReply:
     """
     Import the primary Security Management Server database or the primary Multi-Domain Server database or the single Domain database and the applicable Check Point configuration. <br/>After the import starts, the session expires and you must login again.

@@ -1,5 +1,7 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class ApiKeyRequest(BaseModel):
-    pass
+    admin_uid: str = Field(
+        alias="admin-uid", description="""Administrator uid to generate API key for."""
+    )

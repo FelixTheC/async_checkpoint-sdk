@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.sccp_call_manager_reply import SccpCallManagerReply
 from async_checkpoint_sdk.models.sccp_call_manager_request_edit import SccpCallManagerRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def clone_voip_domain_sccp_call_manager(
-    client: ClientSession, data: SccpCallManagerRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: SccpCallManagerRequestEdit, config: SDKConfig, **kwargs
 ) -> SccpCallManagerReply:
     """
     Clone existing VoIP Domain SCCP Call Manager.

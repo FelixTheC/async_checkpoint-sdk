@@ -1,7 +1,12 @@
-from .pydantic import BaseModel, Field
+from api_doc_rule_base_position_object_builder import ApiDocRuleBasePositionObjectBuilder
+from pydantic import BaseModel, Field
 
 
 class NatRuleRequestNew(BaseModel):
+    package: str = Field(alias="package", description="""Name of the package.""")
+    position: int | str | ApiDocRuleBasePositionObjectBuilder = Field(
+        alias="position", description="""Position in the rulebase."""
+    )
     name: str = Field(alias="name", description="""Rule name.""")
     enabled: bool = Field(alias="enabled", description="""Enable/Disable the rule.""")
     install_on: str | list[str] = Field(
@@ -25,7 +30,7 @@ class NatRuleRequestNew(BaseModel):
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     ignore_warnings: bool = Field(
         alias="ignore-warnings", description="""Apply changes ignoring warnings."""

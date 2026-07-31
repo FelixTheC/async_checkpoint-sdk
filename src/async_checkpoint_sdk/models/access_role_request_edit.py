@@ -1,16 +1,16 @@
+from add import Add
+from machines_source_and_selection_request import MachinesSourceAndSelectionRequest
 from pydantic import BaseModel, Field
-
-from .add import add
-from .machines_source_and_selection_request import MachinesSourceAndSelectionRequest
-from .remove import remove
-from .users_source_and_selection_request import UsersSourceAndSelectionRequest
+from remove import Remove
+from users_source_and_selection_request import UsersSourceAndSelectionRequest
 
 
 class AccessRoleRequestEdit(BaseModel):
-    machines: str | add | remove | MachinesSourceAndSelectionRequest | list[dict] = Field(
+    uid: str = Field(alias="uid", description="""Object unique identifier.""")
+    machines: str | Add | Remove | MachinesSourceAndSelectionRequest | list[dict] = Field(
         alias="machines", description="""Machines that can access the system."""
     )
-    networks: add | remove | str | list[str] = Field(
+    networks: Add | Remove | str | list[str] = Field(
         alias="networks",
         description="""Collection of Network objects identified by the name or UID that can access the system.""",
     )
@@ -19,19 +19,18 @@ class AccessRoleRequestEdit(BaseModel):
         alias="remote-access-clients",
         description="""Remote access clients identified by name or UID.""",
     )
-    users: str | add | remove | UsersSourceAndSelectionRequest | list[dict] = Field(
+    users: str | Add | Remove | UsersSourceAndSelectionRequest | list[dict] = Field(
         alias="users", description="""Users that can access the system."""
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
-    tags: add | remove | str | list[str] = Field(
+    tags: Add | Remove | str | list[str] = Field(
         alias="tags", description="""Collection of tag identifiers."""
     )
     ignore_warnings: bool = Field(

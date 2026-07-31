@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.threat_rule_identifier_request import ThreatRuleIdentifierRequest
 from async_checkpoint_sdk.models.threat_rule_reply import ThreatRuleReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_threat_rule(
-    client: ClientSession, data: ThreatRuleIdentifierRequest, config: Config, **kwargs
+    client: ClientSession, data: ThreatRuleIdentifierRequest, config: SDKConfig, **kwargs
 ) -> ThreatRuleReply:
     """
     Retrieve existing object using object name or uid.

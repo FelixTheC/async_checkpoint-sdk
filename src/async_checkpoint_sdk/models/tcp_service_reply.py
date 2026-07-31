@@ -1,8 +1,8 @@
-from .aggressive_aging_reply import AggressiveAgingReply
-from .api_domain_identifier import ApiDomainIdentifier
-from .available_actions_reply import AvailableActionsReply
-from .meta_info_for_top_level_reply import MetaInfoForTopLevelReply
-from .pydantic import BaseModel, Field
+from aggressive_aging_reply import AggressiveAgingReply
+from api_domain_identifier import ApiDomainIdentifier
+from available_actions_reply import AvailableActionsReply
+from meta_info_for_top_level_reply import MetaInfoForTopLevelReply
+from pydantic import BaseModel, Field
 
 
 class TcpServiceReply(BaseModel):
@@ -34,24 +34,21 @@ class TcpServiceReply(BaseModel):
         description="""Indicates whether this service is a Data Domain service which has been overridden.""",
     )
     port: str = Field(
-        alias="port",
-        description="""The number of the port used to provide this service.""",
+        alias="port", description="""The number of the port used to provide this service."""
     )
     protocol: str = Field(
         alias="protocol",
         description="""The protocol type associated with the service, and by implication, the management server (if any) that enforces Content Security and Authentication for the service.""",
     )
     session_timeout: int = Field(
-        alias="session-timeout",
-        description="""Time (in seconds) before the session times out.""",
+        alias="session-timeout", description="""Time (in seconds) before the session times out."""
     )
     source_port: str = Field(
         alias="source-port",
         description="""Port number for the client side service. If specified, only those Source port Numbers will be Accepted, Dropped, or Rejected during packet inspection. Otherwise, the source port is not inspected.""",
     )
     use_default_session_timeout: bool = Field(
-        alias="use-default-session-timeout",
-        description="""Use default virtual session timeout.""",
+        alias="use-default-session-timeout", description="""Use default virtual session timeout."""
     )
     enable_tcp_resource: bool = Field(
         alias="enable-tcp-resource", description="""Enable for tcp resource."""
@@ -69,13 +66,11 @@ class TcpServiceReply(BaseModel):
         description="""Specify the delay (in seconds) in which a synchronization will start after connection initiation.""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     domain: ApiDomainIdentifier = Field(
-        alias="domain",
-        description="""Information about the domain that holds the Object.""",
+        alias="domain", description="""Information about the domain that holds the Object."""
     )
     icon: str = Field(alias="icon", description="""Object icon.""")
     meta_info: MetaInfoForTopLevelReply = Field(
@@ -89,6 +84,5 @@ class TcpServiceReply(BaseModel):
         description="""Collection of tag objects identified by the name or UID. Level of details in the output corresponds to the number of details for search. This table shows the level of details in the Standard level.""",
     )
     available_actions: AvailableActionsReply = Field(
-        alias="available-actions",
-        description="""Actions that are available on the object.""",
+        alias="available-actions", description="""Actions that are available on the object."""
     )

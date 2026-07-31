@@ -1,5 +1,5 @@
-from .gateway_server_interface_topology_reply import GatewayServerInterfaceTopologyReply
-from .pydantic import BaseModel, Field
+from gateway_server_interface_topology_reply import GatewayServerInterfaceTopologyReply
+from pydantic import BaseModel, Field
 
 
 class GatewayServerInterfaceReply(BaseModel):

@@ -1,5 +1,5 @@
-from .api_domain_identifier import ApiDomainIdentifier
-from .pydantic import BaseModel, Field
+from api_domain_identifier import ApiDomainIdentifier
+from pydantic import BaseModel, Field
 
 
 class MultiCastAddressRangeStandardReply(BaseModel):
@@ -19,11 +19,9 @@ class MultiCastAddressRangeStandardReply(BaseModel):
         alias="ipv6-address-last", description="""Last IPv6 address in the range."""
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     domain: ApiDomainIdentifier = Field(
-        alias="domain",
-        description="""Information about the domain that holds the Object.""",
+        alias="domain", description="""Information about the domain that holds the Object."""
     )
     icon: str = Field(alias="icon", description="""Object icon.""")

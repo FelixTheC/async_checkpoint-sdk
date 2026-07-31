@@ -1,6 +1,6 @@
-from .advanced_settings_request_new import AdvancedSettingsRequestNew
-from .pydantic import BaseModel, Field
-from .sms_provider_credentials_request import SmsProviderCredentialsRequest
+from advanced_settings_request_new import AdvancedSettingsRequestNew
+from pydantic import BaseModel, Field
+from sms_provider_credentials_request import SmsProviderCredentialsRequest
 
 
 class DynamicIdSettingsRequestNew(BaseModel):
@@ -9,10 +9,8 @@ class DynamicIdSettingsRequestNew(BaseModel):
         description="""SMS provider and email configuration.""",
     )
     sms_provider_credentials: SmsProviderCredentialsRequest = Field(
-        alias="sms-provider-credentials",
-        description="""SMS provider credentials configuration.""",
+        alias="sms-provider-credentials", description="""SMS provider credentials configuration."""
     )
     advanced_settings: AdvancedSettingsRequestNew = Field(
-        alias="advanced-settings",
-        description="""Advanced Dynamic ID configuration settings.""",
+        alias="advanced-settings", description="""Advanced Dynamic ID configuration settings."""
     )

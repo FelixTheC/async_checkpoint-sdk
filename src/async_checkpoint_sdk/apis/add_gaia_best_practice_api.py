@@ -6,11 +6,11 @@ from async_checkpoint_sdk.models.compliance_gaia_best_practice_reply import (
 from async_checkpoint_sdk.models.compliance_gaia_best_practice_request_new import (
     ComplianceGaiaBestPracticeRequestNew,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_gaia_best_practice(
-    client: ClientSession, data: ComplianceGaiaBestPracticeRequestNew, config: Config, **kwargs
+    client: ClientSession, data: ComplianceGaiaBestPracticeRequestNew, config: SDKConfig, **kwargs
 ) -> ComplianceGaiaBestPracticeReply:
     """
     Add a new Gaia Best Practice with a custom script that runs on Gaia Security Gateways. <br/>During the Compliance scan, the practice script runs on the Gaia Security Gateway. To comply with the Best Practice, the script's output should match the expected output parameter.

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.gw_proxy_cmd_reply import GwProxyCmdReply
 from async_checkpoint_sdk.models.gw_proxy_cmd_request import GwProxyCmdRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def gaia_api(
-    client: ClientSession, data: GwProxyCmdRequest, config: Config, **kwargs
+    client: ClientSession, data: GwProxyCmdRequest, config: SDKConfig, **kwargs
 ) -> GwProxyCmdReply:
     """
     Runs a gaia-api command from the management.

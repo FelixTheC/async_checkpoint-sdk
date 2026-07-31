@@ -1,5 +1,5 @@
-from .gateway_day_recurrence_request_edit import GatewayDayRecurrenceRequestEdit
-from .pydantic import BaseModel, Field
+from gateway_day_recurrence_request_edit import GatewayDayRecurrenceRequestEdit
+from pydantic import BaseModel, Field
 
 
 class ScheduleConfGatewayRequestEdit(BaseModel):

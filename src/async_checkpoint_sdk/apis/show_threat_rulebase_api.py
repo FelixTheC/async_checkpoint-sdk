@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.query_threat_rulebase_reply import QueryThreatRulebaseReply
 from async_checkpoint_sdk.models.query_threat_rulebase_request import QueryThreatRulebaseRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_threat_rulebase(
-    client: ClientSession, data: QueryThreatRulebaseRequest, config: Config, **kwargs
+    client: ClientSession, data: QueryThreatRulebaseRequest, config: SDKConfig, **kwargs
 ) -> QueryThreatRulebaseReply:
     """
     Shows the entire Threat Prevention Rules layer. The reply features a list of rules. Each rule has the Global Exceptions Group attached and may have any number of an Exceptions Group attached. An optional "filter" field may be added in order to filter out only those rules that match a search criteria.

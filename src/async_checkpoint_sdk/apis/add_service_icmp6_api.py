@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.service_icmp6_reply import ServiceIcmp6Reply
 from async_checkpoint_sdk.models.service_icmp6_request_new import ServiceIcmp6RequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_service_icmp6(
-    client: ClientSession, data: ServiceIcmp6RequestNew, config: Config, **kwargs
+    client: ClientSession, data: ServiceIcmp6RequestNew, config: SDKConfig, **kwargs
 ) -> ServiceIcmp6Reply:
     """
     Create new object.

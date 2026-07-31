@@ -1,11 +1,11 @@
-from .pydantic import BaseModel, Field
-from .security_server_global_properties_reply import SecurityServerGlobalPropertiesReply
+from pydantic import BaseModel, Field
+from security_server_global_properties_reply import SecurityServerGlobalPropertiesReply
 
 
 class FirewallGlobalPropertiesReply(BaseModel):
     accept_control_connections: bool = Field(
         alias="accept-control-connections",
-        description="""Used for:<br>&nbsp;&nbsp;&nbsp;&nbsp; <ul><li> Installing the security policy from .the Security Management server to the gateways.</li><br>&nbsp;&nbsp;&nbsp;&nbsp; <li> Sending logs from .the gateways to the Security Management server.</li><br>&nbsp;&nbsp;&nbsp;&nbsp; <li> Communication between SmartConsole clients and the Security Management Server</li><br>&nbsp;&nbsp;&nbsp;&nbsp; <li> Communication between Firewall daemons on different machines (Security Management Server, Security Gateway).</li><br>&nbsp;&nbsp;&nbsp;&nbsp; <li> Connecting to OPSEC applications such as RADIUS and TACACS authentication servers.</li></ul>If you disable Accept Control Connections and you want Check Point components to communicate with each other and with OPSEC components, you must explicitly allow these connections in the Rule Base.""",
+        description="""Used for:<br>&nbsp;&nbsp;&nbsp;&nbsp; <ul><li> Installing the security policy from the Security Management server to the gateways.</li><br>&nbsp;&nbsp;&nbsp;&nbsp; <li> Sending logs from the gateways to the Security Management server.</li><br>&nbsp;&nbsp;&nbsp;&nbsp; <li> Communication between SmartConsole clients and the Security Management Server</li><br>&nbsp;&nbsp;&nbsp;&nbsp; <li> Communication between Firewall daemons on different machines (Security Management Server, Security Gateway).</li><br>&nbsp;&nbsp;&nbsp;&nbsp; <li> Connecting to OPSEC applications such as RADIUS and TACACS authentication servers.</li></ul>If you disable Accept Control Connections and you want Check Point components to communicate with each other and with OPSEC components, you must explicitly allow these connections in the Rule Base.""",
     )
     accept_control_connections_position: str = Field(
         alias="accept-control-connections-position",
@@ -28,8 +28,7 @@ class FirewallGlobalPropertiesReply(BaseModel):
         description="""The position of the implied rules in the Rule Base.""",
     )
     accept_smart_update_connections: bool = Field(
-        alias="accept-smart-update-connections",
-        description="""Accepts SmartUpdate connections.""",
+        alias="accept-smart-update-connections", description="""Accepts SmartUpdate connections."""
     )
     accept_smart_update_connections_position: str = Field(
         alias="accept-smart-update-connections-position",
@@ -37,7 +36,7 @@ class FirewallGlobalPropertiesReply(BaseModel):
     )
     accept_outgoing_packets_originating_from_gw: bool = Field(
         alias="accept-outgoing-packets-originating-from-gw",
-        description="""Accepts all packets from .connections that originate at the Check Point Security Gateway.""",
+        description="""Accepts all packets from connections that originate at the Check Point Security Gateway.""",
     )
     accept_outgoing_packets_originating_from_gw_position: str = Field(
         alias="accept-outgoing-packets-originating-from-gw-position",
@@ -45,7 +44,7 @@ class FirewallGlobalPropertiesReply(BaseModel):
     )
     accept_outgoing_packets_originating_from_connectra_gw: bool = Field(
         alias="accept-outgoing-packets-originating-from-connectra-gw",
-        description="""Accepts outgoing packets originating from .Connectra gateway.<br>Available only if accept-outgoing-packets-originating-from-gw is false.""",
+        description="""Accepts outgoing packets originating from Connectra gateway.<br>Available only if accept-outgoing-packets-originating-from-gw is false.""",
     )
     accept_outgoing_packets_to_cp_online_services: bool = Field(
         alias="accept-outgoing-packets-to-cp-online-services",
@@ -113,7 +112,7 @@ class FirewallGlobalPropertiesReply(BaseModel):
     )
     accept_vrrp_packets_originating_from_cluster_members: bool = Field(
         alias="accept-vrrp-packets-originating-from-cluster-members",
-        description="""Selecting this option creates an implied rule in the security policy Rule Base that accepts VRRP inbound and outbound traffic to and from .the members of the cluster.""",
+        description="""Selecting this option creates an implied rule in the security policy Rule Base that accepts VRRP inbound and outbound traffic to and from the members of the cluster.""",
     )
     accept_vrrp_packets_originating_from_cluster_members_position: str = Field(
         alias="accept-vrrp-packets-originating-from-cluster-members-position",
@@ -129,7 +128,7 @@ class FirewallGlobalPropertiesReply(BaseModel):
     )
     log_implied_rules: bool = Field(
         alias="log-implied-rules",
-        description="""Produces log records for communications that match the implied rules that are generated in the Rule Base from .the properties defined in this window.""",
+        description="""Produces log records for communications that match the implied rules that are generated in the Rule Base from the properties defined in this window.""",
     )
     security_server: SecurityServerGlobalPropertiesReply = Field(
         alias="security-server",

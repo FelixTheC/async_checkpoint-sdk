@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.login_restrictions_reply import LoginRestrictio
 from async_checkpoint_sdk.models.login_restrictions_request_edit import (
     LoginRestrictionsRequestEdit,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_login_restrictions(
-    client: ClientSession, data: LoginRestrictionsRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: LoginRestrictionsRequestEdit, config: SDKConfig, **kwargs
 ) -> LoginRestrictionsReply:
     """
     Set login restrictions.

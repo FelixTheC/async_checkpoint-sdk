@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.address_range_reply import AddressRangeReply
 from async_checkpoint_sdk.models.address_range_request_edit import AddressRangeRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_address_range(
-    client: ClientSession, data: AddressRangeRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: AddressRangeRequestEdit, config: SDKConfig, **kwargs
 ) -> AddressRangeReply:
     """
     Edit existing object using object name or uid.

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_ok_reply import ApiOkReply
 from async_checkpoint_sdk.models.t_l_s_rule_identifier_request import TLSRuleIdentifierRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def delete_https_rule(
-    client: ClientSession, data: TLSRuleIdentifierRequest, config: Config, **kwargs
+    client: ClientSession, data: TLSRuleIdentifierRequest, config: SDKConfig, **kwargs
 ) -> ApiOkReply:
     """
     Delete existing HTTPS Inspection rule using rule number or uid.

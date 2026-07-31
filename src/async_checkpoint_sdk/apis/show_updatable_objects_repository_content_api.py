@@ -6,11 +6,11 @@ from async_checkpoint_sdk.models.updatable_objects_repository_content_reply impo
 from async_checkpoint_sdk.models.updatable_objects_repository_content_request import (
     UpdatableObjectsRepositoryContentRequest,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_updatable_objects_repository_content(
-    client: ClientSession, data: UpdatableObjectsRepositoryContentRequest, config: Config, **kwargs
+    client: ClientSession, data: UpdatableObjectsRepositoryContentRequest, config: SDKConfig, **kwargs
 ) -> UpdatableObjectsRepositoryContentReply:
     """
     Shows the content of the available updatable objects from the Check Point User Center.

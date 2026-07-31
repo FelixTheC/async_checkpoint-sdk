@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.sccp_call_manager_reply import SccpCallManagerReply
 from async_checkpoint_sdk.models.sccp_call_manager_request_new import SccpCallManagerRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_voip_domain_sccp_call_manager(
-    client: ClientSession, data: SccpCallManagerRequestNew, config: Config, **kwargs
+    client: ClientSession, data: SccpCallManagerRequestNew, config: SDKConfig, **kwargs
 ) -> SccpCallManagerReply:
     """
     Create new VoIP Domain SCCP Call Manager.

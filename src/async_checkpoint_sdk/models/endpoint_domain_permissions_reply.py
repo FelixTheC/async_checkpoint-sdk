@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class EndpointDomainPermissionsReply(BaseModel):
@@ -40,5 +40,5 @@ class EndpointDomainPermissionsReply(BaseModel):
     )
     reset_computer_data: bool = Field(
         alias="reset-computer-data",
-        description="""The administrator can reset a computer, which deletes all information about the computer from .the Security Management Server.""",
+        description="""The administrator can reset a computer, which deletes all information about the computer from the Security Management Server.""",
     )

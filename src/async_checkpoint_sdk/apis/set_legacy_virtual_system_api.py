@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.legacy_virtual_system_reply import LegacyVirtua
 from async_checkpoint_sdk.models.legacy_virtual_system_request_edit import (
     LegacyVirtualSystemRequestEdit,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_legacy_virtual_system(
-    client: ClientSession, data: LegacyVirtualSystemRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: LegacyVirtualSystemRequestEdit, config: SDKConfig, **kwargs
 ) -> LegacyVirtualSystemReply:
     """
     Edit existing object using object name or uid.

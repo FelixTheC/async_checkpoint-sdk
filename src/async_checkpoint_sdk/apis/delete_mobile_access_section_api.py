@@ -4,13 +4,13 @@ from async_checkpoint_sdk.models.api_ok_reply import ApiOkReply
 from async_checkpoint_sdk.models.mobile_applications_section_identifier_request_show import (
     MobileApplicationsSectionIdentifierRequestShow,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def delete_mobile_access_section(
     client: ClientSession,
     data: MobileApplicationsSectionIdentifierRequestShow,
-    config: Config,
+    config: SDKConfig,
     **kwargs,
 ) -> ApiOkReply:
     """

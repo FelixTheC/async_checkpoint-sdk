@@ -1,52 +1,35 @@
-from .add import add
-from .authentication_global_properties_request import (
-    AuthenticationGlobalPropertiesRequest,
-)
-from .carrier_security_global_properties_request import (
-    CarrierSecurityGlobalPropertiesRequest,
-)
-from .connect_control_global_properties_request import (
-    ConnectControlGlobalPropertiesRequest,
-)
-from .data_access_ctrl_global_properties_request import (
-    DataAccessCtrlGlobalPropertiesRequest,
-)
-from .firewall_global_properties_request import FirewallGlobalPropertiesRequest
-from .global_properties_advanced_conf_request import GlobalPropertiesAdvancedConfRequest
-from .hit_count_global_properties_request import HitCountGlobalPropertiesRequest
-from .identity_awareness_global_properties_request import (
-    IdentityAwarenessGlobalPropertiesRequest,
-)
-from .ip_address_range_request import IpAddressRangeRequest
-from .log_and_alert_global_properties_request import LogAndAlertGlobalPropertiesRequest
-from .nat_global_properties_request import NatGlobalPropertiesRequest
-from .proxy_global_properties_request import ProxyGlobalPropertiesRequest
-from .pydantic import BaseModel, Field
-from .qo_s_global_properties_request import QoSGlobalPropertiesRequest
-from .remote_access_global_properties_request import RemoteAccessGlobalPropertiesRequest
-from .remove import remove
-from .stateful_inspection_global_properties_request import (
-    StatefulInspectionGlobalPropertiesRequest,
-)
-from .user_accounts_global_properties_request import UserAccountsGlobalPropertiesRequest
-from .user_authority_global_properties_request import (
-    UserAuthorityGlobalPropertiesRequest,
-)
-from .user_check_global_properties_request import UserCheckGlobalPropertiesRequest
-from .user_directory_global_properties_request import (
-    UserDirectoryGlobalPropertiesRequest,
-)
-from .vpn_global_properties_request import VpnGlobalPropertiesRequest
+from add import Add
+from authentication_global_properties_request import AuthenticationGlobalPropertiesRequest
+from carrier_security_global_properties_request import CarrierSecurityGlobalPropertiesRequest
+from connect_control_global_properties_request import ConnectControlGlobalPropertiesRequest
+from data_access_ctrl_global_properties_request import DataAccessCtrlGlobalPropertiesRequest
+from firewall_global_properties_request import FirewallGlobalPropertiesRequest
+from global_properties_advanced_conf_request import GlobalPropertiesAdvancedConfRequest
+from hit_count_global_properties_request import HitCountGlobalPropertiesRequest
+from identity_awareness_global_properties_request import IdentityAwarenessGlobalPropertiesRequest
+from ip_address_range_request import IpAddressRangeRequest
+from log_and_alert_global_properties_request import LogAndAlertGlobalPropertiesRequest
+from nat_global_properties_request import NatGlobalPropertiesRequest
+from proxy_global_properties_request import ProxyGlobalPropertiesRequest
+from pydantic import BaseModel, Field
+from qo_s_global_properties_request import QoSGlobalPropertiesRequest
+from remote_access_global_properties_request import RemoteAccessGlobalPropertiesRequest
+from remove import Remove
+from stateful_inspection_global_properties_request import StatefulInspectionGlobalPropertiesRequest
+from user_accounts_global_properties_request import UserAccountsGlobalPropertiesRequest
+from user_authority_global_properties_request import UserAuthorityGlobalPropertiesRequest
+from user_check_global_properties_request import UserCheckGlobalPropertiesRequest
+from user_directory_global_properties_request import UserDirectoryGlobalPropertiesRequest
+from vpn_global_properties_request import VpnGlobalPropertiesRequest
 
 
 class GlobalPropertiesRequestEdit(BaseModel):
     firewall: FirewallGlobalPropertiesRequest = Field(
         alias="firewall",
-        description="""Add implied rules to or remove them from .the Firewall Rule Base. Determine the position of the implied rules in the Rule Base, and whether or not to log them.""",
+        description="""Add implied rules to or remove them from the Firewall Rule Base. Determine the position of the implied rules in the Rule Base, and whether or not to log them.""",
     )
     nat: NatGlobalPropertiesRequest = Field(
-        alias="nat",
-        description="""Configure settings that apply to all NAT connections.""",
+        alias="nat", description="""Configure settings that apply to all NAT connections."""
     )
     authentication: AuthenticationGlobalPropertiesRequest = Field(
         alias="authentication",
@@ -56,8 +39,7 @@ class GlobalPropertiesRequestEdit(BaseModel):
         alias="vpn", description="""Configure settings relevant to VPN."""
     )
     identity_awareness: IdentityAwarenessGlobalPropertiesRequest = Field(
-        alias="identity-awareness",
-        description="""Configure Identity Awareness properties.""",
+        alias="identity-awareness", description="""Configure Identity Awareness properties."""
     )
     remote_access: RemoteAccessGlobalPropertiesRequest = Field(
         alias="remote-access", description="""Configure Remote Access properties."""
@@ -87,18 +69,16 @@ class GlobalPropertiesRequestEdit(BaseModel):
         description="""Configure settings that relate to ConnectControl server load balancing.""",
     )
     stateful_inspection: StatefulInspectionGlobalPropertiesRequest = Field(
-        alias="stateful-inspection",
-        description="""Adjust Stateful Inspection parameters.""",
+        alias="stateful-inspection", description="""Adjust Stateful Inspection parameters."""
     )
     log_and_alert: LogAndAlertGlobalPropertiesRequest = Field(
-        alias="log-and-alert",
-        description="""Define system-wide logging and alerting parameters.""",
+        alias="log-and-alert", description="""Define system-wide logging and alerting parameters."""
     )
     data_access_control: DataAccessCtrlGlobalPropertiesRequest = Field(
         alias="data-access-control",
-        description="""Configure automatic downloads from .Check Point and anonymously share product data. Options selected here apply to all Security Gateways, Clusters and VSX devices managed by this management server.""",
+        description="""Configure automatic downloads from Check Point and anonymously share product data. Options selected here apply to all Security Gateways, Clusters and VSX devices managed by this management server.""",
     )
-    non_unique_ip_address_ranges: add | remove | IpAddressRangeRequest | list[dict] = Field(
+    non_unique_ip_address_ranges: Add | Remove | IpAddressRangeRequest | list[dict] = Field(
         alias="non-unique-ip-address-ranges",
         description="""Specify Non Unique IP Address Ranges.""",
     )
@@ -120,7 +100,7 @@ class GlobalPropertiesRequestEdit(BaseModel):
     )
     allow_remote_registration_of_opsec_products: bool = Field(
         alias="allow-remote-registration-of-opsec-products",
-        description="""After installing an OPSEC application, the remote administration (RA) utility enables an OPSEC product to finish registering itself without having to access the SmartConsole. If set to true, any host including the application host can run the utility. Otherwise,  the RA utility can only be run from .the Security Management host.""",
+        description="""After installing an OPSEC application, the remote administration (RA) utility enables an OPSEC product to finish registering itself without having to access the SmartConsole. If set to true, any host including the application host can run the utility. Otherwise,  the RA utility can only be run from the Security Management host.""",
     )
     num_spoofing_errs_that_trigger_brute_force: int = Field(
         alias="num-spoofing-errs-that-trigger-brute-force",
@@ -128,11 +108,11 @@ class GlobalPropertiesRequestEdit(BaseModel):
     )
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     domains_to_process: list[str] = Field(
         alias="domains-to-process",
-        description="""Indicates which domains to process the commands on. It cannot be used with the details-level full, must be run from .the System Domain only and with ignore-warnings true. Valid values are: CURRENT_DOMAIN, ALL_DOMAINS_ON_THIS_SERVER.""",
+        description="""Indicates which domains to process the commands on. It cannot be used with the details-level full, must be run from the System Domain only and with ignore-warnings true. Valid values are: CURRENT_DOMAIN, ALL_DOMAINS_ON_THIS_SERVER.""",
     )
     ignore_warnings: bool = Field(
         alias="ignore-warnings", description="""Apply changes ignoring warnings."""

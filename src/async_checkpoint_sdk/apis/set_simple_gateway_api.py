@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.gateway_ckp_reply import GatewayCkpReply
 from async_checkpoint_sdk.models.gateway_ckp_request_edit import GatewayCkpRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_simple_gateway(
-    client: ClientSession, data: GatewayCkpRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: GatewayCkpRequestEdit, config: SDKConfig, **kwargs
 ) -> GatewayCkpReply:
     """
     Edit existing object using object name or uid.

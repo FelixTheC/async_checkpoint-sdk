@@ -1,18 +1,17 @@
-from .add import add
-from .advanced_dns_settings_request_new import AdvancedDnsSettingsRequestNew
-from .ips_settings_request import IpsSettingsRequest
-from .ips_tag_category_request import IpsTagCategoryRequest
-from .mail_settings_request_new import MailSettingsRequestNew
-from .malicious_links_request import MaliciousLinksRequest
-from .override_activation_by_protection_request import (
-    OverrideActivationByProtectionRequest,
-)
-from .profile_indicator_override_request import ProfileIndicatorOverrideRequest
-from .pydantic import BaseModel, Field
-from .remove import remove
+from add import Add
+from advanced_dns_settings_request_new import AdvancedDnsSettingsRequestNew
+from ips_settings_request import IpsSettingsRequest
+from ips_tag_category_request import IpsTagCategoryRequest
+from mail_settings_request_new import MailSettingsRequestNew
+from malicious_links_request import MaliciousLinksRequest
+from override_activation_by_protection_request import OverrideActivationByProtectionRequest
+from profile_indicator_override_request import ProfileIndicatorOverrideRequest
+from pydantic import BaseModel, Field
+from remove import Remove
 
 
 class ProfileRequestNew(BaseModel):
+    name: str = Field(alias="name", description="""Object name. Must be unique in the domain.""")
     active_protections_performance_impact: str = Field(
         alias="active-protections-performance-impact",
         description="""Protections with this performance impact only will be activated in the profile.""",
@@ -65,20 +64,19 @@ class ProfileRequestNew(BaseModel):
         alias="threat-emulation", description="""Is Threat Emulation blade activated."""
     )
     threat_extraction: bool = Field(
-        alias="threat-extraction",
-        description="""Is Threat Extraction blade activated.""",
+        alias="threat-extraction", description="""Is Threat Extraction blade activated."""
     )
     zero_phishing: bool = Field(
         alias="zero-phishing", description="""Is Zero Phishing blade activated."""
     )
     activate_protections_by_extended_attributes: (
-        add | remove | IpsTagCategoryRequest | list[dict]
+        Add | Remove | IpsTagCategoryRequest | list[dict]
     ) = Field(
         alias="activate-protections-by-extended-attributes",
         description="""Activate protections by these extended attributes.""",
     )
     deactivate_protections_by_extended_attributes: (
-        add | remove | IpsTagCategoryRequest | list[dict]
+        Add | Remove | IpsTagCategoryRequest | list[dict]
     ) = Field(
         alias="deactivate-protections-by-extended-attributes",
         description="""Deactivate protections by these extended attributes.""",
@@ -88,13 +86,12 @@ class ProfileRequestNew(BaseModel):
         description="""Whether to activate/deactivate IPS protections according to the extended attributes.""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     tags: str | list[str] = Field(alias="tags", description="""Collection of tag identifiers.""")
     ignore_warnings: bool = Field(

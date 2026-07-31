@@ -1,8 +1,13 @@
-from .hits_settings_request import HitsSettingsRequest
-from .pydantic import BaseModel, Field
+from hits_settings_request import HitsSettingsRequest
+from pydantic import BaseModel, Field
 
 
 class AccessRuleIdentifierRequestShow(BaseModel):
+    uid: str = Field(alias="uid", description="""Object unique identifier.""")
+    layer: str = Field(
+        alias="layer",
+        description="""Layer that the rule belongs to identified by the name or UID.""",
+    )
     package: str = Field(alias="package", description="""Policy package name or uid.""")
     show_as_ranges: bool = Field(
         alias="show-as-ranges",
@@ -19,5 +24,5 @@ class AccessRuleIdentifierRequestShow(BaseModel):
     )
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )

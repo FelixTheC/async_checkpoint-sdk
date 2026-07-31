@@ -1,5 +1,5 @@
-from .custom_mode_reply import CustomModeReply
-from .pydantic import BaseModel, Field
+from custom_mode_reply import CustomModeReply
+from pydantic import BaseModel, Field
 
 
 class WebsiteCategorizationReply(BaseModel):

@@ -1,22 +1,21 @@
-from .api_domain_identifier import ApiDomainIdentifier
-from .api_object_standard_identifier import ApiObjectStandardIdentifier
-from .available_actions_reply import AvailableActionsReply
-from .meta_info_for_top_level_reply import MetaInfoForTopLevelReply
-from .pydantic import BaseModel, Field
-from .ufp_object_reply import UfpObjectReply
-from .uri_resource_action_reply import UriResourceActionReply
-from .uri_resource_connection_methods_reply import UriResourceConnectionMethodsReply
-from .uri_resource_cvp_reply import UriResourceCvpReply
-from .uri_resource_soap_reply import UriResourceSoapReply
-from .uri_resource_wildcards_reply import UriResourceWildcardsReply
+from api_domain_identifier import ApiDomainIdentifier
+from api_object_standard_identifier import ApiObjectStandardIdentifier
+from available_actions_reply import AvailableActionsReply
+from meta_info_for_top_level_reply import MetaInfoForTopLevelReply
+from pydantic import BaseModel, Field
+from ufp_object_reply import UfpObjectReply
+from uri_resource_action_reply import UriResourceActionReply
+from uri_resource_connection_methods_reply import UriResourceConnectionMethodsReply
+from uri_resource_cvp_reply import UriResourceCvpReply
+from uri_resource_soap_reply import UriResourceSoapReply
+from uri_resource_wildcards_reply import UriResourceWildcardsReply
 
 
 class UriResourceReply(BaseModel):
     name: str = Field(alias="name", description="""Object name. Must be unique in the domain.""")
     uid: str = Field(alias="uid", description="""Object unique identifier.""")
     use_this_resource_to: str = Field(
-        alias="use-this-resource-to",
-        description="""Select the use of the URI resource.""",
+        alias="use-this-resource-to", description="""Select the use of the URI resource."""
     )
     type: str = Field(alias="type", description="""Object type.""")
     connection_methods: UriResourceConnectionMethodsReply = Field(
@@ -38,13 +37,11 @@ class UriResourceReply(BaseModel):
     cvp: UriResourceCvpReply = Field(alias="cvp", description="""CVP settings.""")
     soap: UriResourceSoapReply = Field(alias="soap", description="""SOAP settings.""")
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     domain: ApiDomainIdentifier = Field(
-        alias="domain",
-        description="""Information about the domain that holds the Object.""",
+        alias="domain", description="""Information about the domain that holds the Object."""
     )
     icon: str = Field(alias="icon", description="""Object icon.""")
     meta_info: MetaInfoForTopLevelReply = Field(
@@ -54,8 +51,7 @@ class UriResourceReply(BaseModel):
         alias="read-only", description="""Indicates whether the object is read-only."""
     )
     available_actions: AvailableActionsReply = Field(
-        alias="available-actions",
-        description="""Actions that are available on the object.""",
+        alias="available-actions", description="""Actions that are available on the object."""
     )
     tags: list[dict] = Field(
         alias="tags",

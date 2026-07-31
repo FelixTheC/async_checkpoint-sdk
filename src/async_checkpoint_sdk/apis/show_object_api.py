@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.show_object_reply import ShowObjectReply
 from async_checkpoint_sdk.models.show_object_request import ShowObjectRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_object(
-    client: ClientSession, data: ShowObjectRequest, config: Config, **kwargs
+    client: ClientSession, data: ShowObjectRequest, config: SDKConfig, **kwargs
 ) -> ShowObjectReply:
     """
     Parameters

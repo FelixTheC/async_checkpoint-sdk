@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.cluster_member_reply_ex import ClusterMemberReplyEx
 from async_checkpoint_sdk.models.cluster_member_show_request import ClusterMemberShowRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_cluster_member(
-    client: ClientSession, data: ClusterMemberShowRequest, config: Config, **kwargs
+    client: ClientSession, data: ClusterMemberShowRequest, config: SDKConfig, **kwargs
 ) -> ClusterMemberReplyEx:
     """
     Retrieve existing cluster member using uid.

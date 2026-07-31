@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.cdm_command_reply import CdmCommandReply
 from async_checkpoint_sdk.models.check_network_feed_request import CheckNetworkFeedRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def check_network_feed(
-    client: ClientSession, data: CheckNetworkFeedRequest, config: Config, **kwargs
+    client: ClientSession, data: CheckNetworkFeedRequest, config: SDKConfig, **kwargs
 ) -> CdmCommandReply:
     """
     Check if a target can reach or parse a network feed - can work with an existing feed object or with a new one (by providing all relevant feed parameters).

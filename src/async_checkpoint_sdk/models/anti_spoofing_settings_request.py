@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class AntiSpoofingSettingsRequest(BaseModel):
@@ -7,8 +7,7 @@ class AntiSpoofingSettingsRequest(BaseModel):
         description="""If packets will be rejected (the Prevent option) or whether the packets will be monitored (the Detect option).""",
     )
     exclude_packets: bool = Field(
-        alias="exclude-packets",
-        description="""Don't check packets from .excluded network.""",
+        alias="exclude-packets", description="""Don't check packets from excluded network."""
     )
     excluded_network_name: str = Field(
         alias="excluded-network-name", description="""Excluded network name."""

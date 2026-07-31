@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_query_object_reply import ApiQueryObjectReply
 from async_checkpoint_sdk.models.idp_group_query_request import IdpGroupQueryRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_idp_administrator_groups(
-    client: ClientSession, data: IdpGroupQueryRequest, config: Config, **kwargs
+    client: ClientSession, data: IdpGroupQueryRequest, config: SDKConfig, **kwargs
 ) -> ApiQueryObjectReply:
     """
     Retrieve all Identity Provider administrators groups.

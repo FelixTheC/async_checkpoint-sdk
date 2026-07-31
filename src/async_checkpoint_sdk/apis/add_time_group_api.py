@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.time_group_reply import TimeGroupReply
 from async_checkpoint_sdk.models.time_group_request_new import TimeGroupRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_time_group(
-    client: ClientSession, data: TimeGroupRequestNew, config: Config, **kwargs
+    client: ClientSession, data: TimeGroupRequestNew, config: SDKConfig, **kwargs
 ) -> TimeGroupReply:
     """
     Create new object.

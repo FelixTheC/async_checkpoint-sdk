@@ -1,14 +1,14 @@
-from .authentication_request_new import AuthenticationRequestNew
-from .clientless_vpn_settings_request_new import ClientlessVpnSettingsRequestNew
-from .exported_routes_request_new import ExportedRoutesRequestNew
-from .link_selection_request_new import LinkSelectionRequestNew
-from .office_mode_request import OfficeModeRequest
-from .pydantic import BaseModel, Field
-from .remote_access_request import RemoteAccessRequest
-from .saml_portal_request_new import SamlPortalRequestNew
-from .vpn_advanced_request_new import VpnAdvancedRequestNew
-from .vpn_certificate_request import VpnCertificateRequest
-from .vpn_clients_request_new import VpnClientsRequestNew
+from authentication_request_new import AuthenticationRequestNew
+from clientless_vpn_settings_request_new import ClientlessVpnSettingsRequestNew
+from exported_routes_request_new import ExportedRoutesRequestNew
+from link_selection_request_new import LinkSelectionRequestNew
+from office_mode_request import OfficeModeRequest
+from pydantic import BaseModel, Field
+from remote_access_request import RemoteAccessRequest
+from saml_portal_request_new import SamlPortalRequestNew
+from vpn_advanced_request_new import VpnAdvancedRequestNew
+from vpn_certificate_request import VpnCertificateRequest
+from vpn_clients_request_new import VpnClientsRequestNew
 
 
 class VpnSettingsRequestNew(BaseModel):
@@ -47,16 +47,14 @@ Notation Wide Impact - Office Mode apply IPSec VPN Software Blade clients and to
         description="""Configuration of the SAML portal for VPN authentication.""",
     )
     vpn_clients: VpnClientsRequestNew = Field(
-        alias="vpn-clients",
-        description="""VPN clients allowed to connect to this gateway.""",
+        alias="vpn-clients", description="""VPN clients allowed to connect to this gateway."""
     )
     vpn_domain: str = Field(
-        alias="vpn-domain",
-        description="""Gateway VPN domain identified by the name or UID.""",
+        alias="vpn-domain", description="""Gateway VPN domain identified by the name or UID."""
     )
     vpn_domain_exclude_external_ip_addresses: bool = Field(
         alias="vpn-domain-exclude-external-ip-addresses",
-        description="""Exclude the external IP addresses from .the VPN domain of this Security Gateway.""",
+        description="""Exclude the external IP addresses from the VPN domain of this Security Gateway.""",
     )
     vpn_domain_type: str = Field(
         alias="vpn-domain-type", description="""Gateway VPN domain type."""

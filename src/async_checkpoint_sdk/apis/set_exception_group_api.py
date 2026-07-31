@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.threat_exception_group_reply import ThreatExcep
 from async_checkpoint_sdk.models.threat_exception_group_request_edit import (
     ThreatExceptionGroupRequestEdit,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_exception_group(
-    client: ClientSession, data: ThreatExceptionGroupRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: ThreatExceptionGroupRequestEdit, config: SDKConfig, **kwargs
 ) -> ThreatExceptionGroupReply:
     """
     Edit existing object using object name or uid.

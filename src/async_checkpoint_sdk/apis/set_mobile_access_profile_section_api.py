@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.mobile_profile_section_reply import MobileProfi
 from async_checkpoint_sdk.models.mobile_profile_section_request_edit import (
     MobileProfileSectionRequestEdit,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_mobile_access_profile_section(
-    client: ClientSession, data: MobileProfileSectionRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: MobileProfileSectionRequestEdit, config: SDKConfig, **kwargs
 ) -> MobileProfileSectionReply:
     """
     Edit existing Mobile Access Profile section using section name or uid.

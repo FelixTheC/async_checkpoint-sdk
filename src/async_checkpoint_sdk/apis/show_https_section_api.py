@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.t_l_s_section_identifier_request import (
     TLSSectionIdentifierRequest,
 )
 from async_checkpoint_sdk.models.t_l_s_section_reply import TLSSectionReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_https_section(
-    client: ClientSession, data: TLSSectionIdentifierRequest, config: Config, **kwargs
+    client: ClientSession, data: TLSSectionIdentifierRequest, config: SDKConfig, **kwargs
 ) -> TLSSectionReply:
     """
     Retrieve existing HTTPS Inspection section using section name or uid and layer name.

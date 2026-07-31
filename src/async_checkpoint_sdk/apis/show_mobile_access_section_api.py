@@ -6,13 +6,13 @@ from async_checkpoint_sdk.models.mobile_applications_section_identifier_request_
 from async_checkpoint_sdk.models.mobile_applications_section_reply import (
     MobileApplicationsSectionReply,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_mobile_access_section(
     client: ClientSession,
     data: MobileApplicationsSectionIdentifierRequestShow,
-    config: Config,
+    config: SDKConfig,
     **kwargs,
 ) -> MobileApplicationsSectionReply:
     """

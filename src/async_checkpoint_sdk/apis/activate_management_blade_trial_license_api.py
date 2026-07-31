@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.api_message_reply import ApiMessageReply
 from async_checkpoint_sdk.models.management_blade_trial_license_request import (
     ManagementBladeTrialLicenseRequest,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def activate_management_blade_trial_license(
-    client: ClientSession, data: ManagementBladeTrialLicenseRequest, config: Config, **kwargs
+    client: ClientSession, data: ManagementBladeTrialLicenseRequest, config: SDKConfig, **kwargs
 ) -> ApiMessageReply:
     """
     Parameters

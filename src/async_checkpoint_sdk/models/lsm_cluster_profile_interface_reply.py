@@ -1,5 +1,5 @@
-from .cluster_profile_topology_reply import ClusterProfileTopologyReply
-from .pydantic import BaseModel, Field
+from cluster_profile_topology_reply import ClusterProfileTopologyReply
+from pydantic import BaseModel, Field
 
 
 class LsmClusterProfileInterfaceReply(BaseModel):

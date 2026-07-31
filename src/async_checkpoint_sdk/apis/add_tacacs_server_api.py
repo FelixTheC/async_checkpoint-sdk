@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.tacacs_reply import TacacsReply
 from async_checkpoint_sdk.models.tacacs_request_new import TacacsRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_tacacs_server(
-    client: ClientSession, data: TacacsRequestNew, config: Config, **kwargs
+    client: ClientSession, data: TacacsRequestNew, config: SDKConfig, **kwargs
 ) -> TacacsReply:
     """
     Create new object.

@@ -1,7 +1,7 @@
-from .api_object_standard_identifier import ApiObjectStandardIdentifier
-from .ike_p1_reply import IkeP1Reply
-from .ike_p2_reply import IkeP2Reply
-from .pydantic import BaseModel, Field
+from api_object_standard_identifier import ApiObjectStandardIdentifier
+from ike_p1_reply import IkeP1Reply
+from ike_p2_reply import IkeP2Reply
+from pydantic import BaseModel, Field
 
 
 class GranularEncryptionReply(BaseModel):

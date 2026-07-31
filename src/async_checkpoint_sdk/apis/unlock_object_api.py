@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.locking_reply import LockingReply
 from async_checkpoint_sdk.models.locking_request import LockingRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def unlock_object(
-    client: ClientSession, data: LockingRequest, config: Config, **kwargs
+    client: ClientSession, data: LockingRequest, config: SDKConfig, **kwargs
 ) -> LockingReply:
     """
         Unlock object using uid or {name and type}.

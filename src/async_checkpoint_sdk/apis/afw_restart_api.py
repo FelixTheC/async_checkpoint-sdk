@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.afw_control_request import AfwControlRequest
 from async_checkpoint_sdk.models.afw_control_service_reply import AfwControlServiceReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def afw_restart(
-    client: ClientSession, data: AfwControlRequest, config: Config, **kwargs
+    client: ClientSession, data: AfwControlRequest, config: SDKConfig, **kwargs
 ) -> AfwControlServiceReply:
     """
     Parameters

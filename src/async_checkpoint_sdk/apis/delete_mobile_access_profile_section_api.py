@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.api_ok_reply import ApiOkReply
 from async_checkpoint_sdk.models.mobile_profile_section_identifier_request_show import (
     MobileProfileSectionIdentifierRequestShow,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def delete_mobile_access_profile_section(
-    client: ClientSession, data: MobileProfileSectionIdentifierRequestShow, config: Config, **kwargs
+    client: ClientSession, data: MobileProfileSectionIdentifierRequestShow, config: SDKConfig, **kwargs
 ) -> ApiOkReply:
     """
     Delete existing Mobile Access Profile section using section name or uid.

@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class CustomSettingsReply(BaseModel):
@@ -7,6 +7,5 @@ class CustomSettingsReply(BaseModel):
         alias="anti-virus", description="""Custom Settings for Anti Virus Blade."""
     )
     zero_phishing: str = Field(
-        alias="zero-phishing",
-        description="""Custom Settings for Zero Phishing Blade.""",
+        alias="zero-phishing", description="""Custom Settings for Zero Phishing Blade."""
     )

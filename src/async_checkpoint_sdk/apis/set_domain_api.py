@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.local_domain_edit_reply import LocalDomainEditReply
 from async_checkpoint_sdk.models.local_domain_request_edit import LocalDomainRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_domain(
-    client: ClientSession, data: LocalDomainRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: LocalDomainRequestEdit, config: SDKConfig, **kwargs
 ) -> LocalDomainEditReply:
     """
     Edit domain object using domain name or UID. When the list of domain servers is edited, the command is handled asynchronously. A list of task identifiers is returned to a user. In this case, the changes to the domain object are done in a public session and so should not be published. If the domain is changed in other parameters than the domain servers, i.e.: comments, color or tags, such changes are done in the user's private session and therefore should be published. In this case, the returned command output is similar to the one of 'show-domain'.

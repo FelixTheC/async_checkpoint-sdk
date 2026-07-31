@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.data_center_object_reply import DataCenterObjectReply
 from async_checkpoint_sdk.models.data_center_object_request_show import DataCenterObjectRequestShow
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_data_center_object(
-    client: ClientSession, data: DataCenterObjectRequestShow, config: Config, **kwargs
+    client: ClientSession, data: DataCenterObjectRequestShow, config: SDKConfig, **kwargs
 ) -> DataCenterObjectReply:
     """
     Retrieve existing object using object name or uid.

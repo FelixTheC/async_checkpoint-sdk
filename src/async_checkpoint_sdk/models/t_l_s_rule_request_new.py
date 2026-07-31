@@ -1,7 +1,14 @@
-from .pydantic import BaseModel, Field
+from api_doc_rule_base_position_object_builder import ApiDocRuleBasePositionObjectBuilder
+from pydantic import BaseModel, Field
 
 
 class TLSRuleRequestNew(BaseModel):
+    position: int | str | ApiDocRuleBasePositionObjectBuilder = Field(
+        alias="position", description="""Position in the rulebase."""
+    )
+    layer: str = Field(
+        alias="layer", description="""Layer that holds the Object. Identified by the Name or UID."""
+    )
     name: str = Field(alias="name", description="""HTTPS rule name.""")
     destination: str | list[str] = Field(
         alias="destination",
@@ -26,8 +33,7 @@ class TLSRuleRequestNew(BaseModel):
 otherwise, Outbound Certificate is a default value.""",
     )
     destination_negate: bool = Field(
-        alias="destination-negate",
-        description="""TRUE if negate value is set for Destination.""",
+        alias="destination-negate", description="""TRUE if negate value is set for Destination."""
     )
     enabled: bool = Field(alias="enabled", description="""Enable/Disable the rule.""")
     install_on: str | list[str] = Field(
@@ -35,8 +41,7 @@ otherwise, Outbound Certificate is a default value.""",
         description="""Which Gateways identified by the name or UID to install the policy on.""",
     )
     service_negate: bool = Field(
-        alias="service-negate",
-        description="""TRUE if negate value is set for Service.""",
+        alias="service-negate", description="""TRUE if negate value is set for Service."""
     )
     site_category: str | list[str] = Field(
         alias="site-category",
@@ -57,7 +62,7 @@ otherwise, Outbound Certificate is a default value.""",
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     ignore_warnings: bool = Field(
         alias="ignore-warnings", description="""Apply changes ignoring warnings."""

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.mobile_profile_rule_reply import MobileProfileRuleReply
 from async_checkpoint_sdk.models.mobile_profile_rule_request_new import MobileProfileRuleRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_mobile_access_profile_rule(
-    client: ClientSession, data: MobileProfileRuleRequestNew, config: Config, **kwargs
+    client: ClientSession, data: MobileProfileRuleRequestNew, config: SDKConfig, **kwargs
 ) -> MobileProfileRuleReply:
     """
     Create new Mobile Access Profile rule for associating groups of users with a profile configuration.

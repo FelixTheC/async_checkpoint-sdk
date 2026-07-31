@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.sip_proxy_reply import SipProxyReply
 from async_checkpoint_sdk.models.sip_proxy_request_edit import SipProxyRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def clone_voip_domain_sip_proxy(
-    client: ClientSession, data: SipProxyRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: SipProxyRequestEdit, config: SDKConfig, **kwargs
 ) -> SipProxyReply:
     """
     Clone existing VoIP Domain SIP Proxy.

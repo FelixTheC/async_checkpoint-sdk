@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.client_login_option_reply import ClientLoginOpt
 from async_checkpoint_sdk.models.client_login_option_request_edit import (
     ClientLoginOptionRequestEdit,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_client_login_option(
-    client: ClientSession, data: ClientLoginOptionRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: ClientLoginOptionRequestEdit, config: SDKConfig, **kwargs
 ) -> ClientLoginOptionReply:
     """
     Edit existing client login option configuration using name or uid.

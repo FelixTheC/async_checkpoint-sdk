@@ -6,11 +6,11 @@ from async_checkpoint_sdk.models.domain_permissions_profile_reply import (
 from async_checkpoint_sdk.models.domain_permissions_profile_request_new import (
     DomainPermissionsProfileRequestNew,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_domain_permissions_profile(
-    client: ClientSession, data: DomainPermissionsProfileRequestNew, config: Config, **kwargs
+    client: ClientSession, data: DomainPermissionsProfileRequestNew, config: SDKConfig, **kwargs
 ) -> DomainPermissionsProfileReply:
     """
     Create new Domain Permissions Profile.

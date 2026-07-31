@@ -1,9 +1,14 @@
-from .cpmi_request import CpmiRequest
-from .lea_request import LeaRequest
-from .pydantic import BaseModel, Field
+from cpmi_request import CpmiRequest
+from lea_request import LeaRequest
+from pydantic import BaseModel, Field
 
 
 class OpsecApplicationRequestNew(BaseModel):
+    name: str = Field(alias="name", description="""Object name. Must be unique in the domain.""")
+    host: str = Field(
+        alias="host",
+        description="""The host where the server is running. Pre-define the host as a network object.""",
+    )
     cpmi: CpmiRequest = Field(alias="cpmi", description="""Used to setup the CPMI client entity.""")
     lea: LeaRequest = Field(alias="lea", description="""Used to setup the LEA client entity.""")
     one_time_password: str = Field(
@@ -11,13 +16,12 @@ class OpsecApplicationRequestNew(BaseModel):
         description="""A password required for establishing a Secure Internal Communication (SIC).""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     tags: str | list[str] = Field(alias="tags", description="""Collection of tag identifiers.""")
     ignore_warnings: bool = Field(

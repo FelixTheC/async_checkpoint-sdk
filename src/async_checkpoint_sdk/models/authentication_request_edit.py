@@ -1,8 +1,8 @@
-from .add import add
-from .dynamic_id_settings_request import DynamicIdSettingsRequest
-from .pydantic import BaseModel, Field
-from .remove import remove
-from .single_authentication_client_request import SingleAuthenticationClientRequest
+from add import Add
+from dynamic_id_settings_request import DynamicIdSettingsRequest
+from pydantic import BaseModel, Field
+from remove import Remove
+from single_authentication_client_request import SingleAuthenticationClientRequest
 
 
 class AuthenticationRequestEdit(BaseModel):
@@ -10,7 +10,7 @@ class AuthenticationRequestEdit(BaseModel):
         alias="single-authentication-client",
         description="""Settings for clients that support only single authentication method.""",
     )
-    authentication_clients: add | remove | str | list[str] = Field(
+    authentication_clients: Add | Remove | str | list[str] = Field(
         alias="authentication-clients",
         description="""Collection of VPN Authentication clients identified by the name or UID.""",
     )

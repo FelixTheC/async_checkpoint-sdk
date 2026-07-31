@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.dcerpc_service_reply import DcerpcServiceReply
 from async_checkpoint_sdk.models.dcerpc_service_request_new import DcerpcServiceRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_service_dce_rpc(
-    client: ClientSession, data: DcerpcServiceRequestNew, config: Config, **kwargs
+    client: ClientSession, data: DcerpcServiceRequestNew, config: SDKConfig, **kwargs
 ) -> DcerpcServiceReply:
     """
     Create new object.

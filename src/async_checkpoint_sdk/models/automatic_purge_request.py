@@ -1,8 +1,15 @@
-from .automatic_purge_recurrence_request import AutomaticPurgeRecurrenceRequest
-from .pydantic import BaseModel, Field
+from automatic_purge_recurrence_request import AutomaticPurgeRecurrenceRequest
+from pydantic import BaseModel, Field
 
 
 class AutomaticPurgeRequest(BaseModel):
+    enabled: bool = Field(
+        alias="enabled", description="""Turn on/off the automatic-purge feature."""
+    )
+    ignore_domain_backup: bool = Field(
+        alias="ignore-domain-backup",
+        description="""Ignore global domain sessions that are linked to the latest local domain backups, and purge them anyway.""",
+    )
     keep_sessions_by_count: bool = Field(
         alias="keep-sessions-by-count",
         description="""Whether or not to keep the latest N sessions.

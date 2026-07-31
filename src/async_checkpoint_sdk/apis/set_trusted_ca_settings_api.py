@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.trusted_ca_settings_reply import TrustedCaSetti
 from async_checkpoint_sdk.models.trusted_ca_settings_request_edit import (
     TrustedCaSettingsRequestEdit,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_trusted_ca_settings(
-    client: ClientSession, data: TrustedCaSettingsRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: TrustedCaSettingsRequestEdit, config: SDKConfig, **kwargs
 ) -> TrustedCaSettingsReply:
     """
     Set trusted CAs package automatic update settings.

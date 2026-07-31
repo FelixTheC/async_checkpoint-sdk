@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.query_objects_reply import QueryObjectsReply
 from async_checkpoint_sdk.models.query_objects_request import QueryObjectsRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_objects(
-    client: ClientSession, data: QueryObjectsRequest, config: Config, **kwargs
+    client: ClientSession, data: QueryObjectsRequest, config: SDKConfig, **kwargs
 ) -> QueryObjectsReply:
     """
     Parameters

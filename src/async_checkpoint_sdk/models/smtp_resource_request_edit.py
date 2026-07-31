@@ -1,13 +1,14 @@
-from .add import add
-from .cvp_object_request import CvpObjectRequest
-from .pydantic import BaseModel, Field
-from .remove import remove
-from .smtp_action1_request import SmtpAction1Request
-from .smtp_action2_request import SmtpAction2Request
-from .smtp_match_object_request import SmtpMatchObjectRequest
+from add import Add
+from cvp_object_request import CvpObjectRequest
+from pydantic import BaseModel, Field
+from remove import Remove
+from smtp_action1_request import SmtpAction1Request
+from smtp_action2_request import SmtpAction2Request
+from smtp_match_object_request import SmtpMatchObjectRequest
 
 
 class SmtpResourceRequestEdit(BaseModel):
+    uid: str = Field(alias="uid", description="""Object unique identifier.""")
     mail_delivery_server: str = Field(
         alias="mail-delivery-server",
         description="""Specify the server to which mail is forwarded.""",
@@ -55,13 +56,12 @@ class SmtpResourceRequestEdit(BaseModel):
         alias="cvp", description="""Configure CVP inspection on mail messages."""
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     ignore_warnings: bool = Field(
         alias="ignore-warnings", description="""Apply changes ignoring warnings."""
@@ -70,6 +70,6 @@ class SmtpResourceRequestEdit(BaseModel):
         alias="ignore-errors",
         description="""Apply changes ignoring errors. You won't be able to publish such a changes. If ignore-warnings flag was omitted - warnings will also be ignored.""",
     )
-    tags: add | remove | str | list[str] = Field(
+    tags: Add | Remove | str | list[str] = Field(
         alias="tags", description="""Collection of tag identifiers."""
     )

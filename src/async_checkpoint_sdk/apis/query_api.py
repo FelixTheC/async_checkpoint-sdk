@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.cpm_query_reply import CpmQueryReply
 from async_checkpoint_sdk.models.cpm_query_request import CpmQueryRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def query(
-    client: ClientSession, data: CpmQueryRequest, config: Config, **kwargs
+    client: ClientSession, data: CpmQueryRequest, config: SDKConfig, **kwargs
 ) -> CpmQueryReply:
     """
     Parameters

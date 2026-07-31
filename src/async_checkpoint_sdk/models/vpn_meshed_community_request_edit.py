@@ -1,22 +1,23 @@
-from .add import add
-from .advanced_properties_request import AdvancedPropertiesRequest
-from .encrypted_traffic_request import EncryptedTrafficRequest
-from .enhanced_link_selection_interfaces_per_participant_request_add_and_edit import (
+from add import Add
+from advanced_properties_request import AdvancedPropertiesRequest
+from encrypted_traffic_request import EncryptedTrafficRequest
+from enhanced_link_selection_interfaces_per_participant_request_add_and_edit import (
     EnhancedLinkSelectionInterfacesPerParticipantRequestAddAndEdit,
 )
-from .granular_encryption_request import GranularEncryptionRequest
-from .ike_p1_request import IkeP1Request
-from .ike_p2_request import IkeP2Request
-from .meshed_permanent_tunnels_request_edit import MeshedPermanentTunnelsRequestEdit
-from .participants_domains_request import ParticipantsDomainsRequest
-from .pydantic import BaseModel, Field
-from .remove import remove
-from .route_based_settings_request_edit import RouteBasedSettingsRequestEdit
-from .shared_secret_request import SharedSecretRequest
-from .wire_mode_request import WireModeRequest
+from granular_encryption_request import GranularEncryptionRequest
+from ike_p1_request import IkeP1Request
+from ike_p2_request import IkeP2Request
+from meshed_permanent_tunnels_request_edit import MeshedPermanentTunnelsRequestEdit
+from participants_domains_request import ParticipantsDomainsRequest
+from pydantic import BaseModel, Field
+from remove import Remove
+from route_based_settings_request_edit import RouteBasedSettingsRequestEdit
+from shared_secret_request import SharedSecretRequest
+from wire_mode_request import WireModeRequest
 
 
 class VpnMeshedCommunityRequestEdit(BaseModel):
+    uid: str = Field(alias="uid", description="""Object unique identifier.""")
     disable_nat: bool = Field(
         alias="disable-nat",
         description="""Indicates whether to disable NAT inside the VPN Community.""",
@@ -30,17 +31,16 @@ class VpnMeshedCommunityRequestEdit(BaseModel):
     encryption_suite: str = Field(
         alias="encryption-suite", description="""The encryption suite to be used."""
     )
-    excluded_services: add | remove | str | list[str] = Field(
+    excluded_services: Add | Remove | str | list[str] = Field(
         alias="excluded-services",
-        description="""Collection of services that are excluded from .the community identified by the name or UID.<br> Connections with these services will not be encrypted and will not match rules specifying the community in the VPN community.""",
+        description="""Collection of services that are excluded from the community identified by the name or UID.<br> Connections with these services will not be encrypted and will not match rules specifying the community in the VPN community.""",
     )
-    gateways: add | remove | str | list[str] = Field(
+    gateways: Add | Remove | str | list[str] = Field(
         alias="gateways",
         description="""Collection of VPN Gateway and VPN Device objects identified by the name or UID.""",
     )
-    granular_encryptions: add | remove | GranularEncryptionRequest | list[dict] = Field(
-        alias="granular-encryptions",
-        description="""VPN granular encryption settings.""",
+    granular_encryptions: Add | Remove | GranularEncryptionRequest | list[dict] = Field(
+        alias="granular-encryptions", description="""VPN granular encryption settings."""
     )
     ike_phase_1: IkeP1Request = Field(
         alias="ike-phase-1",
@@ -55,24 +55,23 @@ class VpnMeshedCommunityRequestEdit(BaseModel):
     )
     new_name: str = Field(alias="new-name", description="""New name of the object.""")
     override_interfaces: (
-        add | remove | EnhancedLinkSelectionInterfacesPerParticipantRequestAddAndEdit | list[dict]
+        Add | Remove | EnhancedLinkSelectionInterfacesPerParticipantRequestAddAndEdit | list[dict]
     ) = Field(
         alias="override-interfaces",
         description="""Override the Enhanced Link Selection interfaces for each participant VPN peer.""",
     )
-    override_vpn_domains: add | remove | ParticipantsDomainsRequest | list[dict] = Field(
+    override_vpn_domains: Add | Remove | ParticipantsDomainsRequest | list[dict] = Field(
         alias="override-vpn-domains",
         description="""The Overrides VPN Domains of the participants GWs.""",
     )
     permanent_tunnels: MeshedPermanentTunnelsRequestEdit = Field(
         alias="permanent-tunnels", description="""Permanent tunnels properties."""
     )
-    shared_secrets: add | remove | SharedSecretRequest | list[dict] = Field(
+    shared_secrets: Add | Remove | SharedSecretRequest | list[dict] = Field(
         alias="shared-secrets", description="""Shared secrets for external gateways."""
     )
     tunnel_granularity: str = Field(
-        alias="tunnel-granularity",
-        description="""VPN tunnel sharing option to be used.""",
+        alias="tunnel-granularity", description="""VPN tunnel sharing option to be used."""
     )
     use_shared_secret: bool = Field(
         alias="use-shared-secret",
@@ -90,15 +89,14 @@ class VpnMeshedCommunityRequestEdit(BaseModel):
         alias="advanced-properties", description="""Advanced properties."""
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
-    tags: add | remove | str | list[str] = Field(
+    tags: Add | Remove | str | list[str] = Field(
         alias="tags", description="""Collection of tag identifiers."""
     )
     ignore_warnings: bool = Field(

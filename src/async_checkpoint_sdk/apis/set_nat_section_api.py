@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.nat_section_reply import NatSectionReply
 from async_checkpoint_sdk.models.nat_section_request_edit import NatSectionRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_nat_section(
-    client: ClientSession, data: NatSectionRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: NatSectionRequestEdit, config: SDKConfig, **kwargs
 ) -> NatSectionReply:
     """
     Edit existing object using object name or uid.

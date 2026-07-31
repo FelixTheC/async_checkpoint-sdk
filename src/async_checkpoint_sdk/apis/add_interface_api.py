@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.interface_reply import InterfaceReply
 from async_checkpoint_sdk.models.interface_request_new import InterfaceRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_interface(
-    client: ClientSession, data: InterfaceRequestNew, config: Config, **kwargs
+    client: ClientSession, data: InterfaceRequestNew, config: SDKConfig, **kwargs
 ) -> InterfaceReply:
     """
     Add network interface.

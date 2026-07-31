@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.sctp_service_reply import SctpServiceReply
 from async_checkpoint_sdk.models.sctp_service_request_edit import SctpServiceRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_service_sctp(
-    client: ClientSession, data: SctpServiceRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: SctpServiceRequestEdit, config: SDKConfig, **kwargs
 ) -> SctpServiceReply:
     """
     Edit existing object using object name or uid.

@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.application_site_identifier_request_show import
     ApplicationSiteIdentifierRequestShow,
 )
 from async_checkpoint_sdk.models.application_site_reply import ApplicationSiteReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_application_site(
-    client: ClientSession, data: ApplicationSiteIdentifierRequestShow, config: Config, **kwargs
+    client: ClientSession, data: ApplicationSiteIdentifierRequestShow, config: SDKConfig, **kwargs
 ) -> ApplicationSiteReply:
     """
     Retrieve existing object using object name or uid.

@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.api_query_object_reply import ApiQueryObjectRep
 from async_checkpoint_sdk.models.domain_permissions_profile_query_request import (
     DomainPermissionsProfileQueryRequest,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_domain_permissions_profiles(
-    client: ClientSession, data: DomainPermissionsProfileQueryRequest, config: Config, **kwargs
+    client: ClientSession, data: DomainPermissionsProfileQueryRequest, config: SDKConfig, **kwargs
 ) -> ApiQueryObjectReply:
     """
     Retrieve all Domain Permissions Profiles.

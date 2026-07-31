@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.gateway_global_use_reply import GatewayGlobalUseReply
 from async_checkpoint_sdk.models.gateway_global_use_request_set import GatewayGlobalUseRequestSet
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_gateway_global_use(
-    client: ClientSession, data: GatewayGlobalUseRequestSet, config: Config, **kwargs
+    client: ClientSession, data: GatewayGlobalUseRequestSet, config: SDKConfig, **kwargs
 ) -> GatewayGlobalUseReply:
     """
     Enable or disable global usage on a specific target.

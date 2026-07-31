@@ -1,10 +1,10 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class LsmClusterInterfaceRequest(BaseModel):
+    name: str = Field(alias="name", description="""Interface name.""")
     new_name: str = Field(
-        alias="new-name",
-        description="""New name. Overrides the interface name on profile.""",
+        alias="new-name", description="""New name. Overrides the interface name on profile."""
     )
     ip_address_override: str = Field(
         alias="ip-address-override",

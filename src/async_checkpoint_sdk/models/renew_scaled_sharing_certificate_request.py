@@ -1,5 +1,5 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class RenewScaledSharingCertificateRequest(BaseModel):
-    pass
+    uid: str = Field(alias="uid", description="""Gateway or cluster unique identifier.""")

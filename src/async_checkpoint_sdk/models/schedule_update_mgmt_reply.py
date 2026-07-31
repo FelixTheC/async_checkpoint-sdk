@@ -1,5 +1,5 @@
-from .pydantic import BaseModel, Field
-from .schedule_conf_mgmt_reply import ScheduleConfMgmtReply
+from pydantic import BaseModel, Field
+from schedule_conf_mgmt_reply import ScheduleConfMgmtReply
 
 
 class ScheduleUpdateMgmtReply(BaseModel):

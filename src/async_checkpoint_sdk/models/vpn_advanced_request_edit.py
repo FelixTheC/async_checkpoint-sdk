@@ -1,6 +1,6 @@
-from .add import add
-from .pydantic import BaseModel, Field
-from .remove import remove
+from add import Add
+from pydantic import BaseModel, Field
+from remove import Remove
 
 
 class VpnAdvancedRequestEdit(BaseModel):
@@ -16,7 +16,7 @@ class VpnAdvancedRequestEdit(BaseModel):
         alias="enable-wire-mode",
         description="""Enable Wire Mode to improve connectivity by bypassing firewall enforcement for VPN traffic, treating internal interfaces as trusted.""",
     )
-    wire_mode_interfaces: add | remove | str | list[str] = Field(
+    wire_mode_interfaces: Add | Remove | str | list[str] = Field(
         alias="wire-mode-interfaces",
         description="""Collection of interface names or UIDs to include in Wire Mode. Supports add/remove operations.""",
     )

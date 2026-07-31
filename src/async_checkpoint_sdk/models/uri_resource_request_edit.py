@@ -1,18 +1,18 @@
-from .add import add
-from .pydantic import BaseModel, Field
-from .remove import remove
-from .ufp_object_request import UfpObjectRequest
-from .uri_resource_action_request import UriResourceActionRequest
-from .uri_resource_connection_methods_request import UriResourceConnectionMethodsRequest
-from .uri_resource_cvp_request import UriResourceCvpRequest
-from .uri_resource_soap_request import UriResourceSoapRequest
-from .uri_resource_wildcards_request import UriResourceWildcardsRequest
+from add import Add
+from pydantic import BaseModel, Field
+from remove import Remove
+from ufp_object_request import UfpObjectRequest
+from uri_resource_action_request import UriResourceActionRequest
+from uri_resource_connection_methods_request import UriResourceConnectionMethodsRequest
+from uri_resource_cvp_request import UriResourceCvpRequest
+from uri_resource_soap_request import UriResourceSoapRequest
+from uri_resource_wildcards_request import UriResourceWildcardsRequest
 
 
 class UriResourceRequestEdit(BaseModel):
+    uid: str = Field(alias="uid", description="""Object unique identifier.""")
     use_this_resource_to: str = Field(
-        alias="use-this-resource-to",
-        description="""Select the use of the URI resource.""",
+        alias="use-this-resource-to", description="""Select the use of the URI resource."""
     )
     connection_methods: UriResourceConnectionMethodsRequest = Field(
         alias="connection-methods", description="""Connection methods."""
@@ -34,13 +34,12 @@ class UriResourceRequestEdit(BaseModel):
     cvp: UriResourceCvpRequest = Field(alias="cvp", description="""CVP settings.""")
     soap: UriResourceSoapRequest = Field(alias="soap", description="""SOAP settings.""")
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     ignore_warnings: bool = Field(
         alias="ignore-warnings", description="""Apply changes ignoring warnings."""
@@ -49,6 +48,6 @@ class UriResourceRequestEdit(BaseModel):
         alias="ignore-errors",
         description="""Apply changes ignoring errors. You won't be able to publish such a changes. If ignore-warnings flag was omitted - warnings will also be ignored.""",
     )
-    tags: add | remove | str | list[str] = Field(
+    tags: Add | Remove | str | list[str] = Field(
         alias="tags", description="""Collection of tag identifiers."""
     )

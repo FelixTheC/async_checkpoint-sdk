@@ -1,5 +1,5 @@
-from .api_object_standard_identifier import ApiObjectStandardIdentifier
-from .pydantic import BaseModel, Field
+from api_object_standard_identifier import ApiObjectStandardIdentifier
+from pydantic import BaseModel, Field
 
 
 class AzureADContentObjectReply(BaseModel):
@@ -7,8 +7,7 @@ class AzureADContentObjectReply(BaseModel):
         alias="name-in-azure-ad", description="""Object name in the Azure AD."""
     )
     uid_in_azure_ad: str = Field(
-        alias="uid-in-azure-ad",
-        description="""Unique identifier of the object in the Azure AD.""",
+        alias="uid-in-azure-ad", description="""Unique identifier of the object in the Azure AD."""
     )
     azure_ad_object: ApiObjectStandardIdentifier = Field(
         alias="azure-ad-object",
@@ -19,6 +18,5 @@ class AzureADContentObjectReply(BaseModel):
         alias="type-in-azure-ad", description="""Object type in Azure AD."""
     )
     additional_properties: list[dict] = Field(
-        alias="additional-properties",
-        description="""Additional properties on the object.""",
+        alias="additional-properties", description="""Additional properties on the object."""
     )

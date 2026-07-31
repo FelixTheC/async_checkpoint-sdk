@@ -1,15 +1,15 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class TaskQueryRequest(BaseModel):
     initiator: str = Field(
         alias="initiator",
-        description="""Initiator's name. If name isn't specified, tasks from .all initiators will be shown.""",
+        description="""Initiator's name. If name isn't specified, tasks from all initiators will be shown.""",
     )
     status: str = Field(alias="status", description="""Status.""")
     from_date: str = Field(
         alias="from-date",
-        description="""The date from .which tracking tasks is to be performed, by the task's last update date. ISO 8601. If timezone isn't specified in the input, the Management server's timezone is used.""",
+        description="""The date from which tracking tasks is to be performed, by the task's last update date. ISO 8601. If timezone isn't specified in the input, the Management server's timezone is used.""",
     )
     to_date: str = Field(
         alias="to-date",
@@ -23,5 +23,5 @@ class TaskQueryRequest(BaseModel):
     )
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.assign_global_policy_reply import AssignGlobalPolicyReply
 from async_checkpoint_sdk.models.assign_global_policy_request import AssignGlobalPolicyRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def assign_global_assignment(
-    client: ClientSession, data: AssignGlobalPolicyRequest, config: Config, **kwargs
+    client: ClientSession, data: AssignGlobalPolicyRequest, config: SDKConfig, **kwargs
 ) -> AssignGlobalPolicyReply:
     """
     Executes the assign-global-assignment from a given list of global-domains to a given list of dependent-domains.

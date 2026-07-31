@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.syslog_server_reply import SyslogServerReply
 from async_checkpoint_sdk.models.syslog_server_request_new import SyslogServerRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_syslog_server(
-    client: ClientSession, data: SyslogServerRequestNew, config: Config, **kwargs
+    client: ClientSession, data: SyslogServerRequestNew, config: SDKConfig, **kwargs
 ) -> SyslogServerReply:
     """
     Create new syslog server.<br> Since syslog is not an encrypted protocol, Check Point highly recommends that the Security Gateway and the Log Proxy are located in proximity to each other and that they communicate over secure network.

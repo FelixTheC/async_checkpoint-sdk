@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.smtp_server_reply import SmtpServerReply
 from async_checkpoint_sdk.models.smtp_server_request_edit import SmtpServerRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_smtp_server(
-    client: ClientSession, data: SmtpServerRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: SmtpServerRequestEdit, config: SDKConfig, **kwargs
 ) -> SmtpServerReply:
     """
     Edit an existing new SMTP object. <br>This object can be used while configuring a SmartTask with a Send Mail action.

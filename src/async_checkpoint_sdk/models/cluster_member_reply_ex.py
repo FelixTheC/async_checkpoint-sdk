@@ -1,8 +1,8 @@
-from .api_domain_identifier import ApiDomainIdentifier
-from .meta_info_for_top_level_reply import MetaInfoForTopLevelReply
-from .nat_settings_reply import NatSettingsReply
-from .pydantic import BaseModel, Field
-from .trust_details_reply import TrustDetailsReply
+from api_domain_identifier import ApiDomainIdentifier
+from meta_info_for_top_level_reply import MetaInfoForTopLevelReply
+from nat_settings_reply import NatSettingsReply
+from pydantic import BaseModel, Field
+from trust_details_reply import TrustDetailsReply
 
 
 class ClusterMemberReplyEx(BaseModel):
@@ -13,8 +13,7 @@ class ClusterMemberReplyEx(BaseModel):
         description="""Use an automatically generated IP address for the Gateway object (applies only to Smart-1 Cloud).""",
     )
     cluster_uid: str = Field(
-        alias="cluster-uid",
-        description="""Cluster object (the owner of this member) uid.""",
+        alias="cluster-uid", description="""Cluster object (the owner of this member) uid."""
     )
     domain: ApiDomainIdentifier = Field(alias="domain", description="""Domain information.""")
     interfaces: list[dict] = Field(
@@ -41,11 +40,10 @@ class ClusterMemberReplyEx(BaseModel):
         alias="priority",
         description="""In a High Availability New mode cluster each machine is given a priority. The highest priority machine serves as the gateway in normal circumstances. If this machine fails, control is passed to the next highest priority machine. If that machine fails, control is passed to the next machine, and so on.
 In Load Sharing Unicast mode cluster, the highest priority is the pivot machine.
-The values must be in a range from .1 to N, where N is number of cluster members.""",
+The values must be in a range from 1 to N, where N is number of cluster members.""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     meta_info: MetaInfoForTopLevelReply = Field(

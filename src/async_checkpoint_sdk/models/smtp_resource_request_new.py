@@ -1,11 +1,12 @@
-from .cvp_object_request import CvpObjectRequest
-from .pydantic import BaseModel, Field
-from .smtp_action1_request import SmtpAction1Request
-from .smtp_action2_request import SmtpAction2Request
-from .smtp_match_object_request import SmtpMatchObjectRequest
+from cvp_object_request import CvpObjectRequest
+from pydantic import BaseModel, Field
+from smtp_action1_request import SmtpAction1Request
+from smtp_action2_request import SmtpAction2Request
+from smtp_match_object_request import SmtpMatchObjectRequest
 
 
 class SmtpResourceRequestNew(BaseModel):
+    name: str = Field(alias="name", description="""Object name. Must be unique in the domain.""")
     mail_delivery_server: str = Field(
         alias="mail-delivery-server",
         description="""Specify the server to which mail is forwarded.""",
@@ -52,13 +53,12 @@ class SmtpResourceRequestNew(BaseModel):
         alias="cvp", description="""Configure CVP inspection on mail messages."""
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     ignore_warnings: bool = Field(
         alias="ignore-warnings", description="""Apply changes ignoring warnings."""

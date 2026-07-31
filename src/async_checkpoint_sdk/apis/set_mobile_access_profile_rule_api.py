@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.mobile_profile_rule_reply import MobileProfileR
 from async_checkpoint_sdk.models.mobile_profile_rule_request_edit import (
     MobileProfileRuleRequestEdit,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_mobile_access_profile_rule(
-    client: ClientSession, data: MobileProfileRuleRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: MobileProfileRuleRequestEdit, config: SDKConfig, **kwargs
 ) -> MobileProfileRuleReply:
     """
     Edit existing Mobil Access Profile rule using rule number or uid or name.

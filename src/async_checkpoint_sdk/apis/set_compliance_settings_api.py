@@ -6,11 +6,11 @@ from async_checkpoint_sdk.models.compliance_configuration_settings_reply import 
 from async_checkpoint_sdk.models.compliance_configuration_settings_set_request import (
     ComplianceConfigurationSettingsSetRequest,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_compliance_settings(
-    client: ClientSession, data: ComplianceConfigurationSettingsSetRequest, config: Config, **kwargs
+    client: ClientSession, data: ComplianceConfigurationSettingsSetRequest, config: SDKConfig, **kwargs
 ) -> ComplianceConfigurationSettingsReply:
     """
     Edit existing Compliance Settings.

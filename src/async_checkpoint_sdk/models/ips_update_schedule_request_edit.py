@@ -1,5 +1,5 @@
-from .ips_update_schedule_day_recurrence import IpsUpdateScheduleDayRecurrence
-from .pydantic import BaseModel, Field
+from ips_update_schedule_day_recurrence import IpsUpdateScheduleDayRecurrence
+from pydantic import BaseModel, Field
 
 
 class IpsUpdateScheduleRequestEdit(BaseModel):

@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.multi_cast_address_range_reply import MultiCast
 from async_checkpoint_sdk.models.multi_cast_address_range_request_edit import (
     MultiCastAddressRangeRequestEdit,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def clone_multicast_address_range(
-    client: ClientSession, data: MultiCastAddressRangeRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: MultiCastAddressRangeRequestEdit, config: SDKConfig, **kwargs
 ) -> MultiCastAddressRangeReply:
     """
     Clone existing object.

@@ -1,5 +1,5 @@
-from .date import Date
-from .pydantic import BaseModel, Field
+from date import Date
+from pydantic import BaseModel, Field
 
 
 class MetaInfoForTopLevel(BaseModel):

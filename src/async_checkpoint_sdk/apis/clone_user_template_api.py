@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.user_template_reply import UserTemplateReply
 from async_checkpoint_sdk.models.user_template_request_edit import UserTemplateRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def clone_user_template(
-    client: ClientSession, data: UserTemplateRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: UserTemplateRequestEdit, config: SDKConfig, **kwargs
 ) -> UserTemplateReply:
     """
     Clone existing object.

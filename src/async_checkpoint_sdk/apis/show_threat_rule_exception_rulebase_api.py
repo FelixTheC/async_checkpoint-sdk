@@ -6,11 +6,11 @@ from async_checkpoint_sdk.models.query_threat_exception_rulebase_reply import (
 from async_checkpoint_sdk.models.query_threat_exception_rulebase_request import (
     QueryThreatExceptionRulebaseRequest,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_threat_rule_exception_rulebase(
-    client: ClientSession, data: QueryThreatExceptionRulebaseRequest, config: Config, **kwargs
+    client: ClientSession, data: QueryThreatExceptionRulebaseRequest, config: SDKConfig, **kwargs
 ) -> QueryThreatExceptionRulebaseReply:
     """
     Shows the entire Threat Exceptions layer  generated for a given threat rule.

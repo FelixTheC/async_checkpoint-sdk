@@ -1,5 +1,5 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class DeleteApiKeyRequest(BaseModel):
-    pass
+    api_key: str = Field(alias="api-key", description="""API key to be deleted.""")

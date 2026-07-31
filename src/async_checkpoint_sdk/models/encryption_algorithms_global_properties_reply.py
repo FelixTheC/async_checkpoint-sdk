@@ -1,6 +1,6 @@
-from .ike_encryption_properties_reply import IkeEncryptionPropertiesReply
-from .ipsec_encryption_properties_reply import IpsecEncryptionPropertiesReply
-from .pydantic import BaseModel, Field
+from ike_encryption_properties_reply import IkeEncryptionPropertiesReply
+from ipsec_encryption_properties_reply import IpsecEncryptionPropertiesReply
+from pydantic import BaseModel, Field
 
 
 class EncryptionAlgorithmsGlobalPropertiesReply(BaseModel):

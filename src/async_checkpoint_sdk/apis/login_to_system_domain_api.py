@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.login_to_system_domain_reply import LoginToSystemDomainReply
 from async_checkpoint_sdk.models.login_to_system_domain_request import LoginToSystemDomainRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def login_to_system_domain(
-    client: ClientSession, data: LoginToSystemDomainRequest, config: Config, **kwargs
+    client: ClientSession, data: LoginToSystemDomainRequest, config: SDKConfig, **kwargs
 ) -> LoginToSystemDomainReply:
     """
     Login to system domain session from user domain session.

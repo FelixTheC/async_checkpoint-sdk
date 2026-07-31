@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.idp_to_domain_assignment_reply import IdpToDoma
 from async_checkpoint_sdk.models.idp_to_domain_assignment_request_show import (
     IdpToDomainAssignmentRequestShow,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_idp_to_domain_assignment(
-    client: ClientSession, data: IdpToDomainAssignmentRequestShow, config: Config, **kwargs
+    client: ClientSession, data: IdpToDomainAssignmentRequestShow, config: SDKConfig, **kwargs
 ) -> IdpToDomainAssignmentReply:
     """
     Retrieve existing Identity Provider assignment to domain object by UID or by 'assigned-domain' name or UID. This command only available  for Multi-Domain server.

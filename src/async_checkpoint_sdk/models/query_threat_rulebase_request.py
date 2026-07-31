@@ -1,8 +1,9 @@
-from .api_rulebase_filter_settings_request import ApiRulebaseFilterSettingsRequest
-from .pydantic import BaseModel, Field
+from api_rulebase_filter_settings_request import ApiRulebaseFilterSettingsRequest
+from pydantic import BaseModel, Field
 
 
 class QueryThreatRulebaseRequest(BaseModel):
+    name: str = Field(alias="name", description="""Object name. Must be unique in the domain.""")
     filter: str = Field(
         alias="filter",
         description="""Search expression to filter the rulebase. The provided text should be exactly the same as it would be given in Smart Console. The logical operators in the expression ('AND', 'OR') should be provided in capital letters. If an operator is not used, the default OR operator applies.""",
@@ -28,5 +29,5 @@ class QueryThreatRulebaseRequest(BaseModel):
     )
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )

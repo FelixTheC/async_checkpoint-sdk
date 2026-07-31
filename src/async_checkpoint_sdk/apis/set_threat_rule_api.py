@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.threat_rule_reply import ThreatRuleReply
 from async_checkpoint_sdk.models.threat_rule_request_edit import ThreatRuleRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_threat_rule(
-    client: ClientSession, data: ThreatRuleRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: ThreatRuleRequestEdit, config: SDKConfig, **kwargs
 ) -> ThreatRuleReply:
     """
     Edit existing object using object name or uid.

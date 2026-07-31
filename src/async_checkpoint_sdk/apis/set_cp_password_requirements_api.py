@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.cp_password_requirements_reply import CpPasswor
 from async_checkpoint_sdk.models.cp_password_requirements_request_edit import (
     CpPasswordRequirementsRequestEdit,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_cp_password_requirements(
-    client: ClientSession, data: CpPasswordRequirementsRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: CpPasswordRequirementsRequestEdit, config: SDKConfig, **kwargs
 ) -> CpPasswordRequirementsReply:
     """
     Set Check Point password requirements.

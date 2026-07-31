@@ -2,10 +2,10 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.tag_reply import TagReply
 from async_checkpoint_sdk.models.tag_request_new import TagRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
-async def add_tag(client: ClientSession, data: TagRequestNew, config: Config, **kwargs) -> TagReply:
+async def add_tag(client: ClientSession, data: TagRequestNew, config: SDKConfig, **kwargs) -> TagReply:
     """
     Create new object.
 

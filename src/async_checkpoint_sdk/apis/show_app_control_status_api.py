@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.appi_status_reply import AppiStatusReply
 from async_checkpoint_sdk.models.appi_status_request import AppiStatusRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_app_control_status(
-    client: ClientSession, data: AppiStatusRequest, config: Config, **kwargs
+    client: ClientSession, data: AppiStatusRequest, config: SDKConfig, **kwargs
 ) -> AppiStatusReply:
     """
     Retrieve existing Application Control and URL Filtering update status.

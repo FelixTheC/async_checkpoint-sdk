@@ -1,10 +1,9 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class UriResourceCvpRequest(BaseModel):
     enable_cvp: bool = Field(
-        alias="enable-cvp",
-        description="""Select to enable the Content Vectoring Protocol.""",
+        alias="enable-cvp", description="""Select to enable the Content Vectoring Protocol."""
     )
     server: str = Field(
         alias="server",

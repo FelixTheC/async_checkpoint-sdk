@@ -1,11 +1,10 @@
-from .api_object_standard_identifier import ApiObjectStandardIdentifier
-from .pydantic import BaseModel, Field
+from api_object_standard_identifier import ApiObjectStandardIdentifier
+from pydantic import BaseModel, Field
 
 
 class InterfaceProfileReply(BaseModel):
     profile: ApiObjectStandardIdentifier = Field(
-        alias="profile",
-        description="""The Interface Profile object identified by Name or UID.""",
+        alias="profile", description="""The Interface Profile object identified by Name or UID."""
     )
     custom_message_types: str = Field(
         alias="custom-message-types",

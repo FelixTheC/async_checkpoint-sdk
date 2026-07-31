@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.udp_service_reply import UdpServiceReply
 from async_checkpoint_sdk.models.udp_service_request_edit import UdpServiceRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_service_udp(
-    client: ClientSession, data: UdpServiceRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: UdpServiceRequestEdit, config: SDKConfig, **kwargs
 ) -> UdpServiceReply:
     """
     Edit existing object using object name or uid.

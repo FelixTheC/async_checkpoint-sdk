@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.delete_package_command_reply import DeletePackageCommandReply
 from async_checkpoint_sdk.models.delete_package_command_request import DeletePackageCommandRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def delete_repository_package(
-    client: ClientSession, data: DeletePackageCommandRequest, config: Config, **kwargs
+    client: ClientSession, data: DeletePackageCommandRequest, config: SDKConfig, **kwargs
 ) -> DeletePackageCommandReply:
     """
     Delete the repository software package from the central repository.<br>On a Multi-Domain Server, you must connect to the relevant Domain.

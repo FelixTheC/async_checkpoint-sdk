@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.api_ok_reply import ApiOkReply
 from async_checkpoint_sdk.models.mobile_profile_rule_identifier_request_show import (
     MobileProfileRuleIdentifierRequestShow,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def delete_mobile_access_profile_rule(
-    client: ClientSession, data: MobileProfileRuleIdentifierRequestShow, config: Config, **kwargs
+    client: ClientSession, data: MobileProfileRuleIdentifierRequestShow, config: SDKConfig, **kwargs
 ) -> ApiOkReply:
     """
     Delete existing Mobile Access Profile rule using rule number or uid or name.

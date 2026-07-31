@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.compound_tcp_service_reply import CompoundTcpSe
 from async_checkpoint_sdk.models.compound_tcp_service_request_edit import (
     CompoundTcpServiceRequestEdit,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def clone_service_compound_tcp(
-    client: ClientSession, data: CompoundTcpServiceRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: CompoundTcpServiceRequestEdit, config: SDKConfig, **kwargs
 ) -> CompoundTcpServiceReply:
     """
     Clone existing object.

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.access_section_reply import AccessSectionReply
 from async_checkpoint_sdk.models.access_section_request_new import AccessSectionRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_access_section(
-    client: ClientSession, data: AccessSectionRequestNew, config: Config, **kwargs
+    client: ClientSession, data: AccessSectionRequestNew, config: SDKConfig, **kwargs
 ) -> AccessSectionReply:
     """
     Create new object.

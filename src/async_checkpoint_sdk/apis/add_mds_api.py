@@ -2,10 +2,10 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.mds_reply import MdsReply
 from async_checkpoint_sdk.models.mds_request_new import MdsRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
-async def add_mds(client: ClientSession, data: MdsRequestNew, config: Config, **kwargs) -> MdsReply:
+async def add_mds(client: ClientSession, data: MdsRequestNew, config: SDKConfig, **kwargs) -> MdsReply:
     """
     Create new object of type Multi-Domain Server or Multi-Domain Log Server.
 

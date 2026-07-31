@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class OtherDomainPermissionsRequest(BaseModel):
@@ -10,8 +10,7 @@ class OtherDomainPermissionsRequest(BaseModel):
         alias="edit-cp-users-db", description="""Work with user accounts and groups."""
     )
     https_inspection: str = Field(
-        alias="https-inspection",
-        description="""Enable and configure HTTPS Inspection rules.""",
+        alias="https-inspection", description="""Enable and configure HTTPS Inspection rules."""
     )
     ldap_users_db: str = Field(
         alias="ldap-users-db",

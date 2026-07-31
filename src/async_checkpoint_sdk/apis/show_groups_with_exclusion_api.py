@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.api_query_object_reply import ApiQueryObjectRep
 from async_checkpoint_sdk.models.group_with_exclusion_request_query import (
     GroupWithExclusionRequestQuery,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_groups_with_exclusion(
-    client: ClientSession, data: GroupWithExclusionRequestQuery, config: Config, **kwargs
+    client: ClientSession, data: GroupWithExclusionRequestQuery, config: SDKConfig, **kwargs
 ) -> ApiQueryObjectReply:
     """
     Retrieve all objects.

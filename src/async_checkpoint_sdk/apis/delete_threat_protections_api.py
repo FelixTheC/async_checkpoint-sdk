@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_task_reply import ApiTaskReply
 from async_checkpoint_sdk.models.delete_protections_request import DeleteProtectionsRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def delete_threat_protections(
-    client: ClientSession, data: DeleteProtectionsRequest, config: Config, **kwargs
+    client: ClientSession, data: DeleteProtectionsRequest, config: SDKConfig, **kwargs
 ) -> ApiTaskReply:
     """
     Deletes threat protections.

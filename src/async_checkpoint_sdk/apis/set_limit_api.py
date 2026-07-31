@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.limit_reply import LimitReply
 from async_checkpoint_sdk.models.limit_request_edit import LimitRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_limit(
-    client: ClientSession, data: LimitRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: LimitRequestEdit, config: SDKConfig, **kwargs
 ) -> LimitReply:
     """
     Edit existing Limit object using object name or uid.

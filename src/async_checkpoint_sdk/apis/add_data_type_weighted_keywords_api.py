@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.weighted_words_reply import WeightedWordsReply
 from async_checkpoint_sdk.models.weighted_words_request_new import WeightedWordsRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_data_type_weighted_keywords(
-    client: ClientSession, data: WeightedWordsRequestNew, config: Config, **kwargs
+    client: ClientSession, data: WeightedWordsRequestNew, config: SDKConfig, **kwargs
 ) -> WeightedWordsReply:
     """
     Create new Weighted Keywords Data Type Object.

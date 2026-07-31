@@ -1,32 +1,26 @@
-from .api_domain_identifier import ApiDomainIdentifier
-from .authentication_global_properties_reply import AuthenticationGlobalPropertiesReply
-from .available_actions_reply import AvailableActionsReply
-from .carrier_security_global_properties_reply import (
-    CarrierSecurityGlobalPropertiesReply,
-)
-from .connect_control_global_properties_reply import ConnectControlGlobalPropertiesReply
-from .data_access_ctrl_global_properties_reply import DataAccessCtrlGlobalPropertiesReply
-from .firewall_global_properties_reply import FirewallGlobalPropertiesReply
-from .global_properties_advanced_conf_reply import GlobalPropertiesAdvancedConfReply
-from .hit_count_global_properties_reply import HitCountGlobalPropertiesReply
-from .identity_awareness_global_properties_reply import (
-    IdentityAwarenessGlobalPropertiesReply,
-)
-from .log_and_alert_global_properties_reply import LogAndAlertGlobalPropertiesReply
-from .meta_info_for_top_level_reply import MetaInfoForTopLevelReply
-from .nat_global_properties_reply import NatGlobalPropertiesReply
-from .proxy_global_properties_reply import ProxyGlobalPropertiesReply
-from .pydantic import BaseModel, Field
-from .qo_s_global_properties_reply import QoSGlobalPropertiesReply
-from .remote_access_global_properties_reply import RemoteAccessGlobalPropertiesReply
-from .stateful_inspection_global_properties_reply import (
-    StatefulInspectionGlobalPropertiesReply,
-)
-from .user_accounts_global_properties_reply import UserAccountsGlobalPropertiesReply
-from .user_authority_global_properties_reply import UserAuthorityGlobalPropertiesReply
-from .user_check_global_properties_reply import UserCheckGlobalPropertiesReply
-from .user_directory_global_properties_reply import UserDirectoryGlobalPropertiesReply
-from .vpn_global_properties_reply import VpnGlobalPropertiesReply
+from api_domain_identifier import ApiDomainIdentifier
+from authentication_global_properties_reply import AuthenticationGlobalPropertiesReply
+from available_actions_reply import AvailableActionsReply
+from carrier_security_global_properties_reply import CarrierSecurityGlobalPropertiesReply
+from connect_control_global_properties_reply import ConnectControlGlobalPropertiesReply
+from data_access_ctrl_global_properties_reply import DataAccessCtrlGlobalPropertiesReply
+from firewall_global_properties_reply import FirewallGlobalPropertiesReply
+from global_properties_advanced_conf_reply import GlobalPropertiesAdvancedConfReply
+from hit_count_global_properties_reply import HitCountGlobalPropertiesReply
+from identity_awareness_global_properties_reply import IdentityAwarenessGlobalPropertiesReply
+from log_and_alert_global_properties_reply import LogAndAlertGlobalPropertiesReply
+from meta_info_for_top_level_reply import MetaInfoForTopLevelReply
+from nat_global_properties_reply import NatGlobalPropertiesReply
+from proxy_global_properties_reply import ProxyGlobalPropertiesReply
+from pydantic import BaseModel, Field
+from qo_s_global_properties_reply import QoSGlobalPropertiesReply
+from remote_access_global_properties_reply import RemoteAccessGlobalPropertiesReply
+from stateful_inspection_global_properties_reply import StatefulInspectionGlobalPropertiesReply
+from user_accounts_global_properties_reply import UserAccountsGlobalPropertiesReply
+from user_authority_global_properties_reply import UserAuthorityGlobalPropertiesReply
+from user_check_global_properties_reply import UserCheckGlobalPropertiesReply
+from user_directory_global_properties_reply import UserDirectoryGlobalPropertiesReply
+from vpn_global_properties_reply import VpnGlobalPropertiesReply
 
 
 class GlobalPropertiesReply(BaseModel):
@@ -35,15 +29,13 @@ class GlobalPropertiesReply(BaseModel):
     type: str = Field(alias="type", description="""Object type.""")
     firewall: FirewallGlobalPropertiesReply = Field(
         alias="firewall",
-        description="""Add implied rules to or remove them from .the Firewall Rule Base. Determine the position of the implied rules in the Rule Base, and whether or not to log them.""",
+        description="""Add implied rules to or remove them from the Firewall Rule Base. Determine the position of the implied rules in the Rule Base, and whether or not to log them.""",
     )
     identity_awareness: IdentityAwarenessGlobalPropertiesReply = Field(
-        alias="identity-awareness",
-        description="""Configure Identity Awareness properties.""",
+        alias="identity-awareness", description="""Configure Identity Awareness properties."""
     )
     nat: NatGlobalPropertiesReply = Field(
-        alias="nat",
-        description="""Configure settings that apply to all NAT connections.""",
+        alias="nat", description="""Configure settings that apply to all NAT connections."""
     )
     authentication: AuthenticationGlobalPropertiesReply = Field(
         alias="authentication",
@@ -80,16 +72,14 @@ class GlobalPropertiesReply(BaseModel):
         description="""Configure settings that relate to ConnectControl server load balancing.""",
     )
     stateful_inspection: StatefulInspectionGlobalPropertiesReply = Field(
-        alias="stateful-inspection",
-        description="""Adjust Stateful Inspection parameters.""",
+        alias="stateful-inspection", description="""Adjust Stateful Inspection parameters."""
     )
     log_and_alert: LogAndAlertGlobalPropertiesReply = Field(
-        alias="log-and-alert",
-        description="""Define system-wide logging and alerting parameters.""",
+        alias="log-and-alert", description="""Define system-wide logging and alerting parameters."""
     )
     data_access_control: DataAccessCtrlGlobalPropertiesReply = Field(
         alias="data-access-control",
-        description="""Configure automatic downloads from .Check Point and anonymously share product data. Options selected here apply to all Security Gateways, Clusters and VSX devices managed by this management server.""",
+        description="""Configure automatic downloads from Check Point and anonymously share product data. Options selected here apply to all Security Gateways, Clusters and VSX devices managed by this management server.""",
     )
     non_unique_ip_address_ranges: list[dict] = Field(
         alias="non-unique-ip-address-ranges",
@@ -113,15 +103,14 @@ class GlobalPropertiesReply(BaseModel):
     )
     allow_remote_registration_of_opsec_products: bool = Field(
         alias="allow-remote-registration-of-opsec-products",
-        description="""After installing an OPSEC application, the remote administration (RA) utility enables an OPSEC product to finish registering itself without having to access the SmartConsole. If set to true, any host including the application host can run the utility. Otherwise,  the RA utility can only be run from .the Security Management host.""",
+        description="""After installing an OPSEC application, the remote administration (RA) utility enables an OPSEC product to finish registering itself without having to access the SmartConsole. If set to true, any host including the application host can run the utility. Otherwise,  the RA utility can only be run from the Security Management host.""",
     )
     num_spoofing_errs_that_trigger_brute_force: int = Field(
         alias="num-spoofing-errs-that-trigger-brute-force",
         description="""Indicates how many incorrectly signed packets will be tolerated before assuming that there is an attack on the packet tagging and revoking the client's key.""",
     )
     domain: ApiDomainIdentifier = Field(
-        alias="domain",
-        description="""Information about the domain that holds the Object.""",
+        alias="domain", description="""Information about the domain that holds the Object."""
     )
     icon: str = Field(alias="icon", description="""Object icon.""")
     meta_info: MetaInfoForTopLevelReply = Field(
@@ -131,6 +120,5 @@ class GlobalPropertiesReply(BaseModel):
         alias="read-only", description="""Indicates whether the object is read-only."""
     )
     available_actions: AvailableActionsReply = Field(
-        alias="available-actions",
-        description="""Actions that are available on the object.""",
+        alias="available-actions", description="""Actions that are available on the object."""
     )

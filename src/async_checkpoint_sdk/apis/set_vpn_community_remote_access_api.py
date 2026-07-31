@@ -6,11 +6,11 @@ from async_checkpoint_sdk.models.vpn_remote_access_community_reply import (
 from async_checkpoint_sdk.models.vpn_remote_access_community_request_edit import (
     VpnRemoteAccessCommunityRequestEdit,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_vpn_community_remote_access(
-    client: ClientSession, data: VpnRemoteAccessCommunityRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: VpnRemoteAccessCommunityRequestEdit, config: SDKConfig, **kwargs
 ) -> VpnRemoteAccessCommunityReply:
     """
     Edit existing Remote Access object. Using object name or uid is optional. </br>Add and Delete API commands for this object are unavailable since there is single object per domain.

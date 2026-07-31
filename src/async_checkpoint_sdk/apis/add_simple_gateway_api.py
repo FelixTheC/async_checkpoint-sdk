@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.gateway_ckp_reply import GatewayCkpReply
 from async_checkpoint_sdk.models.gateway_ckp_request_new import GatewayCkpRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_simple_gateway(
-    client: ClientSession, data: GatewayCkpRequestNew, config: Config, **kwargs
+    client: ClientSession, data: GatewayCkpRequestNew, config: SDKConfig, **kwargs
 ) -> GatewayCkpReply:
     """
     Create new object.

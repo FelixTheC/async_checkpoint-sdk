@@ -1,6 +1,6 @@
 from .api_date_reply import ApiDateReply
 from .login_message_reply import LoginMessageReply
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class WebApiLoginReply(BaseModel):
@@ -28,15 +28,13 @@ class WebApiLoginReply(BaseModel):
     )
     read_only: bool = Field(alias="read-only", description="""True if this session is read only.""")
     session_timeout: int = Field(
-        alias="session-timeout",
-        description="""Session expiration timeout in seconds.""",
+        alias="session-timeout", description="""Session expiration timeout in seconds."""
     )
     standby: bool = Field(
-        alias="standby",
-        description="""True if this management server is in the standby mode.""",
+        alias="standby", description="""True if this management server is in the standby mode."""
     )
     uid: str = Field(
         alias="uid",
-        description="""Session object unique identifier. This identifier may be used in the discard API to discard changes that were made in this session, when administrator is working from .another session, or in the 'switch-session' API.""",
+        description="""Session object unique identifier. This identifier may be used in the discard API to discard changes that were made in this session, when administrator is working from another session, or in the 'switch-session' API.""",
     )
     url: str = Field(alias="url", description="""URL that was used to reach the API server.""")

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.validations_query_request import ValidationsQueryRequest
 from async_checkpoint_sdk.models.validations_reply import ValidationsReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_validations(
-    client: ClientSession, data: ValidationsQueryRequest, config: Config, **kwargs
+    client: ClientSession, data: ValidationsQueryRequest, config: SDKConfig, **kwargs
 ) -> ValidationsReply:
     """
     Show all validation incidents limited to 500.

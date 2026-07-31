@@ -1,5 +1,5 @@
-from .custom_frequency_settings import CustomFrequencySettings
-from .pydantic import BaseModel, Field
+from custom_frequency_settings import CustomFrequencySettings
+from pydantic import BaseModel, Field
 
 
 class UserCheckReply(BaseModel):

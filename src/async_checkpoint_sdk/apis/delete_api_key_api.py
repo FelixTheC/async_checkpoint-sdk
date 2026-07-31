@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_ok_reply import ApiOkReply
 from async_checkpoint_sdk.models.delete_api_key_request import DeleteApiKeyRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def delete_api_key(
-    client: ClientSession, data: DeleteApiKeyRequest, config: Config, **kwargs
+    client: ClientSession, data: DeleteApiKeyRequest, config: SDKConfig, **kwargs
 ) -> ApiOkReply:
     """
     Delete the API key. For the key to be invalid publish is needed.

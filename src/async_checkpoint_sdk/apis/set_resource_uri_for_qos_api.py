@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.uri_for_qos_resource_reply import UriForQosReso
 from async_checkpoint_sdk.models.uri_for_qos_resource_request_edit import (
     UriForQosResourceRequestEdit,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_resource_uri_for_qos(
-    client: ClientSession, data: UriForQosResourceRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: UriForQosResourceRequestEdit, config: SDKConfig, **kwargs
 ) -> UriForQosResourceReply:
     """
     Edit existing Uri For QoS resource using object name or uid.

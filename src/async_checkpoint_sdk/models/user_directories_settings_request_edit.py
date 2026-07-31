@@ -1,7 +1,5 @@
-from .manual_configuration_settings_request_edit import (
-    ManualConfigurationSettingsRequestEdit,
-)
-from .pydantic import BaseModel, Field
+from manual_configuration_settings_request_edit import ManualConfigurationSettingsRequestEdit
+from pydantic import BaseModel, Field
 
 
 class UserDirectoriesSettingsRequestEdit(BaseModel):

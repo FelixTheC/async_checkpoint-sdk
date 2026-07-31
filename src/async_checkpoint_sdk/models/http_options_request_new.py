@@ -1,5 +1,5 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class HttpOptionsRequestNew(BaseModel):
-    pass
+    destination: str = Field(alias="destination", description="""The destination URL.""")

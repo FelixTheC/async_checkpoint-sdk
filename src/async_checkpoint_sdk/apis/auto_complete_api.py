@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.auto_complete_reply import AutoCompleteReply
 from async_checkpoint_sdk.models.auto_complete_request import AutoCompleteRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def auto_complete(
-    client: ClientSession, data: AutoCompleteRequest, config: Config, **kwargs
+    client: ClientSession, data: AutoCompleteRequest, config: SDKConfig, **kwargs
 ) -> AutoCompleteReply:
     """
     Parameters

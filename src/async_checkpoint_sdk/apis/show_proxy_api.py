@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.empty_request import EmptyRequest
 from async_checkpoint_sdk.models.proxy_reply import ProxyReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_proxy(
-    client: ClientSession, data: EmptyRequest, config: Config, **kwargs
+    client: ClientSession, data: EmptyRequest, config: SDKConfig, **kwargs
 ) -> ProxyReply:
     """
     Parameters

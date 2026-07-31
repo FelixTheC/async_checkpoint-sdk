@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.trusted_ca_status_reply import TrustedCaStatusReply
 from async_checkpoint_sdk.models.trusted_ca_status_request import TrustedCaStatusRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_trusted_ca_status(
-    client: ClientSession, data: TrustedCaStatusRequest, config: Config, **kwargs
+    client: ClientSession, data: TrustedCaStatusRequest, config: SDKConfig, **kwargs
 ) -> TrustedCaStatusReply:
     """
     Show Trusted CAs package status.

@@ -1,10 +1,10 @@
-from .add import add
-from .pydantic import BaseModel, Field
-from .remove import remove
+from add import Add
+from pydantic import BaseModel, Field
+from remove import Remove
 
 
 class PortalWebSettingsRequestEdit(BaseModel):
-    aliases: add | remove | str | list[str] = Field(
+    aliases: Add | Remove | str | list[str] = Field(
         alias="aliases",
         description="""List of URL aliases that are redirected to the main portal URL.""",
     )

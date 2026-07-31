@@ -1,6 +1,6 @@
-from .fw_rule_condition_type_reply import FwRuleConditionTypeReply
-from .grc_fw_rule_object_reply import GrcFwRuleObjectReply
-from .pydantic import BaseModel, Field
+from fw_rule_condition_type_reply import FwRuleConditionTypeReply
+from grc_fw_rule_object_reply import GrcFwRuleObjectReply
+from pydantic import BaseModel, Field
 
 
 class GrcFwRuleReply(BaseModel):

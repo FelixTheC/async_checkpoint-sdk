@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.automatic_purge_reply import AutomaticPurgeReply
 from async_checkpoint_sdk.models.automatic_purge_request import AutomaticPurgeRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_automatic_purge(
-    client: ClientSession, data: AutomaticPurgeRequest, config: Config, **kwargs
+    client: ClientSession, data: AutomaticPurgeRequest, config: SDKConfig, **kwargs
 ) -> AutomaticPurgeReply:
     """
         Set Automatic Purge. NOTE! this command will permanently delete all of the data which belongs to the published sessions not selected for preservation.

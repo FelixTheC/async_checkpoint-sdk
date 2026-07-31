@@ -1,6 +1,6 @@
-from .add import add
-from .pydantic import BaseModel, Field
-from .remove import remove
+from add import Add
+from pydantic import BaseModel, Field
+from remove import Remove
 
 
 class ContentAwarenessAdvancedSettingsRequestEdit(BaseModel):
@@ -8,7 +8,7 @@ class ContentAwarenessAdvancedSettingsRequestEdit(BaseModel):
         alias="internal-error-fail-mode",
         description="""In case of internal system error, allow or block all connections.""",
     )
-    supported_services: add | remove | str | list[str] = Field(
+    supported_services: Add | Remove | str | list[str] = Field(
         alias="supported-services",
         description="""Specify the services that Content Awareness inspects.""",
     )

@@ -1,8 +1,23 @@
-from .pydantic import BaseModel, Field
-from .vpt_add_route_object_request import VptAddRouteObjectRequest
+from pydantic import BaseModel, Field
+from vpt_add_interface_object_request import VptAddInterfaceObjectRequest
+from vpt_add_route_object_request import VptAddRouteObjectRequest
 
 
 class VptAddVdRequest(BaseModel):
+    interfaces: VptAddInterfaceObjectRequest | list[dict] = Field(
+        alias="interfaces",
+        description="""The list of interfaces for this new Virtual Device.<br/>Optional if this new VD is a Virtual Switch.""",
+    )
+    type: str = Field(
+        alias="type",
+        description="""Type of the Virtual Device <br><br>vs - Virtual Firewall<br>vr - Virtual Router<br>vsw - Virtual Switch<br>vsbm - Virtual Firewall in bridge mode.""",
+    )
+    vd: str = Field(
+        alias="vd", description="""Name of the Virtual System, Virtual Switch, or Virtual Router."""
+    )
+    vsx_name: str = Field(
+        alias="vsx-name", description="""Name of the VSX Gateway or Cluster object."""
+    )
     calc_topology_auto: bool = Field(
         alias="calc-topology-auto",
         description="""Calculate interface topology automatically based on routes.<br/>Relevant only for Virtual Systems.<br/>Do not use for virtual devices.""",

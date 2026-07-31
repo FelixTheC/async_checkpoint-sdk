@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.passcode_profile_reply import PasscodeProfileReply
 from async_checkpoint_sdk.models.passcode_profile_request_new import PasscodeProfileRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_passcode_profile(
-    client: ClientSession, data: PasscodeProfileRequestNew, config: Config, **kwargs
+    client: ClientSession, data: PasscodeProfileRequestNew, config: SDKConfig, **kwargs
 ) -> PasscodeProfileReply:
     """
     Create new Passcode Profile for configurations Mobile Profile objects.

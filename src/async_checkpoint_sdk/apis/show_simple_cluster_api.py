@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.cluster_reply import ClusterReply
 from async_checkpoint_sdk.models.cluster_request_show import ClusterRequestShow
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_simple_cluster(
-    client: ClientSession, data: ClusterRequestShow, config: Config, **kwargs
+    client: ClientSession, data: ClusterRequestShow, config: SDKConfig, **kwargs
 ) -> ClusterReply:
     """
     Retrieve existing object using object name or uid.

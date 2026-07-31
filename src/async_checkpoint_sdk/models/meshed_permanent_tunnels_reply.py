@@ -1,5 +1,5 @@
-from .meshed_rim_reply import MeshedRimReply
-from .pydantic import BaseModel, Field
+from meshed_rim_reply import MeshedRimReply
+from pydantic import BaseModel, Field
 
 
 class MeshedPermanentTunnelsReply(BaseModel):

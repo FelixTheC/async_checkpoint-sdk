@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.updatable_object_reply import UpdatableObjectReply
 from async_checkpoint_sdk.models.updatable_object_request_edit import UpdatableObjectRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_updatable_object(
-    client: ClientSession, data: UpdatableObjectRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: UpdatableObjectRequestEdit, config: SDKConfig, **kwargs
 ) -> UpdatableObjectReply:
     """
     Edit existing Updatable Object.

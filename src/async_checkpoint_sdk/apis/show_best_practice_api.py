@@ -6,11 +6,11 @@ from async_checkpoint_sdk.models.compliance_best_practice_request_show import (
 from async_checkpoint_sdk.models.compliance_show_best_practice_reply import (
     ComplianceShowBestPracticeReply,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_best_practice(
-    client: ClientSession, data: ComplianceBestPracticeRequestShow, config: Config, **kwargs
+    client: ClientSession, data: ComplianceBestPracticeRequestShow, config: SDKConfig, **kwargs
 ) -> ComplianceShowBestPracticeReply:
     """
     Retrieve existing Best Practice using object name, uid or best practice id.

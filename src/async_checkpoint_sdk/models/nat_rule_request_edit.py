@@ -1,14 +1,14 @@
-from .add import add
-from .api_doc_rule_base_position_object_builder import (
-    ApiDocRuleBasePositionObjectBuilder,
-)
-from .pydantic import BaseModel, Field
-from .remove import remove
+from add import Add
+from api_doc_rule_base_position_object_builder import ApiDocRuleBasePositionObjectBuilder
+from pydantic import BaseModel, Field
+from remove import Remove
 
 
 class NatRuleRequestEdit(BaseModel):
+    uid: str = Field(alias="uid", description="""Object unique identifier.""")
+    package: str = Field(alias="package", description="""Name of the package.""")
     enabled: bool = Field(alias="enabled", description="""Enable/Disable the rule.""")
-    install_on: add | remove | str | list[str] = Field(
+    install_on: Add | Remove | str | list[str] = Field(
         alias="install-on",
         description="""Which Gateways identified by the name or UID to install the policy on.""",
     )
@@ -22,7 +22,7 @@ class NatRuleRequestEdit(BaseModel):
     )
     original_service: str = Field(alias="original-service", description="""Original service.""")
     original_source: str = Field(alias="original-source", description="""Original source.""")
-    tags: add | remove | str | list[str] = Field(
+    tags: Add | Remove | str | list[str] = Field(
         alias="tags", description="""Collection of tag identifiers."""
     )
     translated_destination: str = Field(
@@ -35,7 +35,7 @@ class NatRuleRequestEdit(BaseModel):
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     ignore_warnings: bool = Field(
         alias="ignore-warnings", description="""Apply changes ignoring warnings."""

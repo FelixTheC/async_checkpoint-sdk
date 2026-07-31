@@ -1,7 +1,7 @@
-from .dynamic_id_settings_request import DynamicIdSettingsRequest
-from .object import Object
-from .pydantic import BaseModel, Field
-from .single_authentication_client_request import SingleAuthenticationClientRequest
+from dynamic_id_settings_request import DynamicIdSettingsRequest
+from object import Object
+from pydantic import BaseModel, Field
+from single_authentication_client_request import SingleAuthenticationClientRequest
 
 
 class AuthenticationRequest(BaseModel):

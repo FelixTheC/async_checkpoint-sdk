@@ -6,11 +6,11 @@ from async_checkpoint_sdk.models.api_visual_c_p_object_identifier_request_show i
 from async_checkpoint_sdk.models.custom_trusted_ca_certificate_reply import (
     CustomTrustedCaCertificateReply,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_custom_trusted_ca_certificate(
-    client: ClientSession, data: ApiVisualCPObjectIdentifierRequestShow, config: Config, **kwargs
+    client: ClientSession, data: ApiVisualCPObjectIdentifierRequestShow, config: SDKConfig, **kwargs
 ) -> CustomTrustedCaCertificateReply:
     """
     Retrieve existing custom trusted CA certificate using name or uid.

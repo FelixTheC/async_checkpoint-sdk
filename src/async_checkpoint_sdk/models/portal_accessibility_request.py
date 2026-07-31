@@ -1,5 +1,5 @@
-from .internal_access_request import InternalAccessRequest
-from .pydantic import BaseModel, Field
+from internal_access_request import InternalAccessRequest
+from pydantic import BaseModel, Field
 
 
 class PortalAccessibilityRequest(BaseModel):

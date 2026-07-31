@@ -1,9 +1,10 @@
-from .pydantic import BaseModel, Field
-from .user_locations_request_add import UserLocationsRequestAdd
-from .user_template_encryption_request import UserTemplateEncryptionRequest
+from pydantic import BaseModel, Field
+from user_locations_request_add import UserLocationsRequestAdd
+from user_template_encryption_request import UserTemplateEncryptionRequest
 
 
 class UserTemplateRequestNew(BaseModel):
+    name: str = Field(alias="name", description="""Object name. Must be unique in the domain.""")
     expiration_by_global_properties: bool = Field(
         alias="expiration-by-global-properties",
         description="""Expiration date according to global properties.""",
@@ -22,7 +23,7 @@ class UserTemplateRequestNew(BaseModel):
     connect_on_days: list[str] = Field(
         alias="connect-on-days", description="""Days users allow to connect."""
     )
-    from_hour: str = Field(alias="from-hour", description="""Allow users connect from .hour.""")
+    from_hour: str = Field(alias="from-hour", description="""Allow users connect from hour.""")
     to_hour: str = Field(alias="to-hour", description="""Allow users connect until hour.""")
     allowed_locations: UserLocationsRequestAdd = Field(
         alias="allowed-locations", description="""User allowed locations."""
@@ -31,13 +32,12 @@ class UserTemplateRequestNew(BaseModel):
         alias="encryption", description="""User encryption."""
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     ignore_warnings: bool = Field(
         alias="ignore-warnings", description="""Apply changes ignoring warnings."""

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.host_ckp_reply import HostCkpReply
 from async_checkpoint_sdk.models.host_ckp_request_edit import HostCkpRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_checkpoint_host(
-    client: ClientSession, data: HostCkpRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: HostCkpRequestEdit, config: SDKConfig, **kwargs
 ) -> HostCkpReply:
     """
     Edit existing object using object name or uid.

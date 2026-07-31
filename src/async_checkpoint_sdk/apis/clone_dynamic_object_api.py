@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.dynamic_object_reply import DynamicObjectReply
 from async_checkpoint_sdk.models.dynamic_object_request_edit import DynamicObjectRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def clone_dynamic_object(
-    client: ClientSession, data: DynamicObjectRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: DynamicObjectRequestEdit, config: SDKConfig, **kwargs
 ) -> DynamicObjectReply:
     """
     Clone existing object.

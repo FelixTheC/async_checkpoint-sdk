@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.identity_provider_reply import IdentityProviderReply
 from async_checkpoint_sdk.models.identity_provider_request_new import IdentityProviderRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_identity_provider(
-    client: ClientSession, data: IdentityProviderRequestNew, config: Config, **kwargs
+    client: ClientSession, data: IdentityProviderRequestNew, config: SDKConfig, **kwargs
 ) -> IdentityProviderReply:
     """
     Create new SAML Identity Provider.

@@ -1,5 +1,5 @@
-from .api_domain_identifier import ApiDomainIdentifier
-from .pydantic import BaseModel, Field
+from api_domain_identifier import ApiDomainIdentifier
+from pydantic import BaseModel, Field
 
 
 class InterfaceStandardReply(BaseModel):
@@ -19,11 +19,9 @@ class InterfaceStandardReply(BaseModel):
     )
     topology: str = Field(alias="topology", description="""Topology configuration.""")
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     domain: ApiDomainIdentifier = Field(
-        alias="domain",
-        description="""Information about the domain that holds the Object.""",
+        alias="domain", description="""Information about the domain that holds the Object."""
     )
     icon: str = Field(alias="icon", description="""Object icon.""")

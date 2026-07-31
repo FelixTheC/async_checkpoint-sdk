@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.scada_application_reply import ScadaApplicationReply
 from async_checkpoint_sdk.models.scada_application_request_edit import ScadaApplicationRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_scada_application(
-    client: ClientSession, data: ScadaApplicationRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: ScadaApplicationRequestEdit, config: SDKConfig, **kwargs
 ) -> ScadaApplicationReply:
     """
     Edit existing object using object name or uid.

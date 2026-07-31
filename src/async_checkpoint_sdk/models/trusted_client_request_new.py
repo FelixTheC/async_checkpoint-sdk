@@ -1,7 +1,12 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class TrustedClientRequestNew(BaseModel):
+    name: str = Field(alias="name", description="""Object name. Must be unique in the domain.""")
+    ip_address: str = Field(
+        alias="ip-address",
+        description="""IPv4 or IPv6 address. If both addresses are required use ipv4-address and ipv6-address fields explicitly.""",
+    )
     domains_assignment: str | list[str] = Field(
         alias="domains-assignment",
         description="""Domains to be added to this profile. Use domain name only. See example below: add-trusted-client (with domain).""",
@@ -27,13 +32,12 @@ class TrustedClientRequestNew(BaseModel):
     type: str = Field(alias="type", description="""Trusted client type.""")
     wild_card: str = Field(alias="wild-card", description="""IP wild card (e.g. 192.0.2.*).""")
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     tags: str | list[str] = Field(alias="tags", description="""Collection of tag identifiers.""")
     ignore_warnings: bool = Field(

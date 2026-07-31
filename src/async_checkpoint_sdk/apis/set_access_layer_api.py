@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.access_layer_reply import AccessLayerReply
 from async_checkpoint_sdk.models.access_layer_request_edit import AccessLayerRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_access_layer(
-    client: ClientSession, data: AccessLayerRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: AccessLayerRequestEdit, config: SDKConfig, **kwargs
 ) -> AccessLayerReply:
     """
     Edit existing object using object name or uid.

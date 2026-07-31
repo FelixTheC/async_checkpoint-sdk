@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class ServiceGroupRequestQuery(BaseModel):
@@ -14,7 +14,7 @@ class ServiceGroupRequestQuery(BaseModel):
     )
     show_as_ranges: bool = Field(
         alias="show-as-ranges",
-        description="""When true, the service group's matched content is displayed as ranges of port numbers rather than service objects.<br />Objects that are not represented using port numbers are presented as objects.<br />The 'members' parameter is omitted from .the response and instead the 'ranges' parameter is displayed.""",
+        description="""When true, the service group's matched content is displayed as ranges of port numbers rather than service objects.<br />Objects that are not represented using port numbers are presented as objects.<br />The 'members' parameter is omitted from the response and instead the 'ranges' parameter is displayed.""",
     )
     dereference_group_members: bool = Field(
         alias="dereference-group-members",
@@ -26,13 +26,13 @@ class ServiceGroupRequestQuery(BaseModel):
     )
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     domains_to_process: list[str] = Field(
         alias="domains-to-process",
-        description="""Indicates which domains to process the commands on. It cannot be used with the details-level full, must be run from .the System Domain only and with ignore-warnings true. Valid values are: CURRENT_DOMAIN, ALL_DOMAINS_ON_THIS_SERVER.""",
+        description="""Indicates which domains to process the commands on. It cannot be used with the details-level full, must be run from the System Domain only and with ignore-warnings true. Valid values are: CURRENT_DOMAIN, ALL_DOMAINS_ON_THIS_SERVER.""",
     )
     show_only_local_domain: bool = Field(
         alias="show-only-local-domain",
-        description="""Indicates whether the query should return only objects from .the current local domain. This parameter is only valid for local domain.""",
+        description="""Indicates whether the query should return only objects from the current local domain. This parameter is only valid for local domain.""",
     )

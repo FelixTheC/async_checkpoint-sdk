@@ -6,11 +6,11 @@ from async_checkpoint_sdk.models.dynamic_content_object_api_reply import (
 from async_checkpoint_sdk.models.generic_object_identifier_request import (
     GenericObjectIdentifierRequest,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_dynamic_content(
-    client: ClientSession, data: GenericObjectIdentifierRequest, config: Config, **kwargs
+    client: ClientSession, data: GenericObjectIdentifierRequest, config: SDKConfig, **kwargs
 ) -> DynamicContentObjectApiReply:
     """
     Parameters

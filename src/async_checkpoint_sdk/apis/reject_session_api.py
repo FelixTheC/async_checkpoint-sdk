@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_ok_reply import ApiOkReply
 from async_checkpoint_sdk.models.workflow_reject_request import WorkflowRejectRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def reject_session(
-    client: ClientSession, data: WorkflowRejectRequest, config: Config, **kwargs
+    client: ClientSession, data: WorkflowRejectRequest, config: SDKConfig, **kwargs
 ) -> ApiOkReply:
     """
     Workflow feature - Return the session to the submitter administrator.

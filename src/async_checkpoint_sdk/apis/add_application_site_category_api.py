@@ -6,11 +6,11 @@ from async_checkpoint_sdk.models.application_site_category_reply import (
 from async_checkpoint_sdk.models.application_site_category_request_new import (
     ApplicationSiteCategoryRequestNew,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_application_site_category(
-    client: ClientSession, data: ApplicationSiteCategoryRequestNew, config: Config, **kwargs
+    client: ClientSession, data: ApplicationSiteCategoryRequestNew, config: SDKConfig, **kwargs
 ) -> ApplicationSiteCategoryReply:
     """
     Create new object.

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.ldap_group_reply import LdapGroupReply
 from async_checkpoint_sdk.models.ldap_group_request_new import LdapGroupRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_ldap_group(
-    client: ClientSession, data: LdapGroupRequestNew, config: Config, **kwargs
+    client: ClientSession, data: LdapGroupRequestNew, config: SDKConfig, **kwargs
 ) -> LdapGroupReply:
     """
     Create new LDAP Group.

@@ -1,6 +1,6 @@
-from .add import add
-from .pydantic import BaseModel, Field
-from .remove import remove
+from add import Add
+from pydantic import BaseModel, Field
+from remove import Remove
 
 
 class ManualConfigurationSettingsRequestEdit(BaseModel):
@@ -10,7 +10,7 @@ class ManualConfigurationSettingsRequestEdit(BaseModel):
     )
     ldap_users: bool = Field(alias="ldap-users", description="""LDAP users.""")
     ldap_scope: str = Field(alias="ldap-scope", description="""LDAP directory scope.""")
-    specific_directories: add | remove | str | list[str] = Field(
+    specific_directories: Add | Remove | str | list[str] = Field(
         alias="specific-directories",
         description="""List of specific LDAP directory object references. Required when ldap-scope is set to 'specific'. User directories can be added by name or uid following standard object reference conventions.""",
     )

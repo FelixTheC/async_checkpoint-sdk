@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.ips_update_reply import IpsUpdateReply
 from async_checkpoint_sdk.models.ips_update_request import IpsUpdateRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def run_ips_update(
-    client: ClientSession, data: IpsUpdateRequest, config: Config, **kwargs
+    client: ClientSession, data: IpsUpdateRequest, config: SDKConfig, **kwargs
 ) -> IpsUpdateReply:
     """
     Runs IPS database update. If "package-path" is not provided server will try to get the latest package from the User Center.

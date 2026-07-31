@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.intelligence_feed_reply import IntelligenceFeedReply
 from async_checkpoint_sdk.models.intelligence_feed_request_edit import IntelligenceFeedRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_threat_ioc_feed(
-    client: ClientSession, data: IntelligenceFeedRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: IntelligenceFeedRequestEdit, config: SDKConfig, **kwargs
 ) -> IntelligenceFeedReply:
     """
     Edit an existing threat IOC feed.

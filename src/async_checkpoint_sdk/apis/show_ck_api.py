@@ -2,10 +2,10 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.ck_reply import CkReply
 from async_checkpoint_sdk.models.empty_request import EmptyRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
-async def show_ck(client: ClientSession, data: EmptyRequest, config: Config, **kwargs) -> CkReply:
+async def show_ck(client: ClientSession, data: EmptyRequest, config: SDKConfig, **kwargs) -> CkReply:
     """
     Parameters
     ----------

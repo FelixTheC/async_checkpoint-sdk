@@ -1,10 +1,10 @@
-from .browser_based_auth_settings_reply import BrowserBasedAuthSettingsReply
-from .ida_proxy_settings_reply import IdaProxySettingsReply
-from .identity_agent_settings_reply import IdentityAgentSettingsReply
-from .identity_collector_settings_reply import IdentityCollectorSettingsReply
-from .identity_sharing_settings_reply import IdentitySharingSettingsReply
-from .identity_web_api_settings_reply import IdentityWebApiSettingsReply
-from .pydantic import BaseModel, Field
+from browser_based_auth_settings_reply import BrowserBasedAuthSettingsReply
+from ida_proxy_settings_reply import IdaProxySettingsReply
+from identity_agent_settings_reply import IdentityAgentSettingsReply
+from identity_collector_settings_reply import IdentityCollectorSettingsReply
+from identity_sharing_settings_reply import IdentitySharingSettingsReply
+from identity_web_api_settings_reply import IdentityWebApiSettingsReply
+from pydantic import BaseModel, Field
 
 
 class IdentityAwarenessSettingsReply(BaseModel):
@@ -18,8 +18,7 @@ class IdentityAwarenessSettingsReply(BaseModel):
         description="""Browser Based Authentication settings.""",
     )
     collecting_identities: bool = Field(
-        alias="collecting-identities",
-        description="""This gateway collects identities.""",
+        alias="collecting-identities", description="""This gateway collects identities."""
     )
     identity_agent: bool = Field(
         alias="identity-agent", description="""Identity Agent source enabled."""
@@ -35,8 +34,7 @@ class IdentityAwarenessSettingsReply(BaseModel):
         alias="identity-collector", description="""Identity Collector source enabled."""
     )
     identity_collector_settings: IdentityCollectorSettingsReply = Field(
-        alias="identity-collector-settings",
-        description="""Identity Collector settings.""",
+        alias="identity-collector-settings", description="""Identity Collector settings."""
     )
     identity_sharing_settings: IdentitySharingSettingsReply = Field(
         alias="identity-sharing-settings", description="""Identity sharing settings."""

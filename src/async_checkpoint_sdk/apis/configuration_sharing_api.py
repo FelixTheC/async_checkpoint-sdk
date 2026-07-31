@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.sho_reply import ShoReply
 from async_checkpoint_sdk.models.sho_request import ShoRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def configuration_sharing(
-    client: ClientSession, data: ShoRequest, config: Config, **kwargs
+    client: ClientSession, data: ShoRequest, config: SDKConfig, **kwargs
 ) -> ShoReply:
     """
     Parameters

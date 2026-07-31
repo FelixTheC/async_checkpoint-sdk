@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class GatewaysDomainPermissionsRequest(BaseModel):
@@ -20,19 +20,16 @@ class GatewaysDomainPermissionsRequest(BaseModel):
     )
     system_backup: bool = Field(alias="system-backup", description="""Backup Security Gateways.""")
     system_restore: bool = Field(
-        alias="system-restore",
-        description="""Restore Security Gateways from .saved backups.""",
+        alias="system-restore", description="""Restore Security Gateways from saved backups."""
     )
     open_shell: bool = Field(
         alias="open-shell", description="""Use the SmartConsole CLI to run commands."""
     )
     run_one_time_script: bool = Field(
-        alias="run-one-time-script",
-        description="""Run user scripts from .the command line.""",
+        alias="run-one-time-script", description="""Run user scripts from the command line."""
     )
     run_repository_script: bool = Field(
-        alias="run-repository-script",
-        description="""Run scripts from .the repository.""",
+        alias="run-repository-script", description="""Run scripts from the repository."""
     )
     manage_repository_scripts: str = Field(
         alias="manage-repository-scripts",

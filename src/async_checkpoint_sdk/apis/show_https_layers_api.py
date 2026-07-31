@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_query_request import ApiQueryRequest
 from async_checkpoint_sdk.models.t_l_s_layers_query_reply import TLSLayersQueryReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_https_layers(
-    client: ClientSession, data: ApiQueryRequest, config: Config, **kwargs
+    client: ClientSession, data: ApiQueryRequest, config: SDKConfig, **kwargs
 ) -> TLSLayersQueryReply:
     """
     Retrieve all HTTPS Inspection layers.

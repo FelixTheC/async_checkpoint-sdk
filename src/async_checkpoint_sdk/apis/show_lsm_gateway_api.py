@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.lsm_gateway_cluster_common_request_show import 
     LsmGatewayClusterCommonRequestShow,
 )
 from async_checkpoint_sdk.models.lsm_gateway_reply import LsmGatewayReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_lsm_gateway(
-    client: ClientSession, data: LsmGatewayClusterCommonRequestShow, config: Config, **kwargs
+    client: ClientSession, data: LsmGatewayClusterCommonRequestShow, config: SDKConfig, **kwargs
 ) -> LsmGatewayReply:
     """
     Show LSM Gateway.

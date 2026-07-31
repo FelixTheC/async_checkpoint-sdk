@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.vsx_run_operation_reply import VsxRunOperationReply
 from async_checkpoint_sdk.models.vsx_run_operation_request import VsxRunOperationRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def vsx_run_operation(
-    client: ClientSession, data: VsxRunOperationRequest, config: Config, **kwargs
+    client: ClientSession, data: VsxRunOperationRequest, config: SDKConfig, **kwargs
 ) -> VsxRunOperationReply:
     """
     Run the VSX operation by its name and parameters. <br><b>Important note:</b> An automatic session publish is part of all the operations in this API.

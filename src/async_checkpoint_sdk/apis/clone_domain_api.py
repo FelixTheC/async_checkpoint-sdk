@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.clone_domain_request import CloneDomainRequest
 from async_checkpoint_sdk.models.migration_reply import MigrationReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def clone_domain(
-    client: ClientSession, data: CloneDomainRequest, config: Config, **kwargs
+    client: ClientSession, data: CloneDomainRequest, config: SDKConfig, **kwargs
 ) -> MigrationReply:
     """
     Clones an existing Domain and applicable Check Point configuration. <br>This command applies only to a Multi-Domain Security Management Server. <br>This command is available only after you log in to the System Data domain. <br><br>For more information and list of limitations, see <span class="show-only-in-doc-ui"><a data-toggle="modal" href=https://support.checkpoint.com/results/sk/sk180631><u>sk180631</u></a></span>.

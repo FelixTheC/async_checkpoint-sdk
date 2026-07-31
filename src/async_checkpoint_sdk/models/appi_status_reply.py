@@ -1,7 +1,7 @@
-from .api_date_reply import ApiDateReply
-from .api_domain_identifier import ApiDomainIdentifier
-from .meta_info_for_top_level_reply import MetaInfoForTopLevelReply
-from .pydantic import BaseModel, Field
+from api_date_reply import ApiDateReply
+from api_domain_identifier import ApiDomainIdentifier
+from meta_info_for_top_level_reply import MetaInfoForTopLevelReply
+from pydantic import BaseModel, Field
 
 
 class AppiStatusReply(BaseModel):
@@ -20,8 +20,7 @@ class AppiStatusReply(BaseModel):
         description="""Installed Application Control & URL Filtering version creation time.""",
     )
     domain: ApiDomainIdentifier = Field(
-        alias="domain",
-        description="""Information about the domain that holds the Object.""",
+        alias="domain", description="""Information about the domain that holds the Object."""
     )
     meta_info: MetaInfoForTopLevelReply = Field(
         alias="meta-info", description="""Object metadata."""

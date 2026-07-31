@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.cdm_command_reply import CdmCommandReply
 from async_checkpoint_sdk.models.check_intelligence_feed_request import (
     CheckIntelligenceFeedRequest,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def check_threat_ioc_feed(
-    client: ClientSession, data: CheckIntelligenceFeedRequest, config: Config, **kwargs
+    client: ClientSession, data: CheckIntelligenceFeedRequest, config: SDKConfig, **kwargs
 ) -> CdmCommandReply:
     """
     Check if a target can reach or parse a threat IOC feed - can work with an existing feed object or with a new one (by providing all relevant feed parameters.

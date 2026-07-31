@@ -1,6 +1,6 @@
-from .dynamic_id_settings_reply import DynamicIdSettingsReply
-from .pydantic import BaseModel, Field
-from .single_authentication_client_reply import SingleAuthenticationClientReply
+from dynamic_id_settings_reply import DynamicIdSettingsReply
+from pydantic import BaseModel, Field
+from single_authentication_client_reply import SingleAuthenticationClientReply
 
 
 class AuthenticationReply(BaseModel):

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.opsec_trusted_ca_reply import OpsecTrustedCaReply
 from async_checkpoint_sdk.models.opsec_trusted_ca_request_new import OpsecTrustedCaRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_opsec_trusted_ca(
-    client: ClientSession, data: OpsecTrustedCaRequestNew, config: Config, **kwargs
+    client: ClientSession, data: OpsecTrustedCaRequestNew, config: SDKConfig, **kwargs
 ) -> OpsecTrustedCaReply:
     """
     Create new object.

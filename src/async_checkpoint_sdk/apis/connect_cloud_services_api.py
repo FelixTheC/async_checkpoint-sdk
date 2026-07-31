@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.cloud_connect_mgmt_request import CloudConnectMgmtRequest
 from async_checkpoint_sdk.models.cloud_services_status_reply import CloudServicesStatusReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def connect_cloud_services(
-    client: ClientSession, data: CloudConnectMgmtRequest, config: Config, **kwargs
+    client: ClientSession, data: CloudConnectMgmtRequest, config: SDKConfig, **kwargs
 ) -> CloudServicesStatusReply:
     """
     Securely connect the Management Server to Check Point's Infinity Portal. <br>This is a preliminary operation so that the management server can use various Check Point cloud-based security services hosted in the Infinity Portal.

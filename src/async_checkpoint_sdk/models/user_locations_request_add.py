@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class UserLocationsRequestAdd(BaseModel):
@@ -7,6 +7,5 @@ class UserLocationsRequestAdd(BaseModel):
         description="""Collection of allowed destination locations name or uid.""",
     )
     sources: str | list[str] = Field(
-        alias="sources",
-        description="""Collection of allowed source locations name or uid.""",
+        alias="sources", description="""Collection of allowed source locations name or uid."""
     )

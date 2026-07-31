@@ -1,7 +1,5 @@
-from .encryption_algorithms_global_properties_reply import (
-    EncryptionAlgorithmsGlobalPropertiesReply,
-)
-from .pydantic import BaseModel, Field
+from encryption_algorithms_global_properties_reply import EncryptionAlgorithmsGlobalPropertiesReply
+from pydantic import BaseModel, Field
 
 
 class VpnAuthAndEncryptionGlobalPropertiesReply(BaseModel):

@@ -1,6 +1,6 @@
-from .alerts_global_properties_request import AlertsGlobalPropertiesRequest
-from .pydantic import BaseModel, Field
-from .time_settings_global_properties_request import TimeSettingsGlobalPropertiesRequest
+from alerts_global_properties_request import AlertsGlobalPropertiesRequest
+from pydantic import BaseModel, Field
+from time_settings_global_properties_request import TimeSettingsGlobalPropertiesRequest
 
 
 class LogAndAlertGlobalPropertiesRequest(BaseModel):
@@ -21,8 +21,7 @@ class LogAndAlertGlobalPropertiesRequest(BaseModel):
         description="""IP Options drop specifies the action to take when a packet with IP Options is encountered. The Check Point Security Gateway always drops these packets, but you can log them or issue an alert.""",
     )
     packet_is_incorrectly_tagged: str = Field(
-        alias="packet-is-incorrectly-tagged",
-        description="""Packet is incorrectly tagged.""",
+        alias="packet-is-incorrectly-tagged", description="""Packet is incorrectly tagged."""
     )
     packet_tagging_brute_force_attack: str = Field(
         alias="packet-tagging-brute-force-attack",
@@ -49,8 +48,7 @@ class LogAndAlertGlobalPropertiesRequest(BaseModel):
         description="""Log every authenticated HTTP connection specifies that a log entry should be generated for every authenticated HTTP connection.""",
     )
     log_traffic: str = Field(
-        alias="log-traffic",
-        description="""Log Traffic specifies whether or not to log traffic.""",
+        alias="log-traffic", description="""Log Traffic specifies whether or not to log traffic."""
     )
     alerts: AlertsGlobalPropertiesRequest = Field(
         alias="alerts",

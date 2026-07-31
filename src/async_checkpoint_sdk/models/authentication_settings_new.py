@@ -1,5 +1,5 @@
-from .pydantic import BaseModel, Field
-from .users_directories_settings_new import UsersDirectoriesSettingsNew
+from pydantic import BaseModel, Field
+from users_directories_settings_new import UsersDirectoriesSettingsNew
 
 
 class AuthenticationSettingsNew(BaseModel):

@@ -1,10 +1,18 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class RunScriptRequest(BaseModel):
+    uid: str = Field(
+        alias="uid",
+        description="""Repository script unique identifier.<br>Can be used for script-type repository.""",
+    )
+    targets: str | list[str] = Field(
+        alias="targets",
+        description="""On what targets to execute this command. Targets may be identified by their name, or object unique identifier.""",
+    )
     script_type: str = Field(
         alias="script-type",
-        description="""Type of script. Run a new script (one time) or an existing script from .the repository (repository).""",
+        description="""Type of script. Run a new script (one time) or an existing script from the repository (repository).""",
     )
     script_base64: str = Field(
         alias="script-base64",

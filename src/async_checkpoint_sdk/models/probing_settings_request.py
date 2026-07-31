@@ -1,5 +1,5 @@
-from .object import Object
-from .pydantic import BaseModel, Field
+from object import Object
+from pydantic import BaseModel, Field
 
 
 class ProbingSettingsRequest(BaseModel):
@@ -17,7 +17,7 @@ class ProbingSettingsRequest(BaseModel):
     )
     primary_address: str = Field(
         alias="primary-address",
-        description="""Primary IP address to use. Must be one of the addresses from .probed-interface-list. Required when use-primary-address is true.""",
+        description="""Primary IP address to use. Must be one of the addresses from probed-interface-list. Required when use-primary-address is true.""",
     )
     probing_method: str = Field(
         alias="probing-method",

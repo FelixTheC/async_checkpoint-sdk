@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_versions_reply import ApiVersionsReply
 from async_checkpoint_sdk.models.empty_request import EmptyRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_api_versions(
-    client: ClientSession, data: EmptyRequest, config: Config, **kwargs
+    client: ClientSession, data: EmptyRequest, config: SDKConfig, **kwargs
 ) -> ApiVersionsReply:
     """
     Shows all supported API versions and current API version (the latest one).

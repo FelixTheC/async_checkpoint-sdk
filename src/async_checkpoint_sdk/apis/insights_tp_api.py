@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.autonomous_firewall_reply import AutonomousFirewallReply
 from async_checkpoint_sdk.models.autonomous_firewall_request import AutonomousFirewallRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def insights_tp(
-    client: ClientSession, data: AutonomousFirewallRequest, config: Config, **kwargs
+    client: ClientSession, data: AutonomousFirewallRequest, config: SDKConfig, **kwargs
 ) -> AutonomousFirewallReply:
     """
     TBD.

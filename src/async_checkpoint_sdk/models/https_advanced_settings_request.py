@@ -1,10 +1,10 @@
-from .add import add
-from .blocked_cert_request import BlockedCertRequest
-from .bypass_under_load_request import BypassUnderLoadRequest
-from .pydantic import BaseModel, Field
-from .remove import remove
-from .server_cert_validation_actions_request import ServerCertValidationActionsRequest
-from .update import update
+from add import Add
+from blocked_cert_request import BlockedCertRequest
+from bypass_under_load_request import BypassUnderLoadRequest
+from pydantic import BaseModel, Field
+from remove import Remove
+from server_cert_validation_actions_request import ServerCertValidationActionsRequest
+from update import Update
 
 
 class HttpsAdvancedSettingsRequest(BaseModel):
@@ -26,15 +26,15 @@ class HttpsAdvancedSettingsRequest(BaseModel):
     )
     server_certificate_validation_actions: ServerCertValidationActionsRequest = Field(
         alias="server-certificate-validation-actions",
-        description="""When a Security Gateway receives an untrusted certificate from .a website server, define when to drop the connection and how to track it.""",
+        description="""When a Security Gateway receives an untrusted certificate from a website server, define when to drop the connection and how to track it.""",
     )
     retrieve_intermediate_ca_certificates: bool = Field(
         alias="retrieve-intermediate-ca-certificates",
-        description="""Configure the value true to use the Certificate Authority Information Access extension to retrieve certificates that are missing from .the certificate chain.<br>The default value is true.""",
+        description="""Configure the value true to use the Certificate Authority Information Access extension to retrieve certificates that are missing from the certificate chain.<br>The default value is true.""",
     )
-    blocked_certificates: add | remove | update | BlockedCertRequest | list[dict] = Field(
+    blocked_certificates: Add | Remove | Update | BlockedCertRequest | list[dict] = Field(
         alias="blocked-certificates",
-        description="""Collection of certificates objects identified by serial number.<br>Drop traffic from .servers using the blocked certificate.""",
+        description="""Collection of certificates objects identified by serial number.<br>Drop traffic from servers using the blocked certificate.""",
     )
     blocked_certificate_tracking: str = Field(
         alias="blocked-certificate-tracking",
@@ -46,7 +46,7 @@ class HttpsAdvancedSettingsRequest(BaseModel):
     )
     certificate_pinned_apps_action: str = Field(
         alias="certificate-pinned-apps-action",
-        description="""Configure the value bypass to bypass traffic from .certificate-pinned applications approved by Check Point.<br>HTTPS Inspection cannot inspect connections initiated by certificate-pinned applications.<br>Configure the value detect to send logs for traffic from .certificate-pinned applications approved by Check Point.<br>The default value is bypass.""",
+        description="""Configure the value bypass to bypass traffic from certificate-pinned applications approved by Check Point.<br>HTTPS Inspection cannot inspect connections initiated by certificate-pinned applications.<br>Configure the value detect to send logs for traffic from certificate-pinned applications approved by Check Point.<br>The default value is bypass.""",
     )
     log_sessions: bool = Field(
         alias="log-sessions",
@@ -54,11 +54,11 @@ class HttpsAdvancedSettingsRequest(BaseModel):
     )
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     domains_to_process: list[str] = Field(
         alias="domains-to-process",
-        description="""Indicates which domains to process the commands on. It cannot be used with the details-level full, must be run from .the System Domain only and with ignore-warnings true. Valid values are: CURRENT_DOMAIN, ALL_DOMAINS_ON_THIS_SERVER.""",
+        description="""Indicates which domains to process the commands on. It cannot be used with the details-level full, must be run from the System Domain only and with ignore-warnings true. Valid values are: CURRENT_DOMAIN, ALL_DOMAINS_ON_THIS_SERVER.""",
     )
     ignore_warnings: bool = Field(
         alias="ignore-warnings", description="""Apply changes ignoring warnings."""

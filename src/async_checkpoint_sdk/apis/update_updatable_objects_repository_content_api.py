@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_task_reply import ApiTaskReply
 from async_checkpoint_sdk.models.empty_request import EmptyRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def update_updatable_objects_repository_content(
-    client: ClientSession, data: EmptyRequest, config: Config, **kwargs
+    client: ClientSession, data: EmptyRequest, config: SDKConfig, **kwargs
 ) -> ApiTaskReply:
     """
     Updates the content of the Updatable Objects repository from the Check Point User Center.

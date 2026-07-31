@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.updatable_object_reply import UpdatableObjectReply
 from async_checkpoint_sdk.models.updatable_object_request_new import UpdatableObjectRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_updatable_object(
-    client: ClientSession, data: UpdatableObjectRequestNew, config: Config, **kwargs
+    client: ClientSession, data: UpdatableObjectRequestNew, config: SDKConfig, **kwargs
 ) -> UpdatableObjectReply:
     """
     Import an updatable object from the repository to the management server. This operation takes effect immediately and doesn't require publishing.

@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.api_query_object_reply import ApiQueryObjectRep
 from async_checkpoint_sdk.models.global_assignment_query_request import (
     GlobalAssignmentQueryRequest,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_global_assignments(
-    client: ClientSession, data: GlobalAssignmentQueryRequest, config: Config, **kwargs
+    client: ClientSession, data: GlobalAssignmentQueryRequest, config: SDKConfig, **kwargs
 ) -> ApiQueryObjectReply:
     """
     Retrieve all objects.

@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.nat_rule_identifier_request_show import (
     NatRuleIdentifierRequestShow,
 )
 from async_checkpoint_sdk.models.nat_rule_reply import NatRuleReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_nat_rule(
-    client: ClientSession, data: NatRuleIdentifierRequestShow, config: Config, **kwargs
+    client: ClientSession, data: NatRuleIdentifierRequestShow, config: SDKConfig, **kwargs
 ) -> NatRuleReply:
     """
     Retrieve existing object using object name or uid.

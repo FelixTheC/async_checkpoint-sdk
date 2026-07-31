@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_ok_reply import ApiOkReply
 from async_checkpoint_sdk.models.workflow_submit_request import WorkflowSubmitRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def submit_session(
-    client: ClientSession, data: WorkflowSubmitRequest, config: Config, **kwargs
+    client: ClientSession, data: WorkflowSubmitRequest, config: SDKConfig, **kwargs
 ) -> ApiOkReply:
     """
     Workflow feature - Submit the session for approval.

@@ -1,5 +1,5 @@
-from .automatic_purge_recurrence_reply import AutomaticPurgeRecurrenceReply
-from .pydantic import BaseModel, Field
+from automatic_purge_recurrence_reply import AutomaticPurgeRecurrenceReply
+from pydantic import BaseModel, Field
 
 
 class AutomaticPurgeReply(BaseModel):

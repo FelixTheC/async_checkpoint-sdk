@@ -1,11 +1,10 @@
-from .api_object_standard_identifier import ApiObjectStandardIdentifier
-from .pydantic import BaseModel, Field
+from api_object_standard_identifier import ApiObjectStandardIdentifier
+from pydantic import BaseModel, Field
 
 
 class TcpResourceCvpReply(BaseModel):
     server: ApiObjectStandardIdentifier = Field(
-        alias="server",
-        description="""The CVP server defined as an OPSEC Application.""",
+        alias="server", description="""The CVP server defined as an OPSEC Application."""
     )
     cvp_server_is_allowed_to_modify_content: bool = Field(
         alias="cvp-server-is-allowed-to-modify-content",

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.secur_id_reply import SecurIdReply
 from async_checkpoint_sdk.models.secur_id_request_edit import SecurIdRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_securid_server(
-    client: ClientSession, data: SecurIdRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: SecurIdRequestEdit, config: SDKConfig, **kwargs
 ) -> SecurIdReply:
     """
     Edit existing SecurID server using object name or uid.

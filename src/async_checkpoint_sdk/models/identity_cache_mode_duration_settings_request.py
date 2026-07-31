@@ -1,10 +1,9 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class IdentityCacheModeDurationSettingsRequest(BaseModel):
     override_profile: bool = Field(
-        alias="override-profile",
-        description="""Override profile of global configuration.""",
+        alias="override-profile", description="""Override profile of global configuration."""
     )
     value: int = Field(
         alias="value",

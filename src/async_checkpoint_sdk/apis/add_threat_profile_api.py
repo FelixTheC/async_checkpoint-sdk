@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_task_reply import ApiTaskReply
 from async_checkpoint_sdk.models.profile_request_new import ProfileRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_threat_profile(
-    client: ClientSession, data: ProfileRequestNew, config: Config, **kwargs
+    client: ClientSession, data: ProfileRequestNew, config: SDKConfig, **kwargs
 ) -> ApiTaskReply:
     """
     Create new object.

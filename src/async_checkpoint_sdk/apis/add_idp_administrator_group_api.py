@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.idp_group_request_new import IdpGroupRequestNew
 from async_checkpoint_sdk.models.idp_group_role_reply import IdpGroupRoleReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_idp_administrator_group(
-    client: ClientSession, data: IdpGroupRequestNew, config: Config, **kwargs
+    client: ClientSession, data: IdpGroupRequestNew, config: SDKConfig, **kwargs
 ) -> IdpGroupRoleReply:
     """
     Create new Identity Provider administrators group.

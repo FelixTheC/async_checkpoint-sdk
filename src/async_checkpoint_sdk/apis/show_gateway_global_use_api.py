@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.gateway_global_use_reply import GatewayGlobalUseReply
 from async_checkpoint_sdk.models.gateway_global_use_request_show import GatewayGlobalUseRequestShow
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_gateway_global_use(
-    client: ClientSession, data: GatewayGlobalUseRequestShow, config: Config, **kwargs
+    client: ClientSession, data: GatewayGlobalUseRequestShow, config: SDKConfig, **kwargs
 ) -> GatewayGlobalUseReply:
     """
     Show global usage of a specific target.

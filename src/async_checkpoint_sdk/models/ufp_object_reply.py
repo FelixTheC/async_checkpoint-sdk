@@ -1,15 +1,13 @@
-from .api_object_standard_identifier import ApiObjectStandardIdentifier
-from .pydantic import BaseModel, Field
+from api_object_standard_identifier import ApiObjectStandardIdentifier
+from pydantic import BaseModel, Field
 
 
 class UfpObjectReply(BaseModel):
     server: ApiObjectStandardIdentifier = Field(
-        alias="server",
-        description="""The UFP server defined as an OPSEC Application.""",
+        alias="server", description="""The UFP server defined as an OPSEC Application."""
     )
     caching_control: str = Field(
-        alias="caching-control",
-        description="""Specifies if and how caching is to be enabled.""",
+        alias="caching-control", description="""Specifies if and how caching is to be enabled."""
     )
     ignore_ufp_server_after_failure: bool = Field(
         alias="ignore-ufp-server-after-failure",

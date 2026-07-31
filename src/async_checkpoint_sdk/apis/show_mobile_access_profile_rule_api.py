@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.mobile_profile_rule_identifier_request_show imp
     MobileProfileRuleIdentifierRequestShow,
 )
 from async_checkpoint_sdk.models.mobile_profile_rule_reply import MobileProfileRuleReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_mobile_access_profile_rule(
-    client: ClientSession, data: MobileProfileRuleIdentifierRequestShow, config: Config, **kwargs
+    client: ClientSession, data: MobileProfileRuleIdentifierRequestShow, config: SDKConfig, **kwargs
 ) -> MobileProfileRuleReply:
     """
     Retrieve existing Mobile Access Profile rule using rule number or uid or name.

@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.api_query_object_reply import ApiQueryObjectRep
 from async_checkpoint_sdk.models.object_in_group_with_members_query_request import (
     ObjectInGroupWithMembersQueryRequest,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_gsn_handover_groups(
-    client: ClientSession, data: ObjectInGroupWithMembersQueryRequest, config: Config, **kwargs
+    client: ClientSession, data: ObjectInGroupWithMembersQueryRequest, config: SDKConfig, **kwargs
 ) -> ApiQueryObjectReply:
     """
     Retrieve all objects.

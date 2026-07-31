@@ -1,5 +1,7 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class VptRemoveVdRequest(BaseModel):
-    pass
+    vd: str = Field(
+        alias="vd", description="""Name of the Virtual System, Virtual Switch, or Virtual Router."""
+    )

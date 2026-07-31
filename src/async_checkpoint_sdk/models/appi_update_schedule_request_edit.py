@@ -1,6 +1,6 @@
-from .pydantic import BaseModel, Field
-from .schedule_update_gateway_request_edit import ScheduleUpdateGatewayRequestEdit
-from .schedule_update_mgmt_request_edit import ScheduleUpdateMgmtRequestEdit
+from pydantic import BaseModel, Field
+from schedule_update_gateway_request_edit import ScheduleUpdateGatewayRequestEdit
+from schedule_update_mgmt_request_edit import ScheduleUpdateMgmtRequestEdit
 
 
 class AppiUpdateScheduleRequestEdit(BaseModel):

@@ -6,11 +6,11 @@ from async_checkpoint_sdk.models.show_notification_subscriptions_reply import (
 from async_checkpoint_sdk.models.show_notification_subscriptions_request import (
     ShowNotificationSubscriptionsRequest,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_subscriptions_notification(
-    client: ClientSession, data: ShowNotificationSubscriptionsRequest, config: Config, **kwargs
+    client: ClientSession, data: ShowNotificationSubscriptionsRequest, config: SDKConfig, **kwargs
 ) -> ShowNotificationSubscriptionsReply:
     """
     Parameters

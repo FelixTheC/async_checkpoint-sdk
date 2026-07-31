@@ -1,5 +1,5 @@
-from .e_v_c_settings_for_gateway_reply import EVCSettingsForGatewayReply
-from .pydantic import BaseModel, Field
+from e_v_c_settings_for_gateway_reply import EVCSettingsForGatewayReply
+from pydantic import BaseModel, Field
 
 
 class VCSettingsForGatewayReply(BaseModel):

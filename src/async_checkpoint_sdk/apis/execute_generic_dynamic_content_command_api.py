@@ -6,11 +6,11 @@ from async_checkpoint_sdk.models.generic_dynamic_content_command_reply import (
 from async_checkpoint_sdk.models.generic_dynamic_content_command_request import (
     GenericDynamicContentCommandRequest,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def execute_generic_dynamic_content_command(
-    client: ClientSession, data: GenericDynamicContentCommandRequest, config: Config, **kwargs
+    client: ClientSession, data: GenericDynamicContentCommandRequest, config: SDKConfig, **kwargs
 ) -> GenericDynamicContentCommandReply:
     """
     Parameters

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.large_scale_vpn_reply import LargeScaleVpnReply
 from async_checkpoint_sdk.models.large_scale_vpn_request_new import LargeScaleVpnRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_lsv_profile(
-    client: ClientSession, data: LargeScaleVpnRequestNew, config: Config, **kwargs
+    client: ClientSession, data: LargeScaleVpnRequestNew, config: SDKConfig, **kwargs
 ) -> LargeScaleVpnReply:
     """
     Add a new Large Scale VPN object. When used inside a VPN Community, the object enables communication between a large amount of externally managed VPN peers.

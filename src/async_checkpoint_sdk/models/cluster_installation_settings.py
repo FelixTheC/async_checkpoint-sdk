@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class ClusterInstallationSettings(BaseModel):
@@ -10,6 +10,6 @@ class ClusterInstallationSettings(BaseModel):
         alias="cluster-strategy",
         description="""The cluster installation strategy.
 all-members - Install the package on all members in the cluster
-non-active-members-and-failover - In the High Availability cluster, install the package only on the selected cluster members with the cluster state 'Standby' and then failover from .the current 'Active' member to one of the updated members
-non-active-members-no-failover - In the High Availability cluster, install the package only on the selected cluster members with the cluster state 'Standby' and then do not failover from .the current 'Active' member to one of the updated members.""",
+non-active-members-and-failover - In the High Availability cluster, install the package only on the selected cluster members with the cluster state 'Standby' and then failover from the current 'Active' member to one of the updated members
+non-active-members-no-failover - In the High Availability cluster, install the package only on the selected cluster members with the cluster state 'Standby' and then do not failover from the current 'Active' member to one of the updated members.""",
     )

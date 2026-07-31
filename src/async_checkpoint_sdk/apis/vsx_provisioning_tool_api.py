@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.vpt_run_operation_reply import VptRunOperationReply
 from async_checkpoint_sdk.models.vpt_run_operation_request import VptRunOperationRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def vsx_provisioning_tool(
-    client: ClientSession, data: VptRunOperationRequest, config: Config, **kwargs
+    client: ClientSession, data: VptRunOperationRequest, config: SDKConfig, **kwargs
 ) -> VptRunOperationReply:
     """
     Run the VSX provisioning tool with the specified parameters. <br><b>Important note:</b> An automatic session publish is part of all the operations in this API.

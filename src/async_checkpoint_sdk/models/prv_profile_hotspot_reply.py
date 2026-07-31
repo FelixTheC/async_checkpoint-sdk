@@ -1,10 +1,10 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class PrvProfileHotspotReply(BaseModel):
     manage_settings: str = Field(
         alias="manage-settings",
-        description="""Manage settings mode: locally on the device or centrally from .this application.""",
+        description="""Manage settings mode: locally on the device or centrally from this application.""",
     )
     override_settings: str = Field(
         alias="override-settings",
@@ -21,8 +21,7 @@ class PrvProfileHotspotReply(BaseModel):
         alias="require-authentication", description="""Require authentication."""
     )
     allow_users_from_specific_group: bool = Field(
-        alias="allow-users-from-specific-group",
-        description="""Allow users from .specific group.""",
+        alias="allow-users-from-specific-group", description="""Allow users from specific group."""
     )
     allowed_users_groups: list[str] = Field(
         alias="allowed-users-groups", description="""Allowed users groups."""

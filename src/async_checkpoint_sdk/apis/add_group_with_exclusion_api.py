@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.group_with_exclusion_reply import GroupWithExcl
 from async_checkpoint_sdk.models.group_with_exclusion_request_new import (
     GroupWithExclusionRequestNew,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_group_with_exclusion(
-    client: ClientSession, data: GroupWithExclusionRequestNew, config: Config, **kwargs
+    client: ClientSession, data: GroupWithExclusionRequestNew, config: SDKConfig, **kwargs
 ) -> GroupWithExclusionReply:
     """
     Create new object.

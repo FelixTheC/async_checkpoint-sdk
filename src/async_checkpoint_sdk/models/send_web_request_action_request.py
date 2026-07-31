@@ -1,7 +1,8 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class SendWebRequestActionRequest(BaseModel):
+    url: str = Field(alias="url", description="""URL used for the web request.""")
     fingerprint: str = Field(
         alias="fingerprint",
         description="""The SHA1 fingerprint of the URL's SSL certificate. Used to trust servers with self-signed SSL certificates.""",

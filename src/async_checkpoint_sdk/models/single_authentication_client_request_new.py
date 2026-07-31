@@ -1,10 +1,8 @@
-from .client_display_settings_request import ClientDisplaySettingsRequest
-from .personal_certificate_settings_request_new import (
-    PersonalCertificateSettingsRequestNew,
-)
-from .pydantic import BaseModel, Field
-from .radius_settings_request_new import RadiusSettingsRequestNew
-from .secur_id_settings_request_new import SecurIdSettingsRequestNew
+from client_display_settings_request import ClientDisplaySettingsRequest
+from personal_certificate_settings_request_new import PersonalCertificateSettingsRequestNew
+from pydantic import BaseModel, Field
+from radius_settings_request_new import RadiusSettingsRequestNew
+from secur_id_settings_request_new import SecurIdSettingsRequestNew
 
 
 class SingleAuthenticationClientRequestNew(BaseModel):
@@ -17,8 +15,7 @@ class SingleAuthenticationClientRequestNew(BaseModel):
         description="""Allow clients that support multiple authentication methods to connect.""",
     )
     display_name: str = Field(
-        alias="display-name",
-        description="""Display name for the authentication method.""",
+        alias="display-name", description="""Display name for the authentication method."""
     )
     method: str = Field(alias="method", description="""Authentication method type.""")
     secur_id: SecurIdSettingsRequestNew = Field(
@@ -34,6 +31,5 @@ class SingleAuthenticationClientRequestNew(BaseModel):
         description="""Personal certificate authentication settings, relevant only when method is 'personal-certificate'.""",
     )
     client_display_settings: ClientDisplaySettingsRequest = Field(
-        alias="client-display-settings",
-        description="""Client display configuration settings.""",
+        alias="client-display-settings", description="""Client display configuration settings."""
     )

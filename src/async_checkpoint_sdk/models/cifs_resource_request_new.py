@@ -1,7 +1,13 @@
-from .pydantic import BaseModel, Field
+from cifs_allowed_disk_request import CifsAllowedDiskRequest
+from pydantic import BaseModel, Field
 
 
 class CifsResourceRequestNew(BaseModel):
+    name: str = Field(alias="name", description="""Object name. Must be unique in the domain.""")
+    allowed_disk_and_print_shares: CifsAllowedDiskRequest | list[dict] = Field(
+        alias="allowed-disk-and-print-shares",
+        description="""The list of Allowed Disk and Print Shares. Must be added in pairs.""",
+    )
     log_mapped_shares: bool = Field(
         alias="log-mapped-shares", description="""Logs each share map attempt."""
     )
@@ -14,13 +20,12 @@ class CifsResourceRequestNew(BaseModel):
         description="""Blocks the ability to remotely manipulate a the window's registry.""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     ignore_warnings: bool = Field(
         alias="ignore-warnings", description="""Apply changes ignoring warnings."""

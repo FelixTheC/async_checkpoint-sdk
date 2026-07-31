@@ -6,11 +6,11 @@ from async_checkpoint_sdk.models.mobile_applications_section_reply import (
 from async_checkpoint_sdk.models.mobile_applications_section_request_new import (
     MobileApplicationsSectionRequestNew,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_mobile_access_section(
-    client: ClientSession, data: MobileApplicationsSectionRequestNew, config: Config, **kwargs
+    client: ClientSession, data: MobileApplicationsSectionRequestNew, config: SDKConfig, **kwargs
 ) -> MobileApplicationsSectionReply:
     """
     Create new Mobile Access section.

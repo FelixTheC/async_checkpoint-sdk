@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.time_group_reply import TimeGroupReply
 from async_checkpoint_sdk.models.time_group_request_edit import TimeGroupRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def clone_time_group(
-    client: ClientSession, data: TimeGroupRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: TimeGroupRequestEdit, config: SDKConfig, **kwargs
 ) -> TimeGroupReply:
     """
     Clone existing object.

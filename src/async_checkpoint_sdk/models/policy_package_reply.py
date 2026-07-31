@@ -1,9 +1,9 @@
-from .api_domain_identifier import ApiDomainIdentifier
-from .api_object_standard_identifier import ApiObjectStandardIdentifier
-from .available_actions_reply import AvailableActionsReply
-from .https_layers_reply import HttpsLayersReply
-from .meta_info_for_top_level_reply import MetaInfoForTopLevelReply
-from .pydantic import BaseModel, Field
+from api_domain_identifier import ApiDomainIdentifier
+from api_object_standard_identifier import ApiObjectStandardIdentifier
+from available_actions_reply import AvailableActionsReply
+from https_layers_reply import HttpsLayersReply
+from meta_info_for_top_level_reply import MetaInfoForTopLevelReply
+from pydantic import BaseModel, Field
 
 
 class PolicyPackageReply(BaseModel):
@@ -27,8 +27,7 @@ class PolicyPackageReply(BaseModel):
         description="""True - enables, False - disables Desktop security policy, empty - nothing is changed.""",
     )
     https_inspection_layers: HttpsLayersReply = Field(
-        alias="https-inspection-layers",
-        description="""HTTPS inspection policy layers.""",
+        alias="https-inspection-layers", description="""HTTPS inspection policy layers."""
     )
     https_inspection_policy: bool = Field(
         alias="https-inspection-policy",
@@ -65,13 +64,11 @@ class PolicyPackageReply(BaseModel):
         description="""True - enables, False - disables VPN traditional mode, empty - nothing is changed.""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     domain: ApiDomainIdentifier = Field(
-        alias="domain",
-        description="""Information about the domain that holds the Object.""",
+        alias="domain", description="""Information about the domain that holds the Object."""
     )
     icon: str = Field(alias="icon", description="""Object icon.""")
     meta_info: MetaInfoForTopLevelReply = Field(
@@ -85,6 +82,5 @@ class PolicyPackageReply(BaseModel):
         description="""Collection of tag objects identified by the name or UID. Level of details in the output corresponds to the number of details for search. This table shows the level of details in the Standard level.""",
     )
     available_actions: AvailableActionsReply = Field(
-        alias="available-actions",
-        description="""Actions that are available on the object.""",
+        alias="available-actions", description="""Actions that are available on the object."""
     )

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_task_reply import ApiTaskReply
 from async_checkpoint_sdk.models.profile_request_edit import ProfileRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_threat_profile(
-    client: ClientSession, data: ProfileRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: ProfileRequestEdit, config: SDKConfig, **kwargs
 ) -> ApiTaskReply:
     """
     Edit existing object using object name or uid.

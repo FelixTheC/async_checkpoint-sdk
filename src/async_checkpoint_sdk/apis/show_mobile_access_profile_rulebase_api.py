@@ -6,11 +6,11 @@ from async_checkpoint_sdk.models.query_mobile_profile_rulebase_reply import (
 from async_checkpoint_sdk.models.query_mobile_profile_rulebase_request import (
     QueryMobileProfileRulebaseRequest,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_mobile_access_profile_rulebase(
-    client: ClientSession, data: QueryMobileProfileRulebaseRequest, config: Config, **kwargs
+    client: ClientSession, data: QueryMobileProfileRulebaseRequest, config: SDKConfig, **kwargs
 ) -> QueryMobileProfileRulebaseReply:
     """
     Shows the entire Mobile Access Profile Rules layer.  This layer is divided into sections. A Mobile Profile Rule may be within a section, or independent of a section (in which case it is said to be under the "global" section). The reply features a list of objects. Each object may be a section of the layer, with all its rules in, or a rule itself, for the case of rules which are under the global section. An optional "filter" field may be added in order to filter out only those rules that match a search criteria.

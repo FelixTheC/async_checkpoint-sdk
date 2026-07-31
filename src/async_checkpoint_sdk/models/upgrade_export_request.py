@@ -1,7 +1,15 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class UpgradeExportRequest(BaseModel):
+    file_path: str = Field(
+        alias="file-path",
+        description="""Path in which the exported database file is saved.<br><font color=red>Required only</font> when not using pre-export-verification-only flag.""",
+    )
+    domain_name: str = Field(
+        alias="domain-name",
+        description="""Domain name to be exported.<br><font color=red>Required only for</font> exporting a Domain from the Multi-Domain Server or backing up Domain.""",
+    )
     version: str = Field(alias="version", description="""Target version.""")
     verify_all_servers: bool = Field(
         alias="verify-all-servers",

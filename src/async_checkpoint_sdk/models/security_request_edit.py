@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class SecurityRequestEdit(BaseModel):
@@ -7,12 +7,10 @@ class SecurityRequestEdit(BaseModel):
         description="""Session timeout - you can choose a unit (day, week, month) in session-timeout-unit field.""",
     )
     session_timeout_unit: str = Field(
-        alias="session-timeout-unit",
-        description="""Unit for session-timeout numeric value.""",
+        alias="session-timeout-unit", description="""Unit for session-timeout numeric value."""
     )
     activate_passcode_lock: bool = Field(
-        alias="activate-passcode-lock",
-        description="""Require passcode to the application.""",
+        alias="activate-passcode-lock", description="""Require passcode to the application."""
     )
     allow_store_credentials: bool = Field(
         alias="allow-store-credentials",
@@ -27,8 +25,7 @@ class SecurityRequestEdit(BaseModel):
         description="""Issue log when device is detected as jail broken.""",
     )
     block_jailbroken: str = Field(
-        alias="block-jailbroken",
-        description="""Action upon detection of jail broken devices.""",
+        alias="block-jailbroken", description="""Action upon detection of jail broken devices."""
     )
     block_3rd_party_keyboard: bool = Field(
         alias="block-3rd-party-keyboard", description="""Block 3rd party keyboard."""

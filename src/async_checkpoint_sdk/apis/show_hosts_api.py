@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.host_query_reply import HostQueryReply
 from async_checkpoint_sdk.models.object_in_group_query_request import ObjectInGroupQueryRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_hosts(
-    client: ClientSession, data: ObjectInGroupQueryRequest, config: Config, **kwargs
+    client: ClientSession, data: ObjectInGroupQueryRequest, config: SDKConfig, **kwargs
 ) -> HostQueryReply:
     """
     Retrieve all objects.

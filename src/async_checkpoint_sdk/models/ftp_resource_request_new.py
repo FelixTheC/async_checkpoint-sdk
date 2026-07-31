@@ -1,27 +1,30 @@
-from .cvp_object_request import CvpObjectRequest
-from .pydantic import BaseModel, Field
+from cvp_object_request import CvpObjectRequest
+from pydantic import BaseModel, Field
 
 
 class FtpResourceRequestNew(BaseModel):
+    name: str = Field(alias="name", description="""Object name. Must be unique in the domain.""")
+    resource_matching_method: str = Field(
+        alias="resource-matching-method",
+        description="""GET allows Downloads from the server to the client. PUT allows Uploads from the client to the server.""",
+    )
     exception_track: str = Field(
         alias="exception-track",
         description="""The UID or Name of the exception track to be used to log actions taken as a result of a match on the resource.""",
     )
     resources_path: str = Field(
-        alias="resources-path",
-        description="""Refers to a location on the FTP server.""",
+        alias="resources-path", description="""Refers to a location on the FTP server."""
     )
     cvp: CvpObjectRequest = Field(
         alias="cvp", description="""Configure CVP inspection on mail messages."""
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     ignore_warnings: bool = Field(
         alias="ignore-warnings", description="""Apply changes ignoring warnings."""

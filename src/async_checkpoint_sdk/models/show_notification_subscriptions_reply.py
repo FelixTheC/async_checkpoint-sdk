@@ -1,5 +1,5 @@
-from .map import Map
-from .pydantic import BaseModel, Field
+from map import Map
+from pydantic import BaseModel, Field
 
 
 class ShowNotificationSubscriptionsReply(BaseModel):

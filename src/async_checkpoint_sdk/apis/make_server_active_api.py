@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.set_active_reply import SetActiveReply
 from async_checkpoint_sdk.models.set_active_request import SetActiveRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def make_server_active(
-    client: ClientSession, data: SetActiveRequest, config: Config, **kwargs
+    client: ClientSession, data: SetActiveRequest, config: SDKConfig, **kwargs
 ) -> SetActiveReply:
     """
     Parameters

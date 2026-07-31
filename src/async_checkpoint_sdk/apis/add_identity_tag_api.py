@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.id_tag_reply import IdTagReply
 from async_checkpoint_sdk.models.id_tag_request_new import IdTagRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_identity_tag(
-    client: ClientSession, data: IdTagRequestNew, config: Config, **kwargs
+    client: ClientSession, data: IdTagRequestNew, config: SDKConfig, **kwargs
 ) -> IdTagReply:
     """
     Create new object.

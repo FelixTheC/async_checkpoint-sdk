@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.deployment_command_reply import DeploymentComma
 from async_checkpoint_sdk.models.deployment_command_request_install import (
     DeploymentCommandRequestInstall,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def install_software_package(
-    client: ClientSession, data: DeploymentCommandRequestInstall, config: Config, **kwargs
+    client: ClientSession, data: DeploymentCommandRequestInstall, config: SDKConfig, **kwargs
 ) -> DeploymentCommandReply:
     """
     Installs the software package on target machines.

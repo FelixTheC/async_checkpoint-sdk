@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.policy_package_reply import PolicyPackageReply
 from async_checkpoint_sdk.models.policy_package_show_request import PolicyPackageShowRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_package(
-    client: ClientSession, data: PolicyPackageShowRequest, config: Config, **kwargs
+    client: ClientSession, data: PolicyPackageShowRequest, config: SDKConfig, **kwargs
 ) -> PolicyPackageReply:
     """
     Retrieve existing object using object name or uid.

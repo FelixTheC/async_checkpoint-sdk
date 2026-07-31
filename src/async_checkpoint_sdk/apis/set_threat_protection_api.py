@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.protection_reply import ProtectionReply
 from async_checkpoint_sdk.models.protection_request_edit import ProtectionRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_threat_protection(
-    client: ClientSession, data: ProtectionRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: ProtectionRequestEdit, config: SDKConfig, **kwargs
 ) -> ProtectionReply:
     """
     Edit existing object using object name or uid.

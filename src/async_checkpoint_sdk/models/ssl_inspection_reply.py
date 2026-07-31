@@ -1,6 +1,6 @@
-from .pydantic import BaseModel, Field
-from .site_categorization_allow_mode_reply import SiteCategorizationAllowModeReply
-from .ssl_inspection_override_boolean_reply import SslInspectionOverrideBooleanReply
+from pydantic import BaseModel, Field
+from site_categorization_allow_mode_reply import SiteCategorizationAllowModeReply
+from ssl_inspection_override_boolean_reply import SslInspectionOverrideBooleanReply
 
 
 class SslInspectionReply(BaseModel):
@@ -14,13 +14,13 @@ class SslInspectionReply(BaseModel):
     )
     deny_untrusted_server_cert: SslInspectionOverrideBooleanReply = Field(
         alias="deny-untrusted-server-cert",
-        description="""Set to be true in order to drop traffic from .servers with untrusted server certificate.""",
+        description="""Set to be true in order to drop traffic from servers with untrusted server certificate.""",
     )
     deny_revoked_server_cert: SslInspectionOverrideBooleanReply = Field(
         alias="deny-revoked-server-cert",
-        description="""Set to be true in order to drop traffic from .servers with revoked server certificate (validate CRL).""",
+        description="""Set to be true in order to drop traffic from servers with revoked server certificate (validate CRL).""",
     )
     deny_expired_server_cert: SslInspectionOverrideBooleanReply = Field(
         alias="deny-expired-server-cert",
-        description="""Set to be true in order to drop traffic from .servers with expired server certificate.""",
+        description="""Set to be true in order to drop traffic from servers with expired server certificate.""",
     )

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.lsm_base_command_reply import LsmBaseCommandReply
 from async_checkpoint_sdk.models.lsm_install_settings_request import LsmInstallSettingsRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def install_lsm_settings(
-    client: ClientSession, data: LsmInstallSettingsRequest, config: Config, **kwargs
+    client: ClientSession, data: LsmInstallSettingsRequest, config: SDKConfig, **kwargs
 ) -> LsmBaseCommandReply:
     """
     Executes the lsm-install-settings on a given list of targets. Install the provisioning settings that defined on the object on the targets devices.

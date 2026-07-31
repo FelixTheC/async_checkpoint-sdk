@@ -1,10 +1,10 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class PrvProfileDnsReply(BaseModel):
     manage_settings: str = Field(
         alias="manage-settings",
-        description="""Manage settings mode: locally on the device or centrally from .this application.""",
+        description="""Manage settings mode: locally on the device or centrally from this application.""",
     )
     override_settings: str = Field(
         alias="override-settings",

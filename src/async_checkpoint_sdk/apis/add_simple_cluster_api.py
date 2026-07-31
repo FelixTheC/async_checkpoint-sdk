@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.cluster_async_reply import ClusterAsyncReply
 from async_checkpoint_sdk.models.cluster_request_new import ClusterRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_simple_cluster(
-    client: ClientSession, data: ClusterRequestNew, config: Config, **kwargs
+    client: ClientSession, data: ClusterRequestNew, config: SDKConfig, **kwargs
 ) -> ClusterAsyncReply:
     """
     Create new object.

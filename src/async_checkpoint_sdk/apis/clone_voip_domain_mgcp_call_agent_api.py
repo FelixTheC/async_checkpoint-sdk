@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.mgcp_call_agent_reply import MgcpCallAgentReply
 from async_checkpoint_sdk.models.mgcp_call_agent_request_edit import MgcpCallAgentRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def clone_voip_domain_mgcp_call_agent(
-    client: ClientSession, data: MgcpCallAgentRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: MgcpCallAgentRequestEdit, config: SDKConfig, **kwargs
 ) -> MgcpCallAgentReply:
     """
     Clone existing VoIP Domain MGCP Call Agent.

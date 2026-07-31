@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.sho_cmd_reply import ShoCmdReply
 from async_checkpoint_sdk.models.sho_cmd_request import ShoCmdRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def run_sho_command(
-    client: ClientSession, data: ShoCmdRequest, config: Config, **kwargs
+    client: ClientSession, data: ShoCmdRequest, config: SDKConfig, **kwargs
 ) -> ShoCmdReply:
     """
     Parameters

@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class ApplicationsRequestEdit(BaseModel):
@@ -11,7 +11,7 @@ class ApplicationsRequestEdit(BaseModel):
     )
     calendar_from_the_last: int = Field(
         alias="calendar-from-the-last",
-        description="""How far back to see your Calendar from .the current date - you can choose a unit (day, week, month) in calendar-from-the-last-unit field.""",
+        description="""How far back to see your Calendar from the current date - you can choose a unit (day, week, month) in calendar-from-the-last-unit field.""",
     )
     calendar_from_the_last_unit: str = Field(
         alias="calendar-from-the-last-unit",
@@ -19,7 +19,7 @@ class ApplicationsRequestEdit(BaseModel):
     )
     calendar_to_the_following: int = Field(
         alias="calendar-to-the-following",
-        description="""How much ahead to see your Calendar from .the current date - you can choose a unit (day, week, month) in calendar-to-the-following-unit field.""",
+        description="""How much ahead to see your Calendar from the current date - you can choose a unit (day, week, month) in calendar-to-the-following-unit field.""",
     )
     calendar_to_the_following_unit: str = Field(
         alias="calendar-to-the-following-unit",
@@ -27,7 +27,7 @@ class ApplicationsRequestEdit(BaseModel):
     )
     mail_from_the_last: int = Field(
         alias="mail-from-the-last",
-        description="""How far back to see your emails from .the current date - choose a unit (day, week, month) in mail-from-the-last-unit field.""",
+        description="""How far back to see your emails from the current date - choose a unit (day, week, month) in mail-from-the-last-unit field.""",
     )
     mail_from_the_last_unit: str = Field(
         alias="mail-from-the-last-unit",
@@ -35,7 +35,7 @@ class ApplicationsRequestEdit(BaseModel):
     )
     synchronize_contacts: str = Field(
         alias="synchronize-contacts",
-        description="""Contacts synchronization method - from .the mail server to device and the app and vice versa or from .the mail server to device and the app or from .the mail server to the app.""",
+        description="""Contacts synchronization method - from the mail server to device and the app and vice versa or from the mail server to device and the app or from the mail server to the app.""",
     )
     allow_push_notification: bool = Field(
         alias="allow-push-notification",
@@ -47,11 +47,11 @@ class ApplicationsRequestEdit(BaseModel):
     )
     allow_contacts_from_global_address_list: bool = Field(
         alias="allow-contacts-from-global-address-list",
-        description="""Allow to add additional contacts from .Global Address List to the app.""",
+        description="""Allow to add additional contacts from Global Address List to the app.""",
     )
     allow_contacts_from_local_phone: bool = Field(
         alias="allow-contacts-from-local-phone",
-        description="""Allow to add additional contacts from .local phone to the app.""",
+        description="""Allow to add additional contacts from local phone to the app.""",
     )
     save_local_web_cache: bool = Field(
         alias="save-local-web-cache",

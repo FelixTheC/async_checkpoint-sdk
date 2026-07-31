@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class ClientCustomizationReply(BaseModel):
@@ -11,16 +11,14 @@ class ClientCustomizationReply(BaseModel):
         description="""Configure the application display colors in light mode. 6 hex digits that define RGB color - relevant for IOS.""",
     )
     allow_calendar: bool = Field(
-        alias="allow-calendar",
-        description="""Allow sync business calendar to device calendar.""",
+        alias="allow-calendar", description="""Allow sync business calendar to device calendar."""
     )
     allow_contacts: bool = Field(
         alias="allow-contacts", description="""Enable/Disable contacts app."""
     )
     allow_mail: bool = Field(alias="allow-mail", description="""Enable/Disable email app.""")
     allow_notes_sync: bool = Field(
-        alias="allow-notes-sync",
-        description="""Allow sync business notes to device notes.""",
+        alias="allow-notes-sync", description="""Allow sync business notes to device notes."""
     )
     allow_saved_file_apps: bool = Field(
         alias="allow-saved-file-apps",

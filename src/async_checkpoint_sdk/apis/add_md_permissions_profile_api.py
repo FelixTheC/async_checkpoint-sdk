@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.md_permissions_profile_reply import MdPermissio
 from async_checkpoint_sdk.models.md_permissions_profile_request_new import (
     MdPermissionsProfileRequestNew,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_md_permissions_profile(
-    client: ClientSession, data: MdPermissionsProfileRequestNew, config: Config, **kwargs
+    client: ClientSession, data: MdPermissionsProfileRequestNew, config: SDKConfig, **kwargs
 ) -> MdPermissionsProfileReply:
     """
     Create new Multi-Domain Permissions Profile.

@@ -1,5 +1,5 @@
-from .pydantic import BaseModel, Field
-from .website_categorization_request import WebsiteCategorizationRequest
+from pydantic import BaseModel, Field
+from website_categorization_request import WebsiteCategorizationRequest
 
 
 class OverrideGlobalSettingsRequest(BaseModel):

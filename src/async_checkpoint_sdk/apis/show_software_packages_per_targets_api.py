@@ -6,11 +6,11 @@ from async_checkpoint_sdk.models.packages_per_target_command_reply import (
 from async_checkpoint_sdk.models.packages_per_target_command_request import (
     PackagesPerTargetCommandRequest,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_software_packages_per_targets(
-    client: ClientSession, data: PackagesPerTargetCommandRequest, config: Config, **kwargs
+    client: ClientSession, data: PackagesPerTargetCommandRequest, config: SDKConfig, **kwargs
 ) -> PackagesPerTargetCommandReply:
     """
     Shows software packages on targets.

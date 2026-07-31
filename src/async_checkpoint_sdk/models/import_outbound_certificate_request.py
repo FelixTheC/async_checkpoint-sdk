@@ -1,20 +1,26 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class ImportOutboundCertificateRequest(BaseModel):
+    base64_certificate: str = Field(
+        alias="base64-certificate",
+        description="""Certificate file encoded in base64.<br/>Valid file format: p12.""",
+    )
+    base64_password: str = Field(
+        alias="base64-password",
+        description="""Password (encoded in Base64 with padding) for the certificate file.""",
+    )
     name: str = Field(alias="name", description="""Object name. Must be unique in the domain.""")
     is_default: bool = Field(
-        alias="is-default",
-        description="""Is the certificate is the default certificate.""",
+        alias="is-default", description="""Is the certificate is the default certificate."""
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     tags: str | list[str] = Field(alias="tags", description="""Collection of tag identifiers.""")
     ignore_warnings: bool = Field(

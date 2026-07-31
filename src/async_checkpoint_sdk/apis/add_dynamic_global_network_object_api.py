@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.dynamic_global_network_reply import DynamicGlob
 from async_checkpoint_sdk.models.dynamic_global_network_request_new import (
     DynamicGlobalNetworkRequestNew,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_dynamic_global_network_object(
-    client: ClientSession, data: DynamicGlobalNetworkRequestNew, config: Config, **kwargs
+    client: ClientSession, data: DynamicGlobalNetworkRequestNew, config: SDKConfig, **kwargs
 ) -> DynamicGlobalNetworkReply:
     """
     Create new object. <br>Local domain must have a corresponding network object (with the same name as the Dynamic Global Network Object) in order for Assignment to succeed.

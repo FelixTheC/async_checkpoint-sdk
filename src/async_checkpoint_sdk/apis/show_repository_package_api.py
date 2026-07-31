@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.package_info_command_reply import PackageInfoCommandReply
 from async_checkpoint_sdk.models.package_info_command_request import PackageInfoCommandRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_repository_package(
-    client: ClientSession, data: PackageInfoCommandRequest, config: Config, **kwargs
+    client: ClientSession, data: PackageInfoCommandRequest, config: SDKConfig, **kwargs
 ) -> PackageInfoCommandReply:
     """
     Gets repository software packages information.

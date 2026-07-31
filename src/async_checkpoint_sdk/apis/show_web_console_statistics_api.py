@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.web_console_statistics_reply import WebConsoleStatisticsReply
 from async_checkpoint_sdk.models.web_console_statistics_request import WebConsoleStatisticsRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_web_console_statistics(
-    client: ClientSession, data: WebConsoleStatisticsRequest, config: Config, **kwargs
+    client: ClientSession, data: WebConsoleStatisticsRequest, config: SDKConfig, **kwargs
 ) -> WebConsoleStatisticsReply:
     """
     Parameters

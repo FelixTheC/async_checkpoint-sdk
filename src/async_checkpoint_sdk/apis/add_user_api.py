@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.user_reply import UserReply
 from async_checkpoint_sdk.models.user_request_new import UserRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_user(
-    client: ClientSession, data: UserRequestNew, config: Config, **kwargs
+    client: ClientSession, data: UserRequestNew, config: SDKConfig, **kwargs
 ) -> UserReply:
     """
     Create new object.

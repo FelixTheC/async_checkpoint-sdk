@@ -1,7 +1,7 @@
-from .api_rulebase_filter_settings_request__packet_search_settings import (
+from api_rulebase_filter_settings_request__packet_search_settings import (
     ApiRulebaseFilterSettingsRequest_PacketSearchSettings,
 )
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class ApiRulebaseFilterSettingsRequest(BaseModel):

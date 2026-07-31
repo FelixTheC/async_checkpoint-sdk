@@ -1,5 +1,5 @@
-from .pydantic import BaseModel, Field
-from .star_rim_reply import StarRimReply
+from pydantic import BaseModel, Field
+from star_rim_reply import StarRimReply
 
 
 class StarPermanentTunnelsReply(BaseModel):

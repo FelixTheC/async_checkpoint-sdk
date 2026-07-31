@@ -1,5 +1,5 @@
-from .pydantic import BaseModel, Field
-from .schedule_conf_gateway_reply import ScheduleConfGatewayReply
+from pydantic import BaseModel, Field
+from schedule_conf_gateway_reply import ScheduleConfGatewayReply
 
 
 class ScheduleUpdateGatewayReply(BaseModel):

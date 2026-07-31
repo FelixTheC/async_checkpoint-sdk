@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.trust_request_base import TrustRequestBase
 from async_checkpoint_sdk.models.trust_status_reply import TrustStatusReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def test_trust(
-    client: ClientSession, data: TrustRequestBase, config: Config, **kwargs
+    client: ClientSession, data: TrustRequestBase, config: SDKConfig, **kwargs
 ) -> TrustStatusReply:
     """
     Test an existing Trusted communication between the Management Server and the managed Security Gateway.

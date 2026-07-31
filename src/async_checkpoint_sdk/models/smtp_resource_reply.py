@@ -1,12 +1,12 @@
-from .api_domain_identifier import ApiDomainIdentifier
-from .api_object_standard_identifier import ApiObjectStandardIdentifier
-from .available_actions_reply import AvailableActionsReply
-from .cvp_object_reply import CvpObjectReply
-from .meta_info_for_top_level_reply import MetaInfoForTopLevelReply
-from .pydantic import BaseModel, Field
-from .smtp_action1_reply import SmtpAction1Reply
-from .smtp_action2_reply import SmtpAction2Reply
-from .smtp_match_object_reply import SmtpMatchObjectReply
+from api_domain_identifier import ApiDomainIdentifier
+from api_object_standard_identifier import ApiObjectStandardIdentifier
+from available_actions_reply import AvailableActionsReply
+from cvp_object_reply import CvpObjectReply
+from meta_info_for_top_level_reply import MetaInfoForTopLevelReply
+from pydantic import BaseModel, Field
+from smtp_action1_reply import SmtpAction1Reply
+from smtp_action2_reply import SmtpAction2Reply
+from smtp_match_object_reply import SmtpMatchObjectReply
 
 
 class SmtpResourceReply(BaseModel):
@@ -59,13 +59,11 @@ class SmtpResourceReply(BaseModel):
         alias="cvp", description="""Configure CVP inspection on mail messages."""
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     domain: ApiDomainIdentifier = Field(
-        alias="domain",
-        description="""Information about the domain that holds the Object.""",
+        alias="domain", description="""Information about the domain that holds the Object."""
     )
     icon: str = Field(alias="icon", description="""Object icon.""")
     meta_info: MetaInfoForTopLevelReply = Field(
@@ -75,8 +73,7 @@ class SmtpResourceReply(BaseModel):
         alias="read-only", description="""Indicates whether the object is read-only."""
     )
     available_actions: AvailableActionsReply = Field(
-        alias="available-actions",
-        description="""Actions that are available on the object.""",
+        alias="available-actions", description="""Actions that are available on the object."""
     )
     tags: list[dict] = Field(
         alias="tags",

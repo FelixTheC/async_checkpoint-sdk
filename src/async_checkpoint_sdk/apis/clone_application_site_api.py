@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.application_site_reply import ApplicationSiteReply
 from async_checkpoint_sdk.models.application_site_request_edit import ApplicationSiteRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def clone_application_site(
-    client: ClientSession, data: ApplicationSiteRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: ApplicationSiteRequestEdit, config: SDKConfig, **kwargs
 ) -> ApplicationSiteReply:
     """
     Clone existing object.

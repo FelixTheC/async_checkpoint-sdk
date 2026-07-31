@@ -1,10 +1,11 @@
-from .add import add
-from .aggressive_aging_request import AggressiveAgingRequest
-from .pydantic import BaseModel, Field
-from .remove import remove
+from add import Add
+from aggressive_aging_request import AggressiveAgingRequest
+from pydantic import BaseModel, Field
+from remove import Remove
 
 
 class SctpServiceRequestEdit(BaseModel):
+    uid: str = Field(alias="uid", description="""Object unique identifier.""")
     aggressive_aging: AggressiveAgingRequest = Field(
         alias="aggressive-aging",
         description="""Sets short (aggressive) timeouts for idle connections.""",
@@ -23,8 +24,7 @@ class SctpServiceRequestEdit(BaseModel):
         description="""Port number. To specify a port range add a hyphen between the lowest and the highest port numbers, for example 44-45.""",
     )
     session_timeout: int = Field(
-        alias="session-timeout",
-        description="""Time (in seconds) before the session times out.""",
+        alias="session-timeout", description="""Time (in seconds) before the session times out."""
     )
     source_port: str = Field(
         alias="source-port",
@@ -35,22 +35,20 @@ class SctpServiceRequestEdit(BaseModel):
         description="""Enables state-synchronized High Availability or Load Sharing on a ClusterXL or OPSEC-certified cluster.""",
     )
     use_default_session_timeout: bool = Field(
-        alias="use-default-session-timeout",
-        description="""Use default virtual session timeout.""",
+        alias="use-default-session-timeout", description="""Use default virtual session timeout."""
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
-    groups: add | remove | str | list[str] = Field(
+    groups: Add | Remove | str | list[str] = Field(
         alias="groups", description="""Collection of group identifiers."""
     )
-    tags: add | remove | str | list[str] = Field(
+    tags: Add | Remove | str | list[str] = Field(
         alias="tags", description="""Collection of tag identifiers."""
     )
     ignore_warnings: bool = Field(

@@ -6,11 +6,11 @@ from async_checkpoint_sdk.models.background_upgrade_settings_reply import (
 from async_checkpoint_sdk.models.background_upgrade_settings_show import (
     BackgroundUpgradeSettingsShow,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_background_upgrade_settings(
-    client: ClientSession, data: BackgroundUpgradeSettingsShow, config: Config, **kwargs
+    client: ClientSession, data: BackgroundUpgradeSettingsShow, config: SDKConfig, **kwargs
 ) -> BackgroundUpgradeSettingsReply:
     """
     Show background upgrade settings.

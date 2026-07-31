@@ -1,7 +1,7 @@
-from .ike_support_data_integrity_reply import IkeSupportDataIntegrityReply
-from .ike_support_encryption_algs_reply import IkeSupportEncryptionAlgsReply
-from .pydantic import BaseModel, Field
-from .support_d_h_groups_reply import SupportDHGroupsReply
+from ike_support_data_integrity_reply import IkeSupportDataIntegrityReply
+from ike_support_encryption_algs_reply import IkeSupportEncryptionAlgsReply
+from pydantic import BaseModel, Field
+from support_d_h_groups_reply import SupportDHGroupsReply
 
 
 class IkeEncryptionPropertiesReply(BaseModel):

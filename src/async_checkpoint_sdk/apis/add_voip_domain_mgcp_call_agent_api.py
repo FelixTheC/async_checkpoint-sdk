@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.mgcp_call_agent_reply import MgcpCallAgentReply
 from async_checkpoint_sdk.models.mgcp_call_agent_request_new import MgcpCallAgentRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_voip_domain_mgcp_call_agent(
-    client: ClientSession, data: MgcpCallAgentRequestNew, config: Config, **kwargs
+    client: ClientSession, data: MgcpCallAgentRequestNew, config: SDKConfig, **kwargs
 ) -> MgcpCallAgentReply:
     """
     Create new VoIP Domain MGCP Call Agent.

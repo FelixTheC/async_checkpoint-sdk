@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.upgrade_export_reply import UpgradeExportReply
 from async_checkpoint_sdk.models.upgrade_export_request import UpgradeExportRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def export_management(
-    client: ClientSession, data: UpgradeExportRequest, config: Config, **kwargs
+    client: ClientSession, data: UpgradeExportRequest, config: SDKConfig, **kwargs
 ) -> UpgradeExportReply:
     """
     Export the primary Security Management Server database or the primary Multi-Domain Server database or the single Domain database and the applicable Check Point configuration.

@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class SecurityServerGlobalPropertiesReply(BaseModel):
@@ -32,5 +32,5 @@ class SecurityServerGlobalPropertiesReply(BaseModel):
     )
     server_for_null_requests: str = Field(
         alias="server-for-null-requests",
-        description="""The Logical Name of a Null Requests Server from .http-servers.""",
+        description="""The Logical Name of a Null Requests Server from http-servers.""",
     )

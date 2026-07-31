@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.uri_resource_reply import UriResourceReply
 from async_checkpoint_sdk.models.uri_resource_request_edit import UriResourceRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_resource_uri(
-    client: ClientSession, data: UriResourceRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: UriResourceRequestEdit, config: SDKConfig, **kwargs
 ) -> UriResourceReply:
     """
     Edit existing object using object name or uid.

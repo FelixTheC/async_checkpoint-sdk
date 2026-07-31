@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.api_ok_reply import ApiOkReply
 from async_checkpoint_sdk.models.where_used_replace_object_request import (
     WhereUsedReplaceObjectRequest,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def replace_where_used(
-    client: ClientSession, data: WhereUsedReplaceObjectRequest, config: Config, **kwargs
+    client: ClientSession, data: WhereUsedReplaceObjectRequest, config: SDKConfig, **kwargs
 ) -> ApiOkReply:
     """
     Replaces all references to an object with a new object according to specified criteria.

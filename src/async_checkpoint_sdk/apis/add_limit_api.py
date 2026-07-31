@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.limit_reply import LimitReply
 from async_checkpoint_sdk.models.limit_request_new import LimitRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_limit(
-    client: ClientSession, data: LimitRequestNew, config: Config, **kwargs
+    client: ClientSession, data: LimitRequestNew, config: SDKConfig, **kwargs
 ) -> LimitReply:
     """
     Create new Limit object.

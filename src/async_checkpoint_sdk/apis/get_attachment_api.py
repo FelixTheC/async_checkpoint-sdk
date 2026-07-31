@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.packet_capture_reply import PacketCaptureReply
 from async_checkpoint_sdk.models.packet_capture_request import PacketCaptureRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def get_attachment(
-    client: ClientSession, data: PacketCaptureRequest, config: Config, **kwargs
+    client: ClientSession, data: PacketCaptureRequest, config: SDKConfig, **kwargs
 ) -> PacketCaptureReply:
     """
     Retrieves a packet capture or blob data, according to the attributes of a log record.

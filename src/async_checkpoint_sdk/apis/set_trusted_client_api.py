@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.trusted_client_reply import TrustedClientReply
 from async_checkpoint_sdk.models.trusted_client_request_edit import TrustedClientRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_trusted_client(
-    client: ClientSession, data: TrustedClientRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: TrustedClientRequestEdit, config: SDKConfig, **kwargs
 ) -> TrustedClientReply:
     """
     Edit existing object using object name or uid.

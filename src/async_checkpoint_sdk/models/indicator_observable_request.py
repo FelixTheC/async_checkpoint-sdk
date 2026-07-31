@@ -1,7 +1,9 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class IndicatorObservableRequest(BaseModel):
+    name: str = Field(alias="name", description="""Object name. Must be unique in the domain.""")
+    md5: str = Field(alias="md5", description="""A valid MD5 sequence.""")
     confidence: str = Field(
         alias="confidence",
         description="""The confidence level the indicator has that a real threat has been uncovered.""",
@@ -14,7 +16,7 @@ class IndicatorObservableRequest(BaseModel):
     comments: str = Field(alias="comments", description="""Comments string.""")
     domains_to_process: list[str] = Field(
         alias="domains-to-process",
-        description="""Indicates which domains to process the commands on. It cannot be used with the details-level full, must be run from .the System Domain only and with ignore-warnings true. Valid values are: CURRENT_DOMAIN, ALL_DOMAINS_ON_THIS_SERVER.""",
+        description="""Indicates which domains to process the commands on. It cannot be used with the details-level full, must be run from the System Domain only and with ignore-warnings true. Valid values are: CURRENT_DOMAIN, ALL_DOMAINS_ON_THIS_SERVER.""",
     )
     ignore_warnings: bool = Field(
         alias="ignore-warnings", description="""Apply changes ignoring warnings."""

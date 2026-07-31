@@ -1,7 +1,9 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class WebApiLoginRequest(BaseModel):
+    user: str = Field(alias="user", description="""Administrator user name.""")
+    password: str = Field(alias="password", description="""Administrator password.""")
     continue_last_session: bool = Field(
         alias="continue-last-session",
         description="""When 'continue-last-session' is set to 'True', the new session would continue where the last session was stopped. This option is available when the administrator has only one session that can be continued. If there is more than one session, see 'switch-session' API.""",
@@ -27,8 +29,7 @@ class WebApiLoginRequest(BaseModel):
         description="""Session comments. Can be viewed only using the show-session API.""",
     )
     session_description: str = Field(
-        alias="session-description",
-        description="""A description of the session's purpose.""",
+        alias="session-description", description="""A description of the session's purpose."""
     )
     session_name: str = Field(alias="session-name", description="""Session unique name.""")
     session_timeout: int = Field(

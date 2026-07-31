@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_query_object_reply import ApiQueryObjectReply
 from async_checkpoint_sdk.models.mds_query_request import MdsQueryRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_mdss(
-    client: ClientSession, data: MdsQueryRequest, config: Config, **kwargs
+    client: ClientSession, data: MdsQueryRequest, config: SDKConfig, **kwargs
 ) -> ApiQueryObjectReply:
     """
     Retrieve all objects of type Multi-Domain Server or Multi-Domain Log Server.

@@ -1,6 +1,6 @@
-from .add import add
-from .pydantic import BaseModel, Field
-from .remove import remove
+from add import Add
+from pydantic import BaseModel, Field
+from remove import Remove
 
 
 class UsersDirectoriesSettingsEdit(BaseModel):
@@ -9,10 +9,9 @@ class UsersDirectoriesSettingsEdit(BaseModel):
     )
     internal_users: bool = Field(alias="internal-users", description="""Internal users.""")
     users_from_external_directories: str = Field(
-        alias="users-from-external-directories",
-        description="""Users from .external directories.""",
+        alias="users-from-external-directories", description="""Users from external directories."""
     )
-    specific: add | remove | str | list[str] = Field(
+    specific: Add | Remove | str | list[str] = Field(
         alias="specific",
         description="""LDAP AU objects identified by the name or UID. Must be set when users-from-external-directories was selected to be specific.""",
     )

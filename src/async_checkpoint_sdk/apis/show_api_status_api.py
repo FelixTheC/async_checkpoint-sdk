@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.web_api_server_status_reply import WebApiServerStatusReply
 from async_checkpoint_sdk.models.web_api_server_status_request import WebApiServerStatusRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_api_status(
-    client: ClientSession, data: WebApiServerStatusRequest, config: Config, **kwargs
+    client: ClientSession, data: WebApiServerStatusRequest, config: SDKConfig, **kwargs
 ) -> WebApiServerStatusReply:
     """
     Parameters

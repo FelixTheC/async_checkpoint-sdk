@@ -1,6 +1,6 @@
-from .purge_sam_file_reply import PurgeSamFileReply
-from .pydantic import BaseModel, Field
-from .use_early_versions_reply import UseEarlyVersionsReply
+from purge_sam_file_reply import PurgeSamFileReply
+from pydantic import BaseModel, Field
+from use_early_versions_reply import UseEarlyVersionsReply
 
 
 class SamSettingsReply(BaseModel):

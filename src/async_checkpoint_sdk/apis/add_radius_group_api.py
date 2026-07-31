@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.radius_group_reply import RadiusGroupReply
 from async_checkpoint_sdk.models.radius_group_request_new import RadiusGroupRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_radius_group(
-    client: ClientSession, data: RadiusGroupRequestNew, config: Config, **kwargs
+    client: ClientSession, data: RadiusGroupRequestNew, config: SDKConfig, **kwargs
 ) -> RadiusGroupReply:
     """
     Create new object.

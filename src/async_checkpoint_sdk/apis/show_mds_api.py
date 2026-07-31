@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.mds_reply import MdsReply
 from async_checkpoint_sdk.models.mds_request_show import MdsRequestShow
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_mds(
-    client: ClientSession, data: MdsRequestShow, config: Config, **kwargs
+    client: ClientSession, data: MdsRequestShow, config: SDKConfig, **kwargs
 ) -> MdsReply:
     """
     Retrieve existing object of type Multi-Domain Server or Multi-Domain Log Server using object name or uid.

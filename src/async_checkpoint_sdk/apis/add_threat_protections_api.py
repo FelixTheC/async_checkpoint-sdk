@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.add_protections_request import AddProtectionsRequest
 from async_checkpoint_sdk.models.api_task_reply import ApiTaskReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_threat_protections(
-    client: ClientSession, data: AddProtectionsRequest, config: Config, **kwargs
+    client: ClientSession, data: AddProtectionsRequest, config: SDKConfig, **kwargs
 ) -> ApiTaskReply:
     """
     Adds threat protections.

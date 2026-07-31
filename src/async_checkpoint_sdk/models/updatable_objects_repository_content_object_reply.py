@@ -1,6 +1,6 @@
-from .api_object_standard_identifier import ApiObjectStandardIdentifier
-from .pydantic import BaseModel, Field
-from .updatable_object_additional_properties import UpdatableObjectAdditionalProperties
+from api_object_standard_identifier import ApiObjectStandardIdentifier
+from pydantic import BaseModel, Field
+from updatable_object_additional_properties import UpdatableObjectAdditionalProperties
 
 
 class UpdatableObjectsRepositoryContentObjectReply(BaseModel):
@@ -13,8 +13,7 @@ class UpdatableObjectsRepositoryContentObjectReply(BaseModel):
         description="""Unique identifier of the object in the Updatable Objects Repository.""",
     )
     additional_properties: UpdatableObjectAdditionalProperties = Field(
-        alias="additional-properties",
-        description="""Additional properties on the object.""",
+        alias="additional-properties", description="""Additional properties on the object."""
     )
     name: str = Field(alias="name", description="""Object name. Must be unique in the domain.""")
     updatable_object: ApiObjectStandardIdentifier = Field(

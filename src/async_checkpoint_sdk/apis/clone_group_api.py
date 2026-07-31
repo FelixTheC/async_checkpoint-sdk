@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.group_reply import GroupReply
 from async_checkpoint_sdk.models.group_request_edit import GroupRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def clone_group(
-    client: ClientSession, data: GroupRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: GroupRequestEdit, config: SDKConfig, **kwargs
 ) -> GroupReply:
     """
     Clone existing object.

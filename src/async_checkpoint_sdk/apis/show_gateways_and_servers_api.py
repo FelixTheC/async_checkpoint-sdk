@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.api_query_ignore_filter_and_live_request import
     ApiQueryIgnoreFilterAndLiveRequest,
 )
 from async_checkpoint_sdk.models.query_gateways_servers_reply import QueryGatewaysServersReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_gateways_and_servers(
-    client: ClientSession, data: ApiQueryIgnoreFilterAndLiveRequest, config: Config, **kwargs
+    client: ClientSession, data: ApiQueryIgnoreFilterAndLiveRequest, config: SDKConfig, **kwargs
 ) -> QueryGatewaysServersReply:
     """
     Shows list of Gateways & Servers sorted by name.

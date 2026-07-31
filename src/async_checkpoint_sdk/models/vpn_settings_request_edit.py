@@ -1,20 +1,18 @@
-from .add import add
-from .authentication_request_edit import AuthenticationRequestEdit
-from .clientless_vpn_settings_request_edit import ClientlessVpnSettingsRequestEdit
-from .complete import complete
-from .enhanced_link_selection_interfaces_request import (
-    EnhancedLinkSelectionInterfacesRequest,
-)
-from .exported_routes_request_edit import ExportedRoutesRequestEdit
-from .link_selection_request_edit import LinkSelectionRequestEdit
-from .office_mode_request import OfficeModeRequest
-from .pydantic import BaseModel, Field
-from .remote_access_request import RemoteAccessRequest
-from .remove import remove
-from .renew import renew
-from .saml_portal_request_edit import SamlPortalRequestEdit
-from .vpn_advanced_request_edit import VpnAdvancedRequestEdit
-from .vpn_clients_request_edit import VpnClientsRequestEdit
+from add import Add
+from authentication_request_edit import AuthenticationRequestEdit
+from clientless_vpn_settings_request_edit import ClientlessVpnSettingsRequestEdit
+from complete import Complete
+from enhanced_link_selection_interfaces_request import EnhancedLinkSelectionInterfacesRequest
+from exported_routes_request_edit import ExportedRoutesRequestEdit
+from link_selection_request_edit import LinkSelectionRequestEdit
+from office_mode_request import OfficeModeRequest
+from pydantic import BaseModel, Field
+from remote_access_request import RemoteAccessRequest
+from remove import Remove
+from renew import Renew
+from saml_portal_request_edit import SamlPortalRequestEdit
+from vpn_advanced_request_edit import VpnAdvancedRequestEdit
+from vpn_clients_request_edit import VpnClientsRequestEdit
 
 
 class VpnSettingsRequestEdit(BaseModel):
@@ -24,14 +22,14 @@ class VpnSettingsRequestEdit(BaseModel):
     authentication: AuthenticationRequestEdit = Field(
         alias="authentication", description="""Authentication."""
     )
-    certificates: add | renew | complete | remove = Field(
+    certificates: Add | Renew | Complete | Remove = Field(
         alias="certificates", description="""Vpn certificates."""
     )
     exported_routes: ExportedRoutesRequestEdit = Field(
         alias="exported-routes",
         description="""<html>Exported Routes.<br><b>Relevant only in Route-Based VPN Communities</b></html>.""",
     )
-    interfaces: add | remove | EnhancedLinkSelectionInterfacesRequest | list[dict] = Field(
+    interfaces: Add | Remove | EnhancedLinkSelectionInterfacesRequest | list[dict] = Field(
         alias="interfaces", description="""Enhanced Link Selection Interfaces."""
     )
     link_selection: LinkSelectionRequestEdit = Field(
@@ -56,16 +54,14 @@ Notation Wide Impact - Office Mode apply IPSec VPN Software Blade clients and to
         description="""Configuration of the SAML portal for VPN authentication.""",
     )
     vpn_clients: VpnClientsRequestEdit = Field(
-        alias="vpn-clients",
-        description="""VPN clients allowed to connect to this gateway.""",
+        alias="vpn-clients", description="""VPN clients allowed to connect to this gateway."""
     )
     vpn_domain: str = Field(
-        alias="vpn-domain",
-        description="""Gateway VPN domain identified by the name or UID.""",
+        alias="vpn-domain", description="""Gateway VPN domain identified by the name or UID."""
     )
     vpn_domain_exclude_external_ip_addresses: bool = Field(
         alias="vpn-domain-exclude-external-ip-addresses",
-        description="""Exclude the external IP addresses from .the VPN domain of this Security Gateway.""",
+        description="""Exclude the external IP addresses from the VPN domain of this Security Gateway.""",
     )
     vpn_domain_type: str = Field(
         alias="vpn-domain-type", description="""Gateway VPN domain type."""

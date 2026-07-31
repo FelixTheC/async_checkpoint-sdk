@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.indicator_reply import IndicatorReply
 from async_checkpoint_sdk.models.indicator_request_edit import IndicatorRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_threat_indicator(
-    client: ClientSession, data: IndicatorRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: IndicatorRequestEdit, config: SDKConfig, **kwargs
 ) -> IndicatorReply:
     """
     Edit an existing Threat-Indicator.

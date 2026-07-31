@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.security_zone_reply import SecurityZoneReply
 from async_checkpoint_sdk.models.security_zone_request_edit import SecurityZoneRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def clone_security_zone(
-    client: ClientSession, data: SecurityZoneRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: SecurityZoneRequestEdit, config: SDKConfig, **kwargs
 ) -> SecurityZoneReply:
     """
     Clone existing object.

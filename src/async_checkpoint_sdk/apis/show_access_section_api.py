@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.access_section_identifier_request import (
     AccessSectionIdentifierRequest,
 )
 from async_checkpoint_sdk.models.access_section_reply import AccessSectionReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_access_section(
-    client: ClientSession, data: AccessSectionIdentifierRequest, config: Config, **kwargs
+    client: ClientSession, data: AccessSectionIdentifierRequest, config: SDKConfig, **kwargs
 ) -> AccessSectionReply:
     """
     Retrieve existing object using object name or uid.

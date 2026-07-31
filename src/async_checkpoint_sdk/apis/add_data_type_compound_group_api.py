@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.compound_group_reply import CompoundGroupReply
 from async_checkpoint_sdk.models.compound_group_request_new import CompoundGroupRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_data_type_compound_group(
-    client: ClientSession, data: CompoundGroupRequestNew, config: Config, **kwargs
+    client: ClientSession, data: CompoundGroupRequestNew, config: SDKConfig, **kwargs
 ) -> CompoundGroupReply:
     """
     Create new Compound Data Type Group Object.

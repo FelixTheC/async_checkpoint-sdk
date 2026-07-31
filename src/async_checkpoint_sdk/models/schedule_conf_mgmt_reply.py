@@ -1,5 +1,5 @@
-from .mgmt_day_recurrence_reply import MgmtDayRecurrenceReply
-from .pydantic import BaseModel, Field
+from mgmt_day_recurrence_reply import MgmtDayRecurrenceReply
+from pydantic import BaseModel, Field
 
 
 class ScheduleConfMgmtReply(BaseModel):

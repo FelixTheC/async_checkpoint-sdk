@@ -1,25 +1,28 @@
-from .advanced_cluster_settings_request import AdvancedClusterSettingsRequest
-from .advanced_settings_request import AdvancedSettingsRequest
-from .appi_settings_request import AppiSettingsRequest
-from .comm_with_server_behind_nat_settings_request import (
-    CommWithServerBehindNatSettingsRequest,
-)
-from .firewall_settings_request import FirewallSettingsRequest
-from .identity_awareness_settings_request_new import IdentityAwarenessSettingsRequestNew
-from .ips_settings_cluster_request_new import IpsSettingsClusterRequestNew
-from .logs_settings_request import LogsSettingsRequest
-from .nat_settings_gateway_cluster_request import NatSettingsGatewayClusterRequest
-from .object import Object
-from .platform_portal_request_new import PlatformPortalRequestNew
-from .proxy_settings_request import ProxySettingsRequest
-from .pydantic import BaseModel, Field
-from .ssl_inspection_request import SslInspectionRequest
-from .user_check_portal_request_new import UserCheckPortalRequestNew
-from .vpn_settings_request_new import VpnSettingsRequestNew
-from .zero_phishing_fqdn_settings_request import ZeroPhishingFqdnSettingsRequest
+from advanced_cluster_settings_request import AdvancedClusterSettingsRequest
+from advanced_settings_request import AdvancedSettingsRequest
+from appi_settings_request import AppiSettingsRequest
+from comm_with_server_behind_nat_settings_request import CommWithServerBehindNatSettingsRequest
+from firewall_settings_request import FirewallSettingsRequest
+from identity_awareness_settings_request_new import IdentityAwarenessSettingsRequestNew
+from ips_settings_cluster_request_new import IpsSettingsClusterRequestNew
+from logs_settings_request import LogsSettingsRequest
+from nat_settings_gateway_cluster_request import NatSettingsGatewayClusterRequest
+from object import Object
+from platform_portal_request_new import PlatformPortalRequestNew
+from proxy_settings_request import ProxySettingsRequest
+from pydantic import BaseModel, Field
+from ssl_inspection_request import SslInspectionRequest
+from user_check_portal_request_new import UserCheckPortalRequestNew
+from vpn_settings_request_new import VpnSettingsRequestNew
+from zero_phishing_fqdn_settings_request import ZeroPhishingFqdnSettingsRequest
 
 
 class ClusterRequestNew(BaseModel):
+    name: str = Field(alias="name", description="""Object name. Must be unique in the domain.""")
+    ip_address: str = Field(
+        alias="ip-address",
+        description="""IPv4 or IPv6 address. If both addresses are required use ipv4-address and ipv6-address fields explicitly.""",
+    )
     advanced_settings: AdvancedSettingsRequest = Field(
         alias="advanced-settings", description="""N/A"""
     )
@@ -30,8 +33,7 @@ class ClusterRequestNew(BaseModel):
     )
     anti_virus: bool = Field(alias="anti-virus", description="""Anti-Virus blade enabled.""")
     application_control: bool = Field(
-        alias="application-control",
-        description="""Application Control blade enabled.""",
+        alias="application-control", description="""Application Control blade enabled."""
     )
     application_control_and_url_filtering_settings: AppiSettingsRequest = Field(
         alias="application-control-and-url-filtering-settings",
@@ -87,8 +89,7 @@ class ClusterRequestNew(BaseModel):
         alias="identity-awareness", description="""Identity awareness blade enabled."""
     )
     identity_awareness_settings: IdentityAwarenessSettingsRequestNew = Field(
-        alias="identity-awareness-settings",
-        description="""Gateway Identity Awareness settings.""",
+        alias="identity-awareness-settings", description="""Gateway Identity Awareness settings."""
     )
     interfaces: list[dict] = Field(alias="interfaces", description="""Cluster interfaces.""")
     ips: bool = Field(alias="ips", description="""Intrusion Prevention System blade enabled.""")
@@ -97,7 +98,7 @@ class ClusterRequestNew(BaseModel):
     )
     ips_update_policy: str = Field(
         alias="ips-update-policy",
-        description="""Specifies whether the IPS will be downloaded from .the Management or directly to the Gateway.""",
+        description="""Specifies whether the IPS will be downloaded from the Management or directly to the Gateway.""",
     )
     members: list[dict] = Field(
         alias="members",
@@ -127,8 +128,7 @@ class ClusterRequestNew(BaseModel):
         description="""Enables monitoring blades system counters report (e.g CPU Usage,Memory Usage).""",
     )
     rtm_traffic_report: bool = Field(
-        alias="rtm-traffic-report",
-        description="""Enables monitoring blades traffic report.""",
+        alias="rtm-traffic-report", description="""Enables monitoring blades traffic report."""
     )
     rtm_traffic_report_per_connection: bool = Field(
         alias="rtm-traffic-report-per-connection",
@@ -138,8 +138,7 @@ class ClusterRequestNew(BaseModel):
         alias="send-alerts-to-server", description="""Server(s) to send alerts to."""
     )
     send_logs_to_backup_server: Object = Field(
-        alias="send-logs-to-backup-server",
-        description="""Backup server(s) to send logs to.""",
+        alias="send-logs-to-backup-server", description="""Backup server(s) to send logs to."""
     )
     send_logs_to_server: Object = Field(
         alias="send-logs-to-server", description="""Server(s) to send logs to."""
@@ -180,13 +179,12 @@ class ClusterRequestNew(BaseModel):
         description="""Indicates whether to show the portals certificate value in the reply.""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     groups: Object = Field(alias="groups", description="""Collection of group identifiers.""")
     tags: Object = Field(alias="tags", description="""Collection of tag identifiers.""")

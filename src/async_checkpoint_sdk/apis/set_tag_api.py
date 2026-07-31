@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.tag_reply import TagReply
 from async_checkpoint_sdk.models.tag_request_edit import TagRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_tag(
-    client: ClientSession, data: TagRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: TagRequestEdit, config: SDKConfig, **kwargs
 ) -> TagReply:
     """
     Edit existing object using object name or uid.

@@ -1,5 +1,5 @@
-from .pydantic import BaseModel, Field
-from .tunnel_details_reply import TunnelDetailsReply
+from pydantic import BaseModel, Field
+from tunnel_details_reply import TunnelDetailsReply
 
 
 class TrustDetailsReply(BaseModel):

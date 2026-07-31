@@ -1,12 +1,12 @@
-from .advanced_settings_reply import AdvancedSettingsReply
-from .api_domain_identifier import ApiDomainIdentifier
-from .appi_settings_reply import AppiSettingsReply
-from .available_actions_reply import AvailableActionsReply
-from .meta_info_for_top_level_reply import MetaInfoForTopLevelReply
-from .nat_settings_gateway_cluster_reply import NatSettingsGatewayClusterReply
-from .proxy_settings_reply import ProxySettingsReply
-from .pydantic import BaseModel, Field
-from .ssl_inspection_reply import SslInspectionReply
+from advanced_settings_reply import AdvancedSettingsReply
+from api_domain_identifier import ApiDomainIdentifier
+from appi_settings_reply import AppiSettingsReply
+from available_actions_reply import AvailableActionsReply
+from meta_info_for_top_level_reply import MetaInfoForTopLevelReply
+from nat_settings_gateway_cluster_reply import NatSettingsGatewayClusterReply
+from proxy_settings_reply import ProxySettingsReply
+from pydantic import BaseModel, Field
+from ssl_inspection_reply import SslInspectionReply
 
 
 class LsmGwProfileReply(BaseModel):
@@ -19,8 +19,7 @@ class LsmGwProfileReply(BaseModel):
     anti_bot: bool = Field(alias="anti-bot", description="""Anti-Bot blade enabled.""")
     anti_virus: bool = Field(alias="anti-virus", description="""Anti-Virus blade enabled.""")
     application_control: bool = Field(
-        alias="application-control",
-        description="""Application Control blade enabled.""",
+        alias="application-control", description="""Application Control blade enabled."""
     )
     application_control_and_url_filtering_settings: AppiSettingsReply = Field(
         alias="application-control-and-url-filtering-settings",
@@ -68,8 +67,7 @@ class LsmGwProfileReply(BaseModel):
         alias="send-alerts-to-server", description="""Server(s) to send alerts to."""
     )
     send_logs_to_backup_server: list[str] = Field(
-        alias="send-logs-to-backup-server",
-        description="""Backup server(s) to send logs to.""",
+        alias="send-logs-to-backup-server", description="""Backup server(s) to send logs to."""
     )
     send_logs_to_server: list[str] = Field(
         alias="send-logs-to-server", description="""Servers(s) to send logs to."""
@@ -93,13 +91,11 @@ class LsmGwProfileReply(BaseModel):
         alias="zero-phishing", description="""Zero Phishing blade enabled."""
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     domain: ApiDomainIdentifier = Field(
-        alias="domain",
-        description="""Information about the domain that holds the Object.""",
+        alias="domain", description="""Information about the domain that holds the Object."""
     )
     icon: str = Field(alias="icon", description="""Object icon.""")
     meta_info: MetaInfoForTopLevelReply = Field(
@@ -113,6 +109,5 @@ class LsmGwProfileReply(BaseModel):
         description="""Collection of tag objects identified by the name or UID. Level of details in the output corresponds to the number of details for search. This table shows the level of details in the Standard level.""",
     )
     available_actions: AvailableActionsReply = Field(
-        alias="available-actions",
-        description="""Actions that are available on the object.""",
+        alias="available-actions", description="""Actions that are available on the object."""
     )

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_message_reply import ApiMessageReply
 from async_checkpoint_sdk.models.cloud_disconnect_mgmt_request import CloudDisconnectMgmtRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def disconnect_cloud_services(
-    client: ClientSession, data: CloudDisconnectMgmtRequest, config: Config, **kwargs
+    client: ClientSession, data: CloudDisconnectMgmtRequest, config: SDKConfig, **kwargs
 ) -> ApiMessageReply:
     """
     Disconnect the Management Server from Check Point's Infinity Portal.

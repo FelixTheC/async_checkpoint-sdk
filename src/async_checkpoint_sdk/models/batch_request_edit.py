@@ -1,5 +1,7 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class BatchRequestEdit(BaseModel):
-    pass
+    objects: list[dict] = Field(
+        alias="objects", description="""Batch of objects separated by types."""
+    )

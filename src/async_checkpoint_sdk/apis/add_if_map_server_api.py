@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.if_map_reply import IfMapReply
 from async_checkpoint_sdk.models.if_map_request_new import IfMapRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_if_map_server(
-    client: ClientSession, data: IfMapRequestNew, config: Config, **kwargs
+    client: ClientSession, data: IfMapRequestNew, config: SDKConfig, **kwargs
 ) -> IfMapReply:
     """
     Create new IF-MAP server.

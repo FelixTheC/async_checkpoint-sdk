@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.cluster_member_query_reply import ClusterMemberQueryReply
 from async_checkpoint_sdk.models.object_in_group_query_request import ObjectInGroupQueryRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_cluster_members(
-    client: ClientSession, data: ObjectInGroupQueryRequest, config: Config, **kwargs
+    client: ClientSession, data: ObjectInGroupQueryRequest, config: SDKConfig, **kwargs
 ) -> ClusterMemberQueryReply:
     """
     Retrieve all existing cluster members in domain.

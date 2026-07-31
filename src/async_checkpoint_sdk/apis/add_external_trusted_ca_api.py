@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.trusted_ca_reply import TrustedCaReply
 from async_checkpoint_sdk.models.trusted_ca_request_new import TrustedCaRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_external_trusted_ca(
-    client: ClientSession, data: TrustedCaRequestNew, config: Config, **kwargs
+    client: ClientSession, data: TrustedCaRequestNew, config: SDKConfig, **kwargs
 ) -> TrustedCaReply:
     """
     Create new object.

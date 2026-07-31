@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.data_center_content_query_reply import DataCenterContentQueryReply
 from async_checkpoint_sdk.models.data_center_content_request import DataCenterContentRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_data_center_content(
-    client: ClientSession, data: DataCenterContentRequest, config: Config, **kwargs
+    client: ClientSession, data: DataCenterContentRequest, config: SDKConfig, **kwargs
 ) -> DataCenterContentQueryReply:
     """
     Retrieve Data Center Objects from a Data Center Server.

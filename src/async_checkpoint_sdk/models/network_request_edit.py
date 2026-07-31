@@ -1,10 +1,11 @@
-from .add import add
-from .nat_settings_request import NatSettingsRequest
-from .pydantic import BaseModel, Field
-from .remove import remove
+from add import Add
+from nat_settings_request import NatSettingsRequest
+from pydantic import BaseModel, Field
+from remove import Remove
 
 
 class NetworkRequestEdit(BaseModel):
+    uid: str = Field(alias="uid", description="""Object unique identifier.""")
     subnet: str = Field(
         alias="subnet",
         description="""IPv4 or IPv6 network address. If both addresses are required use subnet4 and subnet6 fields explicitly.""",
@@ -17,18 +18,17 @@ class NetworkRequestEdit(BaseModel):
     new_name: str = Field(alias="new-name", description="""New name of the object.""")
     broadcast: str = Field(alias="broadcast", description="""Allow broadcast address inclusion.""")
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
-    groups: add | remove | str | list[str] = Field(
+    groups: Add | Remove | str | list[str] = Field(
         alias="groups", description="""Collection of group identifiers."""
     )
-    tags: add | remove | str | list[str] = Field(
+    tags: Add | Remove | str | list[str] = Field(
         alias="tags", description="""Collection of tag identifiers."""
     )
     ignore_warnings: bool = Field(

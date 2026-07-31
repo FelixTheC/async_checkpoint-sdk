@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.ftp_resource_reply import FtpResourceReply
 from async_checkpoint_sdk.models.ftp_resource_request_new import FtpResourceRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_resource_ftp(
-    client: ClientSession, data: FtpResourceRequestNew, config: Config, **kwargs
+    client: ClientSession, data: FtpResourceRequestNew, config: SDKConfig, **kwargs
 ) -> FtpResourceReply:
     """
     Create new object.

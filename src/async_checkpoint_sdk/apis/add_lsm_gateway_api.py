@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.lsm_gateway_reply import LsmGatewayReply
 from async_checkpoint_sdk.models.lsm_gateway_request_new import LsmGatewayRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_lsm_gateway(
-    client: ClientSession, data: LsmGatewayRequestNew, config: Config, **kwargs
+    client: ClientSession, data: LsmGatewayRequestNew, config: SDKConfig, **kwargs
 ) -> LsmGatewayReply:
     """
     Add LSM Gateway.

@@ -1,5 +1,5 @@
-from .other_range_request import OtherRangeRequest
-from .pydantic import BaseModel, Field
+from other_range_request import OtherRangeRequest
+from pydantic import BaseModel, Field
 
 
 class RaTechRequest(BaseModel):

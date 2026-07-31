@@ -1,21 +1,17 @@
-from .access_control_domain_permissions_reply import AccessControlDomainPermissionsReply
-from .api_domain_identifier import ApiDomainIdentifier
-from .available_actions_reply import AvailableActionsReply
-from .endpoint_domain_permissions_reply import EndpointDomainPermissionsReply
-from .events_and_reports_domain_permissions_reply import (
-    EventsAndReportsDomainPermissionsReply,
-)
-from .gateways_domain_permissions_reply import GatewaysDomainPermissionsReply
-from .management_domain_permissions_reply import ManagementDomainPermissionsReply
-from .meta_info_for_top_level_reply import MetaInfoForTopLevelReply
-from .monitoring_and_logging_domain_permissions_reply import (
+from access_control_domain_permissions_reply import AccessControlDomainPermissionsReply
+from api_domain_identifier import ApiDomainIdentifier
+from available_actions_reply import AvailableActionsReply
+from endpoint_domain_permissions_reply import EndpointDomainPermissionsReply
+from events_and_reports_domain_permissions_reply import EventsAndReportsDomainPermissionsReply
+from gateways_domain_permissions_reply import GatewaysDomainPermissionsReply
+from management_domain_permissions_reply import ManagementDomainPermissionsReply
+from meta_info_for_top_level_reply import MetaInfoForTopLevelReply
+from monitoring_and_logging_domain_permissions_reply import (
     MonitoringAndLoggingDomainPermissionsReply,
 )
-from .other_domain_permissions_reply import OtherDomainPermissionsReply
-from .pydantic import BaseModel, Field
-from .threat_prevention_domain_permissions_reply import (
-    ThreatPreventionDomainPermissionsReply,
-)
+from other_domain_permissions_reply import OtherDomainPermissionsReply
+from pydantic import BaseModel, Field
+from threat_prevention_domain_permissions_reply import ThreatPreventionDomainPermissionsReply
 
 
 class DomainPermissionsProfileReply(BaseModel):
@@ -61,13 +57,11 @@ class DomainPermissionsProfileReply(BaseModel):
         description="""Additional permissions.<br>Only a 'Customized' permission-type profile can edit these permissions.""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     domain: ApiDomainIdentifier = Field(
-        alias="domain",
-        description="""Information about the domain that holds the Object.""",
+        alias="domain", description="""Information about the domain that holds the Object."""
     )
     icon: str = Field(alias="icon", description="""Object icon.""")
     meta_info: MetaInfoForTopLevelReply = Field(
@@ -81,6 +75,5 @@ class DomainPermissionsProfileReply(BaseModel):
         description="""Collection of tag objects identified by the name or UID. Level of details in the output corresponds to the number of details for search. This table shows the level of details in the Standard level.""",
     )
     available_actions: AvailableActionsReply = Field(
-        alias="available-actions",
-        description="""Actions that are available on the object.""",
+        alias="available-actions", description="""Actions that are available on the object."""
     )

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.policy_settings_reply import PolicySettingsReply
 from async_checkpoint_sdk.models.policy_settings_request_edit import PolicySettingsRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_policy_settings(
-    client: ClientSession, data: PolicySettingsRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: PolicySettingsRequestEdit, config: SDKConfig, **kwargs
 ) -> PolicySettingsReply:
     """
     Edit Policy settings, the changes will be applied after publish.

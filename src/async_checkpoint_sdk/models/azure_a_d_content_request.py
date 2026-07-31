@@ -1,7 +1,11 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class AzureADContentRequest(BaseModel):
+    azure_ad_name: str = Field(
+        alias="azure-ad-name",
+        description="""Name of the Azure AD Server where to search for objects.""",
+    )
     limit: int = Field(alias="limit", description="""The maximal number of returned results.""")
     offset: int = Field(alias="offset", description="""Number of the results to initially skip.""")
     order: list[dict] = Field(
@@ -13,10 +17,9 @@ class AzureADContentRequest(BaseModel):
         description="""Return result matching the unique identifier of the object on the Azure AD Server.""",
     )
     details_level: str = Field(
-        alias="details-level",
-        description="""Standard and Full description are the same.""",
+        alias="details-level", description="""Standard and Full description are the same."""
     )
     domains_to_process: list[str] = Field(
         alias="domains-to-process",
-        description="""Indicates which domains to process the commands on. It cannot be used with the details-level full, must be run from .the System Domain only and with ignore-warnings true. Valid values are: CURRENT_DOMAIN, ALL_DOMAINS_ON_THIS_SERVER.""",
+        description="""Indicates which domains to process the commands on. It cannot be used with the details-level full, must be run from the System Domain only and with ignore-warnings true. Valid values are: CURRENT_DOMAIN, ALL_DOMAINS_ON_THIS_SERVER.""",
     )

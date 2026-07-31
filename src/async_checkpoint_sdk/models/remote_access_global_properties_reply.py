@@ -1,17 +1,11 @@
-from .endpoint_connect_global_properties_reply import (
-    EndpointConnectGlobalPropertiesReply,
-)
-from .hot_spot_hotel_registration_reply import HotSpotHotelRegistrationReply
-from .pydantic import BaseModel, Field
-from .scv_global_properties_reply import ScvGlobalPropertiesReply
-from .secure_client_mobile_global_properties_reply import (
-    SecureClientMobileGlobalPropertiesReply,
-)
-from .ssl_network_extender_global_properties_reply import (
-    SslNetworkExtenderGlobalPropertiesReply,
-)
-from .vpn_advanced_global_properties_reply import VpnAdvancedGlobalPropertiesReply
-from .vpn_auth_and_encryption_global_properties_reply import (
+from endpoint_connect_global_properties_reply import EndpointConnectGlobalPropertiesReply
+from hot_spot_hotel_registration_reply import HotSpotHotelRegistrationReply
+from pydantic import BaseModel, Field
+from scv_global_properties_reply import ScvGlobalPropertiesReply
+from secure_client_mobile_global_properties_reply import SecureClientMobileGlobalPropertiesReply
+from ssl_network_extender_global_properties_reply import SslNetworkExtenderGlobalPropertiesReply
+from vpn_advanced_global_properties_reply import VpnAdvancedGlobalPropertiesReply
+from vpn_auth_and_encryption_global_properties_reply import (
     VpnAuthAndEncryptionGlobalPropertiesReply,
 )
 
@@ -30,8 +24,7 @@ class RemoteAccessGlobalPropertiesReply(BaseModel):
         description="""You can decide whether DNS queries sent by the remote client to a DNS server located on the corporate LAN are passed through the VPN tunnel or not. Disable this option if the client has to make DNS queries to the DNS server on the corporate LAN while connecting to the organization but without using the SecuRemote client.""",
     )
     simultaneous_login_mode: str = Field(
-        alias="simultaneous-login-mode",
-        description="""Select the simultaneous login mode.""",
+        alias="simultaneous-login-mode", description="""Select the simultaneous login mode."""
     )
     vpn_authentication_and_encryption: VpnAuthAndEncryptionGlobalPropertiesReply = Field(
         alias="vpn-authentication-and-encryption",
@@ -50,8 +43,7 @@ class RemoteAccessGlobalPropertiesReply(BaseModel):
         description="""Define properties for SSL Network Extender users.""",
     )
     secure_client_mobile: SecureClientMobileGlobalPropertiesReply = Field(
-        alias="secure-client-mobile",
-        description="""Define properties for SecureClient Mobile.""",
+        alias="secure-client-mobile", description="""Define properties for SecureClient Mobile."""
     )
     endpoint_connect: EndpointConnectGlobalPropertiesReply = Field(
         alias="endpoint-connect",

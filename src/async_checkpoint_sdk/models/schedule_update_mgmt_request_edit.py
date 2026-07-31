@@ -1,5 +1,5 @@
-from .pydantic import BaseModel, Field
-from .schedule_conf_mgmt_request_edit import ScheduleConfMgmtRequestEdit
+from pydantic import BaseModel, Field
+from schedule_conf_mgmt_request_edit import ScheduleConfMgmtRequestEdit
 
 
 class ScheduleUpdateMgmtRequestEdit(BaseModel):

@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.api_place_holder_identifier_request import (
     ApiPlaceHolderIdentifierRequest,
 )
 from async_checkpoint_sdk.models.api_place_holder_reply import ApiPlaceHolderReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_place_holder(
-    client: ClientSession, data: ApiPlaceHolderIdentifierRequest, config: Config, **kwargs
+    client: ClientSession, data: ApiPlaceHolderIdentifierRequest, config: SDKConfig, **kwargs
 ) -> ApiPlaceHolderReply:
     """
     Retrieve existing object using object name or uid.

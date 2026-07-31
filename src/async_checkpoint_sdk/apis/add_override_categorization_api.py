@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.override_categorization_reply import OverrideCa
 from async_checkpoint_sdk.models.override_categorization_request_new import (
     OverrideCategorizationRequestNew,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_override_categorization(
-    client: ClientSession, data: OverrideCategorizationRequestNew, config: Config, **kwargs
+    client: ClientSession, data: OverrideCategorizationRequestNew, config: SDKConfig, **kwargs
 ) -> OverrideCategorizationReply:
     """
     Create new object.

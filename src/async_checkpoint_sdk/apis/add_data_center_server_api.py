@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.data_center_server_request_new import DataCenterServerRequestNew
 from async_checkpoint_sdk.models.data_center_server_task_reply import DataCenterServerTaskReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_data_center_server(
-    client: ClientSession, data: DataCenterServerRequestNew, config: Config, **kwargs
+    client: ClientSession, data: DataCenterServerRequestNew, config: SDKConfig, **kwargs
 ) -> DataCenterServerTaskReply:
     """
     Create new Data Center Server.<br> Data Center Server represents the connection to a cloud environment.<br>

@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.access_rule_identifier_request_show import (
     AccessRuleIdentifierRequestShow,
 )
 from async_checkpoint_sdk.models.access_rule_reply import AccessRuleReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_access_rule(
-    client: ClientSession, data: AccessRuleIdentifierRequestShow, config: Config, **kwargs
+    client: ClientSession, data: AccessRuleIdentifierRequestShow, config: SDKConfig, **kwargs
 ) -> AccessRuleReply:
     """
     Retrieve existing object using object name or uid.

@@ -1,11 +1,16 @@
-from .custom_header_request_new import CustomHeaderRequestNew
-from .pydantic import BaseModel, Field
+from custom_header_request_new import CustomHeaderRequestNew
+from pydantic import BaseModel, Field
 
 
 class NetworkFeedRequestNew(BaseModel):
+    name: str = Field(alias="name", description="""Object name. Must be unique in the domain.""")
+    feed_url: str = Field(
+        alias="feed-url",
+        description="""URL of the feed.
+URL should be written as http or https.""",
+    )
     certificate_id: str = Field(
-        alias="certificate-id",
-        description="""Certificate SHA-1 fingerprint to access the feed.""",
+        alias="certificate-id", description="""Certificate SHA-1 fingerprint to access the feed."""
     )
     feed_format: str = Field(alias="feed-format", description="""Feed file format.""")
     feed_type: str = Field(alias="feed-type", description="""Feed type to be enforced.""")
@@ -24,8 +29,7 @@ class NetworkFeedRequestNew(BaseModel):
         description="""Interval in minutes for updating the feed on the Security Gateway.""",
     )
     data_column: int = Field(
-        alias="data-column",
-        description="""Number of the column that contains the feed's data.""",
+        alias="data-column", description="""Number of the column that contains the feed's data."""
     )
     fields_delimiter: str = Field(
         alias="fields-delimiter",
@@ -41,17 +45,16 @@ class NetworkFeedRequestNew(BaseModel):
         description="""Use the gateway's proxy for retrieving the feed.""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     domains_to_process: list[str] = Field(
         alias="domains-to-process",
-        description="""Indicates which domains to process the commands on. It cannot be used with the details-level full, must be run from .the System Domain only and with ignore-warnings true. Valid values are: CURRENT_DOMAIN, ALL_DOMAINS_ON_THIS_SERVER.""",
+        description="""Indicates which domains to process the commands on. It cannot be used with the details-level full, must be run from the System Domain only and with ignore-warnings true. Valid values are: CURRENT_DOMAIN, ALL_DOMAINS_ON_THIS_SERVER.""",
     )
     tags: str | list[str] = Field(alias="tags", description="""Collection of tag identifiers.""")
     ignore_warnings: bool = Field(

@@ -1,5 +1,5 @@
-from .gateway_day_recurrence_reply import GatewayDayRecurrenceReply
-from .pydantic import BaseModel, Field
+from gateway_day_recurrence_reply import GatewayDayRecurrenceReply
+from pydantic import BaseModel, Field
 
 
 class ScheduleConfGatewayReply(BaseModel):

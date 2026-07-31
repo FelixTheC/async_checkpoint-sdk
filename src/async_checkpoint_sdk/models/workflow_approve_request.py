@@ -1,5 +1,5 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class WorkflowApproveRequest(BaseModel):
-    pass
+    uid: str = Field(alias="uid", description="""Session unique identifier.""")

@@ -1,10 +1,9 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class HostCkpLogSettingsReply(BaseModel):
     accept_syslog_messages: bool = Field(
-        alias="accept-syslog-messages",
-        description="""Accept syslog messages enabled.""",
+        alias="accept-syslog-messages", description="""Accept syslog messages enabled."""
     )
     alert_when_free_disk_space_below: bool = Field(
         alias="alert-when-free-disk-space-below",
@@ -24,15 +23,14 @@ class HostCkpLogSettingsReply(BaseModel):
     )
     before_delete_keep_logs_from_the_last_days: bool = Field(
         alias="before-delete-keep-logs-from-the-last-days",
-        description="""Before delete keep logs from .the last days enabled.""",
+        description="""Before delete keep logs from the last days enabled.""",
     )
     before_delete_keep_logs_from_the_last_days_threshold: int = Field(
         alias="before-delete-keep-logs-from-the-last-days-threshold",
-        description="""Before delete keep logs from .the last days threshold.""",
+        description="""Before delete keep logs from the last days threshold.""",
     )
     before_delete_run_script: bool = Field(
-        alias="before-delete-run-script",
-        description="""Before delete run script enabled.""",
+        alias="before-delete-run-script", description="""Before delete run script enabled."""
     )
     before_delete_run_script_command: str = Field(
         alias="before-delete-run-script-command",
@@ -70,28 +68,23 @@ class HostCkpLogSettingsReply(BaseModel):
         alias="enable-log-indexing", description="""Log indexing enabled."""
     )
     forward_logs_to_log_server: bool = Field(
-        alias="forward-logs-to-log-server",
-        description="""Forward logs to log server enabled.""",
+        alias="forward-logs-to-log-server", description="""Forward logs to log server enabled."""
     )
     forward_logs_to_log_server_name: str = Field(
-        alias="forward-logs-to-log-server-name",
-        description="""Forward logs to log server name.""",
+        alias="forward-logs-to-log-server-name", description="""Forward logs to log server name."""
     )
     forward_logs_to_log_server_schedule_name: str = Field(
         alias="forward-logs-to-log-server-schedule-name",
         description="""Forward logs to log server schedule name.""",
     )
     rotate_log_by_file_size: bool = Field(
-        alias="rotate-log-by-file-size",
-        description="""Rotate log by file size enabled.""",
+        alias="rotate-log-by-file-size", description="""Rotate log by file size enabled."""
     )
     rotate_log_file_size_threshold: int = Field(
-        alias="rotate-log-file-size-threshold",
-        description="""Log file size threshold.""",
+        alias="rotate-log-file-size-threshold", description="""Log file size threshold."""
     )
     rotate_log_on_schedule: bool = Field(
-        alias="rotate-log-on-schedule",
-        description="""Rotate log on schedule enabled.""",
+        alias="rotate-log-on-schedule", description="""Rotate log on schedule enabled."""
     )
     rotate_log_schedule_name: str = Field(
         alias="rotate-log-schedule-name", description="""Rotate log schedule name."""

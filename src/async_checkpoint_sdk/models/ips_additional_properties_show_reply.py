@@ -1,6 +1,6 @@
-from .api_domain_identifier import ApiDomainIdentifier
-from .ips_additional_properties_reply import IpsAdditionalPropertiesReply
-from .pydantic import BaseModel, Field
+from api_domain_identifier import ApiDomainIdentifier
+from ips_additional_properties_reply import IpsAdditionalPropertiesReply
+from pydantic import BaseModel, Field
 
 
 class IpsAdditionalPropertiesShowReply(BaseModel):
@@ -8,6 +8,5 @@ class IpsAdditionalPropertiesShowReply(BaseModel):
     type: str = Field(alias="type", description="""Object type.""")
     object: IpsAdditionalPropertiesReply = Field(alias="object", description="""N/A""")
     domain: ApiDomainIdentifier = Field(
-        alias="domain",
-        description="""Information about the domain that holds the Object.""",
+        alias="domain", description="""Information about the domain that holds the Object."""
     )

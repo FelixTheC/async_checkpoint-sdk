@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class ThreatPreventionDomainPermissionsReply(BaseModel):
@@ -11,8 +11,7 @@ class ThreatPreventionDomainPermissionsReply(BaseModel):
         description="""'ALL' -  Gives permission to edit all layers.<br>By Selected Profile In A Layer Editor -  Administrators can only edit the layer if the Threat Prevention layer editor gives editing permission to their profiles.<br>Available only if policy-layers is set to 'Write'.""",
     )
     edit_settings: bool = Field(
-        alias="edit-settings",
-        description="""Work with general Threat Prevention settings.""",
+        alias="edit-settings", description="""Work with general Threat Prevention settings."""
     )
     policy_exceptions: str = Field(
         alias="policy-exceptions",

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.service_reply import ServiceReply
 from async_checkpoint_sdk.models.service_request import ServiceRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def run_service(
-    client: ClientSession, data: ServiceRequest, config: Config, **kwargs
+    client: ClientSession, data: ServiceRequest, config: SDKConfig, **kwargs
 ) -> ServiceReply:
     """
     Parameters

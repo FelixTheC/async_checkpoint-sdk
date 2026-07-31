@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.nat_section_identifier_request import NatSectionIdentifierRequest
 from async_checkpoint_sdk.models.nat_section_reply import NatSectionReply
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_nat_section(
-    client: ClientSession, data: NatSectionIdentifierRequest, config: Config, **kwargs
+    client: ClientSession, data: NatSectionIdentifierRequest, config: SDKConfig, **kwargs
 ) -> NatSectionReply:
     """
     Retrieve existing object using object name or uid.

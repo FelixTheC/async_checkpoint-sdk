@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.access_rule_reply import AccessRuleReply
 from async_checkpoint_sdk.models.access_rule_request_new import AccessRuleRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_access_rule(
-    client: ClientSession, data: AccessRuleRequestNew, config: Config, **kwargs
+    client: ClientSession, data: AccessRuleRequestNew, config: SDKConfig, **kwargs
 ) -> AccessRuleReply:
     """
     Create new object.

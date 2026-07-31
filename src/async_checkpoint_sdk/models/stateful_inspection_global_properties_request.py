@@ -1,6 +1,6 @@
-from .add import add
-from .pydantic import BaseModel, Field
-from .remove import remove
+from add import Add
+from pydantic import BaseModel, Field
+from remove import Remove
 
 
 class StatefulInspectionGlobalPropertiesRequest(BaseModel):
@@ -68,7 +68,7 @@ class StatefulInspectionGlobalPropertiesRequest(BaseModel):
         alias="log-on-drop-out-of-state-tcp-packets",
         description="""Generates a log entry when these out of state TCP packets are dropped.<br>Available only if drop-out-of-state-tcp-packets is true.""",
     )
-    tcp_out_of_state_drop_exceptions: add | remove | str | list[str] = Field(
+    tcp_out_of_state_drop_exceptions: Add | Remove | str | list[str] = Field(
         alias="tcp-out-of-state-drop-exceptions",
         description="""Name or uid of the gateways and clusters for which Out of State packets are allowed.""",
     )

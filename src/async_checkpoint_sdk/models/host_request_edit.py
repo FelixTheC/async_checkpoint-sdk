@@ -1,13 +1,14 @@
-from .add import add
-from .host_interface_request_edit import HostInterfaceRequestEdit
-from .host_servers_request_edit import HostServersRequestEdit
-from .nat_settings_request import NatSettingsRequest
-from .pydantic import BaseModel, Field
-from .remove import remove
+from add import Add
+from host_interface_request_edit import HostInterfaceRequestEdit
+from host_servers_request_edit import HostServersRequestEdit
+from nat_settings_request import NatSettingsRequest
+from pydantic import BaseModel, Field
+from remove import Remove
 
 
 class HostRequestEdit(BaseModel):
-    interfaces: add | remove | HostInterfaceRequestEdit | list[dict] = Field(
+    uid: str = Field(alias="uid", description="""Object unique identifier.""")
+    interfaces: Add | Remove | HostInterfaceRequestEdit | list[dict] = Field(
         alias="interfaces", description="""Host interfaces."""
     )
     ip_address: str = Field(
@@ -20,18 +21,17 @@ class HostRequestEdit(BaseModel):
         alias="host-servers", description="""Servers Configuration."""
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
-    groups: add | remove | str | list[str] = Field(
+    groups: Add | Remove | str | list[str] = Field(
         alias="groups", description="""Collection of group identifiers."""
     )
-    tags: add | remove | str | list[str] = Field(
+    tags: Add | Remove | str | list[str] = Field(
         alias="tags", description="""Collection of tag identifiers."""
     )
     ignore_warnings: bool = Field(

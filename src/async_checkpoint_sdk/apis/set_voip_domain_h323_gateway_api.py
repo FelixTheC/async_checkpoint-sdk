@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.voip_gateway_reply import VoipGatewayReply
 from async_checkpoint_sdk.models.voip_gateway_request_edit import VoipGatewayRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_voip_domain_h323_gateway(
-    client: ClientSession, data: VoipGatewayRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: VoipGatewayRequestEdit, config: SDKConfig, **kwargs
 ) -> VoipGatewayReply:
     """
     Edit existing VoIP Domain H.323 Gateway using object name or uid.

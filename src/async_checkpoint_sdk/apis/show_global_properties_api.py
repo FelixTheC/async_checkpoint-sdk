@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.global_properties_reply import GlobalPropertiesReply
 from async_checkpoint_sdk.models.global_properties_request_show import GlobalPropertiesRequestShow
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_global_properties(
-    client: ClientSession, data: GlobalPropertiesRequestShow, config: Config, **kwargs
+    client: ClientSession, data: GlobalPropertiesRequestShow, config: SDKConfig, **kwargs
 ) -> GlobalPropertiesReply:
     """
     Retrieve existing object using object name or uid.

@@ -1,32 +1,32 @@
-from .add import add
-from .pydantic import BaseModel, Field
-from .remove import remove
+from add import Add
+from pydantic import BaseModel, Field
+from remove import Remove
 
 
 class GsnHandoverGroupRequestEdit(BaseModel):
+    uid: str = Field(alias="uid", description="""Object unique identifier.""")
     enforce_gtp: bool = Field(
         alias="enforce-gtp",
-        description="""Enable enforce GTP signal packet rate limit from .this group.""",
+        description="""Enable enforce GTP signal packet rate limit from this group.""",
     )
     gtp_rate: int = Field(alias="gtp-rate", description="""Limit of the GTP rate in PDU/sec.""")
-    members: add | remove | str | list[str] = Field(
+    members: Add | Remove | str | list[str] = Field(
         alias="members",
         description="""Collection of GSN handover group members identified by the name or UID.""",
     )
     new_name: str = Field(alias="new-name", description="""New name of the object.""")
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
-    groups: add | remove | str | list[str] = Field(
+    groups: Add | Remove | str | list[str] = Field(
         alias="groups", description="""Collection of group identifiers."""
     )
-    tags: add | remove | str | list[str] = Field(
+    tags: Add | Remove | str | list[str] = Field(
         alias="tags", description="""Collection of tag identifiers."""
     )
     ignore_warnings: bool = Field(

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.key_words_data_type_reply import KeyWordsDataTypeReply
 from async_checkpoint_sdk.models.key_words_data_type_request_new import KeyWordsDataTypeRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_data_type_keywords(
-    client: ClientSession, data: KeyWordsDataTypeRequestNew, config: Config, **kwargs
+    client: ClientSession, data: KeyWordsDataTypeRequestNew, config: SDKConfig, **kwargs
 ) -> KeyWordsDataTypeReply:
     """
     Create new Keywords Data Type Object.

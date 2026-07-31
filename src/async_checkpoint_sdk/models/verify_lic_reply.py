@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class VerifyLicReply(BaseModel):
@@ -9,6 +9,5 @@ class VerifyLicReply(BaseModel):
         alias="license-status", description="""Management license status."""
     )
     licensed_gateways: str = Field(
-        alias="licensed-gateways",
-        description="""Number of gateways covered by domain license.""",
+        alias="licensed-gateways", description="""Number of gateways covered by domain license."""
     )

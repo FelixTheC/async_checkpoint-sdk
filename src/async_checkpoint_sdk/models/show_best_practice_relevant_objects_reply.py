@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class ShowBestPracticeRelevantObjectsReply(BaseModel):
@@ -15,6 +15,5 @@ class ShowBestPracticeRelevantObjectsReply(BaseModel):
         description="""The information about the relevant ips-protection objects. Appears only when the value of the 'relevant-objects-type' parameter is 'ips-protection'.""",
     )
     relevant_objects_type: str = Field(
-        alias="relevant-objects-type",
-        description="""The type of the relevant object.""",
+        alias="relevant-objects-type", description="""The type of the relevant object."""
     )

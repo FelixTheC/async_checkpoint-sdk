@@ -1,12 +1,11 @@
-from .api_object_standard_identifier import ApiObjectStandardIdentifier
-from .optional_parameters_reply import OptionalParametersReply
-from .pydantic import BaseModel, Field
+from api_object_standard_identifier import ApiObjectStandardIdentifier
+from optional_parameters_reply import OptionalParametersReply
+from pydantic import BaseModel, Field
 
 
 class OfficeModeMethodReply(BaseModel):
     radius_server: bool = Field(
-        alias="radius-server",
-        description="""Radius server used to authenticate the user.""",
+        alias="radius-server", description="""Radius server used to authenticate the user."""
     )
     use_allocate_method: bool = Field(
         alias="use-allocate-method", description="""Use Allocate Method."""

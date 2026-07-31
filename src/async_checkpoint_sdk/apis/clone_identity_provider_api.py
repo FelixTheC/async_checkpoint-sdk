@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.identity_provider_reply import IdentityProviderReply
 from async_checkpoint_sdk.models.identity_provider_request_edit import IdentityProviderRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def clone_identity_provider(
-    client: ClientSession, data: IdentityProviderRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: IdentityProviderRequestEdit, config: SDKConfig, **kwargs
 ) -> IdentityProviderReply:
     """
     Clone existing SAML Identity Provider.

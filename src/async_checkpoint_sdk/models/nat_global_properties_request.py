@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class NatGlobalPropertiesRequest(BaseModel):
@@ -28,7 +28,7 @@ class NatGlobalPropertiesRequest(BaseModel):
     )
     addr_alloc_and_release_track: str = Field(
         alias="addr-alloc-and-release-track",
-        description="""Specifies whether to log each allocation and release of an IP address from .the IP Pool.<br>Available only if enable-ip-pool-nat is true.""",
+        description="""Specifies whether to log each allocation and release of an IP address from the IP Pool.<br>Available only if enable-ip-pool-nat is true.""",
     )
     addr_exhaustion_track: str = Field(
         alias="addr-exhaustion-track",

@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.management_blade_license_reply import Managemen
 from async_checkpoint_sdk.models.management_blade_license_request_show import (
     ManagementBladeLicenseRequestShow,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_management_blade_license(
-    client: ClientSession, data: ManagementBladeLicenseRequestShow, config: Config, **kwargs
+    client: ClientSession, data: ManagementBladeLicenseRequestShow, config: SDKConfig, **kwargs
 ) -> ManagementBladeLicenseReply:
     """
     Parameters

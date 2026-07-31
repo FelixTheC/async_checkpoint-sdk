@@ -1,22 +1,21 @@
-from .add import add
-from .api_doc_rule_base_position_object_builder import (
-    ApiDocRuleBasePositionObjectBuilder,
-)
-from .pydantic import BaseModel, Field
-from .remove import remove
+from add import Add
+from api_doc_rule_base_position_object_builder import ApiDocRuleBasePositionObjectBuilder
+from pydantic import BaseModel, Field
+from remove import Remove
 
 
 class MobileApplicationsRuleRequestEdit(BaseModel):
-    user_groups: add | remove | str | list[str] = Field(
+    uid: str = Field(alias="uid", description="""Object unique identifier.""")
+    user_groups: Add | Remove | str | list[str] = Field(
         alias="user-groups",
         description="""User groups that will be associated with the apps - identified by the name or UID.""",
     )
-    applications: add | remove | str | list[str] = Field(
+    applications: Add | Remove | str | list[str] = Field(
         alias="applications",
         description="""Available apps that will be associated with the user groups - identified by the name or UID.""",
     )
     enabled: bool = Field(alias="enabled", description="""Enable/Disable the rule.""")
-    install_on: add | remove | str | list[str] = Field(
+    install_on: Add | Remove | str | list[str] = Field(
         alias="install-on",
         description="""Which Gateways identified by the name or UID to install the policy on.""",
     )
@@ -24,13 +23,13 @@ class MobileApplicationsRuleRequestEdit(BaseModel):
     new_position: int | str | ApiDocRuleBasePositionObjectBuilder = Field(
         alias="new-position", description="""New position in the rulebase."""
     )
-    tags: add | remove | str | list[str] = Field(
+    tags: Add | Remove | str | list[str] = Field(
         alias="tags", description="""Collection of tag identifiers."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     ignore_warnings: bool = Field(
         alias="ignore-warnings", description="""Apply changes ignoring warnings."""

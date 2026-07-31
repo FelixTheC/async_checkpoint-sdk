@@ -1,5 +1,5 @@
-from .cloud_app_status_reply import CloudAppStatusReply
-from .pydantic import BaseModel, Field
+from cloud_app_status_reply import CloudAppStatusReply
+from pydantic import BaseModel, Field
 
 
 class GetCloudApiKeyReply(BaseModel):

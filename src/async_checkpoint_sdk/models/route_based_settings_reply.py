@@ -1,5 +1,5 @@
-from .pydantic import BaseModel, Field
-from .route_based_advanced_settings_reply import RouteBasedAdvancedSettingsReply
+from pydantic import BaseModel, Field
+from route_based_advanced_settings_reply import RouteBasedAdvancedSettingsReply
 
 
 class RouteBasedSettingsReply(BaseModel):

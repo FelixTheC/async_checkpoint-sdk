@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.login_message_reply import LoginMessageReply
 from async_checkpoint_sdk.models.login_message_request_show import LoginMessageRequestShow
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_login_message(
-    client: ClientSession, data: LoginMessageRequestShow, config: Config, **kwargs
+    client: ClientSession, data: LoginMessageRequestShow, config: SDKConfig, **kwargs
 ) -> LoginMessageReply:
     """
     Retrieve existing object using object name or uid.

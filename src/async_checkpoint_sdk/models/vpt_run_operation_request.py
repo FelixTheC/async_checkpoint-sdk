@@ -1,22 +1,26 @@
-from .pydantic import BaseModel, Field
-from .vpt_add_phys_interface_request import VptAddPhysInterfaceRequest
-from .vpt_add_route_request import VptAddRouteRequest
-from .vpt_add_vd_interface_request import VptAddVdInterfaceRequest
-from .vpt_add_vd_request import VptAddVdRequest
-from .vpt_add_vsx_cluster_request import VptAddVsxClusterRequest
-from .vpt_add_vsx_gw_request import VptAddVsxGwRequest
-from .vpt_attach_bridge_request import VptAttachBridgeRequest
-from .vpt_remove_phys_interface_request import VptRemovePhysInterfaceRequest
-from .vpt_remove_route_request import VptRemoveRouteRequest
-from .vpt_remove_vd_interface_request import VptRemoveVdInterfaceRequest
-from .vpt_remove_vd_request import VptRemoveVdRequest
-from .vpt_remove_vsx_request import VptRemoveVsxRequest
-from .vpt_set_phys_interface_request import VptSetPhysInterfaceRequest
-from .vpt_set_vd_interface_request import VptSetVdInterfaceRequest
-from .vpt_set_vd_request import VptSetVdRequest
+from pydantic import BaseModel, Field
+from vpt_add_phys_interface_request import VptAddPhysInterfaceRequest
+from vpt_add_route_request import VptAddRouteRequest
+from vpt_add_vd_interface_request import VptAddVdInterfaceRequest
+from vpt_add_vd_request import VptAddVdRequest
+from vpt_add_vsx_cluster_request import VptAddVsxClusterRequest
+from vpt_add_vsx_gw_request import VptAddVsxGwRequest
+from vpt_attach_bridge_request import VptAttachBridgeRequest
+from vpt_remove_phys_interface_request import VptRemovePhysInterfaceRequest
+from vpt_remove_route_request import VptRemoveRouteRequest
+from vpt_remove_vd_interface_request import VptRemoveVdInterfaceRequest
+from vpt_remove_vd_request import VptRemoveVdRequest
+from vpt_remove_vsx_request import VptRemoveVsxRequest
+from vpt_set_phys_interface_request import VptSetPhysInterfaceRequest
+from vpt_set_vd_interface_request import VptSetVdInterfaceRequest
+from vpt_set_vd_request import VptSetVdRequest
 
 
 class VptRunOperationRequest(BaseModel):
+    operation: str = Field(
+        alias="operation",
+        description="""The name of the provisioning operation to run. Each operation has its own specific parameters.<br> The available operations are:<ul><li><i>add-vsx-gateway</i> - Adds a new VSX gateway</li><li><i>add-vsx-cluster</i> - Adds a new VSX cluster*</li><li><i>add-vsx-cluster-member</i> - Adds a new VSX cluster member*</li><li><i>add-vd</i> - Adds a new Virtual Device (VS/VSB/VSW/VR) to a VSX gateway or VSX cluster</li><li><i>add-vd-interface</i> - Adds a new virtual interface to a Virtual Device</li><li><i>add-physical-interface</i> - Adds a physical interface to a VSX gateway or VSX cluster</li><li><i>add-route</i> - Adds a route to a Virtual Device</li><li><i>attach-bridge</i> - Attaches a bridge interface to a Virtual System</li><li><i>remove-vsx</i> - Removes a VSX gateway or VSX cluster</li><li><i>remove-vd</i> - Removes a Virtual Device</li><li><i>remove-vd-interface</i> - Removes an interface from a Virtual Device</li><li><i>remove-physical-interface</i> - Removes a physical interface from a VSX gateway or VSX cluster</li><li><i>remove-route</i> - Removes a route from a Virtual Device</li><li><i>set-vd</i> - Modifies a Virtual Device</li><li><i>set-vd-interface</i> - Modifies an interface on a Virtual Device</li><li><i>set-physical-interface</i> - Modifies a physical interface on a VSX cluster or VSX gateway</li></ul><br> * When adding a VSX Cluster, you must also add at least 2 cluster members<br> * Adding cluster members is only allowed when adding a new VSX cluster<br> * To add members to an existing cluster, use vsx-run-operation.""",
+    )
     add_physical_interface_params: VptAddPhysInterfaceRequest = Field(
         alias="add-physical-interface-params",
         description="""Parameters for the operation to add a physical interface to a VSX gateway or VSX Cluster.""",
@@ -47,15 +51,15 @@ class VptRunOperationRequest(BaseModel):
     )
     remove_physical_interface_params: VptRemovePhysInterfaceRequest = Field(
         alias="remove-physical-interface-params",
-        description="""Parameters for the operation to remove a physical interface from .a VSX (Gateway or Cluster).""",
+        description="""Parameters for the operation to remove a physical interface from a VSX (Gateway or Cluster).""",
     )
     remove_route_params: VptRemoveRouteRequest = Field(
         alias="remove-route-params",
-        description="""Parameters for the operation to remove a route from .a Virtual System or Virtual Router.""",
+        description="""Parameters for the operation to remove a route from a Virtual System or Virtual Router.""",
     )
     remove_vd_interface_params: VptRemoveVdInterfaceRequest = Field(
         alias="remove-vd-interface-params",
-        description="""Parameters for the operation to remove a logical interface from .a Virtual Device.""",
+        description="""Parameters for the operation to remove a logical interface from a Virtual Device.""",
     )
     remove_vd_params: VptRemoveVdRequest = Field(
         alias="remove-vd-params",

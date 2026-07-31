@@ -1,8 +1,9 @@
-from .aggressive_aging_request import AggressiveAgingRequest
-from .pydantic import BaseModel, Field
+from aggressive_aging_request import AggressiveAgingRequest
+from pydantic import BaseModel, Field
 
 
 class OtherServiceRequestNew(BaseModel):
+    name: str = Field(alias="name", description="""Object name. Must be unique in the domain.""")
     accept_replies: bool = Field(
         alias="accept-replies",
         description="""Specifies whether Other Service replies are to be accepted.""",
@@ -40,29 +41,26 @@ Example: tcp, dport = 21, direction = 0 matches incoming FTP control connections
 the management server (if any) that enforces Content Security and Authentication for the service.""",
     )
     session_timeout: int = Field(
-        alias="session-timeout",
-        description="""Time (in seconds) before the session times out.""",
+        alias="session-timeout", description="""Time (in seconds) before the session times out."""
     )
     sync_connections_on_cluster: bool = Field(
         alias="sync-connections-on-cluster",
         description="""Enables state-synchronized High Availability or Load Sharing on a ClusterXL or OPSEC-certified cluster.""",
     )
     use_default_session_timeout: bool = Field(
-        alias="use-default-session-timeout",
-        description="""Use default virtual session timeout.""",
+        alias="use-default-session-timeout", description="""Use default virtual session timeout."""
     )
     set_if_exists: bool = Field(
         alias="set-if-exists",
         description="""If another object with the same identifier already exists, it will be updated. The command behaviour will be the same as if originally a set command was called. Pay attention that original object's fields will be overwritten by the fields provided in the request payload!""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     groups: str | list[str] = Field(
         alias="groups", description="""Collection of group identifiers."""

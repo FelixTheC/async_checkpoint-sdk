@@ -1,8 +1,9 @@
-from .custom_header_request_new import CustomHeaderRequestNew
-from .pydantic import BaseModel, Field
+from custom_header_request_new import CustomHeaderRequestNew
+from pydantic import BaseModel, Field
 
 
 class IntelligenceFeedRequestNew(BaseModel):
+    name: str = Field(alias="name", description="""Object name. Must be unique in the domain.""")
     feed_url: str = Field(
         alias="feed-url",
         description="""URL of the feed.
@@ -10,16 +11,14 @@ URL should be written as http or https.""",
     )
     action: str = Field(alias="action", description="""The feed indicator's action.""")
     certificate_id: str = Field(
-        alias="certificate-id",
-        description="""Certificate SHA-1 fingerprint to access the feed.""",
+        alias="certificate-id", description="""Certificate SHA-1 fingerprint to access the feed."""
     )
     confidence: int = Field(
         alias="confidence",
         description="""Set in order to configure the confidence of the snort protections in snort format. 1-Low, 5-High.""",
     )
     custom_comment: int = Field(
-        alias="custom-comment",
-        description="""Custom IOC feed - the column number of comment.""",
+        alias="custom-comment", description="""Custom IOC feed - the column number of comment."""
     )
     custom_confidence: int = Field(
         alias="custom-confidence",
@@ -29,12 +28,10 @@ URL should be written as http or https.""",
         alias="custom-header", description="""Custom HTTP headers."""
     )
     custom_name: int = Field(
-        alias="custom-name",
-        description="""Custom IOC feed - the column number of name.""",
+        alias="custom-name", description="""Custom IOC feed - the column number of name."""
     )
     custom_severity: int = Field(
-        alias="custom-severity",
-        description="""Custom IOC feed - the column number of severity.""",
+        alias="custom-severity", description="""Custom IOC feed - the column number of severity."""
     )
     custom_type: int = Field(
         alias="custom-type",
@@ -87,13 +84,12 @@ URL should be written as http or https.""",
         description="""If another object with the same identifier already exists, it will be updated. The command behaviour will be the same as if originally a set command was called. Pay attention that original object's fields will be overwritten by the fields provided in the request payload!""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     tags: str | list[str] = Field(alias="tags", description="""Collection of tag identifiers.""")
     ignore_warnings: bool = Field(

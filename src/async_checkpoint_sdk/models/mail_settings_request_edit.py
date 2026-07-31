@@ -1,6 +1,6 @@
-from .add import add
-from .pydantic import BaseModel, Field
-from .remove import remove
+from add import Add
+from pydantic import BaseModel, Field
+from remove import Remove
 
 
 class MailSettingsRequestEdit(BaseModel):
@@ -13,8 +13,7 @@ class MailSettingsRequestEdit(BaseModel):
         description="""Add a prefix to the malicious email subject.""",
     )
     add_x_header_to_email: bool = Field(
-        alias="add-x-header-to-email",
-        description="""Add an X-Header to the malicious email.""",
+        alias="add-x-header-to-email", description="""Add an X-Header to the malicious email."""
     )
     email_action: str = Field(
         alias="email-action",
@@ -25,8 +24,7 @@ class MailSettingsRequestEdit(BaseModel):
         description="""Customized text for the malicious email body.<br> Available predefined fields:<br> $verdicts$ - the malicious/error attachments/links verdict.""",
     )
     email_subject_prefix_text: str = Field(
-        alias="email-subject-prefix-text",
-        description="""Prefix for the malicious email subject.""",
+        alias="email-subject-prefix-text", description="""Prefix for the malicious email subject."""
     )
     failed_to_scan_attachments_text: str = Field(
         alias="failed-to-scan-attachments-text",
@@ -42,13 +40,13 @@ class MailSettingsRequestEdit(BaseModel):
     )
     remove_attachments_and_links: bool = Field(
         alias="remove-attachments-and-links",
-        description="""Remove attachments and links from .the malicious email.""",
+        description="""Remove attachments and links from the malicious email.""",
     )
     send_copy: bool = Field(
         alias="send-copy",
         description="""Send a copy of the malicious email to the recipient list.""",
     )
-    send_copy_list: add | remove | str | list[str] = Field(
+    send_copy_list: Add | Remove | str | list[str] = Field(
         alias="send-copy-list",
         description="""Recipient list to send a copy of the malicious email.""",
     )

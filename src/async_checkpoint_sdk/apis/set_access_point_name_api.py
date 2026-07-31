@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.access_point_reply import AccessPointReply
 from async_checkpoint_sdk.models.access_point_request_edit import AccessPointRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_access_point_name(
-    client: ClientSession, data: AccessPointRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: AccessPointRequestEdit, config: SDKConfig, **kwargs
 ) -> AccessPointReply:
     """
     Edit existing object using object name or uid.

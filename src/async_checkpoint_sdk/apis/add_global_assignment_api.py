@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.global_assignment_reply import GlobalAssignmentReply
 from async_checkpoint_sdk.models.global_assignment_request_new import GlobalAssignmentRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_global_assignment(
-    client: ClientSession, data: GlobalAssignmentRequestNew, config: Config, **kwargs
+    client: ClientSession, data: GlobalAssignmentRequestNew, config: SDKConfig, **kwargs
 ) -> GlobalAssignmentReply:
     """
     Create new object.

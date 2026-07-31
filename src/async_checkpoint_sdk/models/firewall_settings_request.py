@@ -1,10 +1,9 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class FirewallSettingsRequest(BaseModel):
     auto_calculate_connections_hash_table_size_and_memory_pool: bool = Field(
-        alias="auto-calculate-connections-hash-table-size-and-memory-pool",
-        description="""N/A""",
+        alias="auto-calculate-connections-hash-table-size-and-memory-pool", description="""N/A"""
     )
     auto_maximum_limit_for_concurrent_connections: bool = Field(
         alias="auto-maximum-limit-for-concurrent-connections", description="""N/A"""

@@ -1,8 +1,9 @@
-from .manual_attachment import ManualAttachment
-from .pydantic import BaseModel, Field
+from manual_attachment import ManualAttachment
+from pydantic import BaseModel, Field
 
 
 class ThreatExceptionGroupRequestNew(BaseModel):
+    name: str = Field(alias="name", description="""Object name. Must be unique in the domain.""")
     applied_profile: str = Field(
         alias="applied-profile",
         description="""The threat profile to apply this group to in the case of apply-on threat-rules-with-specific-profile.""",
@@ -16,13 +17,12 @@ class ThreatExceptionGroupRequestNew(BaseModel):
         description="""An exception group can be set to apply on all threat rules, all threat rules which have a specific profile, or those rules manually chosen by the user.""",
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     tags: str | list[str] = Field(alias="tags", description="""Collection of tag identifiers.""")
     ignore_warnings: bool = Field(

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.network_probe_reply import NetworkProbeReply
 from async_checkpoint_sdk.models.network_probe_request_edit import NetworkProbeRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_network_probe(
-    client: ClientSession, data: NetworkProbeRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: NetworkProbeRequestEdit, config: SDKConfig, **kwargs
 ) -> NetworkProbeReply:
     """
     Edit existing object using object name or uid.

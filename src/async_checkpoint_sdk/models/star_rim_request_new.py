@@ -1,10 +1,9 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class StarRimRequestNew(BaseModel):
     enabled: bool = Field(
-        alias="enabled",
-        description="""Indicates whether Route Injection Mechanism is enabled.""",
+        alias="enabled", description="""Indicates whether Route Injection Mechanism is enabled."""
     )
     enable_on_center_gateways: bool = Field(
         alias="enable-on-center-gateways",

@@ -1,13 +1,13 @@
-from .add import add
-from .pydantic import BaseModel, Field
-from .remove import remove
-from .smart_task_action_request import SmartTaskActionRequest
+from add import Add
+from pydantic import BaseModel, Field
+from remove import Remove
+from smart_task_action_request import SmartTaskActionRequest
 
 
 class SmartTaskRequestEdit(BaseModel):
+    uid: str = Field(alias="uid", description="""Object unique identifier.""")
     action: SmartTaskActionRequest = Field(
-        alias="action",
-        description="""The action to be run when the trigger is fired.""",
+        alias="action", description="""The action to be run when the trigger is fired."""
     )
     trigger: str = Field(
         alias="trigger", description="""Trigger type associated with the SmartTask."""
@@ -30,15 +30,14 @@ class SmartTaskRequestEdit(BaseModel):
     )
     new_name: str = Field(alias="new-name", description="""New name of the object.""")
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
-    tags: add | remove | str | list[str] = Field(
+    tags: Add | Remove | str | list[str] = Field(
         alias="tags", description="""Collection of tag identifiers."""
     )
     ignore_warnings: bool = Field(

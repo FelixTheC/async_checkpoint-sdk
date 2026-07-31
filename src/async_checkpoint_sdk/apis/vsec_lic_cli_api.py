@@ -6,11 +6,11 @@ from async_checkpoint_sdk.models.turn_on_off_central_licenses_reply import (
 from async_checkpoint_sdk.models.turn_on_off_central_licenses_request import (
     TurnOnOffCentralLicensesRequest,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def vsec_lic_cli(
-    client: ClientSession, data: TurnOnOffCentralLicensesRequest, config: Config, **kwargs
+    client: ClientSession, data: TurnOnOffCentralLicensesRequest, config: SDKConfig, **kwargs
 ) -> TurnOnOffCentralLicensesReply:
     """
     Parameters

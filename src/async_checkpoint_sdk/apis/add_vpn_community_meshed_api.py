@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.vpn_meshed_community_reply import VpnMeshedComm
 from async_checkpoint_sdk.models.vpn_meshed_community_request_new import (
     VpnMeshedCommunityRequestNew,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_vpn_community_meshed(
-    client: ClientSession, data: VpnMeshedCommunityRequestNew, config: Config, **kwargs
+    client: ClientSession, data: VpnMeshedCommunityRequestNew, config: SDKConfig, **kwargs
 ) -> VpnMeshedCommunityReply:
     """
     Create new object.

@@ -1,6 +1,6 @@
-from .api_domain_identifier import ApiDomainIdentifier
-from .compliance_auto_scan_settings_reply import ComplianceAutoScanSettingsReply
-from .pydantic import BaseModel, Field
+from api_domain_identifier import ApiDomainIdentifier
+from compliance_auto_scan_settings_reply import ComplianceAutoScanSettingsReply
+from pydantic import BaseModel, Field
 
 
 class ComplianceConfigurationSettingsReply(BaseModel):
@@ -29,6 +29,5 @@ If the value > 0, then after you publish the session, partial scan is delayed fo
 If the value = 0, then the partial scan starts immediately after you publish the session.""",
     )
     domain: ApiDomainIdentifier = Field(
-        alias="domain",
-        description="""Information about the domain that holds the Object.""",
+        alias="domain", description="""Information about the domain that holds the Object."""
     )

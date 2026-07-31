@@ -1,12 +1,11 @@
-from .authentication_settings_reply import AuthenticationSettingsReply
-from .i_d_a_portal_reply import IDAPortalReply
-from .pydantic import BaseModel, Field
+from authentication_settings_reply import AuthenticationSettingsReply
+from i_d_a_portal_reply import IDAPortalReply
+from pydantic import BaseModel, Field
 
 
 class IdentityAgentSettingsReply(BaseModel):
     agents_interval_keepalive: int = Field(
-        alias="agents-interval-keepalive",
-        description="""Agents send keepalive period (minutes).""",
+        alias="agents-interval-keepalive", description="""Agents send keepalive period (minutes)."""
     )
     authentication_settings: AuthenticationSettingsReply = Field(
         alias="authentication-settings",

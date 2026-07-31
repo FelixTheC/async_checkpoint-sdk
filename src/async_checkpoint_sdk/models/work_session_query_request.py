@@ -1,4 +1,4 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class WorkSessionQueryRequest(BaseModel):
@@ -13,10 +13,9 @@ class WorkSessionQueryRequest(BaseModel):
         description="""Sorts results by the given field. By default the results are sorted in the descending order by the session publish time.""",
     )
     view_published_sessions: bool = Field(
-        alias="view-published-sessions",
-        description="""Show a list of published sessions.""",
+        alias="view-published-sessions", description="""Show a list of published sessions."""
     )
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )

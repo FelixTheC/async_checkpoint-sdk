@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.nat_rule_reply import NatRuleReply
 from async_checkpoint_sdk.models.nat_rule_request_edit import NatRuleRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_nat_rule(
-    client: ClientSession, data: NatRuleRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: NatRuleRequestEdit, config: SDKConfig, **kwargs
 ) -> NatRuleReply:
     """
     Edit existing object using object name or uid.

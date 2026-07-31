@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.ips_status_reply import IpsStatusReply
 from async_checkpoint_sdk.models.ips_status_request import IpsStatusRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_ips_status(
-    client: ClientSession, data: IpsStatusRequest, config: Config, **kwargs
+    client: ClientSession, data: IpsStatusRequest, config: SDKConfig, **kwargs
 ) -> IpsStatusReply:
     """
     Parameters

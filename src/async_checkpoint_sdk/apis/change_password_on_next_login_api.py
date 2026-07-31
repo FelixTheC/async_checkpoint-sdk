@@ -6,11 +6,11 @@ from async_checkpoint_sdk.models.change_password_on_next_login_reply import (
 from async_checkpoint_sdk.models.change_password_on_next_login_request import (
     ChangePasswordOnNextLoginRequest,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def change_password_on_next_login(
-    client: ClientSession, data: ChangePasswordOnNextLoginRequest, config: Config, **kwargs
+    client: ClientSession, data: ChangePasswordOnNextLoginRequest, config: SDKConfig, **kwargs
 ) -> ChangePasswordOnNextLoginReply:
     """
     Change Check Point password on next login.

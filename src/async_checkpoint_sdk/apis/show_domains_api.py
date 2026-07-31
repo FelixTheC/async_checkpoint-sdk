@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.base_domain_query_reply import BaseDomainQueryReply
 from async_checkpoint_sdk.models.base_domain_query_request import BaseDomainQueryRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_domains(
-    client: ClientSession, data: BaseDomainQueryRequest, config: Config, **kwargs
+    client: ClientSession, data: BaseDomainQueryRequest, config: SDKConfig, **kwargs
 ) -> BaseDomainQueryReply:
     """
     Retrieve all objects.

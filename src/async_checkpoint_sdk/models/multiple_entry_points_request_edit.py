@@ -1,19 +1,18 @@
-from .add import add
-from .default_mep_priority_rule_request_edit import DefaultMepPriorityRuleRequestEdit
-from .mep_priority_rule_request import MepPriorityRuleRequest
-from .pydantic import BaseModel, Field
-from .remove import remove
-from .update import update
+from add import Add
+from default_mep_priority_rule_request_edit import DefaultMepPriorityRuleRequestEdit
+from mep_priority_rule_request import MepPriorityRuleRequest
+from pydantic import BaseModel, Field
+from remove import Remove
+from update import Update
 
 
 class MultipleEntryPointsRequestEdit(BaseModel):
     enabled: bool = Field(
-        alias="enabled",
-        description="""Enable center gateways as Multiple Entry Points.""",
+        alias="enabled", description="""Enable center gateways as Multiple Entry Points."""
     )
     entry_point_selection_mechanism: str = Field(
         alias="entry-point-selection-mechanism",
-        description="""The method by which the entry point gateway will be chosen from .the gateways in the center.""",
+        description="""The method by which the entry point gateway will be chosen from the gateways in the center.""",
     )
     entry_point_final_selection_mechanism: str = Field(
         alias="entry-point-final-selection-mechanism",
@@ -24,7 +23,7 @@ class MultipleEntryPointsRequestEdit(BaseModel):
         alias="default-priority-rule",
         description="""Priority rule for all satellite gateways. Relevant only if 'entry-point-selection-mechanism' is set to 'manual'.""",
     )
-    exception_priority_rules: add | remove | update | MepPriorityRuleRequest | list[dict] = Field(
+    exception_priority_rules: Add | Remove | Update | MepPriorityRuleRequest | list[dict] = Field(
         alias="exception-priority-rules",
         description="""Exception priority rules for specific satellites gateways. Relevant only if 'entry-point-selection-mechanism' is set to 'manual'.""",
     )

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.logical_server_reply import LogicalServerReply
 from async_checkpoint_sdk.models.logical_server_request_edit import LogicalServerRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def clone_logical_server(
-    client: ClientSession, data: LogicalServerRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: LogicalServerRequestEdit, config: SDKConfig, **kwargs
 ) -> LogicalServerReply:
     """
     Clone existing logical server.

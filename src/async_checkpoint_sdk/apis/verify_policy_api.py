@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.verify_policy_reply import VerifyPolicyReply
 from async_checkpoint_sdk.models.verify_policy_request import VerifyPolicyRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def verify_policy(
-    client: ClientSession, data: VerifyPolicyRequest, config: Config, **kwargs
+    client: ClientSession, data: VerifyPolicyRequest, config: SDKConfig, **kwargs
 ) -> VerifyPolicyReply:
     """
     Verifies the policy of the selected package. <br>Note: Verify Policy command can verify only access policy.

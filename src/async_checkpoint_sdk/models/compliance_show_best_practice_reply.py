@@ -1,12 +1,10 @@
-from .api_domain_identifier import ApiDomainIdentifier
-from .available_actions_reply import AvailableActionsReply
-from .compliance_user_defined_firewall_reply import ComplianceUserDefinedFirewallReply
-from .compliance_user_defined_gaia_os_reply import ComplianceUserDefinedGaiaOsReply
-from .meta_info_for_top_level_reply import MetaInfoForTopLevelReply
-from .pydantic import BaseModel, Field
-from .show_best_practice_relevant_objects_reply import (
-    ShowBestPracticeRelevantObjectsReply,
-)
+from api_domain_identifier import ApiDomainIdentifier
+from available_actions_reply import AvailableActionsReply
+from compliance_user_defined_firewall_reply import ComplianceUserDefinedFirewallReply
+from compliance_user_defined_gaia_os_reply import ComplianceUserDefinedGaiaOsReply
+from meta_info_for_top_level_reply import MetaInfoForTopLevelReply
+from pydantic import BaseModel, Field
+from show_best_practice_relevant_objects_reply import ShowBestPracticeRelevantObjectsReply
 
 
 class ComplianceShowBestPracticeReply(BaseModel):
@@ -36,8 +34,7 @@ class ComplianceShowBestPracticeReply(BaseModel):
         description="""The applicable regulations of the Best Practice. Appears only when the value of the 'show-regulations' parameter is set to 'true'.""",
     )
     relevant_objects: ShowBestPracticeRelevantObjectsReply = Field(
-        alias="relevant-objects",
-        description="""The applicable objects of the Best Practice.""",
+        alias="relevant-objects", description="""The applicable objects of the Best Practice."""
     )
     status: str = Field(alias="status", description="""The current status of the Best Practice.""")
     user_defined: bool = Field(
@@ -54,8 +51,7 @@ class ComplianceShowBestPracticeReply(BaseModel):
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     domain: ApiDomainIdentifier = Field(
-        alias="domain",
-        description="""Information about the domain that holds the Object.""",
+        alias="domain", description="""Information about the domain that holds the Object."""
     )
     meta_info: MetaInfoForTopLevelReply = Field(
         alias="meta-info", description="""Object metadata."""
@@ -64,6 +60,5 @@ class ComplianceShowBestPracticeReply(BaseModel):
         alias="read-only", description="""Indicates whether the object is read-only."""
     )
     available_actions: AvailableActionsReply = Field(
-        alias="available-actions",
-        description="""Actions that are available on the object.""",
+        alias="available-actions", description="""Actions that are available on the object."""
     )

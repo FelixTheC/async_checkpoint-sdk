@@ -1,18 +1,22 @@
-from .anti_spoofing_settings_request import AntiSpoofingSettingsRequest
-from .internal_topology_settings_request import InternalTopologySettingsRequest
-from .object import Object
-from .pydantic import BaseModel, Field
-from .security_zone_settings_request import SecurityZoneSettingsRequest
+from anti_spoofing_settings_request import AntiSpoofingSettingsRequest
+from internal_topology_settings_request import InternalTopologySettingsRequest
+from object import Object
+from pydantic import BaseModel, Field
+from security_zone_settings_request import SecurityZoneSettingsRequest
 
 
 class InterfaceRequestEdit(BaseModel):
+    uid: str = Field(alias="uid", description="""Network interface uid.""")
+    gateway_uid: str = Field(
+        alias="gateway-uid",
+        description="""Gateway or cluster object uid that the interface belongs to. <font color=red>Required only if</font> name was specified.""",
+    )
     anti_spoofing: bool = Field(alias="anti-spoofing", description="""Enable anti-spoofing.""")
     anti_spoofing_settings: AntiSpoofingSettingsRequest = Field(
         alias="anti-spoofing-settings", description="""Anti Spoofing Settings."""
     )
     cluster_members: list[dict] = Field(
-        alias="cluster-members",
-        description="""Network interface settings for cluster members.""",
+        alias="cluster-members", description="""Network interface settings for cluster members."""
     )
     cluster_network_type: str = Field(
         alias="cluster-network-type", description="""Cluster interface type."""
@@ -40,17 +44,16 @@ class InterfaceRequestEdit(BaseModel):
         alias="topology-settings", description="""Topology Settings."""
     )
     color: str = Field(
-        alias="color",
-        description="""Color of the object. Should be one of existing colors.""",
+        alias="color", description="""Color of the object. Should be one of existing colors."""
     )
     comments: str = Field(alias="comments", description="""Comments string.""")
     details_level: str = Field(
         alias="details-level",
-        description="""The level of detail for some of the fields in the response can vary from .showing only the UID value of the object to a fully detailed representation of the object.""",
+        description="""The level of detail for some of the fields in the response can vary from showing only the UID value of the object to a fully detailed representation of the object.""",
     )
     domains_to_process: list[str] = Field(
         alias="domains-to-process",
-        description="""Indicates which domains to process the commands on. It cannot be used with the details-level full, must be run from .the System Domain only and with ignore-warnings true. Valid values are: CURRENT_DOMAIN, ALL_DOMAINS_ON_THIS_SERVER.""",
+        description="""Indicates which domains to process the commands on. It cannot be used with the details-level full, must be run from the System Domain only and with ignore-warnings true. Valid values are: CURRENT_DOMAIN, ALL_DOMAINS_ON_THIS_SERVER.""",
     )
     tags: Object = Field(alias="tags", description="""Collection of tag identifiers.""")
     ignore_warnings: bool = Field(

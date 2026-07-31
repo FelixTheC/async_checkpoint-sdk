@@ -4,11 +4,11 @@ from async_checkpoint_sdk.models.central_licenses_list_reply import CentralLicen
 from async_checkpoint_sdk.models.delete_central_licenses_request import (
     DeleteCentralLicensesRequest,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def delete_central_license(
-    client: ClientSession, data: DeleteCentralLicensesRequest, config: Config, **kwargs
+    client: ClientSession, data: DeleteCentralLicensesRequest, config: SDKConfig, **kwargs
 ) -> CentralLicensesListReply:
     """
     Delete central license.

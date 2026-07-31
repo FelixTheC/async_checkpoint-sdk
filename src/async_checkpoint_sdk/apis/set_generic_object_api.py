@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.generic_object_api_reply import GenericObjectApiReply
 from async_checkpoint_sdk.models.generic_object_request_edit import GenericObjectRequestEdit
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def set_generic_object(
-    client: ClientSession, data: GenericObjectRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: GenericObjectRequestEdit, config: SDKConfig, **kwargs
 ) -> GenericObjectApiReply:
     """
     Parameters

@@ -1,7 +1,10 @@
-from .pydantic import BaseModel, Field
+from pydantic import BaseModel, Field
 
 
 class PolicyInstallationRequest(BaseModel):
+    policy_package: str = Field(
+        alias="policy-package", description="""The name of the Policy Package to be installed."""
+    )
     targets: str | list[str] = Field(
         alias="targets",
         description="""On what targets to execute this command. In case 'Specific gateways' is chosen, input installation targets must be in the specific targets list of the policy package. Targets may be identified by their name or object unique identifier.""",
@@ -31,10 +34,8 @@ class PolicyInstallationRequest(BaseModel):
         description="""If true, prepares the policy for the installation, but doesn't install it on an installation target.""",
     )
     revision: str = Field(
-        alias="revision",
-        description="""The UID of the revision of the policy to install.""",
+        alias="revision", description="""The UID of the revision of the policy to install."""
     )
     ignore_warnings: bool = Field(
-        alias="ignore-warnings",
-        description="""Install policy ignoring policy mismatch warnings.""",
+        alias="ignore-warnings", description="""Install policy ignoring policy mismatch warnings."""
     )

@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.log_exporter_reply import LogExporterReply
 from async_checkpoint_sdk.models.log_exporter_request_new import LogExporterRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_log_exporter(
-    client: ClientSession, data: LogExporterRequestNew, config: Config, **kwargs
+    client: ClientSession, data: LogExporterRequestNew, config: SDKConfig, **kwargs
 ) -> LogExporterReply:
     """
     Create new log exporter.<br>After you configure a Log Exporter, you must run Install Database.

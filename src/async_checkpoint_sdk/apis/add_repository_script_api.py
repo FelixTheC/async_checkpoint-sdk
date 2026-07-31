@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.script_reply import ScriptReply
 from async_checkpoint_sdk.models.script_request_new import ScriptRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_repository_script(
-    client: ClientSession, data: ScriptRequestNew, config: Config, **kwargs
+    client: ClientSession, data: ScriptRequestNew, config: SDKConfig, **kwargs
 ) -> ScriptReply:
     """
     Add a new script to the script repository.

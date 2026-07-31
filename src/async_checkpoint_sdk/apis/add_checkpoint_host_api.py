@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.host_ckp_reply import HostCkpReply
 from async_checkpoint_sdk.models.host_ckp_request_new import HostCkpRequestNew
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def add_checkpoint_host(
-    client: ClientSession, data: HostCkpRequestNew, config: Config, **kwargs
+    client: ClientSession, data: HostCkpRequestNew, config: SDKConfig, **kwargs
 ) -> HostCkpReply:
     """
     Create new object.

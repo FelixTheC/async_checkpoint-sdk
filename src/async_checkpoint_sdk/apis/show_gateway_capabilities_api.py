@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.gateway_capabilities_reply import GatewayCapabilitiesReply
 from async_checkpoint_sdk.models.gateway_capabilities_request import GatewayCapabilitiesRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def show_gateway_capabilities(
-    client: ClientSession, data: GatewayCapabilitiesRequest, config: Config, **kwargs
+    client: ClientSession, data: GatewayCapabilitiesRequest, config: SDKConfig, **kwargs
 ) -> GatewayCapabilitiesReply:
     """
     Show supported Check Point Gateway capabilities such as versions, hardware, platforms and blades.

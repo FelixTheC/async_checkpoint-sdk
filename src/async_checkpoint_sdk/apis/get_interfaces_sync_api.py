@@ -2,11 +2,11 @@ from aiohttp import ClientSession
 
 from async_checkpoint_sdk.models.api_ok_reply import ApiOkReply
 from async_checkpoint_sdk.models.get_interfaces_request import GetInterfacesRequest
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def get_interfaces_sync(
-    client: ClientSession, data: GetInterfacesRequest, config: Config, **kwargs
+    client: ClientSession, data: GetInterfacesRequest, config: SDKConfig, **kwargs
 ) -> ApiOkReply:
     """
     Parameters

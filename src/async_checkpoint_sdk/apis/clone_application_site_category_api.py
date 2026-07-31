@@ -6,11 +6,11 @@ from async_checkpoint_sdk.models.application_site_category_reply import (
 from async_checkpoint_sdk.models.application_site_category_request_edit import (
     ApplicationSiteCategoryRequestEdit,
 )
-from config import Config
+from src.async_checkpoint_sdk.sdk_config import SDKConfig
 
 
 async def clone_application_site_category(
-    client: ClientSession, data: ApplicationSiteCategoryRequestEdit, config: Config, **kwargs
+    client: ClientSession, data: ApplicationSiteCategoryRequestEdit, config: SDKConfig, **kwargs
 ) -> ApplicationSiteCategoryReply:
     """
     Clone existing object.
