@@ -1,0 +1,28 @@
+from config import Config
+from aiohttp import ClientSession
+from models.generic_object_request_edit import GenericObjectRequestEdit
+from models.generic_object_api_reply import GenericObjectApiReply
+
+
+async def set_generic_object(
+    client: ClientSession, data: GenericObjectRequestEdit, config: Config, **kwargs
+) -> GenericObjectApiReply:
+    """ 
+    Parameters
+    ----------
+    client : ClientSession [Argument]
+    data : GenericObjectRequestEdit [Argument]
+    config : Config [Argument]
+    kwargs : [Keyword arguments]
+
+    Returns
+    -------
+    GenericObjectApiReply
+    """
+    url = f"https://{config.server}:{config.port}/web_api/set-generic-object"
+    data_obj = {"body": data}
+    if client.headers["Content-Type"] == "application/json":
+        data_obj = {"json": data}
+    async with client.post(url, **data_obj, raise_for_status=True, ssl=False) as response:
+        resp = await response.json()
+    return GenericObjectApiReply(**resp)

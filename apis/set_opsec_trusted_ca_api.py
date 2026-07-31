@@ -1,0 +1,30 @@
+from config import Config
+from aiohttp import ClientSession
+from models.opsec_trusted_ca_reply import OpsecTrustedCaReply
+from models.opsec_trusted_ca_request_edit import OpsecTrustedCaRequestEdit
+
+
+async def set_opsec_trusted_ca(
+    client: ClientSession, data: OpsecTrustedCaRequestEdit, config: Config, **kwargs
+) -> OpsecTrustedCaReply:
+    """
+    Edit existing object using object name or uid.
+    
+    Parameters
+    ----------
+    client : ClientSession [Argument]
+    data : OpsecTrustedCaRequestEdit [Argument]
+    config : Config [Argument]
+    kwargs : [Keyword arguments]
+
+    Returns
+    -------
+    OpsecTrustedCaReply
+    """
+    url = f"https://{config.server}:{config.port}/web_api/set-opsec-trusted-ca"
+    data_obj = {"body": data}
+    if client.headers["Content-Type"] == "application/json":
+        data_obj = {"json": data}
+    async with client.post(url, **data_obj, raise_for_status=True, ssl=False) as response:
+        resp = await response.json()
+    return OpsecTrustedCaReply(**resp)

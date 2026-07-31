@@ -1,0 +1,30 @@
+from config import Config
+from aiohttp import ClientSession
+from models.trusted_ca_settings_request_show import TrustedCaSettingsRequestShow
+from models.trusted_ca_settings_reply import TrustedCaSettingsReply
+
+
+async def show_trusted_ca_settings(
+    client: ClientSession, data: TrustedCaSettingsRequestShow, config: Config, **kwargs
+) -> TrustedCaSettingsReply:
+    """
+    Show trusted CAs package update settings.
+    
+    Parameters
+    ----------
+    client : ClientSession [Argument]
+    data : TrustedCaSettingsRequestShow [Argument]
+    config : Config [Argument]
+    kwargs : [Keyword arguments]
+
+    Returns
+    -------
+    TrustedCaSettingsReply
+    """
+    url = f"https://{config.server}:{config.port}/web_api/show-trusted-ca-settings"
+    data_obj = {"body": data}
+    if client.headers["Content-Type"] == "application/json":
+        data_obj = {"json": data}
+    async with client.post(url, **data_obj, raise_for_status=True, ssl=False) as response:
+        resp = await response.json()
+    return TrustedCaSettingsReply(**resp)

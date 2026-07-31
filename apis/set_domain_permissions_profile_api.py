@@ -1,0 +1,30 @@
+from config import Config
+from aiohttp import ClientSession
+from models.domain_permissions_profile_request_edit import DomainPermissionsProfileRequestEdit
+from models.domain_permissions_profile_reply import DomainPermissionsProfileReply
+
+
+async def set_domain_permissions_profile(
+    client: ClientSession, data: DomainPermissionsProfileRequestEdit, config: Config, **kwargs
+) -> DomainPermissionsProfileReply:
+    """
+    Edit existing Domain Permissions Profile using object name or uid.
+    
+    Parameters
+    ----------
+    client : ClientSession [Argument]
+    data : DomainPermissionsProfileRequestEdit [Argument]
+    config : Config [Argument]
+    kwargs : [Keyword arguments]
+
+    Returns
+    -------
+    DomainPermissionsProfileReply
+    """
+    url = f"https://{config.server}:{config.port}/web_api/set-domain-permissions-profile"
+    data_obj = {"body": data}
+    if client.headers["Content-Type"] == "application/json":
+        data_obj = {"json": data}
+    async with client.post(url, **data_obj, raise_for_status=True, ssl=False) as response:
+        resp = await response.json()
+    return DomainPermissionsProfileReply(**resp)

@@ -1,0 +1,40 @@
+from config import Config
+from aiohttp import ClientSession
+from models.updatable_objects_repository_content_reply import UpdatableObjectsRepositoryContentReply
+from models.updatable_objects_repository_content_request import (
+    UpdatableObjectsRepositoryContentRequest,
+)
+
+
+async def show_updatable_objects_repository_content(
+    client: ClientSession, data: UpdatableObjectsRepositoryContentRequest, config: Config, **kwargs
+) -> UpdatableObjectsRepositoryContentReply:
+    """
+    Shows the content of the available updatable objects from the Check Point User Center.
+    
+    Parameters
+    ----------
+    client : ClientSession [Argument]
+        data : UpdatableObjectsRepositoryContentRequest [Argument]
+    config : Config [Argument]
+    kwargs : [Keyword arguments]
+
+    Returns
+    -------
+    UpdatableObjectsRepositoryContentReply
+    data : UpdatableObjectsRepositoryContentRequest [Argument]
+        data : UpdatableObjectsRepositoryContentRequest [Argument]
+    config : Config [Argument]
+    kwargs : [Keyword arguments]
+
+    Returns
+    -------
+    UpdatableObjectsRepositoryContentReply
+    """
+    url = f"https://{config.server}:{config.port}/web_api/show-updatable-objects-repository-content"
+    data_obj = {"body": data}
+    if client.headers["Content-Type"] == "application/json":
+        data_obj = {"json": data}
+    async with client.post(url, **data_obj, raise_for_status=True, ssl=False) as response:
+        resp = await response.json()
+    return UpdatableObjectsRepositoryContentReply(**resp)

@@ -1,0 +1,30 @@
+from config import Config
+from aiohttp import ClientSession
+from models.login_message_reply import LoginMessageReply
+from models.login_message_request_show import LoginMessageRequestShow
+
+
+async def show_login_message(
+    client: ClientSession, data: LoginMessageRequestShow, config: Config, **kwargs
+) -> LoginMessageReply:
+    """
+    Retrieve existing object using object name or uid.
+    
+    Parameters
+    ----------
+    client : ClientSession [Argument]
+    data : LoginMessageRequestShow [Argument]
+    config : Config [Argument]
+    kwargs : [Keyword arguments]
+
+    Returns
+    -------
+    LoginMessageReply
+    """
+    url = f"https://{config.server}:{config.port}/web_api/show-login-message"
+    data_obj = {"body": data}
+    if client.headers["Content-Type"] == "application/json":
+        data_obj = {"json": data}
+    async with client.post(url, **data_obj, raise_for_status=True, ssl=False) as response:
+        resp = await response.json()
+    return LoginMessageReply(**resp)

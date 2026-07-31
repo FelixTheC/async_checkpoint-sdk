@@ -1,0 +1,55 @@
+from aiohttp import ClientSession
+
+from config import Config
+from models.smtp_server_reply import SmtpServerReply
+from models.smtp_server_request_new import SmtpServerRequestNew
+
+
+async def add_smtp_server(
+    client: ClientSession, data: SmtpServerRequestNew, config: Config, **kwargs
+) -> SmtpServerReply:
+    """
+    Create a new SMTP object. <br>This object can be used while configuring a SmartTask with a Send Mail action.
+    
+    Parameters
+    ----------
+    client : ClientSession [Argument]
+    data : SmtpServerRequestNew [Argument]
+        config : Config [Argument]
+    kwargs : [Keyword arguments]
+
+    Returns
+    -------
+    SmtpServerReply
+    config : Config [Argument]
+        data : SmtpServerRequestNew [Argument]
+    config : Config [Argument]
+    kwargs : [Keyword arguments]
+
+    Returns
+    -------
+    SmtpServerReply
+    config : Config [Argument]
+        data : SmtpServerRequestNew [Argument]
+        config : Config [Argument]
+    kwargs : [Keyword arguments]
+
+    Returns
+    -------
+    SmtpServerReply
+    config : Config [Argument]
+        data : SmtpServerRequestNew [Argument]
+        config : Config [Argument]
+    kwargs : [Keyword arguments]
+
+    Returns
+    -------
+    SmtpServerReply
+    """
+    url = f"https://{config.server}:{config.port}/web_api/add-smtp-server"
+    data_obj = {"body": data}
+    if client.headers["Content-Type"] == "application/json":
+        data_obj = {"json": data}
+    async with client.post(url, **data_obj, raise_for_status=True, ssl=False) as response:
+        resp = await response.json()
+    return SmtpServerReply(**resp)

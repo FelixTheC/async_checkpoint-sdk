@@ -1,0 +1,32 @@
+from config import Config
+from aiohttp import ClientSession
+from models.azure_a_d_reply import AzureADReply
+from models.api_visual_c_p_object_identifier_request_show import (
+    ApiVisualCPObjectIdentifierRequestShow,
+)
+
+
+async def show_azure_ad(
+    client: ClientSession, data: ApiVisualCPObjectIdentifierRequestShow, config: Config, **kwargs
+) -> AzureADReply:
+    """
+    Retrieve existing Microsoft Entra ID (formerly, Azure AD). <br>Reply will not contain the sensitive properties <i><b>application key</i></b> and <i><b>password</i></b>.
+    
+    Parameters
+    ----------
+    client : ClientSession [Argument]
+    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
+    config : Config [Argument]
+    kwargs : [Keyword arguments]
+
+    Returns
+    -------
+    AzureADReply
+    """
+    url = f"https://{config.server}:{config.port}/web_api/show-azure-ad"
+    data_obj = {"body": data}
+    if client.headers["Content-Type"] == "application/json":
+        data_obj = {"json": data}
+    async with client.post(url, **data_obj, raise_for_status=True, ssl=False) as response:
+        resp = await response.json()
+    return AzureADReply(**resp)

@@ -1,0 +1,31 @@
+from aiohttp import ClientSession
+
+from config import Config
+from models.udp_service_reply import UdpServiceReply
+from models.udp_service_request_edit import UdpServiceRequestEdit
+
+
+async def clone_service_udp(
+    client: ClientSession, data: UdpServiceRequestEdit, config: Config, **kwargs
+) -> UdpServiceReply:
+    """
+    Clone existing object.
+    
+    Parameters
+    ----------
+    client : ClientSession [Argument]
+    data : UdpServiceRequestEdit [Argument]
+    config : Config [Argument]
+    kwargs : [Keyword arguments]
+
+    Returns
+    -------
+    UdpServiceReply
+    """
+    url = f"https://{config.server}:{config.port}/web_api/clone-service-udp"
+    data_obj = {"body": data}
+    if client.headers["Content-Type"] == "application/json":
+        data_obj = {"json": data}
+    async with client.post(url, **data_obj, raise_for_status=True, ssl=False) as response:
+        resp = await response.json()
+    return UdpServiceReply(**resp)
