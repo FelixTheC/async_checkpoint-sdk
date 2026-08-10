@@ -13,14 +13,16 @@ async def set_access_point_name(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : AccessPointRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : AccessPointRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     AccessPointReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-access-point-name"
     data_obj = {"body": data}

@@ -13,14 +13,16 @@ async def add_api_key(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiKeyRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiKeyRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     AddApiKeyReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-api-key"
     data_obj = {"body": data}

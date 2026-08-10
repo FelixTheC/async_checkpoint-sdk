@@ -11,14 +11,16 @@ async def get_login_token(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : LoginTokenRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : LoginTokenRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     LoginTokenReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/get-login-token"
     data_obj = {"body": data}

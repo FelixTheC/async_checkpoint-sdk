@@ -11,14 +11,16 @@ async def show_internal_version(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : VersionInternalRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : VersionInternalRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     VersionInternalReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-internal-version"
     data_obj = {"body": data}

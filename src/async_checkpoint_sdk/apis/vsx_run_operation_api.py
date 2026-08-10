@@ -13,14 +13,16 @@ async def vsx_run_operation(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : VsxRunOperationRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : VsxRunOperationRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     VsxRunOperationReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/vsx-run-operation"
     data_obj = {"body": data}

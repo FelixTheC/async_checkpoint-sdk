@@ -13,14 +13,16 @@ async def show_login_message(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : LoginMessageRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : LoginMessageRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     LoginMessageReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-login-message"
     data_obj = {"body": data}

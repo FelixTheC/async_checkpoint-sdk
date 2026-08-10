@@ -13,14 +13,16 @@ async def run_trusted_ca_update(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : TrustedCaUpdateRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : TrustedCaUpdateRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiTaskReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/run-trusted-ca-update"
     data_obj = {"body": data}

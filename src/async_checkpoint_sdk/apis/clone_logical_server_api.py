@@ -13,14 +13,16 @@ async def clone_logical_server(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : LogicalServerRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : LogicalServerRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     LogicalServerReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/clone-logical-server"
     data_obj = {"body": data}

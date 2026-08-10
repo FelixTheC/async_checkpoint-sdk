@@ -15,14 +15,16 @@ async def show_ips_protection_extended_attributes(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : CdsIgnoreQueryRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : CdsIgnoreQueryRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     IpsAdditionalPropertiesQueryReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-ips-protection-extended-attributes"
     data_obj = {"body": data}

@@ -13,14 +13,16 @@ async def delete_objects_batch(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : BatchRequestDelete [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : BatchRequestDelete
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     BatchReplyTask
+
     """
     url = f"https://{config.server}:{config.port}/web_api/delete-objects-batch"
     data_obj = {"body": data}

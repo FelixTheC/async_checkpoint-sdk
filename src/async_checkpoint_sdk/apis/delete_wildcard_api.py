@@ -15,14 +15,16 @@ async def delete_wildcard(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestDelete [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestDelete
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiOkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/delete-wildcard"
     data_obj = {"body": data}

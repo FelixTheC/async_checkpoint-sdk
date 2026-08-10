@@ -13,14 +13,16 @@ async def clone_access_layer(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : CloneAccessLayerRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : CloneAccessLayerRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiTaskReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/clone-access-layer"
     data_obj = {"body": data}

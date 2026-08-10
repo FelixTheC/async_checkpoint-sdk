@@ -13,14 +13,16 @@ async def set_opsec_application(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : OpsecApplicationRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : OpsecApplicationRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     OpsecApplicationReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-opsec-application"
     data_obj = {"body": data}

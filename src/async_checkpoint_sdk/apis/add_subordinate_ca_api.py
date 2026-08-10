@@ -13,14 +13,16 @@ async def add_subordinate_ca(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : SubordinateCaRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : SubordinateCaRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     SubordinateCaReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-subordinate-ca"
     data_obj = {"body": data}

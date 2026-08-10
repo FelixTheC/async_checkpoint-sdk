@@ -13,14 +13,16 @@ async def login_to_domain(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : LoginToDomainRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : LoginToDomainRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     WebApiLoginReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/login-to-domain"
     data_obj = {"body": data}

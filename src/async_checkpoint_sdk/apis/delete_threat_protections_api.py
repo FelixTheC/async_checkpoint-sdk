@@ -13,14 +13,16 @@ async def delete_threat_protections(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : DeleteProtectionsRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : DeleteProtectionsRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiTaskReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/delete-threat-protections"
     data_obj = {"body": data}

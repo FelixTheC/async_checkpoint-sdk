@@ -15,14 +15,16 @@ async def set_data_type_keywords(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : KeyWordsDataTypeRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : KeyWordsDataTypeRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     KeyWordsDataTypeReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-data-type-keywords"
     data_obj = {"body": data}

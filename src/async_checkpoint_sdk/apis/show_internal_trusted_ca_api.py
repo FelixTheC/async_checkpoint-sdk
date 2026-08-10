@@ -15,14 +15,16 @@ async def show_internal_trusted_ca(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : InternalTrustedCaRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : InternalTrustedCaRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     TrustedCaReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-internal-trusted-ca"
     data_obj = {"body": data}

@@ -13,14 +13,16 @@ async def set_interface(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : InterfaceRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : InterfaceRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     InterfaceReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-interface"
     data_obj = {"body": data}

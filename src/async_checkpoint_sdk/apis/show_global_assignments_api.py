@@ -15,14 +15,16 @@ async def show_global_assignments(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : GlobalAssignmentQueryRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : GlobalAssignmentQueryRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiQueryObjectReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-global-assignments"
     data_obj = {"body": data}

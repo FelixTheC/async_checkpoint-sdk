@@ -13,8 +13,8 @@ async def reset_sic(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : SicApiRequest [Argument]
+    client : ClientSession
+    data : SicApiRequest
         config : Config [Argument]
     kwargs : [Keyword arguments]
 
@@ -36,7 +36,17 @@ async def reset_sic(
 
     Returns
     -------
+    ResetSicReply.
+    config : SDKConfig
+        data : SicApiRequest [Argument]
+        config : Config [Argument].
+    kwargs : Any
+        Keyword arguments
+
+    Returns
+    -------
     ResetSicReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/reset-sic"
     data_obj = {"body": data}

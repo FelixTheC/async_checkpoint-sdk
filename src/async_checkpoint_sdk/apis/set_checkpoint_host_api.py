@@ -13,14 +13,16 @@ async def set_checkpoint_host(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : HostCkpRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : HostCkpRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     HostCkpReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-checkpoint-host"
     data_obj = {"body": data}

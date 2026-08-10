@@ -15,14 +15,16 @@ async def show_cp_trusted_ca_certificate(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     TrustedCaCertificateReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-cp-trusted-ca-certificate"
     data_obj = {"body": data}

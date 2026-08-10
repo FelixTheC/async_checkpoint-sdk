@@ -17,14 +17,16 @@ async def clone_application_site_category(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApplicationSiteCategoryRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApplicationSiteCategoryRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApplicationSiteCategoryReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/clone-application-site-category"
     data_obj = {"body": data}

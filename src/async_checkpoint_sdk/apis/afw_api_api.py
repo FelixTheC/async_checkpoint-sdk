@@ -13,14 +13,16 @@ async def afw_api(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : AutonomousFirewallRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : AutonomousFirewallRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     AutonomousFirewallReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/afw-api"
     data_obj = {"body": data}

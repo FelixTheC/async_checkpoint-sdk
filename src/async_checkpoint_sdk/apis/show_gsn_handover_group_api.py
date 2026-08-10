@@ -15,14 +15,16 @@ async def show_gsn_handover_group(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     GsnHandoverGroupReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-gsn-handover-group"
     data_obj = {"body": data}

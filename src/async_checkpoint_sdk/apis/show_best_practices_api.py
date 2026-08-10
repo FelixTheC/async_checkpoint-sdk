@@ -17,14 +17,16 @@ async def show_best_practices(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ComplianceShowBestPracticeQueryRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ComplianceShowBestPracticeQueryRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ComplianceShowBestPracticeQueryReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-best-practices"
     data_obj = {"body": data}

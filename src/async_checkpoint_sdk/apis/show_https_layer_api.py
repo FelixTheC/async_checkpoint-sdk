@@ -15,14 +15,16 @@ async def show_https_layer(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     HttpsLayerReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-https-layer"
     data_obj = {"body": data}

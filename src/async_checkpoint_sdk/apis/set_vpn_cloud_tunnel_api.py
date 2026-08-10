@@ -11,14 +11,16 @@ async def set_vpn_cloud_tunnel(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : VpnCloudTunnelRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : VpnCloudTunnelRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     VpnCloudTunnelReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-vpn-cloud-tunnel"
     data_obj = {"body": data}

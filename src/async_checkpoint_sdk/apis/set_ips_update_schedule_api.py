@@ -15,14 +15,16 @@ async def set_ips_update_schedule(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : IpsUpdateScheduleRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : IpsUpdateScheduleRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     IpsUpdateScheduleReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-ips-update-schedule"
     data_obj = {"body": data}

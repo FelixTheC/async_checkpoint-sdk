@@ -13,14 +13,16 @@ async def clone_service_rpc(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : RpcServiceRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : RpcServiceRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     RpcServiceReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/clone-service-rpc"
     data_obj = {"body": data}

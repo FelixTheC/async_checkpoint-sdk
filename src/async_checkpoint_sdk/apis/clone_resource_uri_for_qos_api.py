@@ -15,14 +15,16 @@ async def clone_resource_uri_for_qos(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : UriForQosResourceRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : UriForQosResourceRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     UriForQosResourceReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/clone-resource-uri-for-qos"
     data_obj = {"body": data}

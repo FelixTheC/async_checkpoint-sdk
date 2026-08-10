@@ -13,7 +13,7 @@ async def import_management(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
+    client : ClientSession
         data : UpgradeImportRequest [Argument]
         database or the primary Multi-Domain Server database or the single Domain database and the applicable Check Point
     config : Config [Argument]
@@ -43,7 +43,20 @@ async def import_management(
 
     Returns
     -------
+    UpgradeImportReply.
+    data : UpgradeImportRequest
+        database or the primary Multi-Domain Server database or the single Domain database and the applicable Check Point.
+    config : SDKConfig
+        data : UpgradeImportRequest [Argument]
+        database or the primary Multi-Domain Server database or the single Domain database and the applicable Check Point
+    config : Config [Argument].
+    kwargs : Any
+        Keyword arguments
+
+    Returns
+    -------
     UpgradeImportReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/import-management"
     data_obj = {"body": data}

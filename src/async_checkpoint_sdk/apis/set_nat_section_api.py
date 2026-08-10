@@ -13,14 +13,16 @@ async def set_nat_section(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : NatSectionRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : NatSectionRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     NatSectionReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-nat-section"
     data_obj = {"body": data}

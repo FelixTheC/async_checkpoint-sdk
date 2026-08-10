@@ -13,14 +13,16 @@ async def add_resource_tcp(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : TcpResourceRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : TcpResourceRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     TcpResourceReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-resource-tcp"
     data_obj = {"body": data}

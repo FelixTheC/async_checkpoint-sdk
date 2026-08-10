@@ -13,14 +13,16 @@ async def add_host(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : HostRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : HostRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     HostReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-host"
     data_obj = {"body": data}

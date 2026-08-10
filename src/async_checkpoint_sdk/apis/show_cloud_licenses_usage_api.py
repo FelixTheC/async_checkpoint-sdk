@@ -15,14 +15,16 @@ async def show_cloud_licenses_usage(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ViewCentralLicensesRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ViewCentralLicensesRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ViewCentralLicensesListReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-cloud-licenses-usage"
     data_obj = {"body": data}

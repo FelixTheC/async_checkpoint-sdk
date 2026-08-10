@@ -13,14 +13,16 @@ async def add_threat_ioc_feed(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : IntelligenceFeedRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : IntelligenceFeedRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     IntelligenceFeedReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-threat-ioc-feed"
     data_obj = {"body": data}

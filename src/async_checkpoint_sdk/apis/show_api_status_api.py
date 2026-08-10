@@ -11,14 +11,16 @@ async def show_api_status(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : WebApiServerStatusRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : WebApiServerStatusRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     WebApiServerStatusReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-api-status"
     data_obj = {"body": data}

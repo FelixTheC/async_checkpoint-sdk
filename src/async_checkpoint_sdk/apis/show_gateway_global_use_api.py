@@ -13,14 +13,16 @@ async def show_gateway_global_use(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : GatewayGlobalUseRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : GatewayGlobalUseRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     GatewayGlobalUseReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-gateway-global-use"
     data_obj = {"body": data}

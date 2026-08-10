@@ -13,14 +13,16 @@ async def show_checkpoint_hosts(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ObjectInGroupQueryRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ObjectInGroupQueryRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiQueryObjectReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-checkpoint-hosts"
     data_obj = {"body": data}

@@ -13,14 +13,16 @@ async def add_data_type_file_attributes(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : FileDataTypeRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : FileDataTypeRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     FileDataTypeReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-data-type-file-attributes"
     data_obj = {"body": data}

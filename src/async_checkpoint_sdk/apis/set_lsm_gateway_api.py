@@ -13,14 +13,16 @@ async def set_lsm_gateway(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : LsmGatewayRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : LsmGatewayRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     LsmGatewayReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-lsm-gateway"
     data_obj = {"body": data}

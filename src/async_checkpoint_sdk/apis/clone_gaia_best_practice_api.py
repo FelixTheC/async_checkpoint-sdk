@@ -17,14 +17,16 @@ async def clone_gaia_best_practice(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ComplianceGaiaBestPracticeRequestSet [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ComplianceGaiaBestPracticeRequestSet
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ComplianceGaiaBestPracticeReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/clone-gaia-best-practice"
     data_obj = {"body": data}

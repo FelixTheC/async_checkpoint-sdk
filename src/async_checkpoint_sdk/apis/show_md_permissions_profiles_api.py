@@ -15,14 +15,16 @@ async def show_md_permissions_profiles(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : MdPermissionsProfileQueryRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : MdPermissionsProfileQueryRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiQueryObjectReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-md-permissions-profiles"
     data_obj = {"body": data}

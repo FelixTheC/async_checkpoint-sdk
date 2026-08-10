@@ -13,14 +13,16 @@ async def add_https_layer(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : HttpsLayerRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : HttpsLayerRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     HttpsLayerReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-https-layer"
     data_obj = {"body": data}

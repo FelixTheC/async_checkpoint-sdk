@@ -15,14 +15,16 @@ async def show_dynamic_content(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : GenericObjectIdentifierRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : GenericObjectIdentifierRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     DynamicContentObjectApiReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-dynamic-content"
     data_obj = {"body": data}

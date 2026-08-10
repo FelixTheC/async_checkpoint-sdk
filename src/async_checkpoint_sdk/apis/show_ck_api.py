@@ -9,14 +9,16 @@ async def show_ck(client: ClientSession, data: EmptyRequest, config: SDKConfig, 
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : EmptyRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : EmptyRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     CkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-ck"
     data_obj = {"body": data}

@@ -13,14 +13,16 @@ async def show_servers_and_processes(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : MdsStatRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : MdsStatRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     MdsStatReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-servers-and-processes"
     data_obj = {"body": data}

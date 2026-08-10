@@ -13,14 +13,16 @@ async def show_repository_packages(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : PackagesInfoCommandRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : PackagesInfoCommandRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     PackagesInfoCommandReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-repository-packages"
     data_obj = {"body": data}

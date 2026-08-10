@@ -13,14 +13,16 @@ async def add_address_range(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : AddressRangeRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : AddressRangeRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     AddressRangeReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-address-range"
     data_obj = {"body": data}

@@ -17,14 +17,16 @@ async def set_vpn_community_remote_access(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : VpnRemoteAccessCommunityRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : VpnRemoteAccessCommunityRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     VpnRemoteAccessCommunityReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-vpn-community-remote-access"
     data_obj = {"body": data}

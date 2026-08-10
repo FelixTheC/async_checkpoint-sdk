@@ -11,14 +11,16 @@ async def auto_complete(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : AutoCompleteRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : AutoCompleteRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     AutoCompleteReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/auto-complete"
     data_obj = {"body": data}

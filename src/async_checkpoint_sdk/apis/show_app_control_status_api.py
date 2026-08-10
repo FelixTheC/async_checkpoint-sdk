@@ -13,14 +13,16 @@ async def show_app_control_status(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : AppiStatusRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : AppiStatusRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     AppiStatusReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-app-control-status"
     data_obj = {"body": data}

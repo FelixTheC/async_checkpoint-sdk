@@ -13,14 +13,16 @@ async def set_global_assignment(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : GlobalAssignmentRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : GlobalAssignmentRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     GlobalAssignmentReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-global-assignment"
     data_obj = {"body": data}

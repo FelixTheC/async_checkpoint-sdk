@@ -15,14 +15,16 @@ async def show_data_center_server(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     DataCenterServerReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-data-center-server"
     data_obj = {"body": data}

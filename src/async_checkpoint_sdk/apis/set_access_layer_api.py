@@ -13,14 +13,16 @@ async def set_access_layer(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : AccessLayerRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : AccessLayerRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     AccessLayerReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-access-layer"
     data_obj = {"body": data}

@@ -13,14 +13,16 @@ async def submit_session(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : WorkflowSubmitRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : WorkflowSubmitRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiOkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/submit-session"
     data_obj = {"body": data}

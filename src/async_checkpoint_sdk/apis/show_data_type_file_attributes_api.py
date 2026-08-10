@@ -15,14 +15,16 @@ async def show_data_type_file_attributes(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     FileDataTypeReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-data-type-file-attributes"
     data_obj = {"body": data}

@@ -11,14 +11,16 @@ async def run_sho_command(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ShoCmdRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ShoCmdRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ShoCmdReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/run-sho-command"
     data_obj = {"body": data}

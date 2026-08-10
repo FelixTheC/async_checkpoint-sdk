@@ -13,14 +13,16 @@ async def clone_resource_tcp(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : TcpResourceRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : TcpResourceRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     TcpResourceReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/clone-resource-tcp"
     data_obj = {"body": data}

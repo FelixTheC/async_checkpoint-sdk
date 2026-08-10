@@ -13,14 +13,16 @@ async def add_tacacs_server(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : TacacsRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : TacacsRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     TacacsReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-tacacs-server"
     data_obj = {"body": data}

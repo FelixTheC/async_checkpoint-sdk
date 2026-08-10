@@ -15,14 +15,16 @@ async def show_lsm_cluster(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : LsmGatewayClusterCommonRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : LsmGatewayClusterCommonRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     LsmClusterReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-lsm-cluster"
     data_obj = {"body": data}

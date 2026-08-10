@@ -13,14 +13,16 @@ async def add_data_type_group(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : DataGroupRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : DataGroupRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     DataGroupReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-data-type-group"
     data_obj = {"body": data}

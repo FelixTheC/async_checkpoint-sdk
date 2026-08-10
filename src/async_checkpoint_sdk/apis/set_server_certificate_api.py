@@ -15,14 +15,16 @@ async def set_server_certificate(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ServerCertificateRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ServerCertificateRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ServerCertificateReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-server-certificate"
     data_obj = {"body": data}

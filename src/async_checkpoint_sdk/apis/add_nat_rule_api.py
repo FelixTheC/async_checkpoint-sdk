@@ -13,14 +13,16 @@ async def add_nat_rule(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : NatRuleRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : NatRuleRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     NatRuleReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-nat-rule"
     data_obj = {"body": data}

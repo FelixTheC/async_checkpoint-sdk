@@ -13,14 +13,16 @@ async def set_package(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : PolicyPackageRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : PolicyPackageRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     PolicyPackageReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-package"
     data_obj = {"body": data}

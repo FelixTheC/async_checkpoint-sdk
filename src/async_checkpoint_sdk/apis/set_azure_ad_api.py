@@ -13,14 +13,16 @@ async def set_azure_ad(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : AzureADRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : AzureADRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     AzureADTaskReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-azure-ad"
     data_obj = {"body": data}

@@ -13,14 +13,16 @@ async def import_smart_task(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ImportSmartTaskApiRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ImportSmartTaskApiRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ImportSmartTaskReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/import-smart-task"
     data_obj = {"body": data}

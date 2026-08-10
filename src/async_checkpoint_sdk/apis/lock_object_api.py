@@ -15,14 +15,16 @@ async def lock_object(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : LockingRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : LockingRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     LockingReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/lock-object"
     data_obj = {"body": data}

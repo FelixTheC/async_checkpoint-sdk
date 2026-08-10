@@ -13,14 +13,16 @@ async def show_management_blade_license(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ManagementBladeLicenseRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ManagementBladeLicenseRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ManagementBladeLicenseReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-management-blade-license"
     data_obj = {"body": data}

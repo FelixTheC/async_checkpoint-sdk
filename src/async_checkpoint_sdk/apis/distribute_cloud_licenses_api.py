@@ -15,14 +15,16 @@ async def distribute_cloud_licenses(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : DistributeCloudGuardLicensesRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : DistributeCloudGuardLicensesRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     DistributeLicensesReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/distribute-cloud-licenses"
     data_obj = {"body": data}

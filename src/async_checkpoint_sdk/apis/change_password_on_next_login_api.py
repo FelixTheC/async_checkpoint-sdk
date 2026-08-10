@@ -17,14 +17,16 @@ async def change_password_on_next_login(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ChangePasswordOnNextLoginRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ChangePasswordOnNextLoginRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ChangePasswordOnNextLoginReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/change-password-on-next-login"
     data_obj = {"body": data}

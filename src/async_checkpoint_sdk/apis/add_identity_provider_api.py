@@ -13,14 +13,16 @@ async def add_identity_provider(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : IdentityProviderRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : IdentityProviderRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     IdentityProviderReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-identity-provider"
     data_obj = {"body": data}

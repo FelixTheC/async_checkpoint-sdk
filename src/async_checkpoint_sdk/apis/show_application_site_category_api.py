@@ -17,14 +17,16 @@ async def show_application_site_category(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApplicationSiteCategoryReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-application-site-category"
     data_obj = {"body": data}

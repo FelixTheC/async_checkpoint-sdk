@@ -13,14 +13,16 @@ async def keepalive(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : KeepAliveRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : KeepAliveRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     KeepAliveReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/keepalive"
     data_obj = {"body": data}

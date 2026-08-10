@@ -15,14 +15,16 @@ async def show_custom_trusted_ca_certificates(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : TrustedCaCertificateQueryRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : TrustedCaCertificateQueryRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiQueryObjectReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-custom-trusted-ca-certificates"
     data_obj = {"body": data}

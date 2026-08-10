@@ -13,14 +13,16 @@ async def show_threat_layers(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiQueryRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiQueryRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ThreatLayersQueryReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-threat-layers"
     data_obj = {"body": data}

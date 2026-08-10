@@ -15,14 +15,16 @@ async def add_multicast_address_range(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : MultiCastAddressRangeRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : MultiCastAddressRangeRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     MultiCastAddressRangeReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-multicast-address-range"
     data_obj = {"body": data}

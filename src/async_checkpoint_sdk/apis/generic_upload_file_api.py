@@ -11,14 +11,16 @@ async def generic_upload_file(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : GenericUploadFileRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : GenericUploadFileRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     GenericUploadFileReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/generic-upload-file"
     data_obj = {"body": data}

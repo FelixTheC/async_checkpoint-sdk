@@ -15,14 +15,16 @@ async def unlock_administrator(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiOkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/unlock-administrator"
     data_obj = {"body": data}

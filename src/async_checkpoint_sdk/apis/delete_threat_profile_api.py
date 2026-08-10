@@ -15,14 +15,16 @@ async def delete_threat_profile(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestDelete [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestDelete
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiTaskReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/delete-threat-profile"
     data_obj = {"body": data}

@@ -13,14 +13,16 @@ async def clone_package(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : PolicyPackageRequestClone [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : PolicyPackageRequestClone
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiTaskReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/clone-package"
     data_obj = {"body": data}

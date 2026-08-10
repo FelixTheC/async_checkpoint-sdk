@@ -11,14 +11,16 @@ async def show_ips_status(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : IpsStatusRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : IpsStatusRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     IpsStatusReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-ips-status"
     data_obj = {"body": data}

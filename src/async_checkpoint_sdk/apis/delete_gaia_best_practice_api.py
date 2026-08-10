@@ -15,14 +15,16 @@ async def delete_gaia_best_practice(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ComplianceGaiaBestPracticeRequestDelete [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ComplianceGaiaBestPracticeRequestDelete
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiOkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/delete-gaia-best-practice"
     data_obj = {"body": data}

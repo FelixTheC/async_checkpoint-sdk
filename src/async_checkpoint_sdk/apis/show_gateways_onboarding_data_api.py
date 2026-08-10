@@ -11,14 +11,16 @@ async def show_gateways_onboarding_data(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : OnboardingDataRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : OnboardingDataRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     OnboardingDataReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-gateways-onboarding-data"
     data_obj = {"body": data}

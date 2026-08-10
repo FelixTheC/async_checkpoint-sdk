@@ -15,14 +15,16 @@ async def show_identity_provider(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     IdentityProviderReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-identity-provider"
     data_obj = {"body": data}

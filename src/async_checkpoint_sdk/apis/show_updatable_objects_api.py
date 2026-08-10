@@ -13,7 +13,7 @@ async def show_updatable_objects(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
+    client : ClientSession
         data : ObjectInGroupQueryRequest [Argument]
     config : Config [Argument]
     kwargs : [Keyword arguments]
@@ -28,7 +28,17 @@ async def show_updatable_objects(
 
     Returns
     -------
+    ApiQueryObjectReply.
+    data : ObjectInGroupQueryRequest
+        data : ObjectInGroupQueryRequest [Argument].
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
+
+    Returns
+    -------
     ApiQueryObjectReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-updatable-objects"
     data_obj = {"body": data}

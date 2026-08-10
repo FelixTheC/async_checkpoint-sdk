@@ -13,14 +13,16 @@ async def uninstall_software_package(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : DeploymentCommandRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : DeploymentCommandRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     DeploymentCommandReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/uninstall-software-package"
     data_obj = {"body": data}

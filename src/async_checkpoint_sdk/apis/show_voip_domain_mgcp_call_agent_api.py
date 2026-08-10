@@ -15,14 +15,16 @@ async def show_voip_domain_mgcp_call_agent(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     MgcpCallAgentReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-voip-domain-mgcp-call-agent"
     data_obj = {"body": data}

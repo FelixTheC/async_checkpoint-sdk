@@ -13,14 +13,16 @@ async def set_data_type_compound_group(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : CompoundGroupRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : CompoundGroupRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     CompoundGroupReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-data-type-compound-group"
     data_obj = {"body": data}

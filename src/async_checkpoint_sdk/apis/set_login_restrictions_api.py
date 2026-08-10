@@ -15,14 +15,16 @@ async def set_login_restrictions(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : LoginRestrictionsRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : LoginRestrictionsRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     LoginRestrictionsReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-login-restrictions"
     data_obj = {"body": data}

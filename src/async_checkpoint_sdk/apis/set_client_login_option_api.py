@@ -15,8 +15,8 @@ async def set_client_login_option(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ClientLoginOptionRequestEdit [Argument]
+    client : ClientSession
+    data : ClientLoginOptionRequestEdit
         config : Config [Argument]
     kwargs : [Keyword arguments]
 
@@ -38,7 +38,17 @@ async def set_client_login_option(
 
     Returns
     -------
+    ClientLoginOptionReply.
+    config : SDKConfig
+        data : ClientLoginOptionRequestEdit [Argument]
+        config : Config [Argument].
+    kwargs : Any
+        Keyword arguments
+
+    Returns
+    -------
     ClientLoginOptionReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-client-login-option"
     data_obj = {"body": data}

@@ -13,14 +13,16 @@ async def set_trust(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : SetTrustRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : SetTrustRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     SetTrustReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-trust"
     data_obj = {"body": data}

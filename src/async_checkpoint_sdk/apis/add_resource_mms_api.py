@@ -13,14 +13,16 @@ async def add_resource_mms(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : MmsResourceRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : MmsResourceRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     MmsResourceReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-resource-mms"
     data_obj = {"body": data}

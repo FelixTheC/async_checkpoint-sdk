@@ -15,14 +15,16 @@ async def show_vpn_cloud_gateway(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     VpnCloudGatewayReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-vpn-cloud-gateway"
     data_obj = {"body": data}

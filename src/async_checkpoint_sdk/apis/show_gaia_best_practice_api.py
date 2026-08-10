@@ -17,14 +17,16 @@ async def show_gaia_best_practice(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ComplianceGaiaBestPracticeRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ComplianceGaiaBestPracticeRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ComplianceGaiaBestPracticeReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-gaia-best-practice"
     data_obj = {"body": data}

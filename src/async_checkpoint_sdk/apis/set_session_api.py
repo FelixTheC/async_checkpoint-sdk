@@ -13,14 +13,16 @@ async def set_session(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : WorkSessionRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : WorkSessionRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     WorkSessionReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-session"
     data_obj = {"body": data}

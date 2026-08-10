@@ -17,14 +17,16 @@ async def show_mobile_access_rulebase(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : QueryMobileApplicationsRulebaseRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : QueryMobileApplicationsRulebaseRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     QueryMobileApplicationsRulebaseReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-mobile-access-rulebase"
     data_obj = {"body": data}

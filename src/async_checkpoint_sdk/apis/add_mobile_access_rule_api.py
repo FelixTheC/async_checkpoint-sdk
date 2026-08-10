@@ -15,14 +15,16 @@ async def add_mobile_access_rule(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : MobileApplicationsRuleRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : MobileApplicationsRuleRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     MobileApplicationsRuleReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-mobile-access-rule"
     data_obj = {"body": data}

@@ -13,14 +13,16 @@ async def test_trust(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : TrustRequestBase [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : TrustRequestBase
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     TrustStatusReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/test-trust"
     data_obj = {"body": data}

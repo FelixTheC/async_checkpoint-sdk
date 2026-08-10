@@ -15,14 +15,16 @@ async def show_network_feed(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     NetworkFeedReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-network-feed"
     data_obj = {"body": data}

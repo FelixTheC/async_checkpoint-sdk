@@ -13,14 +13,16 @@ async def export_smart_task(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ExportSmartTaskApiRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ExportSmartTaskApiRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ExportSmartTaskReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/export-smart-task"
     data_obj = {"body": data}

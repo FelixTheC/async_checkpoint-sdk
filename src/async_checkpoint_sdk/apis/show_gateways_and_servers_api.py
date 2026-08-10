@@ -15,14 +15,16 @@ async def show_gateways_and_servers(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiQueryIgnoreFilterAndLiveRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiQueryIgnoreFilterAndLiveRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     QueryGatewaysServersReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-gateways-and-servers"
     data_obj = {"body": data}

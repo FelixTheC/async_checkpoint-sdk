@@ -15,14 +15,16 @@ async def set_identity_sharing_key(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ScaledIdentitySharingKeyRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ScaledIdentitySharingKeyRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ScaledIdentitySharingKeyReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-identity-sharing-key"
     data_obj = {"body": data}

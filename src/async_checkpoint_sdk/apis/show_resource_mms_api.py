@@ -15,14 +15,16 @@ async def show_resource_mms(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     MmsResourceReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-resource-mms"
     data_obj = {"body": data}

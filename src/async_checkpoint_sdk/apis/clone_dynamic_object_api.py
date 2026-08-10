@@ -13,14 +13,16 @@ async def clone_dynamic_object(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : DynamicObjectRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : DynamicObjectRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     DynamicObjectReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/clone-dynamic-object"
     data_obj = {"body": data}

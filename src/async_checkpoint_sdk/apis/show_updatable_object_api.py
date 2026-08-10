@@ -15,7 +15,7 @@ async def show_updatable_object(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
+    client : ClientSession
         data : ApiVisualCPObjectIdentifierRequestShow [Argument]
     config : Config [Argument]
     kwargs : [Keyword arguments]
@@ -30,7 +30,17 @@ async def show_updatable_object(
 
     Returns
     -------
+    UpdatableObjectReply.
+    data : ApiVisualCPObjectIdentifierRequestShow
+        data : ApiVisualCPObjectIdentifierRequestShow [Argument].
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
+
+    Returns
+    -------
     UpdatableObjectReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-updatable-object"
     data_obj = {"body": data}

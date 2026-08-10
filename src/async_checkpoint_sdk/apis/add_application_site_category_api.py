@@ -17,14 +17,16 @@ async def add_application_site_category(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApplicationSiteCategoryRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApplicationSiteCategoryRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApplicationSiteCategoryReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-application-site-category"
     data_obj = {"body": data}

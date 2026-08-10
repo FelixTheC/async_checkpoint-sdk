@@ -13,14 +13,16 @@ async def connect_cloud_services(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : CloudConnectMgmtRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : CloudConnectMgmtRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     CloudServicesStatusReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/connect-cloud-services"
     data_obj = {"body": data}

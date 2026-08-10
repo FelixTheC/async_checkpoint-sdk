@@ -11,14 +11,16 @@ async def show_fwm_sid(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ShowFwmSidRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ShowFwmSidRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ShowFwmSidReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-fwm-sid"
     data_obj = {"body": data}

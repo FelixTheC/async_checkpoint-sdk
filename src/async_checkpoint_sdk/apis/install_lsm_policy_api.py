@@ -13,14 +13,16 @@ async def install_lsm_policy(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : LsmInstallPolicyRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : LsmInstallPolicyRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     LsmBaseCommandReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/install-lsm-policy"
     data_obj = {"body": data}

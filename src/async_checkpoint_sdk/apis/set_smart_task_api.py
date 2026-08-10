@@ -13,14 +13,16 @@ async def set_smart_task(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : SmartTaskRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : SmartTaskRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     SmartTaskReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-smart-task"
     data_obj = {"body": data}

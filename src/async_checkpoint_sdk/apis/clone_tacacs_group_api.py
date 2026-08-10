@@ -13,14 +13,16 @@ async def clone_tacacs_group(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : TacacsGroupRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : TacacsGroupRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     TacacsGroupReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/clone-tacacs-group"
     data_obj = {"body": data}

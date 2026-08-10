@@ -13,14 +13,16 @@ async def add_service_tcp(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : TcpServiceRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : TcpServiceRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     TcpServiceReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-service-tcp"
     data_obj = {"body": data}

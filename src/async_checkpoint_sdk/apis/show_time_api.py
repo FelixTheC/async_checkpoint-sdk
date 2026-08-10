@@ -15,14 +15,16 @@ async def show_time(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     TimeReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-time"
     data_obj = {"body": data}

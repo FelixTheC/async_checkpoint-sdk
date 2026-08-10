@@ -13,14 +13,16 @@ async def show_layer_structure(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : LayerStructureRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : LayerStructureRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     LayerStructureReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-layer-structure"
     data_obj = {"body": data}

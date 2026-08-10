@@ -13,14 +13,16 @@ async def show_automatic_purge(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : AutomaticPurgeRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : AutomaticPurgeRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     AutomaticPurgeReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-automatic-purge"
     data_obj = {"body": data}

@@ -15,14 +15,16 @@ async def show_application_site(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApplicationSiteIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApplicationSiteIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApplicationSiteReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-application-site"
     data_obj = {"body": data}

@@ -13,14 +13,16 @@ async def set_objects_batch(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : BatchRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : BatchRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     BatchReplyTask
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-objects-batch"
     data_obj = {"body": data}

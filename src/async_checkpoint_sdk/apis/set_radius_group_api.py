@@ -13,14 +13,16 @@ async def set_radius_group(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : RadiusGroupRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : RadiusGroupRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     RadiusGroupReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-radius-group"
     data_obj = {"body": data}

@@ -11,14 +11,16 @@ async def run_service(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ServiceRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ServiceRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ServiceReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/run-service"
     data_obj = {"body": data}

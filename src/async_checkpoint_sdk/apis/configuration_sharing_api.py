@@ -11,14 +11,16 @@ async def configuration_sharing(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ShoRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ShoRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ShoReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/configuration-sharing"
     data_obj = {"body": data}

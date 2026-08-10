@@ -14,14 +14,16 @@ async def abort_get_interfaces(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : GetInterfacesAbortRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : GetInterfacesAbortRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiOkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/abort-get-interfaces"
     data_obj = {"body": data}

@@ -13,14 +13,16 @@ async def set_data_type_patterns(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : PatternsDataTypeRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : PatternsDataTypeRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     PatternsDataTypeReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-data-type-patterns"
     data_obj = {"body": data}

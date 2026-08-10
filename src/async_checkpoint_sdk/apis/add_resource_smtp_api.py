@@ -13,14 +13,16 @@ async def add_resource_smtp(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : SmtpResourceRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : SmtpResourceRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     SmtpResourceReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-resource-smtp"
     data_obj = {"body": data}

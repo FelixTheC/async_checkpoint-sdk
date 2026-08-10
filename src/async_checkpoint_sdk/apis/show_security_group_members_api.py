@@ -13,14 +13,16 @@ async def show_security_group_members(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : SecurityGroupMembersRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : SecurityGroupMembersRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     SecurityGroupMembersReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-security-group-members"
     data_obj = {"body": data}

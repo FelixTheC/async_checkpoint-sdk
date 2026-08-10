@@ -13,14 +13,16 @@ async def add_voip_domain_sip_proxy(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : SipProxyRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : SipProxyRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     SipProxyReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-voip-domain-sip-proxy"
     data_obj = {"body": data}

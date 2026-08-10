@@ -13,14 +13,16 @@ async def clone_identity_provider(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : IdentityProviderRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : IdentityProviderRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     IdentityProviderReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/clone-identity-provider"
     data_obj = {"body": data}

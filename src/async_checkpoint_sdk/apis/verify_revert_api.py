@@ -13,14 +13,16 @@ async def verify_revert(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : VerifyRevertRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : VerifyRevertRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiTaskReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/verify-revert"
     data_obj = {"body": data}

@@ -11,14 +11,16 @@ async def run_init_interfaces(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : RunInitInterfacesRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : RunInitInterfacesRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     RunInitInterfacesReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/run-init-interfaces"
     data_obj = {"body": data}

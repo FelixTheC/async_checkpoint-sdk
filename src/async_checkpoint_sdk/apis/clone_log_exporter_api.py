@@ -13,14 +13,16 @@ async def clone_log_exporter(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : LogExporterRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : LogExporterRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     LogExporterReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/clone-log-exporter"
     data_obj = {"body": data}

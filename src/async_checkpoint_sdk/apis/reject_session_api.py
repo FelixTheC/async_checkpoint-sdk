@@ -13,14 +13,16 @@ async def reject_session(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : WorkflowRejectRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : WorkflowRejectRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiOkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/reject-session"
     data_obj = {"body": data}

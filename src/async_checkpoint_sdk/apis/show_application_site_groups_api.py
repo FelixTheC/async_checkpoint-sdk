@@ -15,14 +15,16 @@ async def show_application_site_groups(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ObjectInGroupWithMembersQueryRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ObjectInGroupWithMembersQueryRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiQueryObjectReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-application-site-groups"
     data_obj = {"body": data}

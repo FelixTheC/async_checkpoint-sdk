@@ -13,14 +13,16 @@ async def show_validations(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ValidationsQueryRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ValidationsQueryRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ValidationsReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-validations"
     data_obj = {"body": data}

@@ -13,14 +13,16 @@ async def add_access_role(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : AccessRoleRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : AccessRoleRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     AccessRoleReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-access-role"
     data_obj = {"body": data}

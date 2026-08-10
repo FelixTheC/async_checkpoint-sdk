@@ -15,14 +15,16 @@ async def add_resource_uri_for_qos(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : UriForQosResourceRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : UriForQosResourceRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     UriForQosResourceReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-resource-uri-for-qos"
     data_obj = {"body": data}

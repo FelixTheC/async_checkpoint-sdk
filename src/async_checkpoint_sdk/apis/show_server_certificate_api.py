@@ -15,14 +15,16 @@ async def show_server_certificate(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ServerCertificateReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-server-certificate"
     data_obj = {"body": data}

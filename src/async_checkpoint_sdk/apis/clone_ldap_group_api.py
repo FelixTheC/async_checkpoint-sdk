@@ -13,14 +13,16 @@ async def clone_ldap_group(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : LdapGroupRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : LdapGroupRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     LdapGroupReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/clone-ldap-group"
     data_obj = {"body": data}

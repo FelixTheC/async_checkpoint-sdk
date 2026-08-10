@@ -13,14 +13,16 @@ async def set_wildcard(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : WildcardRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : WildcardRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     WildcardReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-wildcard"
     data_obj = {"body": data}

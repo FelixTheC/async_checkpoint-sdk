@@ -13,14 +13,16 @@ async def set_network_feed(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : NetworkFeedRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : NetworkFeedRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     NetworkFeedReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-network-feed"
     data_obj = {"body": data}

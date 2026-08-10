@@ -13,14 +13,16 @@ async def unsubscribe_notification(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : NotificationUnsubscribeRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : NotificationUnsubscribeRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiOkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/unsubscribe-notification"
     data_obj = {"body": data}

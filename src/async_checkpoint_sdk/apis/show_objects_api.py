@@ -11,14 +11,16 @@ async def show_objects(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : QueryObjectsRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : QueryObjectsRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     QueryObjectsReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-objects"
     data_obj = {"body": data}

@@ -13,14 +13,16 @@ async def show_nat_section(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : NatSectionIdentifierRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : NatSectionIdentifierRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     NatSectionReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-nat-section"
     data_obj = {"body": data}

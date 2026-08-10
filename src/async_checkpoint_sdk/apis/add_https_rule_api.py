@@ -13,14 +13,16 @@ async def add_https_rule(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : TLSRuleRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : TLSRuleRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     TLSRuleReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-https-rule"
     data_obj = {"body": data}

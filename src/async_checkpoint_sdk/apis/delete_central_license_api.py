@@ -15,14 +15,16 @@ async def delete_central_license(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : DeleteCentralLicensesRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : DeleteCentralLicensesRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     CentralLicensesListReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/delete-central-license"
     data_obj = {"body": data}

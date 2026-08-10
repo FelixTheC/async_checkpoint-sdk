@@ -13,14 +13,16 @@ async def show_mdss(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : MdsQueryRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : MdsQueryRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiQueryObjectReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-mdss"
     data_obj = {"body": data}

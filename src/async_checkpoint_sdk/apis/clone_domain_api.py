@@ -13,7 +13,7 @@ async def clone_domain(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
+    client : ClientSession
         data : CloneDomainRequest [Argument]
         data-toggle="modal" href=https://support.checkpoint.com/results/sk/sk180631><u>sk180631</u></a></span>.
     config : Config [Argument]
@@ -75,7 +75,81 @@ async def clone_domain(
 
     Returns
     -------
+    MigrationReply.
+    data : CloneDomainRequest
+        data : CloneDomainRequest [Argument]
+        data-toggle="modal" href=https://support.checkpoint.com/results/sk/sk180631><u>sk180631</u></a></span>.
+    config : Config [Argument]
+    kwargs : [Keyword arguments]
+
+    Returns
+    -------
     MigrationReply
+    data : CloneDomainRequest [Argument]
+        data : CloneDomainRequest [Argument]
+        data-toggle="modal" href=https://support.checkpoint.com/results/sk/sk180631><u>sk180631</u></a></span>.
+    config : Config [Argument]
+    kwargs : [Keyword arguments]
+
+    Returns
+    -------
+    MigrationReply
+    config : Config [Argument]
+        data : CloneDomainRequest [Argument]
+        data-toggle="modal" href=https://support.checkpoint.com/results/sk/sk180631><u>sk180631</u></a></span>.
+    config : Config [Argument]
+    kwargs : [Keyword arguments]
+
+    Returns
+    -------
+    MigrationReply
+    data : CloneDomainRequest [Argument]
+        data : CloneDomainRequest [Argument]
+        data-toggle="modal" href=https://support.checkpoint.com/results/sk/sk180631><u>sk180631</u></a></span>.
+    config : Config [Argument]
+    kwargs : [Keyword arguments]
+
+    Returns
+    -------
+    MigrationReply
+    data : CloneDomainRequest [Argument]
+        data : CloneDomainRequest [Argument]
+        data-toggle="modal" href=https://support.checkpoint.com/results/sk/sk180631><u>sk180631</u></a></span>.
+    config : Config [Argument]
+    kwargs : [Keyword arguments]
+
+    Returns
+    -------
+    MigrationReply
+    config : Config [Argument]
+        data : CloneDomainRequest [Argument]
+        data-toggle="modal" href=https://support.checkpoint.com/results/sk/sk180631><u>sk180631</u></a></span>.
+    config : Config [Argument]
+    kwargs : [Keyword arguments]
+
+    Returns
+    -------
+    MigrationReply
+    config : Config [Argument]
+        data : CloneDomainRequest [Argument]
+        data-toggle="modal" href=https://support.checkpoint.com/results/sk/sk180631><u>sk180631</u></a></span>.
+    config : Config [Argument]
+    kwargs : [Keyword arguments]
+
+    Returns
+    -------
+    MigrationReply.
+    config : SDKConfig
+        data : CloneDomainRequest [Argument]
+        data-toggle="modal" href=https://support.checkpoint.com/results/sk/sk180631><u>sk180631</u></a></span>.
+    config : Config [Argument].
+    kwargs : Any
+        Keyword arguments
+
+    Returns
+    -------
+    MigrationReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/clone-domain"
     data_obj = {"body": data}

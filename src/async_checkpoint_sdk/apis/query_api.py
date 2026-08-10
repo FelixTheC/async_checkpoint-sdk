@@ -11,14 +11,16 @@ async def query(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : CpmQueryRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : CpmQueryRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     CpmQueryReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/query"
     data_obj = {"body": data}

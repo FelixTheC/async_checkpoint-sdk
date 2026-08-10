@@ -13,14 +13,16 @@ async def show_central_license(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ShowCentralLicenseRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ShowCentralLicenseRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     CentralLicensesReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-central-license"
     data_obj = {"body": data}

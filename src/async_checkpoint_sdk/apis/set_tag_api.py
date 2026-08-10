@@ -13,14 +13,16 @@ async def set_tag(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : TagRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : TagRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     TagReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-tag"
     data_obj = {"body": data}

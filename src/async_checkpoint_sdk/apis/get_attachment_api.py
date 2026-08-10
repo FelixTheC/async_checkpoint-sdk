@@ -13,7 +13,7 @@ async def get_attachment(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
+    client : ClientSession
         data : PacketCaptureRequest [Argument]
     config : Config [Argument]
     kwargs : [Keyword arguments]
@@ -36,7 +36,17 @@ async def get_attachment(
 
     Returns
     -------
+    PacketCaptureReply.
+    data : PacketCaptureRequest
+        data : PacketCaptureRequest [Argument].
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
+
+    Returns
+    -------
     PacketCaptureReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/get-attachment"
     data_obj = {"body": data}

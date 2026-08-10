@@ -13,14 +13,16 @@ async def set_mds(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : MdsRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : MdsRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     MdsReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-mds"
     data_obj = {"body": data}

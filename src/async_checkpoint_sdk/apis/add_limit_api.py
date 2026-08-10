@@ -13,14 +13,16 @@ async def add_limit(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : LimitRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : LimitRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     LimitReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-limit"
     data_obj = {"body": data}

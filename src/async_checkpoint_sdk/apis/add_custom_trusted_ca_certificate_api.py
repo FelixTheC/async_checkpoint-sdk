@@ -17,14 +17,16 @@ async def add_custom_trusted_ca_certificate(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : CustomTrustedCaCertificateRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : CustomTrustedCaCertificateRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     CustomTrustedCaCertificateReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-custom-trusted-ca-certificate"
     data_obj = {"body": data}

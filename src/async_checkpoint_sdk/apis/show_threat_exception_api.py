@@ -15,14 +15,16 @@ async def show_threat_exception(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ThreatExceptionIdentifierRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ThreatExceptionIdentifierRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ThreatExceptionReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-threat-exception"
     data_obj = {"body": data}

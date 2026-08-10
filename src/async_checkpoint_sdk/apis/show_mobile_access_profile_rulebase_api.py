@@ -17,14 +17,16 @@ async def show_mobile_access_profile_rulebase(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : QueryMobileProfileRulebaseRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : QueryMobileProfileRulebaseRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     QueryMobileProfileRulebaseReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-mobile-access-profile-rulebase"
     data_obj = {"body": data}

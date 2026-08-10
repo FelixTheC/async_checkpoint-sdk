@@ -13,14 +13,16 @@ async def set_threat_protection(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ProtectionRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ProtectionRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ProtectionReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-threat-protection"
     data_obj = {"body": data}

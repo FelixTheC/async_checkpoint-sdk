@@ -13,8 +13,8 @@ async def add_passcode_profile(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : PasscodeProfileRequestNew [Argument]
+    client : ClientSession
+    data : PasscodeProfileRequestNew
         config : Config [Argument]
     kwargs : [Keyword arguments]
 
@@ -36,7 +36,17 @@ async def add_passcode_profile(
 
     Returns
     -------
+    PasscodeProfileReply.
+    config : SDKConfig
+        data : PasscodeProfileRequestNew [Argument]
+        config : Config [Argument].
+    kwargs : Any
+        Keyword arguments
+
+    Returns
+    -------
     PasscodeProfileReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-passcode-profile"
     data_obj = {"body": data}

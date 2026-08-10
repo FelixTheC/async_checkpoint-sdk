@@ -13,14 +13,16 @@ async def set_securemote_dns_server(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : SecuRemoteDnsRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : SecuRemoteDnsRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     SecuRemoteDnsReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-securemote-dns-server"
     data_obj = {"body": data}

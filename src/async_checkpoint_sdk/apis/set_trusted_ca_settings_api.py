@@ -15,14 +15,16 @@ async def set_trusted_ca_settings(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : TrustedCaSettingsRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : TrustedCaSettingsRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     TrustedCaSettingsReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-trusted-ca-settings"
     data_obj = {"body": data}

@@ -13,14 +13,16 @@ async def show_idp_administrator_groups(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : IdpGroupQueryRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : IdpGroupQueryRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiQueryObjectReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-idp-administrator-groups"
     data_obj = {"body": data}

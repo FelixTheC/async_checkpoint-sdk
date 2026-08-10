@@ -13,14 +13,16 @@ async def add_https_section(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : TLSSectionRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : TLSSectionRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     TLSSectionReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-https-section"
     data_obj = {"body": data}

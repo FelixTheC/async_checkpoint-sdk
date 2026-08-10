@@ -13,14 +13,16 @@ async def show_packages(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : PolicyPackageQueryRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : PolicyPackageQueryRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     PackagesQueryReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-packages"
     data_obj = {"body": data}

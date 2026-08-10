@@ -17,14 +17,16 @@ async def show_software_packages_per_targets(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : PackagesPerTargetCommandRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : PackagesPerTargetCommandRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     PackagesPerTargetCommandReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-software-packages-per-targets"
     data_obj = {"body": data}

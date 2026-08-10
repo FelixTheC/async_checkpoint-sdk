@@ -13,14 +13,16 @@ async def add_threat_protections(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : AddProtectionsRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : AddProtectionsRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiTaskReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-threat-protections"
     data_obj = {"body": data}

@@ -15,14 +15,16 @@ async def delete_https_section(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : TLSSectionIdentifierRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : TLSSectionIdentifierRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiOkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/delete-https-section"
     data_obj = {"body": data}

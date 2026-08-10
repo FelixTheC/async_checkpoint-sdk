@@ -13,7 +13,7 @@ async def run_app_control_update(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
+    client : ClientSession
         data : AppiUpdateRequest [Argument]
     config : Config [Argument]
     kwargs : [Keyword arguments]
@@ -36,7 +36,17 @@ async def run_app_control_update(
 
     Returns
     -------
+    AppiUpdateReply.
+    data : AppiUpdateRequest
+        data : AppiUpdateRequest [Argument].
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
+
+    Returns
+    -------
     AppiUpdateReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/run-app-control-update"
     data_obj = {"body": data}

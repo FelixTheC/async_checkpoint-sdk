@@ -13,14 +13,16 @@ async def show_smart_tasks(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiQueryRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiQueryRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiQueryObjectReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-smart-tasks"
     data_obj = {"body": data}

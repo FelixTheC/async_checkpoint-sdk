@@ -15,14 +15,16 @@ async def install_software_package(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : DeploymentCommandRequestInstall [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : DeploymentCommandRequestInstall
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     DeploymentCommandReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/install-software-package"
     data_obj = {"body": data}

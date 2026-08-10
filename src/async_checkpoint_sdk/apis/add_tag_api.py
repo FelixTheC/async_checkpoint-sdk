@@ -11,14 +11,16 @@ async def add_tag(client: ClientSession, data: TagRequestNew, config: SDKConfig,
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : TagRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : TagRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     TagReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-tag"
     data_obj = {"body": data}

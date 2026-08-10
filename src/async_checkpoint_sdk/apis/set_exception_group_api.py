@@ -15,14 +15,16 @@ async def set_exception_group(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ThreatExceptionGroupRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ThreatExceptionGroupRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ThreatExceptionGroupReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-exception-group"
     data_obj = {"body": data}

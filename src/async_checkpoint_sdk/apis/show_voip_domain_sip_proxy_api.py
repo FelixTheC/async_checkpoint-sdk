@@ -15,14 +15,16 @@ async def show_voip_domain_sip_proxy(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     SipProxyReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-voip-domain-sip-proxy"
     data_obj = {"body": data}

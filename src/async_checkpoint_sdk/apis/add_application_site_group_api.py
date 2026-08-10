@@ -15,14 +15,16 @@ async def add_application_site_group(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApplicationSiteGroupRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApplicationSiteGroupRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApplicationSiteGroupReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-application-site-group"
     data_obj = {"body": data}

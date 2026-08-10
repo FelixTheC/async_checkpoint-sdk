@@ -13,6 +13,16 @@ class SDKConfig(BaseModel):
 
     @classmethod
     def load_from_toml(cls, file: Path) -> SDKConfig:
+        """
+        Parameters
+        ----------
+        file : Path
+
+        Returns
+        -------
+        SDKConfig
+
+        """
         with file.open("rb") as fp:
             data = tomllib.load(fp)
 

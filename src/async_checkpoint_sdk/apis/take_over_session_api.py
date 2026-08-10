@@ -13,14 +13,16 @@ async def take_over_session(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : WorkSessionTakeOverRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : WorkSessionTakeOverRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     WorkSessionReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/take-over-session"
     data_obj = {"body": data}

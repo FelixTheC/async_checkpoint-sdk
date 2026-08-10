@@ -13,14 +13,16 @@ async def verify_management_license(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : VerifyLicRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : VerifyLicRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     VerifyLicReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/verify-management-license"
     data_obj = {"body": data}

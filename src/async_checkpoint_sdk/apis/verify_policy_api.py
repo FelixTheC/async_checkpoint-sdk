@@ -13,14 +13,16 @@ async def verify_policy(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : VerifyPolicyRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : VerifyPolicyRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     VerifyPolicyReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/verify-policy"
     data_obj = {"body": data}

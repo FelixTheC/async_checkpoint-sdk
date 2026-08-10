@@ -15,14 +15,16 @@ async def set_legacy_virtual_system(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : LegacyVirtualSystemRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : LegacyVirtualSystemRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     LegacyVirtualSystemReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-legacy-virtual-system"
     data_obj = {"body": data}

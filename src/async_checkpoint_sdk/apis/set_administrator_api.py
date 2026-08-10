@@ -13,14 +13,16 @@ async def set_administrator(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : AdministratorRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : AdministratorRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     AdministratorReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-administrator"
     data_obj = {"body": data}

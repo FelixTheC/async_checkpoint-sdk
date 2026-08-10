@@ -11,14 +11,16 @@ async def show_rule_candidates(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ShowRuleCandidateRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ShowRuleCandidateRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ShowRuleCandidateReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-rule-candidates"
     data_obj = {"body": data}

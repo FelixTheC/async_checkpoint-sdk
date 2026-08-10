@@ -13,14 +13,16 @@ async def add_service_icmp6(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ServiceIcmp6RequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ServiceIcmp6RequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ServiceIcmp6Reply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-service-icmp6"
     data_obj = {"body": data}

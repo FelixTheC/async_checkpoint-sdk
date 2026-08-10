@@ -13,14 +13,16 @@ async def show_interfaces(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : InterfacesQueryRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : InterfacesQueryRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     InterfaceQueryReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-interfaces"
     data_obj = {"body": data}

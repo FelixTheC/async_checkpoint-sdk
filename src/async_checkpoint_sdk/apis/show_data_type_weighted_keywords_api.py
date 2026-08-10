@@ -15,14 +15,16 @@ async def show_data_type_weighted_keywords(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     WeightedWordsReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-data-type-weighted-keywords"
     data_obj = {"body": data}

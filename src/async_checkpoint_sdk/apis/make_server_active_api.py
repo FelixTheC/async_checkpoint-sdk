@@ -11,14 +11,16 @@ async def make_server_active(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : SetActiveRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : SetActiveRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     SetActiveReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/make-server-active"
     data_obj = {"body": data}

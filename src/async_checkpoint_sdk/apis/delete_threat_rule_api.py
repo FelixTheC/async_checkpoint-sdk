@@ -13,14 +13,16 @@ async def delete_threat_rule(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ThreatRuleIdentifierRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ThreatRuleIdentifierRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiOkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/delete-threat-rule"
     data_obj = {"body": data}

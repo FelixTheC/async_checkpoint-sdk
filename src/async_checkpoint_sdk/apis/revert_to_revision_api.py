@@ -13,14 +13,16 @@ async def revert_to_revision(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : RevertToRevisionRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : RevertToRevisionRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiTaskReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/revert-to-revision"
     data_obj = {"body": data}

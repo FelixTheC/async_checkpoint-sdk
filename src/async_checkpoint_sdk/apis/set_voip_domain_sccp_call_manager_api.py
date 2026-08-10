@@ -13,14 +13,16 @@ async def set_voip_domain_sccp_call_manager(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : SccpCallManagerRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : SccpCallManagerRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     SccpCallManagerReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-voip-domain-sccp-call-manager"
     data_obj = {"body": data}

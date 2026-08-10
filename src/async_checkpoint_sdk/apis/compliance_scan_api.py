@@ -14,8 +14,8 @@ async def compliance_scan(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ComplianceScanRequest [Argument]
+    client : ClientSession
+    data : ComplianceScanRequest
         config : Config [Argument]
     kwargs : [Keyword arguments]
 
@@ -37,7 +37,17 @@ async def compliance_scan(
 
     Returns
     -------
+    ComplianceScanReply.
+    config : SDKConfig
+        data : ComplianceScanRequest [Argument]
+        config : Config [Argument].
+    kwargs : Any
+        Keyword arguments
+
+    Returns
+    -------
     ComplianceScanReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/compliance-scan"
     data_obj = {"body": data}

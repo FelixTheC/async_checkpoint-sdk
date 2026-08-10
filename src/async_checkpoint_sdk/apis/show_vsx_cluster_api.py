@@ -15,14 +15,16 @@ async def show_vsx_cluster(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     VsxClusterReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-vsx-cluster"
     data_obj = {"body": data}

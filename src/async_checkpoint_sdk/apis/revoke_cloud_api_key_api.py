@@ -11,14 +11,16 @@ async def revoke_cloud_api_key(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : CloudApiKeyRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : CloudApiKeyRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiOkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/revoke-cloud-api-key"
     data_obj = {"body": data}

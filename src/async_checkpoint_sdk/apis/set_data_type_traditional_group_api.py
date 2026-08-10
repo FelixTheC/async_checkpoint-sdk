@@ -13,14 +13,16 @@ async def set_data_type_traditional_group(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : TraditionalGroupRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : TraditionalGroupRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     TraditionalGroupReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-data-type-traditional-group"
     data_obj = {"body": data}

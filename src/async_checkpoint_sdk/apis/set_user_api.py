@@ -13,14 +13,16 @@ async def set_user(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : UserRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : UserRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     UserReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-user"
     data_obj = {"body": data}

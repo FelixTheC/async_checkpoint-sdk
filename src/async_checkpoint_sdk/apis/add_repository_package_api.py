@@ -13,14 +13,16 @@ async def add_repository_package(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : AddPackageCommandRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : AddPackageCommandRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     AddPackageCommandReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-repository-package"
     data_obj = {"body": data}

@@ -11,14 +11,16 @@ async def result_link(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : WebApiResultLinkRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : WebApiResultLinkRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     WebApiResultLinkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/result-link"
     data_obj = {"body": data}

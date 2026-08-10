@@ -13,14 +13,16 @@ async def delete_api_key(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : DeleteApiKeyRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : DeleteApiKeyRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiOkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/delete-api-key"
     data_obj = {"body": data}

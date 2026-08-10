@@ -13,14 +13,16 @@ async def clone_user_template(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : UserTemplateRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : UserTemplateRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     UserTemplateReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/clone-user-template"
     data_obj = {"body": data}

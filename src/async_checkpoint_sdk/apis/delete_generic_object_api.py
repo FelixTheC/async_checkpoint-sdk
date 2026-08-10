@@ -13,14 +13,16 @@ async def delete_generic_object(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : GenericObjectIdentifierRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : GenericObjectIdentifierRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiOkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/delete-generic-object"
     data_obj = {"body": data}

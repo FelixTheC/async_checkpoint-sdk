@@ -13,7 +13,7 @@ async def discard(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
+    client : ClientSession
         data : DiscardRequest [Argument]
     config : Config [Argument]
     kwargs : [Keyword arguments]
@@ -36,7 +36,17 @@ async def discard(
 
     Returns
     -------
+    DiscardReply.
+    data : DiscardRequest
+        data : DiscardRequest [Argument].
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
+
+    Returns
+    -------
     DiscardReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/discard"
     data_obj = {"body": data}

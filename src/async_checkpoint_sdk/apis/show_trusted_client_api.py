@@ -15,14 +15,16 @@ async def show_trusted_client(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     TrustedClientReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-trusted-client"
     data_obj = {"body": data}

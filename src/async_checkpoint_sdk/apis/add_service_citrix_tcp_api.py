@@ -13,14 +13,16 @@ async def add_service_citrix_tcp(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : CitrixTcpServiceRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : CitrixTcpServiceRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     CitrixTcpServiceReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-service-citrix-tcp"
     data_obj = {"body": data}

@@ -13,14 +13,16 @@ async def clone_network(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : NetworkRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : NetworkRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     NetworkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/clone-network"
     data_obj = {"body": data}

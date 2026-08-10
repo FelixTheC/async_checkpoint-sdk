@@ -15,14 +15,16 @@ async def show_infinity_idp_machine(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     InfinityIdpMachineReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-infinity-idp-machine"
     data_obj = {"body": data}

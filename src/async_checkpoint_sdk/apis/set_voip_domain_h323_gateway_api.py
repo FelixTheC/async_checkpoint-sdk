@@ -13,14 +13,16 @@ async def set_voip_domain_h323_gateway(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : VoipGatewayRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : VoipGatewayRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     VoipGatewayReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-voip-domain-h323-gateway"
     data_obj = {"body": data}

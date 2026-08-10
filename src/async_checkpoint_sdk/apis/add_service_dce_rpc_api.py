@@ -13,14 +13,16 @@ async def add_service_dce_rpc(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : DcerpcServiceRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : DcerpcServiceRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     DcerpcServiceReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-service-dce-rpc"
     data_obj = {"body": data}

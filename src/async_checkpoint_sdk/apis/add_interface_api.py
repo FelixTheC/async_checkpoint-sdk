@@ -13,14 +13,16 @@ async def add_interface(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : InterfaceRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : InterfaceRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     InterfaceReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-interface"
     data_obj = {"body": data}

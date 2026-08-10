@@ -13,14 +13,16 @@ async def add_gsn_handover_group(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : GsnHandoverGroupRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : GsnHandoverGroupRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     GsnHandoverGroupReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-gsn-handover-group"
     data_obj = {"body": data}

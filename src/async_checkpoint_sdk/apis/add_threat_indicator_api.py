@@ -13,14 +13,16 @@ async def add_threat_indicator(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : IndicatorRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : IndicatorRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiTaskReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-threat-indicator"
     data_obj = {"body": data}

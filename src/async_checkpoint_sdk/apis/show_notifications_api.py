@@ -11,14 +11,16 @@ async def show_notifications(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : NotificationQueryRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : NotificationQueryRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     NotificationQueryReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-notifications"
     data_obj = {"body": data}

@@ -13,14 +13,16 @@ async def show_simple_gateway(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : GatewayCkpRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : GatewayCkpRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     GatewayCkpReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-simple-gateway"
     data_obj = {"body": data}

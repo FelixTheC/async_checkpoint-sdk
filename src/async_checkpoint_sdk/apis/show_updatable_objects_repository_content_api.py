@@ -17,7 +17,7 @@ async def show_updatable_objects_repository_content(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
+    client : ClientSession
         data : UpdatableObjectsRepositoryContentRequest [Argument]
     config : Config [Argument]
     kwargs : [Keyword arguments]
@@ -32,7 +32,17 @@ async def show_updatable_objects_repository_content(
 
     Returns
     -------
+    UpdatableObjectsRepositoryContentReply.
+    data : UpdatableObjectsRepositoryContentRequest
+        data : UpdatableObjectsRepositoryContentRequest [Argument].
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
+
+    Returns
+    -------
     UpdatableObjectsRepositoryContentReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-updatable-objects-repository-content"
     data_obj = {"body": data}

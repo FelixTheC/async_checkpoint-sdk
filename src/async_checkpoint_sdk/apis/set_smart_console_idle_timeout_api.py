@@ -17,14 +17,16 @@ async def set_smart_console_idle_timeout(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : SmartConsoleIdleTimeoutRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : SmartConsoleIdleTimeoutRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     SmartConsoleIdleTimeoutReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-smart-console-idle-timeout"
     data_obj = {"body": data}

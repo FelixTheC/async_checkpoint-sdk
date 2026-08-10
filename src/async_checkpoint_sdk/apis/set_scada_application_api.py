@@ -13,14 +13,16 @@ async def set_scada_application(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ScadaApplicationRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ScadaApplicationRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ScadaApplicationReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-scada-application"
     data_obj = {"body": data}

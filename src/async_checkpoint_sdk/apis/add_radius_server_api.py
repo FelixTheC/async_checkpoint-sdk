@@ -13,14 +13,16 @@ async def add_radius_server(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : RadiusRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : RadiusRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     RadiusReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-radius-server"
     data_obj = {"body": data}

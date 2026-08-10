@@ -13,14 +13,16 @@ async def set_securid_server(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : SecurIdRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : SecurIdRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     SecurIdReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-securid-server"
     data_obj = {"body": data}

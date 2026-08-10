@@ -13,14 +13,16 @@ async def clone_resource_cifs(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : CifsResourceRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : CifsResourceRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     CifsResourceReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/clone-resource-cifs"
     data_obj = {"body": data}

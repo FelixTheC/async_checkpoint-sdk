@@ -13,14 +13,16 @@ async def add_if_map_server(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : IfMapRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : IfMapRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     IfMapReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-if-map-server"
     data_obj = {"body": data}

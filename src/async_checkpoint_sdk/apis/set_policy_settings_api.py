@@ -13,14 +13,16 @@ async def set_policy_settings(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : PolicySettingsRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : PolicySettingsRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     PolicySettingsReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-policy-settings"
     data_obj = {"body": data}

@@ -15,14 +15,16 @@ async def show_smtp_server(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     SmtpServerReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-smtp-server"
     data_obj = {"body": data}

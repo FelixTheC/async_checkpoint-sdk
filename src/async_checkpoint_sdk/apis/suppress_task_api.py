@@ -11,14 +11,16 @@ async def suppress_task(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : SuppressTaskRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : SuppressTaskRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiMessageReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/suppress-task"
     data_obj = {"body": data}

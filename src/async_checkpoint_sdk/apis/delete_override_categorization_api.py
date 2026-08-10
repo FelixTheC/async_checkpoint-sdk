@@ -15,14 +15,16 @@ async def delete_override_categorization(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : OverrideCategorizationRequestDelete [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : OverrideCategorizationRequestDelete
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiOkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/delete-override-categorization"
     data_obj = {"body": data}

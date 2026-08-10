@@ -13,14 +13,16 @@ async def add_user(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : UserRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : UserRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     UserReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-user"
     data_obj = {"body": data}

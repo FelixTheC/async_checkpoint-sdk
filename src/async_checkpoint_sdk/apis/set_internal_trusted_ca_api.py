@@ -15,14 +15,16 @@ async def set_internal_trusted_ca(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : InternalTrustedCaRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : InternalTrustedCaRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     TrustedCaReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-internal-trusted-ca"
     data_obj = {"body": data}

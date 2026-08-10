@@ -13,14 +13,16 @@ async def set_idp_administrator_group(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : IdpGroupRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : IdpGroupRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     IdpGroupRoleReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-idp-administrator-group"
     data_obj = {"body": data}

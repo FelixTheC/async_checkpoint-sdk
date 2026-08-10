@@ -13,14 +13,16 @@ async def switch_session(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : WorkSessionSwitchRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : WorkSessionSwitchRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     WorkSessionReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/switch-session"
     data_obj = {"body": data}

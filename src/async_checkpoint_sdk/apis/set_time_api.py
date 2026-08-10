@@ -13,14 +13,16 @@ async def set_time(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : TimeRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : TimeRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     TimeReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-time"
     data_obj = {"body": data}

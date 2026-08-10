@@ -13,7 +13,7 @@ async def export_management(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
+    client : ClientSession
         data : UpgradeExportRequest [Argument]
         database or the primary Multi-Domain Server database or the single Domain database and the applicable Check Point
     config : Config [Argument]
@@ -43,7 +43,20 @@ async def export_management(
 
     Returns
     -------
+    UpgradeExportReply.
+    data : UpgradeExportRequest
+        database or the primary Multi-Domain Server database or the single Domain database and the applicable Check Point.
+    config : SDKConfig
+        data : UpgradeExportRequest [Argument]
+        database or the primary Multi-Domain Server database or the single Domain database and the applicable Check Point
+    config : Config [Argument].
+    kwargs : Any
+        Keyword arguments
+
+    Returns
+    -------
     UpgradeExportReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/export-management"
     data_obj = {"body": data}

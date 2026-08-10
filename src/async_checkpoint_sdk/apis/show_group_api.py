@@ -13,14 +13,16 @@ async def show_group(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : GroupRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : GroupRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     GroupReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-group"
     data_obj = {"body": data}

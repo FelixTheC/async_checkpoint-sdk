@@ -13,14 +13,16 @@ async def activate_management_blade_trial_license(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ManagementBladeTrialLicenseRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ManagementBladeTrialLicenseRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiMessageReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/activate-management-blade-trial-license"
     data_obj = {"body": data}

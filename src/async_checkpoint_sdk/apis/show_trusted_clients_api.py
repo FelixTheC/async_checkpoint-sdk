@@ -13,14 +13,16 @@ async def show_trusted_clients(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : CdsIgnoreQueryRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : CdsIgnoreQueryRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiQueryObjectReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-trusted-clients"
     data_obj = {"body": data}

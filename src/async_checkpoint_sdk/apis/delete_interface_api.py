@@ -13,14 +13,16 @@ async def delete_interface(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : InterfaceRequestDelete [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : InterfaceRequestDelete
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiOkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/delete-interface"
     data_obj = {"body": data}

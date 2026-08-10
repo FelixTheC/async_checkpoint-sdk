@@ -13,14 +13,16 @@ async def add_domain(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : LocalDomainRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : LocalDomainRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiTasksReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-domain"
     data_obj = {"body": data}

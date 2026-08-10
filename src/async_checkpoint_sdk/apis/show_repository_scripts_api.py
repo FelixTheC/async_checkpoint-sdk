@@ -13,14 +13,16 @@ async def show_repository_scripts(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ScriptQuery [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ScriptQuery
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiQueryObjectReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-repository-scripts"
     data_obj = {"body": data}

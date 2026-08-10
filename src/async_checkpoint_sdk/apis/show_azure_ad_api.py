@@ -15,14 +15,16 @@ async def show_azure_ad(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     AzureADReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-azure-ad"
     data_obj = {"body": data}

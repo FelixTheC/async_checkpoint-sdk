@@ -15,14 +15,16 @@ async def set_idp_default_assignment(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : IdpDefaultAssignmentRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : IdpDefaultAssignmentRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     IdpDefaultAssignmentReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-idp-default-assignment"
     data_obj = {"body": data}

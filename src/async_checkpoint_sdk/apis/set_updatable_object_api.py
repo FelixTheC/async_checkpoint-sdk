@@ -13,7 +13,7 @@ async def set_updatable_object(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
+    client : ClientSession
         data : UpdatableObjectRequestEdit [Argument]
     config : Config [Argument]
     kwargs : [Keyword arguments]
@@ -36,7 +36,17 @@ async def set_updatable_object(
 
     Returns
     -------
+    UpdatableObjectReply.
+    data : UpdatableObjectRequestEdit
+        data : UpdatableObjectRequestEdit [Argument].
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
+
+    Returns
+    -------
     UpdatableObjectReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-updatable-object"
     data_obj = {"body": data}

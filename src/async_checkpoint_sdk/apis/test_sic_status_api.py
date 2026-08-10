@@ -13,14 +13,16 @@ async def test_sic_status(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : SicApiRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : SicApiRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     SicStatusReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/test-sic-status"
     data_obj = {"body": data}

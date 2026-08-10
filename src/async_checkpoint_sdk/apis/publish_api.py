@@ -13,14 +13,16 @@ async def publish(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : PublishRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : PublishRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     PublishReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/publish"
     data_obj = {"body": data}

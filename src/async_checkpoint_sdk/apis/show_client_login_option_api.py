@@ -15,8 +15,8 @@ async def show_client_login_option(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
         config : Config [Argument]
     kwargs : [Keyword arguments]
 
@@ -38,7 +38,17 @@ async def show_client_login_option(
 
     Returns
     -------
+    ClientLoginOptionReply.
+    config : SDKConfig
+        data : ApiVisualCPObjectIdentifierRequestShow [Argument]
+        config : Config [Argument].
+    kwargs : Any
+        Keyword arguments
+
+    Returns
+    -------
     ClientLoginOptionReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-client-login-option"
     data_obj = {"body": data}

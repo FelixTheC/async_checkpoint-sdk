@@ -13,14 +13,16 @@ async def show_nat_rulebase(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : QueryNatRulebaseRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : QueryNatRulebaseRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     QueryNatRulebaseReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-nat-rulebase"
     data_obj = {"body": data}

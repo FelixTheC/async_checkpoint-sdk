@@ -17,14 +17,16 @@ async def set_compliance_settings(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ComplianceConfigurationSettingsSetRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ComplianceConfigurationSettingsSetRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ComplianceConfigurationSettingsReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-compliance-settings"
     data_obj = {"body": data}

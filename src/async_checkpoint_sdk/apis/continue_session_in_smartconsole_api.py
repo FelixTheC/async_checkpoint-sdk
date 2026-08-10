@@ -15,14 +15,16 @@ async def continue_session_in_smartconsole(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : WorkSessionObjectIdentifierRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : WorkSessionObjectIdentifierRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiOkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/continue-session-in-smartconsole"
     data_obj = {"body": data}

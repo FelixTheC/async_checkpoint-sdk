@@ -13,14 +13,16 @@ async def set_threat_layer(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ThreatLayerRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ThreatLayerRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ThreatLayerReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-threat-layer"
     data_obj = {"body": data}

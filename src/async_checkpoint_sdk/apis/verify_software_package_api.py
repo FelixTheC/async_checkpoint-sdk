@@ -15,14 +15,16 @@ async def verify_software_package(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : DeploymentCommandRequestVerify [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : DeploymentCommandRequestVerify
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     DeploymentCommandReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/verify-software-package"
     data_obj = {"body": data}

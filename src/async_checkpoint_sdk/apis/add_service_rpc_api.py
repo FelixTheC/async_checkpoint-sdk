@@ -13,14 +13,16 @@ async def add_service_rpc(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : RpcServiceRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : RpcServiceRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     RpcServiceReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-service-rpc"
     data_obj = {"body": data}

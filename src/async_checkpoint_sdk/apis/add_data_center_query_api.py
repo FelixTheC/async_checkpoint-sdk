@@ -13,7 +13,7 @@ async def add_data_center_query(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
+    client : ClientSession
         data : DataCenterQueryRequestNew [Argument]
     config : Config [Argument]
     kwargs : [Keyword arguments]
@@ -36,7 +36,17 @@ async def add_data_center_query(
 
     Returns
     -------
+    DataCenterQueryReply.
+    data : DataCenterQueryRequestNew
+        data : DataCenterQueryRequestNew [Argument].
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
+
+    Returns
+    -------
     DataCenterQueryReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-data-center-query"
     data_obj = {"body": data}

@@ -15,14 +15,16 @@ async def show_checkpoint_host(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     HostCkpReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-checkpoint-host"
     data_obj = {"body": data}

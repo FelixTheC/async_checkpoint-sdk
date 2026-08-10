@@ -13,14 +13,16 @@ async def install_policy(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : PolicyInstallationRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : PolicyInstallationRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     PolicyInstallationReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/install-policy"
     data_obj = {"body": data}

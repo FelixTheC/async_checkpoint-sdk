@@ -13,8 +13,8 @@ async def add_client_login_option(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ClientLoginOptionRequestNew [Argument]
+    client : ClientSession
+    data : ClientLoginOptionRequestNew
         config : Config [Argument]
     kwargs : [Keyword arguments]
 
@@ -36,7 +36,17 @@ async def add_client_login_option(
 
     Returns
     -------
+    ClientLoginOptionReply.
+    config : SDKConfig
+        data : ClientLoginOptionRequestNew [Argument]
+        config : Config [Argument].
+    kwargs : Any
+        Keyword arguments
+
+    Returns
+    -------
     ClientLoginOptionReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-client-login-option"
     data_obj = {"body": data}

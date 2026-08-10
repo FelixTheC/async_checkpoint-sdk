@@ -15,14 +15,16 @@ async def clone_multicast_address_range(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : MultiCastAddressRangeRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : MultiCastAddressRangeRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     MultiCastAddressRangeReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/clone-multicast-address-range"
     data_obj = {"body": data}

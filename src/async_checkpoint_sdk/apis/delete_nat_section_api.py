@@ -13,14 +13,16 @@ async def delete_nat_section(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : NatSectionIdentifierRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : NatSectionIdentifierRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiOkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/delete-nat-section"
     data_obj = {"body": data}

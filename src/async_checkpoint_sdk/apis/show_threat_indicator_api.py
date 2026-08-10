@@ -15,14 +15,16 @@ async def show_threat_indicator(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     IndicatorShowReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-threat-indicator"
     data_obj = {"body": data}

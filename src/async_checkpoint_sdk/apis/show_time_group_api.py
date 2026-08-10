@@ -15,14 +15,16 @@ async def show_time_group(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     TimeGroupReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-time-group"
     data_obj = {"body": data}

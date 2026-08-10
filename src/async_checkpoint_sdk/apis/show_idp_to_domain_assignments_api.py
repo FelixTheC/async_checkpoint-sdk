@@ -15,14 +15,16 @@ async def show_idp_to_domain_assignments(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : IdpToDomainAssignmentApiQueryRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : IdpToDomainAssignmentApiQueryRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiQueryObjectReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-idp-to-domain-assignments"
     data_obj = {"body": data}

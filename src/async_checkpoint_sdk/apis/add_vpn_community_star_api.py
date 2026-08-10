@@ -13,14 +13,16 @@ async def add_vpn_community_star(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : VpnStarCommunityRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : VpnStarCommunityRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     VpnStarCommunityReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-vpn-community-star"
     data_obj = {"body": data}

@@ -15,14 +15,16 @@ async def show_voip_domain_sccp_call_manager(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     SccpCallManagerReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-voip-domain-sccp-call-manager"
     data_obj = {"body": data}

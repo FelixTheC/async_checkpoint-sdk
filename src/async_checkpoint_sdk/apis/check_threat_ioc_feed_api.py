@@ -15,14 +15,16 @@ async def check_threat_ioc_feed(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : CheckIntelligenceFeedRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : CheckIntelligenceFeedRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     CdmCommandReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/check-threat-ioc-feed"
     data_obj = {"body": data}

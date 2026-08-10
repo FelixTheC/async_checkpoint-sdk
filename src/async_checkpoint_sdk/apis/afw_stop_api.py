@@ -11,14 +11,16 @@ async def afw_stop(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : AfwControlRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : AfwControlRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     AfwControlServiceReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/afw-stop"
     data_obj = {"body": data}

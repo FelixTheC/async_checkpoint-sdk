@@ -13,14 +13,16 @@ async def add_mobile_profile(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : MobileProfileRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : MobileProfileRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     MobileProfileReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-mobile-profile"
     data_obj = {"body": data}

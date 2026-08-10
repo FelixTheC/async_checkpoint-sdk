@@ -15,14 +15,16 @@ async def clone_client_login_option(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ClientLoginOptionRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ClientLoginOptionRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ClientLoginOptionReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/clone-client-login-option"
     data_obj = {"body": data}

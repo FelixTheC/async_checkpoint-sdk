@@ -15,14 +15,16 @@ async def show_service_icmp6(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ServiceIcmp6Reply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-service-icmp6"
     data_obj = {"body": data}

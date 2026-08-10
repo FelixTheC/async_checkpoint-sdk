@@ -13,14 +13,16 @@ async def set_data_center_object(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : DataCenterObjectRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : DataCenterObjectRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     DataCenterObjectReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-data-center-object"
     data_obj = {"body": data}

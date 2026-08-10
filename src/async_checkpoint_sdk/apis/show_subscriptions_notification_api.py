@@ -15,14 +15,16 @@ async def show_subscriptions_notification(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ShowNotificationSubscriptionsRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ShowNotificationSubscriptionsRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ShowNotificationSubscriptionsReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-subscriptions-notification"
     data_obj = {"body": data}

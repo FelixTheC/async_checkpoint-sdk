@@ -13,14 +13,16 @@ async def add_network(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : NetworkRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : NetworkRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     NetworkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-network"
     data_obj = {"body": data}

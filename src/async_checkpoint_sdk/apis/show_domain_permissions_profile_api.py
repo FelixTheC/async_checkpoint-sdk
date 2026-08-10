@@ -17,14 +17,16 @@ async def show_domain_permissions_profile(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     DomainPermissionsProfileReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-domain-permissions-profile"
     data_obj = {"body": data}

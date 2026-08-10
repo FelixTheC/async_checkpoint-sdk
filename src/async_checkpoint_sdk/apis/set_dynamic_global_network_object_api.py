@@ -15,14 +15,16 @@ async def set_dynamic_global_network_object(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : DynamicGlobalNetworkRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : DynamicGlobalNetworkRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     DynamicGlobalNetworkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-dynamic-global-network-object"
     data_obj = {"body": data}

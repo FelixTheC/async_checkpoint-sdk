@@ -13,14 +13,16 @@ async def add_rules_batch(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : RuleBatchRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : RuleBatchRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     BatchReplyTask
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-rules-batch"
     data_obj = {"body": data}

@@ -13,14 +13,16 @@ async def vsx_provisioning_tool(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : VptRunOperationRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : VptRunOperationRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     VptRunOperationReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/vsx-provisioning-tool"
     data_obj = {"body": data}

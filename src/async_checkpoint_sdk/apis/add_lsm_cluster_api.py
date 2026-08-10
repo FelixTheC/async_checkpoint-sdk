@@ -13,14 +13,16 @@ async def add_lsm_cluster(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : LsmClusterRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : LsmClusterRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     LsmClusterReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-lsm-cluster"
     data_obj = {"body": data}

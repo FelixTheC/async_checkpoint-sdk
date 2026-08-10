@@ -13,14 +13,16 @@ async def show_azure_ad_content(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : AzureADContentRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : AzureADContentRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     AzureADContentQueryReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-azure-ad-content"
     data_obj = {"body": data}

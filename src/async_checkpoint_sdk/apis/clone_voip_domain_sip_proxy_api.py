@@ -13,14 +13,16 @@ async def clone_voip_domain_sip_proxy(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : SipProxyRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : SipProxyRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     SipProxyReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/clone-voip-domain-sip-proxy"
     data_obj = {"body": data}

@@ -13,14 +13,16 @@ async def add_dns_domain(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : DnsDomainRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : DnsDomainRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     DnsDomainReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-dns-domain"
     data_obj = {"body": data}

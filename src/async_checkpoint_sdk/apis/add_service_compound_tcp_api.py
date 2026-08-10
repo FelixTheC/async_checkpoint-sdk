@@ -15,14 +15,16 @@ async def add_service_compound_tcp(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : CompoundTcpServiceRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : CompoundTcpServiceRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     CompoundTcpServiceReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-service-compound-tcp"
     data_obj = {"body": data}

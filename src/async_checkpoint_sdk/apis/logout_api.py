@@ -13,13 +13,15 @@ async def logout(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     WebApiLogoutReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/logout"
     async with client.post(url, raise_for_status=True, ssl=False) as response:

@@ -15,14 +15,16 @@ async def add_vpn_community_meshed(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : VpnMeshedCommunityRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : VpnMeshedCommunityRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     VpnMeshedCommunityReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-vpn-community-meshed"
     data_obj = {"body": data}

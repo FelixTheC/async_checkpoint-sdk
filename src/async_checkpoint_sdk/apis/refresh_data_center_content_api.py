@@ -13,14 +13,16 @@ async def refresh_data_center_content(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     DataCenterServerTaskReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/refresh-data-center-content"
     data_obj = {"body": data}

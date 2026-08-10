@@ -11,14 +11,16 @@ async def run_command_line(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : CommandLineRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : CommandLineRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     CommandLineReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/run-command-line"
     data_obj = {"body": data}

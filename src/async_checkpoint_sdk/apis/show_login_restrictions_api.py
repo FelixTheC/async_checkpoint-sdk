@@ -15,14 +15,16 @@ async def show_login_restrictions(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : LoginRestrictionsRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : LoginRestrictionsRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     LoginRestrictionsReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-login-restrictions"
     data_obj = {"body": data}

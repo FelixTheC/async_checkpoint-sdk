@@ -13,14 +13,16 @@ async def show_changes(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : DiffRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : DiffRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     DiffReplyTask
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-changes"
     data_obj = {"body": data}

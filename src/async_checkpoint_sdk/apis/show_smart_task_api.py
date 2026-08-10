@@ -15,14 +15,16 @@ async def show_smart_task(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     SmartTaskReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-smart-task"
     data_obj = {"body": data}

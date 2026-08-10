@@ -13,14 +13,16 @@ async def show_gateway_capabilities(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : GatewayCapabilitiesRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : GatewayCapabilitiesRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     GatewayCapabilitiesReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-gateway-capabilities"
     data_obj = {"body": data}

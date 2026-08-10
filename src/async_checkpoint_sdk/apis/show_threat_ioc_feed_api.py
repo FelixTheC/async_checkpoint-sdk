@@ -15,14 +15,16 @@ async def show_threat_ioc_feed(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     IntelligenceFeedReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-threat-ioc-feed"
     data_obj = {"body": data}

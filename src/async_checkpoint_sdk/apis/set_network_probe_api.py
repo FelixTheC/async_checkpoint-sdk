@@ -13,14 +13,16 @@ async def set_network_probe(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : NetworkProbeRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : NetworkProbeRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     NetworkProbeReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-network-probe"
     data_obj = {"body": data}

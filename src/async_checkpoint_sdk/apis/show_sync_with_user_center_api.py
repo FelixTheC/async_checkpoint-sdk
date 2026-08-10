@@ -13,14 +13,16 @@ async def show_sync_with_user_center(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : SyncUserCenterRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : SyncUserCenterRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     SyncUserCenterReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-sync-with-user-center"
     data_obj = {"body": data}

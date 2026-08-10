@@ -14,7 +14,7 @@ async def set_automatic_purge(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
+    client : ClientSession
         data : AutomaticPurgeRequest [Argument]
     config : Config [Argument]
     kwargs : [Keyword arguments]
@@ -37,7 +37,17 @@ async def set_automatic_purge(
 
     Returns
     -------
+    AutomaticPurgeReply.
+    data : AutomaticPurgeRequest
+        data : AutomaticPurgeRequest [Argument].
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
+
+    Returns
+    -------
     AutomaticPurgeReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-automatic-purge"
     data_obj = {"body": data}

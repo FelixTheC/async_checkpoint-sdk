@@ -13,14 +13,16 @@ async def add_access_rule(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : AccessRuleRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : AccessRuleRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     AccessRuleReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-access-rule"
     data_obj = {"body": data}

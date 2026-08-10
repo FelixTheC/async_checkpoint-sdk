@@ -13,14 +13,16 @@ async def delete_rules_batch(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : RuleBatchRequestDelete [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : RuleBatchRequestDelete
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     BatchReplyTask
+
     """
     url = f"https://{config.server}:{config.port}/web_api/delete-rules-batch"
     data_obj = {"body": data}

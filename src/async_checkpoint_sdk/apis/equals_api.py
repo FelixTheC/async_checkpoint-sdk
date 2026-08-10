@@ -11,14 +11,16 @@ async def equals(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : EqualsRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : EqualsRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     EqualsReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/equals"
     data_obj = {"body": data}

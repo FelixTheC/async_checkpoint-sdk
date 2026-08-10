@@ -15,14 +15,16 @@ async def set_mobile_access_profile_section(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : MobileProfileSectionRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : MobileProfileSectionRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     MobileProfileSectionReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-mobile-access-profile-section"
     data_obj = {"body": data}

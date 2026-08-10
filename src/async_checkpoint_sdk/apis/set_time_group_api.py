@@ -13,14 +13,16 @@ async def set_time_group(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : TimeGroupRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : TimeGroupRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     TimeGroupReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-time-group"
     data_obj = {"body": data}

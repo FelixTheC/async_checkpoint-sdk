@@ -13,7 +13,7 @@ async def install_database(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
+    client : ClientSession
         data : InstallDbRequest [Argument]
     config : Config [Argument]
     kwargs : [Keyword arguments]
@@ -36,7 +36,17 @@ async def install_database(
 
     Returns
     -------
+    InstallDbReply.
+    data : InstallDbRequest
+        data : InstallDbRequest [Argument].
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
+
+    Returns
+    -------
     InstallDbReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/install-database"
     data_obj = {"body": data}

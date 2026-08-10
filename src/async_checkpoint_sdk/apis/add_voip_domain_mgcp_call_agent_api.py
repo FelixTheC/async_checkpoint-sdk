@@ -13,14 +13,16 @@ async def add_voip_domain_mgcp_call_agent(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : MgcpCallAgentRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : MgcpCallAgentRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     MgcpCallAgentReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-voip-domain-mgcp-call-agent"
     data_obj = {"body": data}

@@ -17,14 +17,16 @@ async def add_mobile_access_section(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : MobileApplicationsSectionRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : MobileApplicationsSectionRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     MobileApplicationsSectionReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-mobile-access-section"
     data_obj = {"body": data}

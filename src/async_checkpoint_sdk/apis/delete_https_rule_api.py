@@ -13,14 +13,16 @@ async def delete_https_rule(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : TLSRuleIdentifierRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : TLSRuleIdentifierRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiOkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/delete-https-rule"
     data_obj = {"body": data}

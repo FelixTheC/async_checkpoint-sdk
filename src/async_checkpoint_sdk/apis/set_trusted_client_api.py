@@ -13,14 +13,16 @@ async def set_trusted_client(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : TrustedClientRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : TrustedClientRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     TrustedClientReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-trusted-client"
     data_obj = {"body": data}

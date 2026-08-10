@@ -15,14 +15,16 @@ async def show_opsec_trusted_ca(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     OpsecTrustedCaReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-opsec-trusted-ca"
     data_obj = {"body": data}

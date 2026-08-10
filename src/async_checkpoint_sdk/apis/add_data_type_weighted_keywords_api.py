@@ -13,14 +13,16 @@ async def add_data_type_weighted_keywords(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : WeightedWordsRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : WeightedWordsRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     WeightedWordsReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-data-type-weighted-keywords"
     data_obj = {"body": data}

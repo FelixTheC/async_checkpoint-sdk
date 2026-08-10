@@ -13,14 +13,16 @@ async def show_services_sctp(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ObjectInGroupQueryRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ObjectInGroupQueryRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiQueryObjectReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-services-sctp"
     data_obj = {"body": data}

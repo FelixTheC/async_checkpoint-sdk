@@ -15,14 +15,16 @@ async def show_external_trusted_ca(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     TrustedCaReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-external-trusted-ca"
     data_obj = {"body": data}

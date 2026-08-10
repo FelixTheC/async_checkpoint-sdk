@@ -13,14 +13,16 @@ async def add_ldap_group(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : LdapGroupRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : LdapGroupRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     LdapGroupReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-ldap-group"
     data_obj = {"body": data}

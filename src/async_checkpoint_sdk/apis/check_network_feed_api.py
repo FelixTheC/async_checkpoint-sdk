@@ -13,14 +13,16 @@ async def check_network_feed(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : CheckNetworkFeedRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : CheckNetworkFeedRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     CdmCommandReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/check-network-feed"
     data_obj = {"body": data}

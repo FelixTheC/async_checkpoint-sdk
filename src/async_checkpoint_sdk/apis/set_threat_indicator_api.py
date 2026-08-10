@@ -13,14 +13,16 @@ async def set_threat_indicator(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : IndicatorRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : IndicatorRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     IndicatorReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-threat-indicator"
     data_obj = {"body": data}

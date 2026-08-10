@@ -15,14 +15,16 @@ async def show_mobile_profile(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     MobileProfileReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-mobile-profile"
     data_obj = {"body": data}

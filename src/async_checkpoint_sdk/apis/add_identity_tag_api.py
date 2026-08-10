@@ -13,14 +13,16 @@ async def add_identity_tag(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : IdTagRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : IdTagRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     IdTagReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-identity-tag"
     data_obj = {"body": data}

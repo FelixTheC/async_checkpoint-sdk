@@ -11,14 +11,16 @@ async def delete_objects_by_tag(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : DeleteObjectsByTagRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : DeleteObjectsByTagRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiOkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/delete-objects-by-tag"
     data_obj = {"body": data}

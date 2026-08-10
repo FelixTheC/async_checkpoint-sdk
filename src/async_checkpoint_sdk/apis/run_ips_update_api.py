@@ -13,7 +13,7 @@ async def run_ips_update(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
+    client : ClientSession
         data : IpsUpdateRequest [Argument]
     config : Config [Argument]
     kwargs : [Keyword arguments]
@@ -44,7 +44,17 @@ async def run_ips_update(
 
     Returns
     -------
+    IpsUpdateReply.
+    data : IpsUpdateRequest
+        data : IpsUpdateRequest [Argument].
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
+
+    Returns
+    -------
     IpsUpdateReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/run-ips-update"
     data_obj = {"body": data}

@@ -11,14 +11,16 @@ async def show_version(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : VersionRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : VersionRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     VersionReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-version"
     data_obj = {"body": data}

@@ -11,14 +11,16 @@ async def add_mds(client: ClientSession, data: MdsRequestNew, config: SDKConfig,
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : MdsRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : MdsRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     MdsReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-mds"
     data_obj = {"body": data}

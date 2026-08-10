@@ -11,14 +11,16 @@ async def subscribe_notification(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : NotificationSubscribeRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : NotificationSubscribeRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     NotificationSubscribeReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/subscribe-notification"
     data_obj = {"body": data}

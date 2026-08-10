@@ -13,14 +13,16 @@ async def set_service_other(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : OtherServiceRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : OtherServiceRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     OtherServiceReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-service-other"
     data_obj = {"body": data}

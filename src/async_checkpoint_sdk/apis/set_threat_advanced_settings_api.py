@@ -15,14 +15,16 @@ async def set_threat_advanced_settings(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ThreatAdvancedSettingsRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ThreatAdvancedSettingsRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ThreatAdvancedSettingsReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-threat-advanced-settings"
     data_obj = {"body": data}

@@ -13,14 +13,16 @@ async def show_ha_status(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ShowHaStatusRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ShowHaStatusRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ShowHaStatusReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-ha-status"
     data_obj = {"body": data}

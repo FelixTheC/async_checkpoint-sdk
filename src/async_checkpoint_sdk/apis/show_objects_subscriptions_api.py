@@ -15,14 +15,16 @@ async def show_objects_subscriptions(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ShowObjectsSubscriptionsRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ShowObjectsSubscriptionsRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ShowObjectsSubscriptionsReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-objects-subscriptions"
     data_obj = {"body": data}

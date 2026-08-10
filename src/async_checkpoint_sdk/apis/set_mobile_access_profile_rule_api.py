@@ -15,14 +15,16 @@ async def set_mobile_access_profile_rule(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : MobileProfileRuleRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : MobileProfileRuleRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     MobileProfileRuleReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-mobile-access-profile-rule"
     data_obj = {"body": data}

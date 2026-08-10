@@ -13,14 +13,16 @@ async def show_application_sites(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApplicationSiteQueryRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApplicationSiteQueryRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiQueryObjectReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-application-sites"
     data_obj = {"body": data}

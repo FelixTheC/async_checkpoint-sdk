@@ -13,14 +13,16 @@ async def show_infinity_cloud_idps(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiQueryRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiQueryRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     InfinityCloudIdpQueryReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-infinity-cloud-idps"
     data_obj = {"body": data}

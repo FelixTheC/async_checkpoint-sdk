@@ -13,14 +13,16 @@ async def clone_smtp_server(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : SmtpServerRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : SmtpServerRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     SmtpServerReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/clone-smtp-server"
     data_obj = {"body": data}

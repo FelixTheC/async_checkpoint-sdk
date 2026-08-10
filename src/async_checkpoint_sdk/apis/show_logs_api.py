@@ -13,14 +13,16 @@ async def show_logs(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ShowLogsRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ShowLogsRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ShowLogsReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-logs"
     data_obj = {"body": data}

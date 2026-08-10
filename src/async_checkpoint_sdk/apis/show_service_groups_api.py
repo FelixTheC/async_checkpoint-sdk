@@ -13,14 +13,16 @@ async def show_service_groups(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ServiceGroupRequestQuery [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ServiceGroupRequestQuery
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiQueryObjectReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-service-groups"
     data_obj = {"body": data}

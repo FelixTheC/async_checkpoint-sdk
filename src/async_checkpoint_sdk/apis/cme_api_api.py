@@ -13,8 +13,8 @@ async def cme_api(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : CmeApiCmdRequest [Argument]
+    client : ClientSession
+    data : CmeApiCmdRequest
         config : Config [Argument]
     kwargs : [Keyword arguments]
 
@@ -36,7 +36,17 @@ async def cme_api(
 
     Returns
     -------
+    CmeApiCmdReply.
+    config : SDKConfig
+        data : CmeApiCmdRequest [Argument]
+        config : Config [Argument].
+    kwargs : Any
+        Keyword arguments
+
+    Returns
+    -------
     CmeApiCmdReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/cme-api"
     data_obj = {"body": data}

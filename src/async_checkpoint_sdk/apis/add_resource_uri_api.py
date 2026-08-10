@@ -13,14 +13,16 @@ async def add_resource_uri(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : UriResourceRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : UriResourceRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     UriResourceReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-resource-uri"
     data_obj = {"body": data}

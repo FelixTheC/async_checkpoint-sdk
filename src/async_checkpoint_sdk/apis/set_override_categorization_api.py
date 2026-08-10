@@ -15,14 +15,16 @@ async def set_override_categorization(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : OverrideCategorizationRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : OverrideCategorizationRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     OverrideCategorizationReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-override-categorization"
     data_obj = {"body": data}

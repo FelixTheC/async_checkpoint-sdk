@@ -13,14 +13,16 @@ async def show_data_center_object(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : DataCenterObjectRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : DataCenterObjectRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     DataCenterObjectReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-data-center-object"
     data_obj = {"body": data}

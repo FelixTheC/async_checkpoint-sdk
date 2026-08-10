@@ -13,14 +13,16 @@ async def set_opsec_trusted_ca(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : OpsecTrustedCaRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : OpsecTrustedCaRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     OpsecTrustedCaReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-opsec-trusted-ca"
     data_obj = {"body": data}

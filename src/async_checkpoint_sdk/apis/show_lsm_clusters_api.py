@@ -13,14 +13,16 @@ async def show_lsm_clusters(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ObjectInGroupQueryRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ObjectInGroupQueryRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiQueryObjectReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-lsm-clusters"
     data_obj = {"body": data}

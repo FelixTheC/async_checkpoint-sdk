@@ -15,14 +15,16 @@ async def show_default_administrator_settings(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : DefaultAdminSettingsRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : DefaultAdminSettingsRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     DefaultAdminSettingsReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-default-administrator-settings"
     data_obj = {"body": data}

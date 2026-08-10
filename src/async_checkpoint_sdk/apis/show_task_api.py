@@ -13,14 +13,16 @@ async def show_task(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : TaskRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : TaskRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     TaskReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-task"
     data_obj = {"body": data}

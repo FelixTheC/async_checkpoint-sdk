@@ -15,14 +15,16 @@ async def delete_global_assignment(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : GlobalAssignmentIdentifierRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : GlobalAssignmentIdentifierRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiTaskReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/delete-global-assignment"
     data_obj = {"body": data}

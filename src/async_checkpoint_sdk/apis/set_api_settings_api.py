@@ -15,14 +15,16 @@ async def set_api_settings(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiServerSettingsRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiServerSettingsRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiServerSettingsReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-api-settings"
     data_obj = {"body": data}

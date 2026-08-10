@@ -13,14 +13,16 @@ async def add_threat_profile(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ProfileRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ProfileRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiTaskReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-threat-profile"
     data_obj = {"body": data}

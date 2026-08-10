@@ -13,14 +13,16 @@ async def set_identity_tag(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : IdTagRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : IdTagRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     IdTagReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-identity-tag"
     data_obj = {"body": data}

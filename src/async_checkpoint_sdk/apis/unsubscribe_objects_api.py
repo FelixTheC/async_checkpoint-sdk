@@ -11,14 +11,16 @@ async def unsubscribe_objects(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : UnsubscribeObjectRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : UnsubscribeObjectRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiOkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/unsubscribe-objects"
     data_obj = {"body": data}

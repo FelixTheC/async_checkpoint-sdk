@@ -11,14 +11,16 @@ async def set_generic_object(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : GenericObjectRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : GenericObjectRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     GenericObjectApiReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-generic-object"
     data_obj = {"body": data}

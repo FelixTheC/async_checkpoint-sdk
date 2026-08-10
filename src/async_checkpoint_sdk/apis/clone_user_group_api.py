@@ -13,14 +13,16 @@ async def clone_user_group(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : UserGroupRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : UserGroupRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     UserGroupReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/clone-user-group"
     data_obj = {"body": data}

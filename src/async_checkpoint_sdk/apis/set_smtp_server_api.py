@@ -13,8 +13,8 @@ async def set_smtp_server(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : SmtpServerRequestEdit [Argument]
+    client : ClientSession
+    data : SmtpServerRequestEdit
         config : Config [Argument]
     kwargs : [Keyword arguments]
 
@@ -36,7 +36,17 @@ async def set_smtp_server(
 
     Returns
     -------
+    SmtpServerReply.
+    config : SDKConfig
+        data : SmtpServerRequestEdit [Argument]
+        config : Config [Argument].
+    kwargs : Any
+        Keyword arguments
+
+    Returns
+    -------
     SmtpServerReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-smtp-server"
     data_obj = {"body": data}

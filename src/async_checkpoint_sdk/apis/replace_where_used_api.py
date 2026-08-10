@@ -15,14 +15,16 @@ async def replace_where_used(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : WhereUsedReplaceObjectRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : WhereUsedReplaceObjectRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiOkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/replace-where-used"
     data_obj = {"body": data}

@@ -10,7 +10,7 @@ dependencies = [
 
 [dependency-groups]
 dev = [
-    #"docstring-generator>=2.1.0",
+    "docstring-generator>=2.1.0",
     "ruff>=0.16.1",
 ]
 

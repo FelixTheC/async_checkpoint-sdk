@@ -13,14 +13,16 @@ async def show_networks(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ObjectInGroupQueryRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ObjectInGroupQueryRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     NetworkQueryReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-networks"
     data_obj = {"body": data}

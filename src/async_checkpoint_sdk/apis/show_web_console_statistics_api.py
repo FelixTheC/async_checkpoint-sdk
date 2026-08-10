@@ -11,14 +11,16 @@ async def show_web_console_statistics(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : WebConsoleStatisticsRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : WebConsoleStatisticsRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     WebConsoleStatisticsReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-web-console-statistics"
     data_obj = {"body": data}

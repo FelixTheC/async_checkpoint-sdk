@@ -13,14 +13,16 @@ async def show_access_rulebase(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : QueryAccessRulebaseRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : QueryAccessRulebaseRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     QueryAccessRulebaseReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-access-rulebase"
     data_obj = {"body": data}

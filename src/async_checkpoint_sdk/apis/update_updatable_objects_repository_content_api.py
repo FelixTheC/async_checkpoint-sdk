@@ -13,7 +13,7 @@ async def update_updatable_objects_repository_content(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
+    client : ClientSession
         data : EmptyRequest [Argument]
     config : Config [Argument]
     kwargs : [Keyword arguments]
@@ -28,7 +28,17 @@ async def update_updatable_objects_repository_content(
 
     Returns
     -------
+    ApiTaskReply.
+    data : EmptyRequest
+        data : EmptyRequest [Argument].
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
+
+    Returns
+    -------
     ApiTaskReply
+
     """
     url = (
         f"https://{config.server}:{config.port}/web_api/update-updatable-objects-repository-content"

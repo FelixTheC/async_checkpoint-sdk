@@ -15,14 +15,16 @@ async def show_dynamic_global_network_object(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     DynamicGlobalNetworkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-dynamic-global-network-object"
     data_obj = {"body": data}

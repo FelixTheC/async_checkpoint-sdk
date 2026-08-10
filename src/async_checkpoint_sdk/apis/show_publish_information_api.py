@@ -11,14 +11,16 @@ async def show_publish_information(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : InternalDiffRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : InternalDiffRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     DiffReplyTask
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-publish-information"
     data_obj = {"body": data}

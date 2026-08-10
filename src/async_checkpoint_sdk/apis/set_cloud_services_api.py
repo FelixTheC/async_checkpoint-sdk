@@ -13,14 +13,16 @@ async def set_cloud_services(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : CloudServicesRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : CloudServicesRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     CloudServicesStatusReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-cloud-services"
     data_obj = {"body": data}

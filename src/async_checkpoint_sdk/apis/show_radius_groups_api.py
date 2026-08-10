@@ -13,14 +13,16 @@ async def show_radius_groups(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : RadiusGroupRequestQuery [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : RadiusGroupRequestQuery
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiQueryObjectReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-radius-groups"
     data_obj = {"body": data}

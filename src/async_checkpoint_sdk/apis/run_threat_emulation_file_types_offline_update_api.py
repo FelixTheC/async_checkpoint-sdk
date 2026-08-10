@@ -17,14 +17,16 @@ async def run_threat_emulation_file_types_offline_update(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ThreatEmulationFileTypesUpdateRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ThreatEmulationFileTypesUpdateRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ThreatEmulationFileTypesUpdateReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/run-threat-emulation-file-types-offline-update"
     data_obj = {"body": data}

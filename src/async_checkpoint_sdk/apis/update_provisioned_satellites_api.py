@@ -15,14 +15,16 @@ async def update_provisioned_satellites(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : UpdateProvisionedSatellitesRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : UpdateProvisionedSatellitesRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     LsmBaseCommandReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/update-provisioned-satellites"
     data_obj = {"body": data}

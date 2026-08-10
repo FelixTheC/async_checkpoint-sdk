@@ -11,14 +11,16 @@ async def show_proxy(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : EmptyRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : EmptyRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ProxyReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-proxy"
     data_obj = {"body": data}

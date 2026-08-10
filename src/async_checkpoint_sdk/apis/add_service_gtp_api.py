@@ -13,14 +13,16 @@ async def add_service_gtp(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : GtpServiceRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : GtpServiceRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     GtpServiceReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-service-gtp"
     data_obj = {"body": data}

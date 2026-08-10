@@ -13,14 +13,16 @@ async def show_address_ranges(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ObjectInGroupQueryRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ObjectInGroupQueryRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     AddressRangeQueryReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-address-ranges"
     data_obj = {"body": data}

@@ -13,14 +13,16 @@ async def show_user(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : UserRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : UserRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     UserReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-user"
     data_obj = {"body": data}

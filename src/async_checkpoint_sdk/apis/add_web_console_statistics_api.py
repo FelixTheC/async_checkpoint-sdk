@@ -13,14 +13,16 @@ async def add_web_console_statistics(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : WebConsoleStatisticsRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : WebConsoleStatisticsRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiOkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-web-console-statistics"
     data_obj = {"body": data}

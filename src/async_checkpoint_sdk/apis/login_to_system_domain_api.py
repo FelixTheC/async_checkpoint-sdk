@@ -13,14 +13,16 @@ async def login_to_system_domain(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : LoginToSystemDomainRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : LoginToSystemDomainRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     LoginToSystemDomainReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/login-to-system-domain"
     data_obj = {"body": data}

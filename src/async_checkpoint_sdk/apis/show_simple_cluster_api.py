@@ -13,14 +13,16 @@ async def show_simple_cluster(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ClusterRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ClusterRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ClusterReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-simple-cluster"
     data_obj = {"body": data}

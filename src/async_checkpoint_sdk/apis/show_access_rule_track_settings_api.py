@@ -11,14 +11,16 @@ async def show_access_rule_track_settings(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : TrackSettingsRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : TrackSettingsRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     TrackSettingsReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-access-rule-track-settings"
     data_obj = {"body": data}

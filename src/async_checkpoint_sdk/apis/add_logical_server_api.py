@@ -13,14 +13,16 @@ async def add_logical_server(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : LogicalServerRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : LogicalServerRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     LogicalServerReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-logical-server"
     data_obj = {"body": data}

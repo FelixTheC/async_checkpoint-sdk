@@ -15,14 +15,16 @@ async def set_interoperable_device(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : InteroperableDeviceRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : InteroperableDeviceRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     InteroperableDeviceReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-interoperable-device"
     data_obj = {"body": data}

@@ -15,14 +15,16 @@ async def add_multiple_key_exchanges(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : MultipleKeyExchangesRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : MultipleKeyExchangesRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     MultipleKeyExchangesReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-multiple-key-exchanges"
     data_obj = {"body": data}

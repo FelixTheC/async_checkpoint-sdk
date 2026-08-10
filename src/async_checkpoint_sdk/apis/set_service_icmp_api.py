@@ -13,14 +13,16 @@ async def set_service_icmp(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ServiceIcmpRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ServiceIcmpRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ServiceIcmpReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-service-icmp"
     data_obj = {"body": data}

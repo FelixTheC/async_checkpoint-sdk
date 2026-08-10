@@ -13,14 +13,16 @@ async def clone_object(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : CloneObjectRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : CloneObjectRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     CloneObjectReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/clone-object"
     data_obj = {"body": data}

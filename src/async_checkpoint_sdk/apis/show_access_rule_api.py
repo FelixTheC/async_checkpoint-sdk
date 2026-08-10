@@ -15,14 +15,16 @@ async def show_access_rule(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : AccessRuleIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : AccessRuleIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     AccessRuleReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-access-rule"
     data_obj = {"body": data}

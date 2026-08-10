@@ -11,14 +11,16 @@ async def add_generic_object(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : GenericObjectRequestAdd [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : GenericObjectRequestAdd
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     GenericObjectApiReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-generic-object"
     data_obj = {"body": data}

@@ -13,14 +13,16 @@ async def clone_https_layer(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : CloneHttpsLayerRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : CloneHttpsLayerRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiTaskReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/clone-https-layer"
     data_obj = {"body": data}

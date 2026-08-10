@@ -15,14 +15,16 @@ async def show_syslog_server(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     SyslogServerReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-syslog-server"
     data_obj = {"body": data}

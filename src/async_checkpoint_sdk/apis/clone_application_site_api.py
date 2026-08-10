@@ -13,14 +13,16 @@ async def clone_application_site(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApplicationSiteRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApplicationSiteRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApplicationSiteReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/clone-application-site"
     data_obj = {"body": data}

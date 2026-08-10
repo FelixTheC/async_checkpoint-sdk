@@ -15,14 +15,16 @@ async def vsec_lic_cli(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : TurnOnOffCentralLicensesRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : TurnOnOffCentralLicensesRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     TurnOnOffCentralLicensesReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/vsec-lic-cli"
     data_obj = {"body": data}

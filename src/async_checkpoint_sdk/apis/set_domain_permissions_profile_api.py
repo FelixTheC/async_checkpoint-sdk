@@ -17,14 +17,16 @@ async def set_domain_permissions_profile(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : DomainPermissionsProfileRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : DomainPermissionsProfileRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     DomainPermissionsProfileReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-domain-permissions-profile"
     data_obj = {"body": data}

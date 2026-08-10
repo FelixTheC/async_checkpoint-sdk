@@ -13,14 +13,16 @@ async def add_external_trusted_ca(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : TrustedCaRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : TrustedCaRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     TrustedCaReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-external-trusted-ca"
     data_obj = {"body": data}

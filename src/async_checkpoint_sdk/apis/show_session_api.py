@@ -13,14 +13,16 @@ async def show_session(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : WorkSessionRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : WorkSessionRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     WorkSessionShowReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-session"
     data_obj = {"body": data}

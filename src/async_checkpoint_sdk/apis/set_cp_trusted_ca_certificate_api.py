@@ -15,14 +15,16 @@ async def set_cp_trusted_ca_certificate(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : TrustedCaCertificateRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : TrustedCaCertificateRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     TrustedCaCertificateReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-cp-trusted-ca-certificate"
     data_obj = {"body": data}

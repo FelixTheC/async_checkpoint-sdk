@@ -16,14 +16,24 @@ async def gaia_api(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : GwProxyCmdRequest [Argument]
-    config : Config [Argument]
+    client : ClientSession
+    data : GwProxyCmdRequest
+        config : Config [Argument]
     kwargs : [Keyword arguments]
 
     Returns
     -------
+    GwProxyCmdReply.
+    config : SDKConfig
+        data : GwProxyCmdRequest [Argument]
+    config : Config [Argument].
+    kwargs : Any
+        Keyword arguments
+
+    Returns
+    -------
     GwProxyCmdReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/gaia-api"
     data_obj = {"body": data}

@@ -13,14 +13,16 @@ async def add_simple_gateway(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : GatewayCkpRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : GatewayCkpRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     GatewayCkpReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-simple-gateway"
     data_obj = {"body": data}

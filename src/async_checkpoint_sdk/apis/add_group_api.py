@@ -13,14 +13,16 @@ async def add_group(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : GroupRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : GroupRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     GroupReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-group"
     data_obj = {"body": data}

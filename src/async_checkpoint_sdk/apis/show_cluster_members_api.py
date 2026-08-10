@@ -13,14 +13,16 @@ async def show_cluster_members(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ObjectInGroupQueryRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ObjectInGroupQueryRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ClusterMemberQueryReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-cluster-members"
     data_obj = {"body": data}

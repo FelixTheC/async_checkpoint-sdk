@@ -13,14 +13,16 @@ async def add_resource_cifs(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : CifsResourceRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : CifsResourceRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     CifsResourceReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-resource-cifs"
     data_obj = {"body": data}

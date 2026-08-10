@@ -20,14 +20,16 @@ async def show_content_awareness_advanced_settings(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ContentAwarenessAdvancedSettingsRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ContentAwarenessAdvancedSettingsRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ContentAwarenessAdvancedSettingsReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-content-awareness-advanced-settings"
     data_obj = {"body": data}

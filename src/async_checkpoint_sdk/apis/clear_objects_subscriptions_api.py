@@ -13,14 +13,16 @@ async def clear_objects_subscriptions(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ClearObjectsSubscriptionsRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ClearObjectsSubscriptionsRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiOkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/clear-objects-subscriptions"
     data_obj = {"body": data}

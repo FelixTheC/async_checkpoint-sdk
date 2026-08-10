@@ -14,14 +14,16 @@ async def unlock_object(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : LockingRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : LockingRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     LockingReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/unlock-object"
     data_obj = {"body": data}

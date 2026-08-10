@@ -13,14 +13,16 @@ async def add_user_template(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : UserTemplateRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : UserTemplateRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     UserTemplateReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-user-template"
     data_obj = {"body": data}

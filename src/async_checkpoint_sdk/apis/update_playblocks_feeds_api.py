@@ -11,14 +11,16 @@ async def update_playblocks_feeds(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : PlayblocksFeedsRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : PlayblocksFeedsRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiOkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/update-playblocks-feeds"
     data_obj = {"body": data}

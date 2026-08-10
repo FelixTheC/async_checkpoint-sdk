@@ -13,14 +13,16 @@ async def add_time_group(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : TimeGroupRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : TimeGroupRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     TimeGroupReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-time-group"
     data_obj = {"body": data}

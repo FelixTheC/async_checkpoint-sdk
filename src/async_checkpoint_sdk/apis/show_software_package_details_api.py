@@ -13,14 +13,16 @@ async def show_software_package_details(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : PackageInfoCommandRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : PackageInfoCommandRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     PackageInfoCommandReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-software-package-details"
     data_obj = {"body": data}

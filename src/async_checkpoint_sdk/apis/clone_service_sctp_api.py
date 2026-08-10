@@ -13,14 +13,16 @@ async def clone_service_sctp(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : SctpServiceRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : SctpServiceRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     SctpServiceReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/clone-service-sctp"
     data_obj = {"body": data}

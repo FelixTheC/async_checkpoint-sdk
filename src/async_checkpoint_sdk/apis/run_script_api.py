@@ -13,14 +13,16 @@ async def run_script(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : RunScriptRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : RunScriptRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     CdmCommandReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/run-script"
     data_obj = {"body": data}

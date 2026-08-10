@@ -13,14 +13,16 @@ async def clone_host(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : HostRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : HostRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     HostReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/clone-host"
     data_obj = {"body": data}

@@ -13,14 +13,16 @@ async def set_syslog_server(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : SyslogServerRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : SyslogServerRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     SyslogServerReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-syslog-server"
     data_obj = {"body": data}

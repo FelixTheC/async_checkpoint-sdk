@@ -13,14 +13,16 @@ async def show_threat_rulebase(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : QueryThreatRulebaseRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : QueryThreatRulebaseRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     QueryThreatRulebaseReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-threat-rulebase"
     data_obj = {"body": data}

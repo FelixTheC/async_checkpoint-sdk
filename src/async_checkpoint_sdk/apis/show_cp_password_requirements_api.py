@@ -15,14 +15,16 @@ async def show_cp_password_requirements(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : CpPasswordRequirementsRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : CpPasswordRequirementsRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     CpPasswordRequirementsReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-cp-password-requirements"
     data_obj = {"body": data}

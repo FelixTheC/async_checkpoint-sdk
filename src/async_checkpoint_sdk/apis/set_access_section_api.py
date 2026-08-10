@@ -13,14 +13,16 @@ async def set_access_section(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : AccessSectionRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : AccessSectionRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     AccessSectionReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-access-section"
     data_obj = {"body": data}

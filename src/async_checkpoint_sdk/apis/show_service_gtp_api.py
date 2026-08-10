@@ -15,14 +15,16 @@ async def show_service_gtp(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     GtpServiceReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-service-gtp"
     data_obj = {"body": data}

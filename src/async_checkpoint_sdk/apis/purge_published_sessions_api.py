@@ -13,7 +13,7 @@ async def purge_published_sessions(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
+    client : ClientSession
         data : WorkSessionPurgeRequest [Argument]
     config : Config [Argument]
     kwargs : [Keyword arguments]
@@ -44,7 +44,17 @@ async def purge_published_sessions(
 
     Returns
     -------
+    ApiTaskReply.
+    data : WorkSessionPurgeRequest
+        data : WorkSessionPurgeRequest [Argument].
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
+
+    Returns
+    -------
     ApiTaskReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/purge-published-sessions"
     data_obj = {"body": data}

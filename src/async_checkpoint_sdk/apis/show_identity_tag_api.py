@@ -15,14 +15,16 @@ async def show_identity_tag(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     IdTagReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-identity-tag"
     data_obj = {"body": data}

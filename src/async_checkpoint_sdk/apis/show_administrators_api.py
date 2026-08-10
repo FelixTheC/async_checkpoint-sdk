@@ -13,14 +13,16 @@ async def show_administrators(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : AdministratorQueryRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : AdministratorQueryRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiQueryObjectReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-administrators"
     data_obj = {"body": data}

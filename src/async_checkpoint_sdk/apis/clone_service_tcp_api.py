@@ -13,14 +13,16 @@ async def clone_service_tcp(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : TcpServiceRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : TcpServiceRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     TcpServiceReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/clone-service-tcp"
     data_obj = {"body": data}

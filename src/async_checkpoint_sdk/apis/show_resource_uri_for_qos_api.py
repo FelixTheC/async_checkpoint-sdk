@@ -15,14 +15,16 @@ async def show_resource_uri_for_qos(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     UriForQosResourceReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-resource-uri-for-qos"
     data_obj = {"body": data}

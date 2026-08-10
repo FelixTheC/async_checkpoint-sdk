@@ -11,14 +11,16 @@ async def show_pnp_license(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : PnpLicenseRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : PnpLicenseRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     PnpLicenseReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-pnp-license"
     data_obj = {"body": data}

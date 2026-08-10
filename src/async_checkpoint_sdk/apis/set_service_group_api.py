@@ -13,14 +13,16 @@ async def set_service_group(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ServiceGroupRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ServiceGroupRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ServiceGroupReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-service-group"
     data_obj = {"body": data}

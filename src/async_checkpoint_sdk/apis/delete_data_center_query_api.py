@@ -15,7 +15,7 @@ async def delete_data_center_query(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
+    client : ClientSession
         data : ApiVisualCPObjectIdentifierRequestDelete [Argument]
     config : Config [Argument]
     kwargs : [Keyword arguments]
@@ -38,7 +38,17 @@ async def delete_data_center_query(
 
     Returns
     -------
+    ApiOkReply.
+    data : ApiVisualCPObjectIdentifierRequestDelete
+        data : ApiVisualCPObjectIdentifierRequestDelete [Argument].
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
+
+    Returns
+    -------
     ApiOkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/delete-data-center-query"
     data_obj = {"body": data}

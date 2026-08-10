@@ -15,14 +15,16 @@ async def show_nat_rule(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : NatRuleIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : NatRuleIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     NatRuleReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-nat-rule"
     data_obj = {"body": data}

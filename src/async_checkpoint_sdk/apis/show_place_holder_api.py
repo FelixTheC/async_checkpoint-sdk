@@ -15,14 +15,16 @@ async def show_place_holder(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiPlaceHolderIdentifierRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiPlaceHolderIdentifierRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiPlaceHolderReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-place-holder"
     data_obj = {"body": data}

@@ -13,14 +13,16 @@ async def show_last_published_session(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : EmptyRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : EmptyRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     WorkSessionReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-last-published-session"
     data_obj = {"body": data}

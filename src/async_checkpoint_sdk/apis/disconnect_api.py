@@ -13,14 +13,16 @@ async def disconnect(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : DisconnectRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : DisconnectRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     DisconnectReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/disconnect"
     data_obj = {"body": data}

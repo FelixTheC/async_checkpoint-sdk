@@ -15,14 +15,16 @@ async def show_https_rule(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : TLSRuleIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : TLSRuleIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     TLSRuleReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-https-rule"
     data_obj = {"body": data}

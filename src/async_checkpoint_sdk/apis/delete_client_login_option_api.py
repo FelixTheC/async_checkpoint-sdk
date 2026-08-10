@@ -15,8 +15,8 @@ async def delete_client_login_option(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestDelete [Argument]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestDelete
         config : Config [Argument]
     kwargs : [Keyword arguments]
 
@@ -38,7 +38,17 @@ async def delete_client_login_option(
 
     Returns
     -------
+    ApiOkReply.
+    config : SDKConfig
+        data : ApiVisualCPObjectIdentifierRequestDelete [Argument]
+        config : Config [Argument].
+    kwargs : Any
+        Keyword arguments
+
+    Returns
+    -------
     ApiOkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/delete-client-login-option"
     data_obj = {"body": data}

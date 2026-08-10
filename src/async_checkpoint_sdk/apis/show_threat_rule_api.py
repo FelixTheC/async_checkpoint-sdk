@@ -13,14 +13,16 @@ async def show_threat_rule(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ThreatRuleIdentifierRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ThreatRuleIdentifierRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ThreatRuleReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-threat-rule"
     data_obj = {"body": data}

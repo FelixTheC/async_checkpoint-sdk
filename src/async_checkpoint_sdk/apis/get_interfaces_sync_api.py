@@ -11,14 +11,16 @@ async def get_interfaces_sync(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : GetInterfacesRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : GetInterfacesRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiOkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/get-interfaces-sync"
     data_obj = {"body": data}

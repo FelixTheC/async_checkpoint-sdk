@@ -15,14 +15,16 @@ async def show_exception_group(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ThreatExceptionGroupReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-exception-group"
     data_obj = {"body": data}

@@ -13,14 +13,16 @@ async def add_application_site(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApplicationSiteRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApplicationSiteRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApplicationSiteReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-application-site"
     data_obj = {"body": data}

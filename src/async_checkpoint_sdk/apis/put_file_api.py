@@ -13,14 +13,16 @@ async def put_file(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : PutFileRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : PutFileRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     CdmCommandReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/put-file"
     data_obj = {"body": data}

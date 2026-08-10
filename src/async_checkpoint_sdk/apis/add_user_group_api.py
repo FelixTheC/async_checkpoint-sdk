@@ -13,14 +13,16 @@ async def add_user_group(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : UserGroupRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : UserGroupRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     UserGroupReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-user-group"
     data_obj = {"body": data}

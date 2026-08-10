@@ -15,14 +15,16 @@ async def show_user_template(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     UserTemplateReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-user-template"
     data_obj = {"body": data}

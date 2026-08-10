@@ -15,14 +15,16 @@ async def show_app_control_update_schedule(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : AppiUpdateScheduleRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : AppiUpdateScheduleRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     AppiUpdateScheduleReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-app-control-update-schedule"
     data_obj = {"body": data}

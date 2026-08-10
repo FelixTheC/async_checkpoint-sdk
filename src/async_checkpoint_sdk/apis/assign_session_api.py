@@ -13,14 +13,16 @@ async def assign_session(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : WorkSessionAssignRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : WorkSessionAssignRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiOkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/assign-session"
     data_obj = {"body": data}

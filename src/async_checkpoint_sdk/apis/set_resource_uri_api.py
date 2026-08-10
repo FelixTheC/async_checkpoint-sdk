@@ -13,14 +13,16 @@ async def set_resource_uri(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : UriResourceRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : UriResourceRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     UriResourceReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-resource-uri"
     data_obj = {"body": data}

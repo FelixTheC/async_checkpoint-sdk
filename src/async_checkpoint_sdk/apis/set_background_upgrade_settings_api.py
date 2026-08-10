@@ -17,14 +17,16 @@ async def set_background_upgrade_settings(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : BackgroundUpgradeSettingsRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : BackgroundUpgradeSettingsRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     BackgroundUpgradeSettingsReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-background-upgrade-settings"
     data_obj = {"body": data}

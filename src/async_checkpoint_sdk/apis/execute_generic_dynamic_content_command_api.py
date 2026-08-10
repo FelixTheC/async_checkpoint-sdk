@@ -15,14 +15,16 @@ async def execute_generic_dynamic_content_command(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : GenericDynamicContentCommandRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : GenericDynamicContentCommandRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     GenericDynamicContentCommandReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/execute-generic-dynamic-content-command"
     data_obj = {"body": data}

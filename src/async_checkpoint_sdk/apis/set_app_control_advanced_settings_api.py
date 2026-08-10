@@ -15,14 +15,16 @@ async def set_app_control_advanced_settings(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : AppiAdvancedSettingsRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : AppiAdvancedSettingsRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     AppiAdvancedSettingsReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-app-control-advanced-settings"
     data_obj = {"body": data}

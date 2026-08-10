@@ -15,14 +15,16 @@ async def show_unused_objects(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ObjectInGroupWithMembersQueryRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ObjectInGroupWithMembersQueryRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiQueryObjectReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-unused-objects"
     data_obj = {"body": data}

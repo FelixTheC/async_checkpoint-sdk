@@ -13,14 +13,16 @@ async def clone_radius_server(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : RadiusRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : RadiusRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     RadiusReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/clone-radius-server"
     data_obj = {"body": data}

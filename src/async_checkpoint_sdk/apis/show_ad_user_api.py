@@ -15,14 +15,16 @@ async def show_ad_user(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     AdUserReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-ad-user"
     data_obj = {"body": data}

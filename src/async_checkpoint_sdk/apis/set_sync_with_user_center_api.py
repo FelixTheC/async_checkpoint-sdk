@@ -13,7 +13,7 @@ async def set_sync_with_user_center(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
+    client : ClientSession
         data : SyncUserCenterRequestEdit [Argument]
     config : Config [Argument]
     kwargs : [Keyword arguments]
@@ -36,7 +36,17 @@ async def set_sync_with_user_center(
 
     Returns
     -------
+    SyncUserCenterReply.
+    data : SyncUserCenterRequestEdit
+        data : SyncUserCenterRequestEdit [Argument].
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
+
+    Returns
+    -------
     SyncUserCenterReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-sync-with-user-center"
     data_obj = {"body": data}

@@ -13,8 +13,8 @@ async def reset_trust(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : TrustRequestBase [Argument]
+    client : ClientSession
+    data : TrustRequestBase
         config : Config [Argument]
     kwargs : [Keyword arguments]
 
@@ -36,7 +36,17 @@ async def reset_trust(
 
     Returns
     -------
+    TrustStatusReply.
+    config : SDKConfig
+        data : TrustRequestBase [Argument]
+        config : Config [Argument].
+    kwargs : Any
+        Keyword arguments
+
+    Returns
+    -------
     TrustStatusReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/reset-trust"
     data_obj = {"body": data}

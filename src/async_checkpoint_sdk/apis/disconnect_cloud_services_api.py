@@ -13,14 +13,16 @@ async def disconnect_cloud_services(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : CloudDisconnectMgmtRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : CloudDisconnectMgmtRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiMessageReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/disconnect-cloud-services"
     data_obj = {"body": data}

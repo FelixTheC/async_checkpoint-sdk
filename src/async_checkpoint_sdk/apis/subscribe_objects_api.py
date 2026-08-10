@@ -13,14 +13,16 @@ async def subscribe_objects(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : SubscribeObjectRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : SubscribeObjectRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     SubscribeObjectReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/subscribe-objects"
     data_obj = {"body": data}

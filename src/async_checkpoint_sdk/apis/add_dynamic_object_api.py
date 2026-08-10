@@ -13,14 +13,16 @@ async def add_dynamic_object(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : DynamicObjectRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : DynamicObjectRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     DynamicObjectReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-dynamic-object"
     data_obj = {"body": data}

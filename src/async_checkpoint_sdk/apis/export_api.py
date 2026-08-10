@@ -13,14 +13,16 @@ async def export(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : WebApiExportRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : WebApiExportRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     WebApiExportReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/export"
     data_obj = {"body": data}

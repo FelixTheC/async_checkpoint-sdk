@@ -13,14 +13,16 @@ async def add_security_zone(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : SecurityZoneRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : SecurityZoneRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     SecurityZoneReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-security-zone"
     data_obj = {"body": data}

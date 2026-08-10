@@ -15,14 +15,16 @@ async def set_https_advanced_settings(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : HttpsAdvancedSettingsRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : HttpsAdvancedSettingsRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     HttpsAdvancedSettingsReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-https-advanced-settings"
     data_obj = {"body": data}

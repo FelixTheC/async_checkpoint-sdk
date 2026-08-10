@@ -15,14 +15,16 @@ async def show_outbound_inspection_certificate(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : OutboundCertificateRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : OutboundCertificateRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     OutboundCertificateReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-outbound-inspection-certificate"
     data_obj = {"body": data}

@@ -11,14 +11,16 @@ async def connect_session(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ConnectSessionRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ConnectSessionRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiOkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/connect-session"
     data_obj = {"body": data}

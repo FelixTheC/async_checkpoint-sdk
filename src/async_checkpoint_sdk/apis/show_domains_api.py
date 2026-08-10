@@ -13,14 +13,16 @@ async def show_domains(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : BaseDomainQueryRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : BaseDomainQueryRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     BaseDomainQueryReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-domains"
     data_obj = {"body": data}

@@ -13,14 +13,16 @@ async def get_platform(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : GetPlatformRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : GetPlatformRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     GetPlatformReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/get-platform"
     data_obj = {"body": data}

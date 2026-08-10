@@ -18,14 +18,16 @@ async def delete_mobile_access_rule(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : MobileApplicationsRuleIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : MobileApplicationsRuleIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiOkReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/delete-mobile-access-rule"
     data_obj = {"body": data}

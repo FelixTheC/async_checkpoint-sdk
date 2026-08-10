@@ -13,14 +13,16 @@ async def ha_full_sync(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : FullSyncRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : FullSyncRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiTaskReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/ha-full-sync"
     data_obj = {"body": data}

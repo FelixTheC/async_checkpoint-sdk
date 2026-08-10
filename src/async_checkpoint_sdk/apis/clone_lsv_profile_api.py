@@ -13,14 +13,16 @@ async def clone_lsv_profile(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : LargeScaleVpnRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : LargeScaleVpnRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     LargeScaleVpnReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/clone-lsv-profile"
     data_obj = {"body": data}

@@ -13,14 +13,16 @@ async def install_lsm_settings(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : LsmInstallSettingsRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : LsmInstallSettingsRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     LsmBaseCommandReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/install-lsm-settings"
     data_obj = {"body": data}

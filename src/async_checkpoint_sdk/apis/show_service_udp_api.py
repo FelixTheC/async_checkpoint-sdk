@@ -15,14 +15,16 @@ async def show_service_udp(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     UdpServiceReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-service-udp"
     data_obj = {"body": data}

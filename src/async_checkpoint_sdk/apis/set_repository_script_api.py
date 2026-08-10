@@ -13,14 +13,16 @@ async def set_repository_script(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ScriptRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ScriptRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ScriptReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-repository-script"
     data_obj = {"body": data}

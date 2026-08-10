@@ -15,14 +15,16 @@ async def add_group_with_exclusion(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : GroupWithExclusionRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : GroupWithExclusionRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     GroupWithExclusionReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-group-with-exclusion"
     data_obj = {"body": data}

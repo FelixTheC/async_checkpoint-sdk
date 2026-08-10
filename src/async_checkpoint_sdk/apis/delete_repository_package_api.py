@@ -13,14 +13,16 @@ async def delete_repository_package(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : DeletePackageCommandRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : DeletePackageCommandRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     DeletePackageCommandReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/delete-repository-package"
     data_obj = {"body": data}

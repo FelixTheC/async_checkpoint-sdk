@@ -13,14 +13,16 @@ async def lsm_run_script(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : LsmRunScriptRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : LsmRunScriptRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     LsmBaseCommandReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/lsm-run-script"
     data_obj = {"body": data}

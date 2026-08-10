@@ -13,14 +13,16 @@ async def set_ha_state(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : SetHaStateRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : SetHaStateRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     SetHaStateReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-ha-state"
     data_obj = {"body": data}

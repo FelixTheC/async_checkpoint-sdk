@@ -13,14 +13,16 @@ async def show_users(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : UserRequestQuery [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : UserRequestQuery
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     ApiQueryObjectReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-users"
     data_obj = {"body": data}

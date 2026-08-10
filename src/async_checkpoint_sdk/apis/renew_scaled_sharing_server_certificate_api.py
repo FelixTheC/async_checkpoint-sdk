@@ -17,14 +17,16 @@ async def renew_scaled_sharing_server_certificate(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : RenewScaledSharingCertificateRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : RenewScaledSharingCertificateRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     RenewScaledSharingCertificateReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/renew-scaled-sharing-server-certificate"
     data_obj = {"body": data}

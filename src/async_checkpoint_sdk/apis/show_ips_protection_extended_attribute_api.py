@@ -17,14 +17,16 @@ async def show_ips_protection_extended_attribute(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiVisualCPObjectIdentifierRequestShow [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiVisualCPObjectIdentifierRequestShow
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     IpsAdditionalPropertiesShowReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-ips-protection-extended-attribute"
     data_obj = {"body": data}

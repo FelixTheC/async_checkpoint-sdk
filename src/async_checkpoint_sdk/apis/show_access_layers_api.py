@@ -13,14 +13,16 @@ async def show_access_layers(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : ApiQueryRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : ApiQueryRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     AccessLayersQueryReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-access-layers"
     data_obj = {"body": data}

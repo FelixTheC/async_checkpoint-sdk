@@ -13,14 +13,16 @@ async def show_policy_insights_status(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : AfwControlRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : AfwControlRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     AfwControlStatusReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-policy-insights-status"
     data_obj = {"body": data}

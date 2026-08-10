@@ -13,14 +13,16 @@ async def clone_access_role(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : AccessRoleRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : AccessRoleRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     AccessRoleReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/clone-access-role"
     data_obj = {"body": data}

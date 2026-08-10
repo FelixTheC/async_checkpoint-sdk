@@ -13,14 +13,16 @@ async def set_global_properties(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : GlobalPropertiesRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : GlobalPropertiesRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     GlobalPropertiesReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-global-properties"
     data_obj = {"body": data}

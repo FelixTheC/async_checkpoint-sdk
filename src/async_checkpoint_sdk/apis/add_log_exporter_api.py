@@ -13,8 +13,8 @@ async def add_log_exporter(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : LogExporterRequestNew [Argument]
+    client : ClientSession
+    data : LogExporterRequestNew
         config : Config [Argument]
     kwargs : [Keyword arguments]
 
@@ -44,7 +44,17 @@ async def add_log_exporter(
 
     Returns
     -------
+    LogExporterReply.
+    config : SDKConfig
+        data : LogExporterRequestNew [Argument]
+        config : Config [Argument].
+    kwargs : Any
+        Keyword arguments
+
+    Returns
+    -------
     LogExporterReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-log-exporter"
     data_obj = {"body": data}

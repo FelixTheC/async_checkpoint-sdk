@@ -13,14 +13,16 @@ async def set_global_domain(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : GlobalDomainRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : GlobalDomainRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     GlobalDomainEditReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-global-domain"
     data_obj = {"body": data}

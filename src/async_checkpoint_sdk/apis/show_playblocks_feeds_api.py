@@ -11,14 +11,16 @@ async def show_playblocks_feeds(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : EmptyRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : EmptyRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     PlayblocksFeedsShowReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-playblocks-feeds"
     data_obj = {"body": data}

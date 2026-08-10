@@ -13,14 +13,16 @@ async def set_voip_domain_h323_gatekeeper(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : VoipGatekeeperRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : VoipGatekeeperRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     VoipGatekeeperReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/set-voip-domain-h323-gatekeeper"
     data_obj = {"body": data}

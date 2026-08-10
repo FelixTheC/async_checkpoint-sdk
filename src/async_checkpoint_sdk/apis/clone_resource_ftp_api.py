@@ -13,14 +13,16 @@ async def clone_resource_ftp(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : FtpResourceRequestEdit [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : FtpResourceRequestEdit
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     FtpResourceReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/clone-resource-ftp"
     data_obj = {"body": data}

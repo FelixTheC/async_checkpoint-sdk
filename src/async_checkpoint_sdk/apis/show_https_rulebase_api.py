@@ -17,14 +17,16 @@ async def show_https_rulebase(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : QueryTLSInspectionRulebaseRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : QueryTLSInspectionRulebaseRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     QueryTLSInspectionRulebaseReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-https-rulebase"
     data_obj = {"body": data}

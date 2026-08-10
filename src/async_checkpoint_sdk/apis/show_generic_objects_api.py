@@ -11,14 +11,16 @@ async def show_generic_objects(
     """
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : GenericObjectQueryRequest [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : GenericObjectQueryRequest
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     GenericObjectQueryReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/show-generic-objects"
     data_obj = {"body": data}

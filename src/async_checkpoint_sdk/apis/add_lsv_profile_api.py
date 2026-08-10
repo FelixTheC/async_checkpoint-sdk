@@ -13,14 +13,16 @@ async def add_lsv_profile(
 
     Parameters
     ----------
-    client : ClientSession [Argument]
-    data : LargeScaleVpnRequestNew [Argument]
-    config : Config [Argument]
-    kwargs : [Keyword arguments]
+    client : ClientSession
+    data : LargeScaleVpnRequestNew
+    config : SDKConfig
+    kwargs : Any
+        Keyword arguments
 
     Returns
     -------
     LargeScaleVpnReply
+
     """
     url = f"https://{config.server}:{config.port}/web_api/add-lsv-profile"
     data_obj = {"body": data}
